@@ -15,11 +15,14 @@ return new class extends Migration
             $table->string('barang_id');
             $table->primary('barang_id');
             $table->string('slug');
-            $table->string('nama_barang');
+            $table->string('nama_barang')->unique('unique_nama_barang');
             $table->integer('harga_barang');
             $table->integer('biaya_penyimpanan')->default(0);
             $table->integer('rop')->default(0);
+
             $table->timestamps();
+
+            $table->index(['barang_id']);
         });
     }
 

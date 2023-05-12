@@ -1,26 +1,27 @@
 <h4 class="card-title">Form @yield('title')</h4>
-{{-- <p class="card-title-desc">Here are examples of <code>.form-control</code> applied to
-    each
-    textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p> --}}
 
 <div class="mt-4 mb-3 row">
     <label for="id_barang" class="col-md-2 col-form-label">ID Barang</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" value="B0001" id="id_barang" readonly>
+        <input class="form-control" type="text"
+            value="{{ !empty($barangs) ? $barangs->barang_id : '' }}{{ !empty($barang_id) ? $barang_id : '' }}"
+            id="id_barang" readonly>
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="nama_barang" class="col-md-2 col-form-label">Nama Barang</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="nama_barang" placeholder="Ketikkan Nama Barang">
+        <input class="form-control" type="text" name="nama_barang" id="nama_barang"
+            placeholder="Ketikkan Nama Barang" value="{{ !empty($barangs) ? $barangs->nama_barang : '' }}">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="harga_barang" class="col-md-2 col-form-label">Harga Barang</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="harga_barang" placeholder="Ketikkan Harga Barang">
+        <input class="form-control" type="text" id="harga_barang" name="harga_barang"
+            placeholder="Ketikkan Harga Barang" value="{{ !empty($barangs) ? $barangs->harga_barang : '' }}">
     </div>
 </div>
 

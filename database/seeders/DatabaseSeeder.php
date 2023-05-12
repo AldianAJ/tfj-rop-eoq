@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             GudangSeeder::class,
             CounterSeeder::class,
+            BarangGudangSeeder::class,
+            BarangCounterSeeder::class,
         ]);
     }
 }

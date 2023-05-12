@@ -24,7 +24,146 @@
     <!-- Datatable init js -->
     <script src="assets/js/pages/datatables.init.js"></script>
     <script>
-        $('#datatable').DataTable();
+        const rupiah = (number) => {
+            return new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number);
+        }
+
+        let barangDatatable = $('#datatable').DataTable({
+            ajax: "{{ route('barang') }}",
+            columns: [{
+                    data: "barang_id",
+                    name: "barang_id"
+                },
+                {
+                    data: "nama_barang",
+                    name: "nama_barang"
+                },
+                {
+                    data: "harga_barang",
+                    render: function(data, type, row) {
+                        return rupiah(data);
+                    }
+                },
+                {
+                    data: "biaya_penyimpanan",
+                    render: function(data, type, row) {
+                        return rupiah(data);
+                    }
+                },
+                {
+                    data: "rop",
+                    name: "rop"
+                },
+                {
+                    data: "qty_total",
+                    name: "qty_total"
+                },
+                {
+                    data: "action",
+                    name: "action"
+                }
+            ],
+        });
+
+        $('input[name=btnradio]').each(function(index, element) {
+            // element == this
+            $(this).on('change', function(e) {
+                $('#datatable').DataTable().clear();
+                $('#datatable').DataTable().destroy();
+                const target = $(e.target).val();
+                if (target == 'master') {
+                    barangDatatable.columns(4).visible(true);
+                    barangDatatable.columns(5).visible(true);
+                    barangDatatable.columns(6).visible(true);
+                    $(barangDatatable.columns(3).header()).text('Biaya Penyimpanan');
+                    $('#datatable').DataTable({
+                        ajax: "{{ route('barang') }}",
+                        columns: [{
+                                data: "barang_id",
+                                name: "barang_id"
+                            },
+                            {
+                                data: "nama_barang",
+                                name: "nama_barang"
+                            },
+                            {
+                                data: "harga_barang",
+                                render: function(data, type, row) {
+                                    return rupiah(data);
+                                }
+                            },
+                            {
+                                data: "biaya_penyimpanan",
+                                render: function(data, type, row) {
+                                    return rupiah(data);
+                                }
+                            },
+                            {
+                                data: "rop",
+                                name: "rop"
+                            },
+                            {
+                                data: "qty_total",
+                                name: "qty_total"
+                            },
+                            {
+                                data: "action",
+                                name: "action"
+                            }
+                        ],
+                    });
+                } else {
+                    barangDatatable.columns(4).visible(false);
+                    barangDatatable.columns(5).visible(false);
+                    barangDatatable.columns(6).visible(false);
+                    $(barangDatatable.columns(3).header()).text('Quantity');
+                    $('#datatable').DataTable({
+
+                        ajax: {
+                            "type": "GET",
+                            "url": "{{ route('barang') }}",
+                            "data": {
+                                '_token': "{{ csrf_token() }}",
+                                'target': target
+                            }
+                        },
+                        columns: [{
+                                data: "barang_id",
+                                name: "barang_id"
+                            },
+                            {
+                                data: "nama_barang",
+                                name: "nama_barang"
+                            },
+                            {
+                                data: "harga_barang",
+                                render: function(data, type, row) {
+                                    return rupiah(data);
+                                }
+                            },
+                            {
+                                data: "quantity",
+                            },
+                            // {
+                            //     data: "rop",
+                            //     name: "rop"
+                            // },
+                            // {
+                            //     data: "qty_total",
+                            //     name: "qty_total"
+                            // },
+                            // {
+                            //     data: "action",
+                            //     name: "action"
+                            // }
+                        ],
+                    });
+                }
+            });
+        });
     </script>
 @endpush
 
@@ -47,19 +186,39 @@
 
     <div class="row">
         <div class="col-12">
+            @if (session()->has('msg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="mdi mdi-check-all me-2"></i>
+                    {{ session('msg') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card">
                 <div class="card-body">
+                    <div class="row mb-4 mt-1">
+                        <div class="col-8 d-flex justify-content-end">
+                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check" name="btnradio" value="master" id="btnradio4"
+                                    autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="btnradio4">Master Barang</label>
 
-                    {{-- <h4 class="card-title">Default Datatable</h4>
-                    <p class="card-title-desc">DataTables has most features enabled by
-                        default, so all you need to do to use it with your own tables is to call
-                        the construction function: <code>$().DataTable();</code>.
-                    </p> --}}
+                                <input type="radio" class="btn-check" name="btnradio" value="gudang" id="btnradio5"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btnradio5">Barang Gudang</label>
 
-                    <div class="d-flex justify-content-end mb-4">
-                        <a href="{{ route('barang.create') }}" class="btn btn-primary waves-effect waves-light">
-                            <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
-                        </a>
+                                <input type="radio" class="btn-check" name="btnradio" value="counter" id="btnradio6"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btnradio6">Barang Counter</label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="d-flex justify-content-end">
+                                <a href="{{ route('barang.create') }}" class="btn btn-primary waves-effect waves-light">
+                                    <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -68,31 +227,13 @@
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
                                 <th>Harga Barang</th>
-                                <th>Biaya Penyimpanan per unit</th>
-                                <th>Quantity</th>
-                                <th>Quantity Total(Gudang & Counter)</th>
+                                <th>Biaya Penyimpanan</th>
+                                <th>ROP</th>
+                                <th>Quantity Total</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-
-
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                                <td>
-                                    <a href="{{ route('barang.edit', ['slug' => 'a']) }}"
-                                        class="btn btn-success waves-effect waves-light">
-                                        <i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>
-                                    <a href="" class="btn btn-danger waves-effect waves-light"> <i
-                                            class="bx bx-trash align-middle me-2 font-size-18"></i>Hapus</a>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
 

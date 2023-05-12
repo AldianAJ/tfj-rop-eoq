@@ -32,14 +32,6 @@
         "status": "Active"
     },
     {
-        "name": "Counter 4",
-        "address": "JL. Kendangsari No.7C, Kota Surabaya, Jawa Timur",
-        "username": "counter4",
-        "password": "counter",
-        "role": "counter",
-        "status": "Active"
-    },
-    {
         "name": "Owner",
         "address": "-",
         "username": "owner",

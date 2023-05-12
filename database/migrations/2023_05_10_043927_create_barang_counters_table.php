@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('slug');
             $table->string('counter_id');
             $table->string('barang_id');
-            $table->integer('stok_awal');
-            $table->integer('stok_masuk');
-            $table->integer('stok_keluar');
+            $table->integer('stok_awal')->default(0);
+            $table->integer('stok_masuk')->default(0);
+            $table->integer('stok_keluar')->default(0);
 
             $table->foreign('barang_id')
                 ->references('barang_id')
@@ -30,6 +30,8 @@ return new class extends Migration
                 ->on('counters')->onDelete('cascade');
 
             $table->timestamps();
+
+            $table->index(['barang_counter_id', 'barang_id', 'counter_id']);
         });
     }
 
