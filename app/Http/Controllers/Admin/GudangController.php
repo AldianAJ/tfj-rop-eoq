@@ -12,7 +12,7 @@ use Yajra\DataTables\DataTables;
 class GudangController extends Controller
 {
 
-    public function validationHelper($request)
+    public function validatorHelper($request)
     {
         if (empty($request['nama_gudang']) || empty($request['alamat_gudang']) || empty($request['username'])) {
             # tidak boleh ada field yang kosong
@@ -58,13 +58,11 @@ class GudangController extends Controller
 
     public function update(Request $request, $slug)
     {
-        $validator = $this->validationHelper($request->all());
+        $validator = $this->validatorHelper($request->all());
 
         if (!empty($validator)) {
             return redirect()->back()->with(['msg' => $validator->message]);
         }
-
-
 
         DB::beginTransaction();
         try {

@@ -164,6 +164,68 @@
                 }
             });
         });
+
+        $('#btn-save').on('click', function() {
+            const total_biaya = $('#biaya_penyimpanan').val();
+            if (total_biaya != "") {
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('barang.biayapenyimpanan') }}",
+                    data: {
+                        '_token': "{{ csrf_token() }}",
+                        'total_biaya': total_biaya
+                    },
+                    success: function(response) {
+                        $('#biayaModal').modal('toggle');
+                        $('#datatable').DataTable().clear();
+                        $('#datatable').DataTable().destroy();
+                        barangDatatable.columns(4).visible(true);
+                        barangDatatable.columns(5).visible(true);
+                        barangDatatable.columns(6).visible(true);
+                        $(barangDatatable.columns(3).header()).text('Biaya Penyimpanan');
+                        $('#datatable').DataTable({
+                            ajax: "{{ route('barang') }}",
+                            columns: [{
+                                    data: "barang_id",
+                                    name: "barang_id"
+                                },
+                                {
+                                    data: "nama_barang",
+                                    name: "nama_barang"
+                                },
+                                {
+                                    data: "harga_barang",
+                                    render: function(data, type, row) {
+                                        return rupiah(data);
+                                    }
+                                },
+                                {
+                                    data: "biaya_penyimpanan",
+                                    render: function(data, type, row) {
+                                        return rupiah(data);
+                                    }
+                                },
+                                {
+                                    data: "rop",
+                                    name: "rop"
+                                },
+                                {
+                                    data: "qty_total",
+                                    name: "qty_total"
+                                },
+                                {
+                                    data: "action",
+                                    name: "action"
+                                }
+                            ],
+                        });
+                        $('#biaya_penyimpanan').val("");
+                    }
+                });
+            } else {
+                $('#biayaModal').modal('toggle');
+            }
+        });
     </script>
 @endpush
 
@@ -196,7 +258,13 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row mb-4 mt-1">
-                        <div class="col-8 d-flex justify-content-end">
+                        <div class="col-3">
+                            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#biayaModal">
+                                <i class="bx bx-money align-middle me-2 font-size-18"></i>
+                                Biaya Penyimpanan
+                            </button>
+                        </div>
+                        <div class="col-5 d-flex justify-content-end">
                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                 <input type="radio" class="btn-check" name="btnradio" value="master" id="btnradio4"
                                     autocomplete="off" checked>
@@ -240,5 +308,26 @@
                 </div>
             </div>
         </div> <!-- end col -->
+    </div>
+
+    <div class="modal fade" id="biayaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Total Biaya Penyimpanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="nama_barang" class="form-label font-weight-bold">Total biaya penyimpanan akan dibagi total
+                        stok barang agar menjadi biaya penyimpanan barang per unit</label>
+                    <input class="form-control" type="text" value="" id="biaya_penyimpanan"
+                        placeholder="Masukkan Total Biaya Penyimpanan">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary" id="btn-save">Simpan</button>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

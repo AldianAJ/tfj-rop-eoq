@@ -6,35 +6,41 @@
 <div class="mt-4 mb-3 row">
     <label for="id_counter" class="col-md-2 col-form-label">ID Counter</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" value="G0001" id="id_counter" readonly>
+        <input class="form-control" type="text" value="{{ !empty($counters) ? $counters->counter_id : $counter_id }}"
+            id="id_counter" name="counter_id" readonly>
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="nama_counter" class="col-md-2 col-form-label">Nama Counter</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="nama_counter" placeholder="Ketikkan Nama Counter">
+        <input class="form-control" type="text" id="nama_counter"
+            value="{{ !empty($counters) ? $counters->name : '' }}" name="nama_counter"
+            placeholder="Ketikkan Nama Counter">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="alamat_counter" class="col-md-2 col-form-label">Alamat Counter</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="alamat_counter" placeholder="Ketikkan Alamat Counter">
+        <input class="form-control" type="text" id="alamat_counter"
+            value="{{ !empty($counters) ? $counters->address : '' }}" name="alamat_counter"
+            placeholder="Ketikkan Alamat Counter">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="username" class="col-md-2 col-form-label">Username</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="username" placeholder="Ketikkan Username">
+        <input class="form-control" type="text" id="username"
+            value="{{ !empty($counters) ? $counters->username : '' }}" name="username" placeholder="Ketikkan Username">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="password" class="col-md-2 col-form-label">Password</label>
     <div class="col-md-10">
-        <input class="form-control" type="password" id="password" placeholder="Ketikkan Password">
+        <input class="form-control" type="password" id="password" name="password" placeholder="Ketikkan Password">
     </div>
 </div>
 

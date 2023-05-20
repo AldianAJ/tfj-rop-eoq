@@ -47,7 +47,7 @@ class BarangController extends Controller
                 $data = DB::select($query);
                 return DataTables::of($data)->make(true);
             } else if ($request->target == 'counter') {
-                $query = "SELECT b.barang_counter_id as barang_id, b.slug,a.nama_barang, a.harga_barang, (SELECT (SUM(stok_masuk) - SUM(stok_keluar)) FROM barang_counters WHERE barang_id = b.barang_id GROUP BY barang_id) as quantity
+                $query = "SELECT b.barang_counter_id as barang_id, b.slug, a.nama_barang, a.harga_barang, (SUM(b.stok_masuk) - SUM(b.stok_keluar)) as quantity
                 FROM barangs as a
                 JOIN barang_counters as b on a.barang_id = b.barang_id
                 GROUP BY b.barang_counter_id, b.slug,a.nama_barang, a.harga_barang
@@ -186,6 +186,28 @@ class BarangController extends Controller
             Barang::where('slug', $slug)->delete();
             DB::commit();
             return redirect(route('barang'))->with('msg', 'Data barang berhasil dihapus');
+        } catch (\Exception $ex) {
+            //throw $th;
+            echo $ex->getMessage();
+            DB::rollBack();
+        }
+    }
+
+    public function biayaPenyimpanan(Request $request)
+    {
+        $query = 'SELECT ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters)) as qty_total
+        FROM barangs as a
+        JOIN barang_gudangs as b on a.barang_id = b.barang_id
+        JOIN barang_counters as c on a.barang_id = c.barang_id LIMIT 1';
+        $data = DB::select($query);
+        $biaya_penyimpanan_perunit = $request->total_biaya / $data[0]->qty_total;
+
+        DB::beginTransaction();
+        try {
+            //code... 
+            DB::table('barangs')->update(array('biaya_penyimpanan' => $biaya_penyimpanan_perunit));
+            DB::commit();
+            return response()->json([], 200);
         } catch (\Exception $ex) {
             //throw $th;
             echo $ex->getMessage();

@@ -43,6 +43,7 @@ Route::controller(BarangController::class)->group(function () {
     Route::post('/barang/store', 'store')->name('barang.store');
     Route::post('/barang/update/{slug}', 'update')->name('barang.update');
     Route::get('/barang/destroy/{slug}', 'destroy')->name('barang.destroy');
+    Route::post('/barang/biayapenyimpanan', 'biayaPenyimpanan')->name('barang.biayapenyimpanan');
 });
 
 Route::controller(GudangController::class)->group(function () {
@@ -54,7 +55,10 @@ Route::controller(GudangController::class)->group(function () {
 Route::controller(CounterController::class)->group(function () {
     Route::get('/counter', 'index')->name('counter');
     Route::get('/counter/create', 'create')->name('counter.create');
+    Route::post('/counter/store', 'store')->name('counter.store');
     Route::get('/counter/edit/{slug}', 'edit')->name('counter.edit');
+    Route::post('/counter/update/{slug}', 'update')->name('counter.update');
+    Route::get('/counter/destroy/{slug}', 'destroy')->name('counter.destroy');
 });
 
 Route::controller(PemesananController::class)->group(function () {
