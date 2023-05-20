@@ -24,7 +24,25 @@
     <!-- Datatable init js -->
     <script src="assets/js/pages/datatables.init.js"></script>
     <script>
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+            ajax: "{{ route('gudang') }}",
+            columns: [{
+                    data: "gudang_id"
+                },
+                {
+                    data: "name"
+                },
+                {
+                    data: "address"
+                },
+                {
+                    data: "username"
+                },
+                {
+                    data: "action"
+                }
+            ],
+        });
     </script>
 @endpush
 
@@ -47,21 +65,15 @@
 
     <div class="row">
         <div class="col-12">
+            @if (session()->has('msg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="mdi mdi-check-all me-2"></i>
+                    {{ session('msg') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card">
                 <div class="card-body">
-
-                    {{-- <h4 class="card-title">Default Datatable</h4>
-                    <p class="card-title-desc">DataTables has most features enabled by
-                        default, so all you need to do to use it with your own tables is to call
-                        the construction function: <code>$().DataTable();</code>.
-                    </p> --}}
-
-                    {{-- <div class="d-flex justify-content-end mb-4">
-                        <a href="{{ route('barang.create') }}" class="btn btn-success waves-effect waves-light">
-                            <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
-                        </a>
-                    </div> --}}
-
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
@@ -75,20 +87,6 @@
 
 
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>
-                                    <a href="{{ route('gudang.edit', ['slug' => 'a']) }}"
-                                        class="btn btn-success waves-effect waves-light"> <i
-                                            class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>
-                                    {{-- <a href="" class="btn btn-danger waves-effect waves-light"> <i
-                                            class="bx bx-trash align-middle me-2 font-size-18"></i>Hapus</a> --}}
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
 

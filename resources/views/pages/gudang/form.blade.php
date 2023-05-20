@@ -6,35 +6,38 @@
 <div class="mt-4 mb-3 row">
     <label for="id_gudang" class="col-md-2 col-form-label">ID Gudang</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" value="G0001" id="id_gudang" readonly>
+        <input class="form-control" type="text" value="{{ $gudangs->gudang_id }}" id="id_gudang" readonly>
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="nama_gudang" class="col-md-2 col-form-label">Nama Gudang</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="nama_gudang" placeholder="Ketikkan Nama Gudang">
+        <input class="form-control" type="text" id="nama_gudang" name="nama_gudang"
+            placeholder="Ketikkan Nama Gudang" value="{{ $gudangs->name }}">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="alamat_gudang" class="col-md-2 col-form-label">Alamat Gudang</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="alamat_gudang" placeholder="Ketikkan Alamat Gudang">
+        <input class="form-control" type="text" id="alamat_gudang" name="alamat_gudang"
+            placeholder="Ketikkan Alamat Gudang" value="{{ $gudangs->address }}">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="username" class="col-md-2 col-form-label">Username</label>
     <div class="col-md-10">
-        <input class="form-control" type="text" id="username" placeholder="Ketikkan Username">
+        <input class="form-control" type="text" id="username" name="username" placeholder="Ketikkan Username"
+            value="{{ $gudangs->username }}">
     </div>
 </div>
 
 <div class="mt-4 mb-3 row">
     <label for="password" class="col-md-2 col-form-label">Password</label>
     <div class="col-md-10">
-        <input class="form-control" type="password" id="password" placeholder="Ketikkan Password">
+        <input class="form-control" type="password" id="password" name="password" placeholder="Ketikkan Password">
     </div>
 </div>
 

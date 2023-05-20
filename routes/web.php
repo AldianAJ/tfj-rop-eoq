@@ -48,6 +48,7 @@ Route::controller(BarangController::class)->group(function () {
 Route::controller(GudangController::class)->group(function () {
     Route::get('/gudang', 'index')->name('gudang');
     Route::get('/gudang/edit/{slug}', 'edit')->name('gudang.edit');
+    Route::post('/gudang/update/{slug}', 'update')->name('gudang.update');
 });
 
 Route::controller(CounterController::class)->group(function () {

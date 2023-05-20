@@ -25,7 +25,15 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="" method="post">
+                    @if (session()->has('msg'))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <i class="mdi mdi-alert-outline me-2"></i>
+                            {{ session('msg') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    <form action="{{ route('gudang.update', ['slug' => $gudangs->slug]) }}" method="post">
+                        @csrf
                         @include('pages.gudang.form')
                     </form>
                 </div>

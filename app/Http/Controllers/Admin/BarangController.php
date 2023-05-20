@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Admin\Barang;
 use App\Models\Admin\BarangGudang;
 use App\Models\Admin\BarangCounter;
-use App\Models\Admin\Gudang;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
