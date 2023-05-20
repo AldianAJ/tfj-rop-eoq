@@ -24,7 +24,7 @@ class Penjualan extends Model
             ->where('counter_id', $counter_id)
             ->max('penjualan_id');
         $addZero = '';
-        $penjualan_id = substr($penjualan_id, 6, 6);
+        $penjualan_id = substr($penjualan_id, 16, 5);
         $penjualan_id = (int) $penjualan_id + 1;
         $incrementPenjualanCounterId = $penjualan_id;
 

@@ -83,6 +83,7 @@ Route::controller(PenjualanController::class)->group(function () {
 
 Route::controller(KasirController::class)->group(function () {
     Route::get('/kasir', 'index')->name('kasir');
+    Route::post('/kasir/store', 'store')->name('kasir.store');
 });
 
 // Route::get('/login', function () {

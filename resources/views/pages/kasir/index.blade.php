@@ -29,17 +29,21 @@
             ajax: "{{ route('kasir') }}",
             "columnDefs": [{
                     className: "nama-barang",
-                    "targets": [0]
+                    "targets": [1]
                 },
                 {
                     className: "harga-barang",
-                    "targets": [1]
+                    "targets": [2]
                 },
             ],
-            order: [
-                [1, 'desc']
-            ],
+            // order: [
+            //     [1, 'desc']
+            // ],
             columns: [{
+                    data: 'barang_counter_id',
+                    name: 'ID Barang'
+                },
+                {
                     data: 'nama_barang',
                     name: 'Nama Barang'
                 },
@@ -75,6 +79,8 @@
                 currency: "IDR"
             }).format(number);
         }
+
+        $('.alert').hide();
 
         function viewKeranjangDataTable(paramOne) {
             $('#datatable-keranjang').DataTable().clear();
@@ -140,6 +146,7 @@
                 let keranjangTemp = {
                     "no": no++,
                     "id_barang": selectedData.barang_id,
+                    "barang_counter_id": selectedData.barang_counter_id,
                     "nama_barang": selectedData.nama_barang,
                     "harga_barang": selectedData.harga_barang,
                     "jumlah": Number(jumlah_pembelian),
@@ -163,6 +170,76 @@
             keranjang.splice(indexRow, 1);
             keranjangDatatable = viewKeranjangDataTable(keranjang);
         });
+
+        $('.btn-close').on('click', function() {
+            $('.alert').hide();
+        });
+
+        $('#save-transaction').on('click', function() {
+            if (keranjang.length > 0) {
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('kasir.store') }}",
+                    data: {
+                        '_token': "{{ csrf_token() }}",
+                        'keranjang': JSON.stringify(keranjang),
+                        'grand_total': grandTotal
+                    },
+                    success: function(response) {
+                        keranjang = [];
+                        $('.alert').show();
+                        viewKeranjangDataTable(keranjang);
+                        grandTotal = 0;
+                        $('#grandTotal').text("Rp 0,00");
+                        mainTable.clear();
+                        mainTable.destroy();
+                        mainTable = $('#datatable').DataTable({
+                            lengthMenu: [5, 10, 20, 50, 100],
+                            ajax: "{{ route('kasir') }}",
+                            "columnDefs": [{
+                                    className: "nama-barang",
+                                    "targets": [1]
+                                },
+                                {
+                                    className: "harga-barang",
+                                    "targets": [2]
+                                },
+                            ],
+                            // order: [
+                            //     [1, 'desc']
+                            // ],
+                            columns: [{
+                                    data: 'barang_counter_id',
+                                    name: 'ID Barang'
+                                },
+                                {
+                                    data: 'nama_barang',
+                                    name: 'Nama Barang'
+                                },
+                                {
+                                    data: 'harga_barang',
+                                    name: 'Harga Barang',
+                                    render: function(data, type, row) {
+                                        return rupiah(data);
+                                    },
+                                },
+                                {
+                                    data: 'quantity',
+                                    name: 'Quantity'
+                                },
+                                {
+                                    data: 'action',
+                                    name: 'action',
+                                    orderable: false,
+                                    searchable: false
+                                },
+                            ]
+                        });
+                    }
+                });
+            }
+
+        });
     </script>
 @endpush
 
@@ -176,13 +253,20 @@
     </div>
 
     <div class="row">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <i class="mdi mdi-check-all me-2"></i>
+            Transaksi berhasil disimpan
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
         <div class="col">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">Barang Kasir</h4>
+
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
+                                <th>ID Barang</th>
                                 <th>Nama Barang</th>
                                 <th class="col-md-2">Harga barang</th>
                                 <th class="col-md-1">Quantity</th>
@@ -203,9 +287,9 @@
                 <div class="card-body">
                     <h4 class="card-title mb-3">Keranjang Kasir</h4>
                     <div class="d-flex justify-content-end mb-4">
-                        <a href="" class="btn btn-primary waves-effect waves-light">
+                        <button class="btn btn-primary waves-effect waves-light" id="save-transaction">
                             <i class="bx bx-save align-middle me-2 font-size-18"></i>Simpan
-                        </a>
+                        </button>
                     </div>
                     <table id="datatable-keranjang" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
