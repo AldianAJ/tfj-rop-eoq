@@ -220,6 +220,7 @@
                             ],
                         });
                         $('#biaya_penyimpanan').val("");
+                        $('input[name=btnradio][value="master"]').prop('checked', true);
                     }
                 });
             } else {
