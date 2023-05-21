@@ -31,6 +31,14 @@
                     <div class="card overflow-hidden">
                         <div class="bg-primary bg-soft">
                             <div class="row">
+                                @if (session()->has('msg'))
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <i class="mdi mdi-alert-outline me-2"></i>
+                                        {{ session('msg') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
                                 <div class="col-7">
                                     <div class="text-primary p-4">
                                         <h5 class="text-primary">Selamat Datang !</h5>
@@ -63,11 +71,11 @@
                                 </a>
                             </div>
                             <div class="p-2">
-                                <form class="form-horizontal" action="https://themesbrand.com/skote/layouts/index.html">
-
+                                <form class="form-horizontal" action="{{ route('auth.login') }}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
-                                        <input type="text" class="form-control" id="username"
+                                        <input type="text" class="form-control" id="username" name="username"
                                             placeholder="Enter username">
                                     </div>
 
@@ -75,7 +83,7 @@
                                         <label class="form-label">Password</label>
                                         <div class="input-group auth-pass-inputgroup">
                                             <input type="password" class="form-control" placeholder="Enter password"
-                                                aria-label="Password" aria-describedby="password-addon">
+                                                aria-label="Password" aria-describedby="password-addon" name="password">
                                             <button class="btn btn-light " type="button" id="password-addon"><i
                                                     class="mdi mdi-eye-outline"></i></button>
                                         </div>

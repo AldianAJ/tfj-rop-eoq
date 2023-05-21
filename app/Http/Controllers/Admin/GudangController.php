@@ -8,9 +8,15 @@ use App\Models\Admin\Gudang;
 use App\Models\Admin\UserAuth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Auth;
 
 class GudangController extends Controller
 {
+    public function userAuth()
+    {
+        $user = Auth::guard('user')->user();
+        return $user;
+    }
 
     public function validatorHelper($request)
     {
@@ -27,6 +33,7 @@ class GudangController extends Controller
     public function index(Request $request)
     {
         $path = 'gudang';
+        $user = $this->userAuth();
         if ($request->ajax()) {
 
             $query = 'SELECT a.gudang_id, b.name, b.address, b.username, a.slug
@@ -43,7 +50,7 @@ class GudangController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('pages.gudang.index');
+        return view('pages.gudang.index', compact('user'));
     }
 
     public function edit($slug)
@@ -53,7 +60,7 @@ class GudangController extends Controller
             ->select('a.gudang_id', 'b.name', 'b.address', 'b.username', 'a.slug')
             ->where('a.slug', $slug)->first();
 
-        return view('pages.gudang.edit', compact('gudangs'));
+        return view('pages.gudang.edit', compact('gudangs', 'user'));
     }
 
     public function update(Request $request, $slug)

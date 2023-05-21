@@ -47,24 +47,32 @@
                         return rupiah(data);
                     }
                 },
-                {
-                    data: "biaya_penyimpanan",
-                    render: function(data, type, row) {
-                        return rupiah(data);
-                    }
-                },
-                {
-                    data: "rop",
-                    name: "rop"
-                },
-                {
-                    data: "qty_total",
-                    name: "qty_total"
-                },
-                {
-                    data: "action",
-                    name: "action"
-                }
+                @if ($user->role == 'gudang' || $user->role == 'owner')
+                    {
+                        data: "biaya_penyimpanan",
+                        render: function(data, type, row) {
+                            return rupiah(data);
+                        }
+                    }, {
+                        data: "rop",
+                        name: "rop"
+                    }, {
+                        data: "qty_total",
+                        name: "qty_total"
+                    },
+                    @if ($user->role == 'gudang')
+                        {
+                            data: "action",
+                            name: "action"
+                        }
+                    @endif
+                @else
+                    {
+                        data: "quantity",
+                        name: "qquantity"
+                    },
+                @endif
+
             ],
         });
 
@@ -258,37 +266,39 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    <div class="row mb-4 mt-1">
-                        <div class="col-3">
-                            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#biayaModal">
-                                <i class="bx bx-money align-middle me-2 font-size-18"></i>
-                                Biaya Penyimpanan
-                            </button>
-                        </div>
-                        <div class="col-5 d-flex justify-content-end">
-                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" name="btnradio" value="master" id="btnradio4"
-                                    autocomplete="off" checked>
-                                <label class="btn btn-outline-primary" for="btnradio4">Master Barang</label>
+                    @if ($user->role == 'gudang')
+                        <div class="row mb-4 mt-1">
+                            <div class="col-3">
+                                <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#biayaModal">
+                                    <i class="bx bx-money align-middle me-2 font-size-18"></i>
+                                    Biaya Penyimpanan
+                                </button>
+                            </div>
+                            <div class="col-5 d-flex justify-content-end">
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" value="master" id="btnradio4"
+                                        autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="btnradio4">Master Barang</label>
 
-                                <input type="radio" class="btn-check" name="btnradio" value="gudang" id="btnradio5"
-                                    autocomplete="off">
-                                <label class="btn btn-outline-primary" for="btnradio5">Barang Gudang</label>
+                                    <input type="radio" class="btn-check" name="btnradio" value="gudang" id="btnradio5"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio5">Barang Gudang</label>
 
-                                <input type="radio" class="btn-check" name="btnradio" value="counter" id="btnradio6"
-                                    autocomplete="off">
-                                <label class="btn btn-outline-primary" for="btnradio6">Barang Counter</label>
+                                    <input type="radio" class="btn-check" name="btnradio" value="counter" id="btnradio6"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio6">Barang Counter</label>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex justify-content-end">
+                                    <a href="{{ route('barang.create') }}" class="btn btn-primary waves-effect waves-light">
+                                        <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col">
-                            <div class="d-flex justify-content-end">
-                                <a href="{{ route('barang.create') }}" class="btn btn-primary waves-effect waves-light">
-                                    <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endif
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
@@ -296,10 +306,16 @@
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
                                 <th>Harga Barang</th>
-                                <th>Biaya Penyimpanan</th>
-                                <th>ROP</th>
-                                <th>Quantity Total</th>
-                                <th>Action</th>
+                                @if ($user->role == 'gudang' || $user->role == 'owner')
+                                    <th>Biaya Penyimpanan</th>
+                                    <th>ROP</th>
+                                    <th>Quantity Total</th>
+                                    @if ($user->role == 'gudang')
+                                        <th>Action</th>
+                                    @endif
+                                @else
+                                    <th>Quantity</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>

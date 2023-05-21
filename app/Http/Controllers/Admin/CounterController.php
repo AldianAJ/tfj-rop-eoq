@@ -10,9 +10,16 @@ use App\Models\Admin\UserAuth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class CounterController extends Controller
 {
+    public function userAuth()
+    {
+        $user = Auth::guard('user')->user();
+        return $user;
+    }
+
     public function storeBarangCounter($counter_id)
     {
         $barangs = DB::table('barangs')->get();
@@ -37,6 +44,7 @@ class CounterController extends Controller
 
     public function index(Request $request)
     {
+        $user = $this->userAuth();
         $path = 'counter';
         if ($request->ajax()) {
             $counters = DB::table('counters as a')
@@ -55,7 +63,7 @@ class CounterController extends Controller
                 ->make(true);
         }
 
-        return view('pages.counter.index');
+        return view('pages.counter.index', compact('user'));
     }
 
     public function validatorHelper($request, $slug = null)
@@ -117,8 +125,9 @@ class CounterController extends Controller
 
     public function create()
     {
+        $user = $this->userAuth();
         $counter_id = Counter::generateCounterId();
-        return view('pages.counter.create', compact('counter_id'));
+        return view('pages.counter.create', compact('counter_id', 'user'));
     }
 
     public function store(Request $request)
@@ -162,12 +171,13 @@ class CounterController extends Controller
 
     public function edit($slug)
     {
+        $user = $this->userAuth();
         $counters = DB::table('counters as a')
             ->join('users as b', 'a.user_id', '=', 'b.user_id')
             ->select('a.counter_id', 'b.name', 'b.address', 'b.username', 'a.slug')
             ->where('a.slug', $slug)->first();
 
-        return view('pages.counter.edit', compact('counters'));
+        return view('pages.counter.edit', compact('counters', 'user'));
     }
 
     public function update(Request $request, $slug)

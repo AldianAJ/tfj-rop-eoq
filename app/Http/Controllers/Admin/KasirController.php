@@ -11,16 +11,28 @@ use App\Models\Admin\Penjualan;
 use App\Models\Admin\DetailPenjualan;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class KasirController extends Controller
 {
+    public function userAuth()
+    {
+        $user = Auth::guard('user')->user();
+        return $user;
+    }
+
     public function index(Request $request)
     {
+        $user = $this->userAuth();
         if ($request->ajax()) {
+            $counters = DB::table('counters')
+                ->select('counter_id')
+                ->where('user_id', $user->user_id)
+                ->first();
             $query = 'SELECT a.barang_counter_id, b.barang_id, b.nama_barang, b.harga_barang, a.slug, (a.stok_masuk-a.stok_keluar) as quantity
             FROM barang_counters as a
             JOIN barangs as b on a.barang_id = b.barang_id
-            WHERE a.counter_id = "' . 'C00002' . '" ORDER BY a.barang_counter_id ASC';
+            WHERE a.counter_id = "' . $counters->counter_id . '" ORDER BY a.barang_counter_id ASC';
             $data = DB::select($query);
 
             return DataTables::of($data)
@@ -32,7 +44,7 @@ class KasirController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('pages.kasir.index');
+        return view('pages.kasir.index', compact('user'));
     }
 
     public function store(Request $request)

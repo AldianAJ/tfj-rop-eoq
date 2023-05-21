@@ -10,60 +10,84 @@ use App\Models\Admin\BarangCounter;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class BarangController extends Controller
 {
 
+    public function userAuth()
+    {
+        $user = Auth::guard('user')->user();
+        return $user;
+    }
+
     public function index(Request $request)
     {
+        $user = $this->userAuth();
         $path = 'barang';
 
-        if ($request->ajax() && empty($request->target)) {
-            $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
-            FROM barangs as a
-            JOIN barang_gudangs as b on a.barang_id = b.barang_id
-            JOIN barang_counters as c on a.barang_id = c.barang_id
-            GROUP BY a.barang_id, a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY a.barang_id ASC;";
-            $barangs = DB::select($query);
-
-            return DataTables::of($barangs)
-                ->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
-                        . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
-                    $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
-                        . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i>Hapus</a>';
-                    return $html;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        } else if ($request->ajax() && !empty($request->target)) {
-            $data = '';
-            if ($request->target == 'gudang') {
-                $query = "SELECT b.barang_gudang_id as barang_id, b.slug,a.nama_barang, a.harga_barang, (SELECT (SUM(stok_masuk) - SUM(stok_keluar)) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) as quantity
+        if ($user->role == 'gudang' || $user->role == 'owner') {
+            if ($request->ajax() && empty($request->target)) {
+                $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
                 FROM barangs as a
                 JOIN barang_gudangs as b on a.barang_id = b.barang_id
-                GROUP BY b.barang_gudang_id, b.slug,a.nama_barang, a.harga_barang
-                ORDER BY b.barang_gudang_id ASC";
-                $data = DB::select($query);
-                return DataTables::of($data)->make(true);
-            } else if ($request->target == 'counter') {
-                $query = "SELECT b.barang_counter_id as barang_id, b.slug, a.nama_barang, a.harga_barang, (SUM(b.stok_masuk) - SUM(b.stok_keluar)) as quantity
-                FROM barangs as a
-                JOIN barang_counters as b on a.barang_id = b.barang_id
-                GROUP BY b.barang_counter_id, b.slug,a.nama_barang, a.harga_barang
-                ORDER BY b.barang_counter_id ASC";
-                $data = DB::select($query);
-                return DataTables::of($data)->make(true);
+                JOIN barang_counters as c on a.barang_id = c.barang_id
+                GROUP BY a.barang_id, a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY a.barang_id ASC;";
+                $barangs = DB::select($query);
+
+                return DataTables::of($barangs)
+                    ->addColumn('action', function ($object) use ($path) {
+                        $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
+                            . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
+                        $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
+                            . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i>Hapus</a>';
+                        return $html;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            } else if ($request->ajax() && !empty($request->target)) {
+                $data = '';
+                if ($request->target == 'gudang') {
+                    $query = "SELECT b.barang_gudang_id as barang_id, b.slug,a.nama_barang, a.harga_barang, (SELECT (SUM(stok_masuk) - SUM(stok_keluar)) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) as quantity
+                    FROM barangs as a
+                    JOIN barang_gudangs as b on a.barang_id = b.barang_id
+                    GROUP BY b.barang_gudang_id, b.slug,a.nama_barang, a.harga_barang
+                    ORDER BY b.barang_gudang_id ASC";
+                    $data = DB::select($query);
+                    return DataTables::of($data)->make(true);
+                } else if ($request->target == 'counter') {
+                    $query = "SELECT b.barang_counter_id as barang_id, b.slug, a.nama_barang, a.harga_barang, (SUM(b.stok_masuk) - SUM(b.stok_keluar)) as quantity
+                    FROM barangs as a
+                    JOIN barang_counters as b on a.barang_id = b.barang_id
+                    GROUP BY b.barang_counter_id, b.slug,a.nama_barang, a.harga_barang
+                    ORDER BY b.barang_counter_id ASC";
+                    $data = DB::select($query);
+                    return DataTables::of($data)->make(true);
+                }
             }
-            // return DataTables::of($datas)->make(true);
+        } elseif ($user->role == 'counter') {
+            $counters = DB::table('counters')
+                ->select('counter_id')
+                ->where('user_id', $user->user_id)
+                ->first();
+            if ($request->ajax()) {
+                $query = 'SELECT a.barang_counter_id as barang_id, b.nama_barang, b.harga_barang, a.slug, (a.stok_masuk-a.stok_keluar) as quantity
+                FROM barang_counters as a
+                JOIN barangs as b on a.barang_id = b.barang_id
+                WHERE a.counter_id = "' . $counters->counter_id  . '" ORDER BY a.barang_counter_id ASC';
+                $barangs = DB::select($query);
+                return DataTables::of($barangs)->make(true);
+            }
         }
-        return view('pages.barang.index');
+
+        return view('pages.barang.index', compact('user'));
     }
 
     public function create()
     {
+        $user = $this->userAuth();
         $barang_id = Barang::generateBarangId();
-        return view('pages.barang.create', compact('barang_id'));
+        return view('pages.barang.create', compact('barang_id', 'user'));
     }
 
     public function validatorHelper($request, $slug = null)
@@ -152,8 +176,9 @@ class BarangController extends Controller
 
     public function edit($slug)
     {
+        $user = $this->userAuth();
         $barangs = Barang::where('slug', $slug)->first();
-        return view('pages.barang.edit', compact('barangs'));
+        return view('pages.barang.edit', compact('barangs', 'user'));
     }
 
     public function update(Request $request, $slug)

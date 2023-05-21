@@ -30,60 +30,67 @@ use App\Http\Controllers\Admin\PenjualanController;
 
 Route::controller(UserAuthController::class)->group(function () {
     Route::get('/auth', 'index')->name('auth');
+    Route::post('/auth/login', 'login')->name('auth.login');
 });
 
-Route::controller(DashboardController::class)->group(function () {
-    Route::get('/', 'index')->name('dashboard');
-});
+Route::middleware('user')->group(function () {
+    Route::controller(UserAuthController::class)->group(function () {
+        Route::get('/auth/logout', 'logout')->name('auth.logout');
+    });
 
-Route::controller(BarangController::class)->group(function () {
-    Route::get('/barang', 'index')->name('barang');
-    Route::get('/barang/create', 'create')->name('barang.create');
-    Route::get('/barang/edit/{slug}', 'edit')->name('barang.edit');
-    Route::post('/barang/store', 'store')->name('barang.store');
-    Route::post('/barang/update/{slug}', 'update')->name('barang.update');
-    Route::get('/barang/destroy/{slug}', 'destroy')->name('barang.destroy');
-    Route::post('/barang/biayapenyimpanan', 'biayaPenyimpanan')->name('barang.biayapenyimpanan');
-});
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index')->name('dashboard');
+    });
 
-Route::controller(GudangController::class)->group(function () {
-    Route::get('/gudang', 'index')->name('gudang');
-    Route::get('/gudang/edit/{slug}', 'edit')->name('gudang.edit');
-    Route::post('/gudang/update/{slug}', 'update')->name('gudang.update');
-});
+    Route::controller(BarangController::class)->group(function () {
+        Route::get('/barang', 'index')->name('barang');
+        Route::get('/barang/create', 'create')->name('barang.create');
+        Route::get('/barang/edit/{slug}', 'edit')->name('barang.edit');
+        Route::post('/barang/store', 'store')->name('barang.store');
+        Route::post('/barang/update/{slug}', 'update')->name('barang.update');
+        Route::get('/barang/destroy/{slug}', 'destroy')->name('barang.destroy');
+        Route::post('/barang/biayapenyimpanan', 'biayaPenyimpanan')->name('barang.biayapenyimpanan');
+    });
 
-Route::controller(CounterController::class)->group(function () {
-    Route::get('/counter', 'index')->name('counter');
-    Route::get('/counter/create', 'create')->name('counter.create');
-    Route::post('/counter/store', 'store')->name('counter.store');
-    Route::get('/counter/edit/{slug}', 'edit')->name('counter.edit');
-    Route::post('/counter/update/{slug}', 'update')->name('counter.update');
-    Route::get('/counter/destroy/{slug}', 'destroy')->name('counter.destroy');
-});
+    Route::controller(GudangController::class)->group(function () {
+        Route::get('/gudang', 'index')->name('gudang');
+        Route::get('/gudang/edit/{slug}', 'edit')->name('gudang.edit');
+        Route::post('/gudang/update/{slug}', 'update')->name('gudang.update');
+    });
 
-Route::controller(PemesananController::class)->group(function () {
-    Route::get('/pemesanan', 'index')->name('pemesanan');
-});
+    Route::controller(CounterController::class)->group(function () {
+        Route::get('/counter', 'index')->name('counter');
+        Route::get('/counter/create', 'create')->name('counter.create');
+        Route::post('/counter/store', 'store')->name('counter.store');
+        Route::get('/counter/edit/{slug}', 'edit')->name('counter.edit');
+        Route::post('/counter/update/{slug}', 'update')->name('counter.update');
+        Route::get('/counter/destroy/{slug}', 'destroy')->name('counter.destroy');
+    });
 
-Route::controller(PersediaanMasukController::class)->group(function () {
-    Route::get('/persediaan-masuk', 'index')->name('persediaan-masuk');
-});
+    Route::controller(PemesananController::class)->group(function () {
+        Route::get('/pemesanan', 'index')->name('pemesanan');
+    });
 
-Route::controller(PermintaanCounterController::class)->group(function () {
-    Route::get('/permintaan-counter', 'index')->name('permintaan-counter');
-});
+    Route::controller(PersediaanMasukController::class)->group(function () {
+        Route::get('/persediaan-masuk', 'index')->name('persediaan-masuk');
+    });
 
-Route::controller(PengirimanCounterController::class)->group(function () {
-    Route::get('/pengiriman-counter', 'index')->name('pengiriman-counter');
-});
+    Route::controller(PermintaanCounterController::class)->group(function () {
+        Route::get('/permintaan-counter', 'index')->name('permintaan-counter');
+    });
 
-Route::controller(PenjualanController::class)->group(function () {
-    Route::get('/penjualan', 'index')->name('penjualan');
-});
+    Route::controller(PengirimanCounterController::class)->group(function () {
+        Route::get('/pengiriman-counter', 'index')->name('pengiriman-counter');
+    });
 
-Route::controller(KasirController::class)->group(function () {
-    Route::get('/kasir', 'index')->name('kasir');
-    Route::post('/kasir/store', 'store')->name('kasir.store');
+    Route::controller(PenjualanController::class)->group(function () {
+        Route::get('/penjualan', 'index')->name('penjualan');
+    });
+
+    Route::controller(KasirController::class)->group(function () {
+        Route::get('/kasir', 'index')->name('kasir');
+        Route::post('/kasir/store', 'store')->name('kasir.store');
+    });
 });
 
 // Route::get('/login', function () {

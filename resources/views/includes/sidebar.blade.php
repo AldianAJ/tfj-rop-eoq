@@ -40,12 +40,14 @@
 
                 <li class="menu-title" key="t-pages">Utility</li>
 
-                <li>
-                    <a href="{{ route('kasir') }}" class="waves-effect">
-                        <i class="bx bxs-calculator"></i>
-                        <span key="t-kasir">Kasir</span>
-                    </a>
-                </li>
+                @if ($user->role == 'counter')
+                    <li>
+                        <a href="{{ route('kasir') }}" class="waves-effect">
+                            <i class="bx bxs-calculator"></i>
+                            <span key="t-kasir">Kasir</span>
+                        </a>
+                    </li>
+                @endif
 
                 <li>
                     <a href="chat.html" class="waves-effect">
