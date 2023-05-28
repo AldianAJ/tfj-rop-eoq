@@ -38,9 +38,11 @@
                 {
                     data: "username"
                 },
-                {
-                    data: "action"
-                }
+                @if ($user->role == 'gudang')
+                    {
+                        data: "action"
+                    }
+                @endif
             ],
         });
     </script>
@@ -74,12 +76,13 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
-                    <div class="d-flex justify-content-end mb-4">
-                        <a href="{{ route('counter.create') }}" class="btn btn-primary waves-effect waves-light">
-                            <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
-                        </a>
-                    </div>
+                    @if ($user->role == 'gudang')
+                        <div class="d-flex justify-content-end mb-4">
+                            <a href="{{ route('counter.create') }}" class="btn btn-primary waves-effect waves-light">
+                                <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
+                            </a>
+                        </div>
+                    @endif
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
@@ -88,7 +91,9 @@
                                 <th>Nama Counter</th>
                                 <th>Alamat Counter</th>
                                 <th>Username</th>
-                                <th>Action</th>
+                                @if ($user->role == 'gudang')
+                                    <th>Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>

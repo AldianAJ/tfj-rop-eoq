@@ -50,6 +50,7 @@ Route::middleware('user')->group(function () {
         Route::post('/barang/update/{slug}', 'update')->name('barang.update');
         Route::get('/barang/destroy/{slug}', 'destroy')->name('barang.destroy');
         Route::post('/barang/biayapenyimpanan', 'biayaPenyimpanan')->name('barang.biayapenyimpanan');
+        Route::post('/barang/detail', 'detailQuantity')->name('barang.detail');
     });
 
     Route::controller(GudangController::class)->group(function () {

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->primary('barang_gudang_id');
             $table->string('slug');
             $table->string('barang_id');
+            $table->string('gudang_id');
             $table->integer('stok_awal')->default(0);
             $table->integer('stok_masuk')->default(0);
             $table->integer('stok_keluar')->default(0);
@@ -23,6 +24,10 @@ return new class extends Migration
             $table->foreign('barang_id')
                 ->references('barang_id')
                 ->on('barangs')->onDelete('cascade');
+
+            $table->foreign('gudang_id')
+                ->references('gudang_id')
+                ->on('gudangs')->onDelete('cascade');
 
             $table->timestamps();
 

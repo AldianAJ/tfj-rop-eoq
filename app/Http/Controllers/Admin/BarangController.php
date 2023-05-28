@@ -38,9 +38,11 @@ class BarangController extends Controller
                 return DataTables::of($barangs)
                     ->addColumn('action', function ($object) use ($path) {
                         $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
-                            . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
+                            . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i></a>';
                         $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
-                            . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i>Hapus</a>';
+                            . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i></a>';
+                        $html .= ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
+                        <i class="bx bx-detail font-size-18 align-middle me-2"></i></button>';
                         return $html;
                     })
                     ->rawColumns(['action'])
@@ -238,5 +240,28 @@ class BarangController extends Controller
             echo $ex->getMessage();
             DB::rollBack();
         }
+    }
+
+    public function detailQuantity(Request $request)
+    {
+        $slug = $request->slug;
+        // $slug = "R4NY4vMU1nXKkgAe";
+        $query = 'SELECT DISTINCT u.name as nama, 
+        CASE u.name
+        WHEN "Gudang Pusat" THEN
+        (bg.stok_masuk - bg.stok_keluar)
+        ELSE
+        (bc.stok_masuk - bc.stok_keluar)
+        END as quantity
+        FROM barangs as b
+        LEFT JOIN barang_gudangs as bg on b.barang_id = bg.barang_id
+        LEFT JOIN barang_counters as bc on b.barang_id = bc.barang_id
+        LEFT JOIN gudangs as g on bg.gudang_id = g.gudang_id
+        LEFT JOIN counters as c on bc.counter_id = c.counter_id
+        LEFT JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.slug = "' . $slug . '"';
+        $details = DB::select($query);
+
+        // dd($details);
+        return DataTables::of($details)->make(true);
     }
 }

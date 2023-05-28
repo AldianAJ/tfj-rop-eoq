@@ -95,7 +95,7 @@
                             },
                             {
                                 data: "nama_barang",
-                                name: "nama_barang"
+                                name: "nama_barang",
                             },
                             {
                                 data: "harga_barang",
@@ -129,7 +129,6 @@
                     barangDatatable.columns(6).visible(false);
                     $(barangDatatable.columns(3).header()).text('Quantity');
                     $('#datatable').DataTable({
-
                         ajax: {
                             "type": "GET",
                             "url": "{{ route('barang') }}",
@@ -235,6 +234,38 @@
                 $('#biayaModal').modal('toggle');
             }
         });
+
+        $('#datatable').on('click', '.btn-detail', function() {
+            let selectedData = '';
+            let slug = '';
+            let indexRow = barangDatatable.rows().nodes().to$().index($(this).closest('tr'));
+            selectedData = barangDatatable.row(indexRow).data();
+            // console.log(selectedData.slug);
+            slug = selectedData.slug;
+            console.log(slug);
+            $('#detai-datatable').DataTable().clear();
+            $('#detail-datatable').DataTable().destroy();
+            $('#detail-datatable').DataTable({
+                ajax: {
+                    "type": "POST",
+                    "url": "{{ route('barang.detail') }}",
+                    "data": {
+                        '_token': "{{ csrf_token() }}",
+                        'slug': slug
+                    }
+                },
+                lengthMenu: [5],
+                columns: [{
+                        data: "nama",
+                        name: "nama"
+                    },
+                    {
+                        data: "quantity",
+                        name: "quantity"
+                    }
+                ],
+            });
+        });
     </script>
 @endpush
 
@@ -283,16 +314,17 @@
                                     <input type="radio" class="btn-check" name="btnradio" value="gudang" id="btnradio5"
                                         autocomplete="off">
                                     <label class="btn btn-outline-primary" for="btnradio5">Barang Gudang</label>
-
+                                    {{-- 
                                     <input type="radio" class="btn-check" name="btnradio" value="counter" id="btnradio6"
                                         autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btnradio6">Barang Counter</label>
+                                    <label class="btn btn-outline-primary" for="btnradio6">Barang Counter</label> --}}
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="d-flex justify-content-end">
-                                    <a href="{{ route('barang.create') }}" class="btn btn-primary waves-effect waves-light">
+                                    <a href="{{ route('barang.create') }}"
+                                        class="btn btn-primary waves-effect waves-light">
                                         <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
                                     </a>
                                 </div>
@@ -343,6 +375,31 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                     <button type="button" class="btn btn-primary" id="btn-save">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail <span id="nama-barang"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered dt-responsive  nowrap w-100" id="detail-datatable">
+                        <thead>
+                            <tr>
+                                <th>Sumber</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

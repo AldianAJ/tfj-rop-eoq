@@ -16,20 +16,21 @@
                 </li>
 
                 <li class="menu-title" key="t-apps">Master Data</li>
+                @if ($user->role == 'gudang' || $user->role == 'owner')
+                    <li>
+                        <a href="{{ route('gudang') }}" class="waves-effect">
+                            <i class="bx bxs-building-house"></i>
+                            <span key="t-gudang">Gudang</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="{{ route('gudang') }}" class="waves-effect">
-                        <i class="bx bxs-building-house"></i>
-                        <span key="t-gudang">Gudang</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{ route('counter') }}" class="waves-effect">
-                        <i class="bx bxs-store-alt"></i>
-                        <span key="t-counter">Counter</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{{ route('counter') }}" class="waves-effect">
+                            <i class="bx bxs-store-alt"></i>
+                            <span key="t-counter">Counter</span>
+                        </a>
+                    </li>
+                @endif
 
                 <li>
                     <a href="{{ route('barang') }}" class="waves-effect">
@@ -37,8 +38,10 @@
                         <span key="t-barang">Barang</span>
                     </a>
                 </li>
+                @if ($user->role == 'counter' || $user->role == 'gudang')
+                    <li class="menu-title" key="t-pages">Utility</li>
+                @endif
 
-                <li class="menu-title" key="t-pages">Utility</li>
 
                 @if ($user->role == 'counter')
                     <li>
@@ -49,33 +52,35 @@
                     </li>
                 @endif
 
-                <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bxs-duplicate"></i>
-                        <span key="t-permintaan">Permintaan Counter</span>
-                    </a>
-                </li>
-
-                <li>
+                @if ($user->role == 'counter' || $user->role == 'gudang')
+                    <li>
+                        <a href="chat.html" class="waves-effect">
+                            <i class="bx bxs-duplicate"></i>
+                            <span key="t-permintaan">Permintaan Counter</span>
+                        </a>
+                    </li>
+                @endif
+                {{-- <li>
                     <a href="chat.html" class="waves-effect">
                         <i class="bx bxs-truck"></i>
                         <span key="t-pengiriman">Pengiriman Counter</span>
                     </a>
-                </li>
+                </li> --}}
+                @if ($user->role == 'gudang')
+                    <li>
+                        <a href="chat.html" class="waves-effect">
+                            <i class="bx bxs-package"></i>
+                            <span key="t-pemesanan">Pemesanan Persediaan</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bxs-package"></i>
-                        <span key="t-pemesanan">Pemesanan Persediaan</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bxs-widget"></i>
-                        <span key="t-pemesanan">Persediaan Masuk</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="chat.html" class="waves-effect">
+                            <i class="bx bxs-widget"></i>
+                            <span key="t-pemesanan">Persediaan Masuk</span>
+                        </a>
+                    </li>
+                @endif
 
                 <li class="menu-title" key="t-components">Riwayat</li>
 

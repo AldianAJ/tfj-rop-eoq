@@ -38,9 +38,11 @@
                 {
                     data: "username"
                 },
-                {
-                    data: "action"
-                }
+                @if ($user->role == 'gudang')
+                    {
+                        data: "action"
+                    }
+                @endif
             ],
         });
     </script>
@@ -81,7 +83,9 @@
                                 <th>Nama Gudang</th>
                                 <th>Alamat Gudang</th>
                                 <th>Username</th>
-                                <th>Action</th>
+                                @if ($user->role == 'gudang')
+                                    <th>Action</th>
+                                @endif
                             </tr>
                         </thead>
 

@@ -25,6 +25,7 @@ class BarangGudangSeeder extends Seeder
                 $barang_gudang->barang_gudang_id = $barang_gudang_id;
                 $barang_gudang->slug = Str::random(16);
                 $barang_gudang->barang_id = $data->barang_id;
+                $barang_gudang->gudang_id = 'G00001';
                 if ($data->nama_barang == 'Buku Tulis BigBoss Campus 50 Lembar' || $data->nama_barang == 'Buku Tulis Sidu 38 Lembar') {
                     $barang_gudang->stok_masuk = 80;
                     $barang_gudang->stok_keluar = 60;
