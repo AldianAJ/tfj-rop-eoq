@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Gudang
+    Permintaan Counter
 @endsection
 
 @push('before-app-style')
@@ -27,24 +27,34 @@
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
         $('#datatable').DataTable({
-            ajax: "{{ route('gudang') }}",
+            ajax: "{{ route('permintaan-counter') }}",
             columns: [{
-                    data: "gudang_id"
+                    data: "permintaan_id"
                 },
                 {
                     data: "name"
                 },
                 {
-                    data: "address"
+                    data: "status",
+                    render: function(data, type, row) {
+                        return '<span class="badge rounded-pill badge-soft-warning font-size-14">' + data +
+                            '</span>';
+                    }
                 },
                 {
-                    data: "username"
-                },
-                @if ($user->role == 'gudang')
-                    {
-                        data: "action"
+                    data: "tanggal_permintaan",
+                    render: function(data, type, row) {
+                        let date = new Date(data);
+                        let tanggal_permintaan = new Intl.DateTimeFormat(['ban', 'id'], {
+                            dateStyle: 'long',
+                            timeZone: 'Asia/Jakarta'
+                        }).format(date);
+                        return tanggal_permintaan;
                     }
-                @endif
+                },
+                {
+                    data: "action"
+                }
             ],
         });
     </script>
@@ -68,30 +78,35 @@
     </div>
 
     <div class="row">
+        @if (session()->has('msg'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="mdi mdi-check-all me-2"></i>
+                {{ session('msg') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="col-12">
-            @if (session()->has('msg'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-check-all me-2"></i>
-                    {{ session('msg') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
             <div class="card">
                 <div class="card-body">
+                    @if ($user->role == 'counter')
+                        <div class="d-flex justify-content-end mb-4">
+                            <a href="{{ route('permintaan-counter.create') }}"
+                                class="btn btn-primary waves-effect waves-light">
+                                <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
+                            </a>
+                        </div>
+                    @endif
+
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
-                                <th>ID Gudang</th>
-                                <th>Nama Gudang</th>
-                                <th>Alamat Gudang</th>
-                                <th>Username</th>
-                                @if ($user->role == 'gudang')
-                                    <th>Action</th>
-                                @endif
+                                <th>ID Permintaan</th>
+                                <th>Nama Counter</th>
+                                <th>Status</th>
+                                <th>Tanggal Permintaan</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
-
-
                         <tbody>
                         </tbody>
                     </table>

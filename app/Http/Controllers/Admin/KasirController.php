@@ -49,7 +49,9 @@ class KasirController extends Controller
 
     public function store(Request $request)
     {
-        $counter_id = 'C00002';
+        $user = $this->userAuth();
+        $counters = DB::table('counters')->where('user_id', $user->user_id)->first();
+        $counter_id = $counters->counter_id;
         $keranjangs = json_decode($request->keranjang);
         DB::beginTransaction();
         try {

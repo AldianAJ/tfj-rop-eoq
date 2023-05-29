@@ -54,7 +54,7 @@
 
                 @if ($user->role == 'counter' || $user->role == 'gudang')
                     <li>
-                        <a href="chat.html" class="waves-effect">
+                        <a href="{{ route('permintaan-counter') }}" class="waves-effect">
                             <i class="bx bxs-duplicate"></i>
                             <span key="t-permintaan">Permintaan Counter</span>
                         </a>

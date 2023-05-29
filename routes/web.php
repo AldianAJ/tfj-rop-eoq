@@ -78,6 +78,8 @@ Route::middleware('user')->group(function () {
 
     Route::controller(PermintaanCounterController::class)->group(function () {
         Route::get('/permintaan-counter', 'index')->name('permintaan-counter');
+        Route::get('/permintaan-counter/create', 'create')->name('permintaan-counter.create');
+        Route::post('/permintaan-counter/store', 'store')->name('permintaan-counter.store');
     });
 
     Route::controller(PengirimanCounterController::class)->group(function () {
