@@ -26,7 +26,7 @@
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
-        $('#datatable').DataTable({
+        let permintaanDatatable = $('#datatable').DataTable({
             ajax: "{{ route('permintaan-counter') }}",
             columns: [{
                     data: "permintaan_id"
@@ -56,6 +56,38 @@
                     data: "action"
                 }
             ],
+        });
+
+        $('#datatable').on('click', '.btn-detail', function() {
+            let selectedData = '';
+            let slug = '';
+            let indexRow = permintaanDatatable.rows().nodes().to$().index($(this).closest('tr'));
+            selectedData = permintaanDatatable.row(indexRow).data();
+            console.log(selectedData);
+            slug = selectedData.slug;
+            $("#id_permintaan").text(selectedData.permintaan_id);
+            $('#detai-datatable').DataTable().clear();
+            $('#detail-datatable').DataTable().destroy();
+            $('#detail-datatable').DataTable({
+                ajax: {
+                    "type": "POST",
+                    "url": "{{ route('permintaan-counter.detail') }}",
+                    "data": {
+                        '_token': "{{ csrf_token() }}",
+                        'slug': slug
+                    }
+                },
+                lengthMenu: [5],
+                columns: [{
+                        data: "nama",
+                        name: "nama"
+                    },
+                    {
+                        data: "quantity",
+                        name: "quantity"
+                    }
+                ],
+            });
         });
     </script>
 @endpush
@@ -114,5 +146,30 @@
                 </div>
             </div>
         </div> <!-- end col -->
+    </div>
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail <span id="id_permintaan"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered dt-responsive nowrap w-100" id="detail-datatable">
+                        <thead>
+                            <tr>
+                                <th>Nama Barang</th>
+                                <th>Jumlah Permintaan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

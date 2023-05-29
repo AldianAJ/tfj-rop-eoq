@@ -38,8 +38,8 @@ class PermintaanCounterController extends Controller
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
                         // ' . route($path . ".detail", ["slug" => $object->slug]) . '
-                        $html = ' <a href="" class="btn btn-success waves-effect waves-light">'
-                            . ' <i class="bx bx-detail align-middle me-2 font-size-18"></i>Detail</a>';
+                        $html = ' <button class="btn btn-success waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . ' <i class="bx bx-detail align-middle me-2 font-size-18"></i>Detail</button>';
                         return $html;
                     })
                     ->rawColumns(['action'])
@@ -114,5 +114,19 @@ class PermintaanCounterController extends Controller
             echo $ex->getMessage();
             DB::rollBack();
         }
+    }
+
+    public function detail(Request $request)
+    {
+        $slug = $request->slug;
+        $details = DB::table('permintaan_counters as a')
+            ->join('detail_permintaan_counters as b', 'a.permintaan_counter_id', '=', 'b.permintaan_counter_id')
+            ->join('barangs as c', 'b.barang_id', '=', 'c.barang_id')
+            ->select('c.nama_barang as nama', 'jumlah_permintaan as quantity')
+            ->where('a.slug', $slug)
+            ->get();
+
+        return DataTables::of($details)->make(true);
+        // dd($details);
     }
 }
