@@ -29,7 +29,7 @@ class PengirimanCounter extends Model
             ->where('pm.counter_id', $counter_id)
             ->max('pg.pengiriman_counter_id');
         $addZero = '';
-        $pengiriman_counter_id = substr($pengiriman_counter_id, 6, 6);
+        $pengiriman_counter_id = substr($pengiriman_counter_id, 16, 5);
         $pengiriman_counter_id = (int) $pengiriman_counter_id + 1;
         $incrementPengirimanCounterId = $pengiriman_counter_id;
 

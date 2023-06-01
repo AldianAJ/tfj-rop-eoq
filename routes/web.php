@@ -81,6 +81,10 @@ Route::middleware('user')->group(function () {
         Route::get('/permintaan-counter/create', 'create')->name('permintaan-counter.create');
         Route::post('/permintaan-counter/store', 'store')->name('permintaan-counter.store');
         Route::post('/permintaan-counter/detail', 'detail')->name('permintaan-counter.detail');
+        Route::get('/permintaan-counter/detail/{slug}', 'detailByGudang')->name('permintaan-counter.detailByGudang');
+        Route::get('/permintaan-counter/persetujuan/{slug}/{id}', 'createPersetujuan')->name('permintaan-counter.persetujuan');
+        Route::post('/permintaan-counter/temp/persetujuan', 'temporaryPersetujuan')->name('permintaan-counter.tmpPersetujuan');
+        Route::get('/permintaan-counter/pengiriman/store/{slug}', 'storePengiriman')->name('permintaan-counter.storePersetujuan');
     });
 
     Route::controller(PengirimanCounterController::class)->group(function () {

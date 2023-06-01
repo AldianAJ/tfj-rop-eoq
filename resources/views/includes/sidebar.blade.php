@@ -59,13 +59,14 @@
                             <span key="t-permintaan">Permintaan Counter</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="chat.html" class="waves-effect">
+                            <i class="bx bxs-truck"></i>
+                            <span key="t-pengiriman">Pengiriman Counter</span>
+                        </a>
+                    </li>
                 @endif
-                {{-- <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bxs-truck"></i>
-                        <span key="t-pengiriman">Pengiriman Counter</span>
-                    </a>
-                </li> --}}
+
                 @if ($user->role == 'gudang')
                     <li>
                         <a href="chat.html" class="waves-effect">

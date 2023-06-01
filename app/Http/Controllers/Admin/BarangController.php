@@ -173,6 +173,7 @@ class BarangController extends Controller
         } catch (\Exception $ex) {
             //throw $th;
             echo $ex->getMessage();
+            DB::rollBack();
         }
     }
 

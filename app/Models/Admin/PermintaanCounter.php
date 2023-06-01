@@ -28,7 +28,7 @@ class PermintaanCounter extends Model
             ->where('counter_id', $counter_id)
             ->max('permintaan_counter_id');
         $addZero = '';
-        $permintaan_counter_id = substr($permintaan_counter_id, 6, 6);
+        $permintaan_counter_id = substr($permintaan_counter_id, 16, 5);
         $permintaan_counter_id = (int) $permintaan_counter_id + 1;
         $incrementPermintaanCounterId = $permintaan_counter_id;
 

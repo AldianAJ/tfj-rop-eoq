@@ -31,10 +31,11 @@
             columns: [{
                     data: "permintaan_id"
                 },
-                {
-                    data: "name"
-                },
-                {
+                @if ($user->role == 'gudang')
+                    {
+                        data: "name"
+                    },
+                @endif {
                     data: "status",
                     render: function(data, type, row) {
                         return '<span class="badge rounded-pill badge-soft-warning font-size-14">' + data +
@@ -133,7 +134,9 @@
                         <thead>
                             <tr>
                                 <th>ID Permintaan</th>
-                                <th>Nama Counter</th>
+                                @if ($user->role == 'gudang')
+                                    <th>Nama Counter</th>
+                                @endif
                                 <th>Status</th>
                                 <th>Tanggal Permintaan</th>
                                 <th>Action</th>

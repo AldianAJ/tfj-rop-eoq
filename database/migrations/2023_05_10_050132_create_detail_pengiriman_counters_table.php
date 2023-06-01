@@ -13,6 +13,30 @@ return new class extends Migration
     {
         Schema::create('detail_pengiriman_counters', function (Blueprint $table) {
             $table->id();
+            $table->string('pengiriman_counter_id');
+            $table->string('barang_id');
+            $table->string('persetujuan');
+            $table->integer('jumlah_pengiriman')->nullable();
+            $table->string('gudang_id')->nullable();
+            $table->string('counter_id')->nullable();
+            $table->string('catatan')->nullable();
+
+            $table->foreign('pengiriman_counter_id')
+                ->references('pengiriman_counter_id')
+                ->on('pengiriman_counters')->onDelete('cascade');
+
+            $table->foreign('barang_id')
+                ->references('barang_id')
+                ->on('barangs')->onDelete('cascade');
+
+            $table->foreign('gudang_id')
+                ->references('gudang_id')
+                ->on('gudangs')->onDelete('cascade');
+
+            $table->foreign('counter_id')
+                ->references('counter_id')
+                ->on('counters')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

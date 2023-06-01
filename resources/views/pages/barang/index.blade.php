@@ -244,7 +244,7 @@
             selectedData = barangDatatable.row(indexRow).data();
             slug = selectedData.slug;
             $("#nama-barang").text(selectedData.nama_barang);
-            $('#detai-datatable').DataTable().clear();
+            $('#detail-datatable').DataTable().clear();
             $('#detail-datatable').DataTable().destroy();
             $('#detail-datatable').DataTable({
                 ajax: {

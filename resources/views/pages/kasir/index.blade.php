@@ -131,19 +131,33 @@
             }
         }
 
-        $('#datatable').on('click', '.btn-add', function(e) {
-            selectedData = '';
-            let indexRow = mainTable.rows().nodes().to$().index($(this).closest('tr'));
-            selectedData = mainTable.row(indexRow).data();
-            $('#label-barang').text(selectedData.nama_barang);
-            $('#jumlah_pembelian').val("");
-        });
-
-        $('#btn-save-add').on('click', function(e) {
-            // e.preventDefault();
-            let jumlah_pembelian = $('#jumlah_pembelian').val();
-            if (jumlah_pembelian > selectedData.quantity) {
-                alert('Stok tidak cukup');
+        function changeBarangAfterAddKasir(id_barang, jumlah_pembelian) {
+            let found = false;
+            if (keranjang.length > 0) {
+                for (var key in keranjang) {
+                    if (keranjang[key].id_barang == id_barang) {
+                        grandTotal -= (keranjang[key].subtotal);
+                        keranjang[key].jumlah = Number(jumlah_pembelian);
+                        keranjang[key].subtotal = Number(keranjang[key].harga_barang) * Number(jumlah_pembelian);
+                        grandTotal += keranjang[key].subtotal;
+                        found = true;
+                        break;
+                    }
+                    found = false;
+                }
+                if (found == false) {
+                    let keranjangTemp = {
+                        "no": no++,
+                        "id_barang": selectedData.barang_id,
+                        "barang_counter_id": selectedData.barang_counter_id,
+                        "nama_barang": selectedData.nama_barang,
+                        "harga_barang": selectedData.harga_barang,
+                        "jumlah": Number(jumlah_pembelian),
+                        "subtotal": (selectedData.harga_barang) * Number(jumlah_pembelian)
+                    }
+                    grandTotal += (selectedData.harga_barang) * Number(jumlah_pembelian);
+                    keranjang.push(keranjangTemp);
+                }
             } else {
                 let keranjangTemp = {
                     "no": no++,
@@ -156,11 +170,50 @@
                 }
                 grandTotal += (selectedData.harga_barang) * Number(jumlah_pembelian);
                 keranjang.push(keranjangTemp);
+            }
+        }
+
+        $('#datatable').on('click', '.btn-add', function(e) {
+            selectedData = '';
+            let indexRow = mainTable.rows().nodes().to$().index($(this).closest('tr'));
+            selectedData = mainTable.row(indexRow).data();
+            $('#label-barang').text(selectedData.nama_barang);
+            $('#jumlah_pembelian').val("");
+        });
+
+        $('#btn-save-add').on('click', function(e) {
+            // e.preventDefault();
+            let jumlah_pembelian = $('#jumlah_pembelian').val();
+            let id_barang = selectedData.barang_id;
+            if (jumlah_pembelian > selectedData.quantity) {
+                alert('Stok tidak cukup');
+            } else {
+                // let keranjangTemp = {
+                //     "no": no++,
+                //     "id_barang": selectedData.barang_id,
+                //     "barang_counter_id": selectedData.barang_counter_id,
+                //     "nama_barang": selectedData.nama_barang,
+                //     "harga_barang": selectedData.harga_barang,
+                //     "jumlah": Number(jumlah_pembelian),
+                //     "subtotal": (selectedData.harga_barang) * Number(jumlah_pembelian)
+                // }
+                // grandTotal += (selectedData.harga_barang) * Number(jumlah_pembelian);
+
+                // keranjang.push(keranjangTemp);
+                changeBarangAfterAddKasir(id_barang, jumlah_pembelian);
                 $('#quantityModal').modal('toggle');
                 keranjangDatatable = viewKeranjangDataTable(keranjang);
                 // $('#grandTotal').text(rupiah(grandTotal));
             }
         });
+
+        function changeNumberDelKasir() {
+            no = 1;
+            for (var key in keranjang) {
+                keranjang[key].no = no;
+                no++;
+            }
+        }
 
         $('#datatable-keranjang').on('click', '.btn-remove', function(e) {
             selectedKeranjang = '';
@@ -170,6 +223,7 @@
             console.log(selectedKeranjang);
             grandTotal -= selectedKeranjang.subtotal;
             keranjang.splice(indexRow, 1);
+            changeNumberDelKasir();
             keranjangDatatable = viewKeranjangDataTable(keranjang);
         });
 

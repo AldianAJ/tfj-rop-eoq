@@ -59,8 +59,6 @@
             $('#datatable-permintaan').DataTable().clear();
             $('#datatable-permintaan').DataTable().destroy();
             if (paramOne.length > 0) {
-                console.log('onok');
-                console.log(paramOne.length);
                 return $('#datatable-permintaan').DataTable({
                     lengthMenu: [5],
                     data: paramOne,
@@ -83,7 +81,6 @@
                 });
 
             } else {
-                console.log('raonok');
                 return $('#datatable-permintaan').DataTable({
                     lengthMenu: [5],
                 });
@@ -98,27 +95,61 @@
             $('#jumlah_permintaan').val("");
         });
 
+        function checkBarangAfterAddPermintaan(id_barang, jumlah_permintaan) {
+            let found = false;
+            if (permintaan.length > 0) {
+                for (var key in permintaan) {
+                    if (permintaan[key].id_barang == id_barang) {
+                        permintaan[key].jumlah = Number(jumlah_permintaan);
+                        found = true;
+                        break;
+                    }
+                    found = false;
+                }
+                if (found == false) {
+                    let permintaanTemp = {
+                        "no": no++,
+                        "id_barang": selectedData.barang_id,
+                        "nama_barang": selectedData.nama_barang,
+                        "harga_barang": selectedData.harga_barang,
+                        "jumlah": Number(jumlah_permintaan),
+                    }
+                    permintaan.push(permintaanTemp);
+                }
+            } else {
+                let permintaanTemp = {
+                    "no": no++,
+                    "id_barang": selectedData.barang_id,
+                    "nama_barang": selectedData.nama_barang,
+                    "harga_barang": selectedData.harga_barang,
+                    "jumlah": Number(jumlah_permintaan),
+                }
+                permintaan.push(permintaanTemp);
+            }
+        }
+
         $('#btn-save-add').on('click', function(e) {
             let jumlah_permintaan = $('#jumlah_permintaan').val();
-            let permintaanTemp = {
-                "no": no++,
-                "id_barang": selectedData.barang_id,
-                "nama_barang": selectedData.nama_barang,
-                "harga_barang": selectedData.harga_barang,
-                "jumlah": Number(jumlah_permintaan),
-            }
-            permintaan.push(permintaanTemp);
+            let id_barang = selectedData.barang_id;
+            checkBarangAfterAddPermintaan(id_barang, jumlah_permintaan);
             $('#jumlahModal').modal('toggle');
             permintaanDatatable = viewPermintaanDataTable(permintaan);
         });
+
+        function changeNumberDelPermintaan() {
+            no = 1;
+            for (var key in permintaan) {
+                permintaan[key].no = no;
+                no++;
+            }
+        }
 
         $('#datatable-permintaan').on('click', '.btn-remove', function(e) {
             selectedPermintaan = '';
             let indexRow = permintaanDatatable.rows().nodes().to$().index($(this).closest('tr'));
             selectedPermintaan = permintaanDatatable.row(indexRow).data();
-            console.log(indexRow);
-            console.log(selectedPermintaan);
             permintaan.splice(indexRow, 1);
+            changeNumberDelPermintaan();
             permintaanDatatable = viewPermintaanDataTable(permintaan);
         });
 
