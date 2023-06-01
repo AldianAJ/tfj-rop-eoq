@@ -38,12 +38,16 @@ class PermintaanCounterController extends Controller
                     ->join('users as c', 'c.user_id', '=', 'b.user_id')
                     ->select('a.permintaan_counter_id as permintaan_id', 'c.name', 'a.status', 'a.tanggal_permintaan', 'a.slug')
                     ->where('a.counter_id', $counter_id)
-                    ->where('a.status', '!=', 'Selesai')
+                    ->where(function ($q) {
+                        $q->where('a.status', 'Pending')
+                            ->orWhere('a.status', 'Dikirim');
+                    })
+                    ->orderByDesc('permintaan_id')
                     ->get();
 
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
-                        $html = ' <button class="btn btn-success waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        $html = ' <button class="btn btn-success waves-effect waves-light btn-detail"' . ($object->status == 'Pending' ? ' data-bs-toggle="modal" data-bs-target="#detailModal ' : '') . ' ">'
                             . ' <i class="bx bx-detail align-middle me-2 font-size-18"></i>Detail</button>';
                         return $html;
                     })
@@ -54,14 +58,24 @@ class PermintaanCounterController extends Controller
                     ->join('counters as b', 'a.counter_id', '=', 'b.counter_id')
                     ->join('users as c', 'c.user_id', '=', 'b.user_id')
                     ->select('a.permintaan_counter_id as permintaan_id', 'c.name', 'a.status', 'a.tanggal_permintaan', 'a.slug')
-                    ->where('a.status', '=', 'Pending')
+                    ->where(function ($q) {
+                        $q->where('a.status', 'Pending')
+                            ->orWhere('a.status', 'Dikirim');
+                    })
                     ->get();
                 $path = 'permintaan-counter';
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
                         // ' . route($path . ".confirm", ["slug" => $object->slug]) . '
-                        $html = ' <a href="' . route($path . '.detailByGudang', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
-                            . ' <i class="bx bx-transfer-alt align-middle me-2 font-size-18"></i>Proses</a>';
+                        $html = '';
+                        if ($object->status == 'Pending') {
+                            $html = ' <a href="' . route($path . '.detailByGudang', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
+                                . ' <i class="bx bx-transfer-alt align-middle me-2 font-size-18"></i>Proses</a>';
+                        } elseif ($object->status == 'Dikirim') {
+                            $html = ' <a href="' . route('pengiriman-counter.detail', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
+                                . ' <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+                        }
+
                         return $html;
                     })
                     ->rawColumns(['action'])

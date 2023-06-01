@@ -89,6 +89,8 @@ Route::middleware('user')->group(function () {
 
     Route::controller(PengirimanCounterController::class)->group(function () {
         Route::get('/pengiriman-counter', 'index')->name('pengiriman-counter');
+        Route::get('/pengiriman-counter/detail/{slug}', 'show')->name('pengiriman-counter.detail');
+        Route::get('/pengiriman-counter/store/penerimaan/{slug}', 'storePenerimaan')->name('pengiriman-counter.penerimaan');
     });
 
     Route::controller(PenjualanController::class)->group(function () {

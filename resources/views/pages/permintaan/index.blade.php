@@ -28,6 +28,9 @@
     <script>
         let permintaanDatatable = $('#datatable').DataTable({
             ajax: "{{ route('permintaan-counter') }}",
+            order: [
+                [0, 'desc'],
+            ],
             columns: [{
                     data: "permintaan_id"
                 },
@@ -38,8 +41,17 @@
                 @endif {
                     data: "status",
                     render: function(data, type, row) {
-                        return '<span class="badge rounded-pill badge-soft-warning font-size-14">' + data +
-                            '</span>';
+                        let html = '';
+                        if (data == 'Dikirim') {
+                            html = '<span class="badge rounded-pill badge-soft-primary font-size-14">' +
+                                data +
+                                '</span>';
+                        } else if (data == 'Pending') {
+                            html = '<span class="badge rounded-pill badge-soft-warning font-size-14">' +
+                                data +
+                                '</span>';
+                        }
+                        return html;
                     }
                 },
                 {
@@ -66,29 +78,34 @@
             selectedData = permintaanDatatable.row(indexRow).data();
             console.log(selectedData);
             slug = selectedData.slug;
-            $("#id_permintaan").text(selectedData.permintaan_id);
-            $('#detai-datatable').DataTable().clear();
-            $('#detail-datatable').DataTable().destroy();
-            $('#detail-datatable').DataTable({
-                ajax: {
-                    "type": "POST",
-                    "url": "{{ route('permintaan-counter.detail') }}",
-                    "data": {
-                        '_token': "{{ csrf_token() }}",
-                        'slug': slug
-                    }
-                },
-                lengthMenu: [5],
-                columns: [{
-                        data: "nama",
-                        name: "nama"
+            if (selectedData.status == 'Dikirim') {
+                // $('#detailModal').modal('toggle');
+                window.location = '/pengiriman-counter/detail/' + slug;
+            } else if (selectedData.status == 'Pending') {
+                $("#id_permintaan").text(selectedData.permintaan_id);
+                $('#detai-datatable').DataTable().clear();
+                $('#detail-datatable').DataTable().destroy();
+                $('#detail-datatable').DataTable({
+                    ajax: {
+                        "type": "POST",
+                        "url": "{{ route('permintaan-counter.detail') }}",
+                        "data": {
+                            '_token': "{{ csrf_token() }}",
+                            'slug': slug
+                        }
                     },
-                    {
-                        data: "quantity",
-                        name: "quantity"
-                    }
-                ],
-            });
+                    lengthMenu: [5],
+                    columns: [{
+                            data: "nama",
+                            name: "nama"
+                        },
+                        {
+                            data: "quantity",
+                            name: "quantity"
+                        }
+                    ],
+                });
+            }
         });
     </script>
 @endpush
