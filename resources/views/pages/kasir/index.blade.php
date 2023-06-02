@@ -38,9 +38,6 @@
                     "targets": [2]
                 },
             ],
-            // order: [
-            //     [1, 'desc']
-            // ],
             columns: [{
                     data: 'barang_counter_id',
                     name: 'ID Barang'
@@ -82,13 +79,14 @@
             }).format(number);
         }
 
-        $('.alert').hide();
+        $('.alert-success').hide();
+        $('.alert-warning').hide();
+        $('.zero').hide();
 
         function viewKeranjangDataTable(paramOne) {
             $('#datatable-keranjang').DataTable().clear();
             $('#datatable-keranjang').DataTable().destroy();
             if (paramOne.length > 0) {
-                console.log('onok');
                 $('#grandTotal').text(rupiah(grandTotal));
                 return $('#datatable-keranjang').DataTable({
                     lengthMenu: [5, 10, 20, 50, 100],
@@ -123,7 +121,6 @@
                     ],
                 });
             } else {
-                console.log('raonok');
                 $('#grandTotal').text(rupiah(grandTotal));
                 return $('#datatable-keranjang').DataTable({
                     lengthMenu: [5, 10, 20, 50, 100],
@@ -182,28 +179,18 @@
         });
 
         $('#btn-save-add').on('click', function(e) {
-            // e.preventDefault();
             let jumlah_pembelian = $('#jumlah_pembelian').val();
             let id_barang = selectedData.barang_id;
             if (jumlah_pembelian > selectedData.quantity) {
-                alert('Stok tidak cukup');
+                $('#quantityModal').modal('toggle');
+                $('.alert-warning').show();
+            } else if (jumlah_pembelian == "") {
+                $('#quantityModal').modal('toggle');
+                $('.zero').show();
             } else {
-                // let keranjangTemp = {
-                //     "no": no++,
-                //     "id_barang": selectedData.barang_id,
-                //     "barang_counter_id": selectedData.barang_counter_id,
-                //     "nama_barang": selectedData.nama_barang,
-                //     "harga_barang": selectedData.harga_barang,
-                //     "jumlah": Number(jumlah_pembelian),
-                //     "subtotal": (selectedData.harga_barang) * Number(jumlah_pembelian)
-                // }
-                // grandTotal += (selectedData.harga_barang) * Number(jumlah_pembelian);
-
-                // keranjang.push(keranjangTemp);
                 changeBarangAfterAddKasir(id_barang, jumlah_pembelian);
                 $('#quantityModal').modal('toggle');
                 keranjangDatatable = viewKeranjangDataTable(keranjang);
-                // $('#grandTotal').text(rupiah(grandTotal));
             }
         });
 
@@ -214,6 +201,13 @@
                 no++;
             }
         }
+
+        $("#jumlah_pembelian").keypress(function(evt) {
+            var key = String.fromCharCode(evt.which);
+            if (!(/[0-9]/.test(key))) {
+                evt.preventDefault();
+            }
+        });
 
         $('#datatable-keranjang').on('click', '.btn-remove', function(e) {
             selectedKeranjang = '';
@@ -244,7 +238,7 @@
                     success: function(response) {
                         no = 1;
                         keranjang = [];
-                        $('.alert').show();
+                        $('.alert-success').show();
                         viewKeranjangDataTable(keranjang);
                         grandTotal = 0;
                         $('#grandTotal').text("Rp 0,00");
@@ -313,6 +307,16 @@
         <div class="alert alert-success alert-dismissible" role="alert">
             <i class="mdi mdi-check-all me-2"></i>
             Transaksi berhasil disimpan
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <i class="mdi mdi-alert-outline me-2"></i>
+            Stok barang counter tidak cukup!!
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="alert alert-warning alert-dismissible zero" role="alert">
+            <i class="mdi mdi-alert-outline me-2"></i>
+            Jumlah pembelian harus diisi
             <button type="button" class="btn-close" aria-label="Close"></button>
         </div>
         <div class="col">

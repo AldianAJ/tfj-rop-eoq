@@ -174,18 +174,27 @@
             });
         });
 
+        $("#biaya_penyimpanan").keypress(function(evt) {
+            var key = String.fromCharCode(evt.which);
+            if (!(/[0-9]/.test(key))) {
+                evt.preventDefault();
+            }
+        });
+        $('.alert-success').hide();
+        $('.alert-warning').hide();
         $('#btn-save').on('click', function() {
-            const total_biaya = $('#biaya_penyimpanan').val();
+            let total_biaya = $('#biaya_penyimpanan').val();
             if (total_biaya != "") {
                 $.ajax({
                     type: "post",
                     url: "{{ route('barang.biayapenyimpanan') }}",
                     data: {
                         '_token': "{{ csrf_token() }}",
-                        'total_biaya': total_biaya
+                        'total_biaya': Number(total_biaya)
                     },
                     success: function(response) {
                         $('#biayaModal').modal('toggle');
+                        $('.alert-success').show();
                         $('#datatable').DataTable().clear();
                         $('#datatable').DataTable().destroy();
                         barangDatatable.columns(4).visible(true);
@@ -234,6 +243,8 @@
                 });
             } else {
                 $('#biayaModal').modal('toggle');
+                $('.alert-warning').show();
+                $('#biaya_penyimpanan').val("");
             }
         });
 
@@ -267,6 +278,10 @@
                 ],
             });
         });
+
+        $('.btn-close').on('click', function() {
+            $('.alert').hide();
+        });
     </script>
 @endpush
 
@@ -296,6 +311,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <i class="mdi mdi-check-all me-2"></i>
+                Biaya Penyimpanan berhasil disimpan
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <i class="mdi mdi-alert-outline me-2"></i>
+                Biaya penyimpanan tidak boleh kosong
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
             <div class="card">
                 <div class="card-body">
                     @if ($user->role == 'gudang')
