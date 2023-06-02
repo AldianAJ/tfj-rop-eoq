@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\BarangCounter;
 use Illuminate\Http\Request;
 use App\Models\Admin\PengirimanCounter;
 use App\Models\Admin\PermintaanCounter;
@@ -52,13 +53,20 @@ class PengirimanCounterController extends Controller
     {
         $pengiriman = PengirimanCounter::where('slug', $slug)->first();
         $permintaan = PermintaanCounter::where('permintaan_counter_id', $pengiriman->permintaan_counter_id)->first();
-
+        $details = DB::table('detail_pengiriman_counters')->where('pengiriman_counter_id', $pengiriman->pengiriman_counter_id)->get();
         DB::beginTransaction();
         try {
             $permintaan->status = 'Diterima/Selesai';
             $permintaan->save();
             $pengiriman->tanggal_penerimaan = Carbon::now();
             $pengiriman->save();
+            foreach ($details as $detail) {
+                if ($detail->persetujuan == 'Setuju') {
+                    $barang_counter = BarangCounter::where(['barang_id' => $detail->barang_id, 'counter_id' => $permintaan->counter_id])->first();
+                    $barang_counter->stok_masuk += $detail->jumlah_pengiriman;
+                    $barang_counter->save();
+                }
+            }
             DB::commit();
         } catch (\Exception $ex) {
             //throw $th;

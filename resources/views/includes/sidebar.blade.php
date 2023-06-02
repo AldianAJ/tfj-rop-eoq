@@ -86,7 +86,7 @@
                 <li class="menu-title" key="t-components">Riwayat</li>
 
                 <li>
-                    <a href="chat.html" class="waves-effect">
+                    <a href="{{ route('penjualan') }}" class="waves-effect">
                         <i class="bx bxs-spreadsheet"></i>
                         <span key="t-kasir">Transaksi Penjualan</span>
                     </a>

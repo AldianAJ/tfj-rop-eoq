@@ -207,7 +207,7 @@ class PermintaanCounterController extends Controller
         LEFT JOIN barang_counters as bc on b.barang_id = bc.barang_id
         LEFT JOIN gudangs as g on bg.gudang_id = g.gudang_id
         LEFT JOIN counters as c on bc.counter_id = c.counter_id
-        LEFT JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.barang_id = "' . $permintaan->barang_id . '" AND (bg.stok_masuk - bg.stok_keluar > "' . $permintaan->jumlah_permintaan . '" or bc.stok_masuk - bc.stok_keluar > "' . $permintaan->jumlah_permintaan . '")';
+        LEFT JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.barang_id = "' . $permintaan->barang_id . '" AND (bg.stok_masuk - bg.stok_keluar > "' . $permintaan->jumlah_permintaan . '" or bc.stok_masuk - bc.stok_keluar > "' . $permintaan->jumlah_permintaan . '") and c.counter_id <> "' . $permintaan->counter_id . '"';
         $sumbers = DB::select($query);
 
         return view('pages.permintaan.persetujuan', compact('barang_counter', 'permintaan', 'user', 'sumbers'));
