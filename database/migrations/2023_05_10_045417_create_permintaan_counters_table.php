@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('counter_id');
             $table->string('status');
-            $table->date('tanggal_permintaan');
+            $table->dateTime('tanggal_permintaan');
 
             $table->foreign('counter_id')
                 ->references('counter_id')

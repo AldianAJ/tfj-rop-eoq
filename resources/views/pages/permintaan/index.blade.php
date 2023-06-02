@@ -29,7 +29,7 @@
         let permintaanDatatable = $('#datatable').DataTable({
             ajax: "{{ route('permintaan-counter') }}",
             order: [
-                [0, 'desc'],
+                [3, 'desc'],
             ],
             columns: [{
                     data: "permintaan_id"

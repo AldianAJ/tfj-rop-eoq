@@ -105,20 +105,21 @@
                         <span key="t-kasir">Pengiriman Counter</span>
                     </a>
                 </li> --}}
+                @if ($user->role == 'gudang' || $user->role == 'owner')
+                    <li>
+                        <a href="chat.html" class="waves-effect">
+                            <i class="bx bx-detail"></i>
+                            <span key="t-kasir">Pemesanan Persediaan</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bx-detail"></i>
-                        <span key="t-kasir">Pemesanan Persediaan</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bx-task"></i>
-                        <span key="t-kasir">Persediaan Masuk</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="chat.html" class="waves-effect">
+                            <i class="bx bx-task"></i>
+                            <span key="t-kasir">Persediaan Masuk</span>
+                        </a>
+                    </li>
+                @endif
 
             </ul>
         </div>

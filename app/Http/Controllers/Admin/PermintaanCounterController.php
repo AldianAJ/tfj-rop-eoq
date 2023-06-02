@@ -42,7 +42,7 @@ class PermintaanCounterController extends Controller
                         $q->where('a.status', 'Pending')
                             ->orWhere('a.status', 'Dikirim');
                     })
-                    ->orderByDesc('permintaan_id')
+                    ->orderByDesc('tanggal_permintaan')
                     ->get();
 
                 return DataTables::of($permintaans)
@@ -62,6 +62,7 @@ class PermintaanCounterController extends Controller
                         $q->where('a.status', 'Pending')
                             ->orWhere('a.status', 'Dikirim');
                     })
+                    ->orderByDesc('tanggal_permintaan')
                     ->get();
                 $path = 'permintaan-counter';
                 return DataTables::of($permintaans)
