@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CounterSeeder::class,
             BarangGudangSeeder::class,
             BarangCounterSeeder::class,
+            PenjualanSeeder::class,
         ]);
     }
 }

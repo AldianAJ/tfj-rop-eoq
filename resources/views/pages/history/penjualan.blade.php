@@ -34,9 +34,10 @@
         }
 
         let mainTable = $('#datatable').DataTable({
-            order: [
-                [2, 'desc']
-            ],
+            // order: [
+            //     [2, 'desc']
+            // ],
+            "ordering": false,
             columnDefs: [
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     {
@@ -112,9 +113,7 @@
                 console.log(type);
                 if (type == 'group') {
                     mainTable = $('#datatable').DataTable({
-                        order: [
-                            [2, 'desc']
-                        ],
+                        "ordering": false,
                         columnDefs: [
                             @if ($user->role == 'gudang' || $user->role == 'owner')
                                 {
@@ -183,9 +182,7 @@
                     });
                 } else if (type == 'ungroup') {
                     mainTable = $('#datatable').DataTable({
-                        order: [
-                            [2, 'desc']
-                        ],
+                        "ordering": false,
                         columnDefs: [
                             @if ($user->role == 'gudang' || $user->role == 'owner')
                                 {

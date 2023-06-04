@@ -29,6 +29,7 @@ class PenjualanController extends Controller
                     ->join('users as u', 'c.user_id', '=', 'u.user_id')
                     ->select('p.penjualan_id', 'p.slug', 'u.name', 'p.grand_total', 'p.tanggal_penjualan')
                     ->orderByDesc('p.tanggal_penjualan')
+                    ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
                     $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
@@ -45,6 +46,7 @@ class PenjualanController extends Controller
                     ->select('p.penjualan_id', 'p.slug', 'u.name', 'p.grand_total', 'p.tanggal_penjualan')
                     ->where('p.counter_id', $counter->counter_id)
                     ->orderByDesc('p.tanggal_penjualan')
+                    ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
                     $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
@@ -64,6 +66,7 @@ class PenjualanController extends Controller
                     ->join('users as u', 'c.user_id', '=', 'u.user_id')
                     ->select('p.penjualan_id', 'p.slug', 'u.name', 'p.grand_total', 'p.tanggal_penjualan', 'b.nama_barang', 'dp.quantity', 'dp.subtotal')
                     ->orderByDesc('p.tanggal_penjualan')
+                    ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
                     $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
@@ -83,6 +86,7 @@ class PenjualanController extends Controller
                     ->select('p.penjualan_id', 'p.slug', 'u.name', 'p.grand_total', 'p.tanggal_penjualan', 'b.nama_barang', 'dp.quantity', 'dp.subtotal')
                     ->where('p.counter_id', $counter->counter_id)
                     ->orderByDesc('p.tanggal_penjualan')
+                    ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
                     $html = ' <a href="" class="btn btn-info waves-effect waves-light">'

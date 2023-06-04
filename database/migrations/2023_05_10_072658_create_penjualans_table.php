@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('counter_id');
             $table->integer('grand_total');
-            $table->dateTime('tanggal_penjualan');
+            $table->dateTime('tanggal_penjualan')->nullable();
 
             $table->foreign('counter_id')
                 ->references('counter_id')

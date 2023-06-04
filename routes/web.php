@@ -70,6 +70,12 @@ Route::middleware('user')->group(function () {
 
     Route::controller(PemesananController::class)->group(function () {
         Route::get('/pemesanan', 'index')->name('pemesanan');
+        Route::get('/pemesanan/persediaan-baru', 'createNewPersediaan')->name('pemesanan.create.new-persediaan');
+        // Route::get('/pemesanan/persediaan-baru/store', 'createNewPersediaan')->name('pemesanan.store.new-persediaan');
+        Route::get('/pemesanan/create', 'create')->name('pemesanan.create');
+        Route::post('/pemesanan/store', 'store')->name('pemesanan.store');
+        Route::post('/pemesanan/hitung', 'hitungEOQ')->name('pemesanan.hitung');
+        // Route::get('/pemesanan/persediaan-baru/store', 'createNewPersediaan')->name('pemesanan.store.new-persediaan');
     });
 
     Route::controller(PersediaanMasukController::class)->group(function () {

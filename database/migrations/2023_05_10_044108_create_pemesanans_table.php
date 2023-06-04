@@ -16,7 +16,8 @@ return new class extends Migration
             $table->primary('pemesanan_id');
             $table->string('slug');
             $table->string('status_pemesanan');
-            $table->date('tanggal_pemesanan');
+            $table->dateTime('tanggal_pemesanan');
+            $table->integer('biaya_pemesanan');
             $table->timestamps();
         });
     }

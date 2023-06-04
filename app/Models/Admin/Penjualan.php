@@ -16,11 +16,11 @@ class Penjualan extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
-    public static function generatePenjualanCounterId($counter_id)
+    public static function generatePenjualanCounterId($counter_id, $tahun = null)
     {
         $now = Carbon::now();
         $penjualan_id = DB::table('penjualans')
-            ->whereYear('tanggal_penjualan', $now->year)
+            ->whereYear('tanggal_penjualan', (!empty($tahun) ? $tahun : $now->year))
             ->where('counter_id', $counter_id)
             ->max('penjualan_id');
         $addZero = '';
@@ -38,7 +38,7 @@ class Penjualan extends Model
             $addZero = "0";
         }
 
-        $newPenjualanCounterId = "PNJ." . $counter_id . "." . $now->year . "." . $addZero . $incrementPenjualanCounterId;
+        $newPenjualanCounterId = "PNJ." . $counter_id . "." . (!empty($tahun) ? $tahun : $now->year) . "." . $addZero . $incrementPenjualanCounterId;
         return $newPenjualanCounterId;
     }
 }

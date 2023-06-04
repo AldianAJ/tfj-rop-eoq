@@ -36,13 +36,19 @@ class BarangController extends Controller
                 $barangs = DB::select($query);
 
                 return DataTables::of($barangs)
-                    ->addColumn('action', function ($object) use ($path) {
-                        $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
-                            . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i></a>';
-                        $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
-                            . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i></a>';
-                        $html .= ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
+                    ->addColumn('action', function ($object) use ($path, $user) {
+                        $html = '';
+                        if ($user->role == 'gudang') {
+                            $html .= ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
+                                . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i></a>';
+                            $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
+                                . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i></a>';
+                            $html .= ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
+                                <i class="bx bx-detail font-size-18 align-middle me-2"></i></button>';
+                        } else {
+                            $html .= ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
                         <i class="bx bx-detail font-size-18 align-middle me-2"></i></button>';
+                        }
                         return $html;
                     })
                     ->rawColumns(['action'])
@@ -135,7 +141,7 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $validator = $this->validatorHelper($request->all());
-
+        $user = $this->userAuth();
         if (!empty($validator)) {
             return redirect()->back()->with(['msg' => $validator->message]);
         }
@@ -155,6 +161,7 @@ class BarangController extends Controller
             $barang_gudangs = new BarangGudang;
             $barang_gudangs->barang_gudang_id = $barang_gudang_id;
             $barang_gudangs->slug = Str::random(16);
+            $barang_gudangs->gudang_id = 'G00001';
             $barang_gudangs->barang_id = $barang_id;
             $barang_gudangs->save();
 

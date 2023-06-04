@@ -16,7 +16,7 @@ return new class extends Migration
             $table->primary('persediaan_masuk_id');
             $table->string('slug');
             $table->string('pemesanan_id');
-            $table->date('tanggal_persediaan_masuk');
+            $table->dateTime('tanggal_persediaan_masuk');
 
             $table->foreign('pemesanan_id')
                 ->references('pemesanan_id')

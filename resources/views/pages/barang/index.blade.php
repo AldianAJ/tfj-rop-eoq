@@ -62,7 +62,7 @@
                         data: "qty_total",
                         name: "qty_total"
                     },
-                    @if ($user->role == 'gudang')
+                    @if ($user->role == 'gudang' || $user->role == 'owner')
                         {
                             data: "action",
                             name: "action"
@@ -71,7 +71,7 @@
                 @else
                     {
                         data: "quantity",
-                        name: "qquantity"
+                        name: "quantity"
                     },
                 @endif
 
@@ -368,7 +368,7 @@
                                     <th>Biaya Penyimpanan</th>
                                     <th>ROP</th>
                                     <th>Quantity Total</th>
-                                    @if ($user->role == 'gudang')
+                                    @if ($user->role == 'gudang' || $user->role == 'owner')
                                         <th>Action</th>
                                     @endif
                                 @else

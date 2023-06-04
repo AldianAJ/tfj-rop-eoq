@@ -67,14 +67,15 @@
                     </li> --}}
                 @endif
 
-                @if ($user->role == 'gudang')
+                @if ($user->role == 'gudang' || $user->role == 'owner')
                     <li>
-                        <a href="chat.html" class="waves-effect">
+                        <a href="{{ route('pemesanan') }}" class="waves-effect">
                             <i class="bx bxs-package"></i>
                             <span key="t-pemesanan">Pemesanan Persediaan</span>
                         </a>
                     </li>
-
+                @endif
+                @if ($user->role == 'gudang')
                     <li>
                         <a href="chat.html" class="waves-effect">
                             <i class="bx bxs-widget"></i>
