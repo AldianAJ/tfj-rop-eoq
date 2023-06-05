@@ -194,7 +194,7 @@
                     },
                     success: function(response) {
                         $('#biayaModal').modal('toggle');
-                        $('.alert-success').show();
+                        $('.alert-penyimpanan').show();
                         $('#datatable').DataTable().clear();
                         $('#datatable').DataTable().destroy();
                         barangDatatable.columns(4).visible(true);
@@ -311,7 +311,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            <div class="alert alert-success alert-dismissible" role="alert">
+            <div class="alert alert-success alert-dismissible alert-penyimpanan" role="alert">
                 <i class="mdi mdi-check-all me-2"></i>
                 Biaya Penyimpanan berhasil disimpan
                 <button type="button" class="btn-close" aria-label="Close"></button>

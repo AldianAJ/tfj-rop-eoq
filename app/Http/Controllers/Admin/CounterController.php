@@ -195,7 +195,9 @@ class CounterController extends Controller
             $users->name = $request->nama_counter;
             $users->username = $request->username;
             $users->address = $request->alamat_counter;
-            $users->password = bcrypt($request->password);
+            if (!empty($request->password)) {
+                $users->password = bcrypt($request->password);
+            }
             $users->save();
             DB::commit();
 

@@ -254,9 +254,12 @@ class BarangController extends Controller
     {
         $slug = $request->slug;
         // $slug = "R4NY4vMU1nXKkgAe";
+        $gudang = DB::table('users')
+            ->where('role', 'gudang')
+            ->first();
         $query = 'SELECT DISTINCT u.name as nama, 
         CASE u.name
-        WHEN "Gudang Pusat" THEN
+        WHEN "' . $gudang->name . '" THEN
         (bg.stok_masuk - bg.stok_keluar)
         ELSE
         (bc.stok_masuk - bc.stok_keluar)

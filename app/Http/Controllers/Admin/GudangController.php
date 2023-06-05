@@ -55,6 +55,7 @@ class GudangController extends Controller
 
     public function edit($slug)
     {
+        $user = $this->userAuth();
         $gudangs = DB::table('gudangs as a')
             ->join('users as b', 'a.user_id', '=', 'b.user_id')
             ->select('a.gudang_id', 'b.name', 'b.address', 'b.username', 'a.slug')

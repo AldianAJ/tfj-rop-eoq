@@ -190,26 +190,33 @@ class PermintaanCounterController extends Controller
             ->where(['a.counter_id' => $permintaan->counter_id, 'a.barang_id' => $permintaan->barang_id])
             ->first();
 
+        $gudang = DB::table('users')
+            ->where('role', 'gudang')
+            ->first();
+
         $query = 'SELECT DISTINCT u.name as nama,CASE u.name 
-        WHEN "Gudang Pusat" THEN
+        WHEN "' . $gudang->name . '" THEN
         (bg.stok_masuk - bg.stok_keluar)
         ELSE
         (bc.stok_masuk - bc.stok_keluar)
         END as quantity,
         CASE u.name
-        WHEN "Gudang Pusat" THEN
+        WHEN "' . $gudang->name . '" THEN
         g.gudang_id
         ELSE
         c.counter_id
         END as sumber_id
         ,b.nama_barang
         FROM barangs as b
-        LEFT JOIN barang_gudangs as bg on b.barang_id = bg.barang_id
-        LEFT JOIN barang_counters as bc on b.barang_id = bc.barang_id
-        LEFT JOIN gudangs as g on bg.gudang_id = g.gudang_id
-        LEFT JOIN counters as c on bc.counter_id = c.counter_id
-        LEFT JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.barang_id = "' . $permintaan->barang_id . '" AND (bg.stok_masuk - bg.stok_keluar > "' . $permintaan->jumlah_permintaan . '" or bc.stok_masuk - bc.stok_keluar > "' . $permintaan->jumlah_permintaan . '") and c.counter_id <> "' . $permintaan->counter_id . '"';
+        JOIN barang_gudangs as bg on b.barang_id = bg.barang_id
+        JOIN barang_counters as bc on b.barang_id = bc.barang_id
+        JOIN gudangs as g on bg.gudang_id = g.gudang_id
+        JOIN counters as c on bc.counter_id = c.counter_id
+        JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.barang_id = "' . $permintaan->barang_id . '" AND (bg.stok_masuk - bg.stok_keluar > "' . $permintaan->jumlah_permintaan . '" or bc.stok_masuk - bc.stok_keluar > "' . $permintaan->jumlah_permintaan . '") and c.counter_id <> "' . $permintaan->counter_id . '"
+        GROUP BY nama, quantity, sumber_id, nama_barang
+        ';
         $sumbers = DB::select($query);
+
 
         return view('pages.permintaan.persetujuan', compact('barang_counter', 'permintaan', 'user', 'sumbers'));
     }

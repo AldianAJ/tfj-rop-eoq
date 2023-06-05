@@ -323,7 +323,7 @@
                         <thead>
                             <tr>
                                 <th>ID Penjualan</th>
-                                @if ($user->role == 'gudang')
+                                @if ($user->role == 'gudang' || $user->role == 'owner')
                                     <th>Nama Counter</th>
                                 @endif
                                 <th>Tanggal Penjualan</th>
