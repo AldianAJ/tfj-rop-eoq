@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Pemesanan Persediaan
+    Barang Counter Diambil
 @endsection
 
 @push('before-app-style')
@@ -26,58 +26,42 @@
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
-        const rupiah = (number) => {
-            return new Intl.NumberFormat("id-ID", {
-                style: "currency",
-                currency: "IDR"
-            }).format(number);
-        }
-
         $('#datatable').DataTable({
-            "ordering": false,
-            ajax: "{{ route('pemesanan') }}",
+            ajax: "{{ route('pengiriman-counter.barangDiambil') }}",
             columns: [{
-                    data: "pemesanan_id"
+                    data: "nama_barang"
                 },
                 {
-                    data: "status_pemesanan",
-                    render: function(data, type, row) {
-                        let html = '';
-                        if (data == 'Menunggu Persetujuan') {
-                            html = '<span class="badge rounded-pill badge-soft-secondary font-size-14">' +
-                                data +
-                                '</span>';
-                        } else if (data == 'Disetujui') {
-                            html = '<span class="badge rounded-pill badge-soft-primary font-size-14">' +
-                                data +
-                                '</span>';
-                        } else if (data == 'Dipesan') {
-                            html = '<span class="badge rounded-pill badge-soft-success font-size-14">' +
-                                data +
-                                '</span>';
-                        }
-                        return html;
-                    }
+                    data: "jumlah_pengiriman"
                 },
                 {
-                    data: "tanggal_pemesanan",
+                    data: "tanggal_permintaan",
                     render: function(data, type, row) {
                         let date = new Date(data);
-                        let tanggal_pemesanan = new Intl.DateTimeFormat(['ban', 'id'], {
+                        let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
+                            'id'
+                        ], {
                             dateStyle: 'long',
                             timeZone: 'Asia/Jakarta'
                         }).format(date);
-                        return tanggal_pemesanan;
+                        return tanggal_penjualan;
                     }
                 },
                 {
-                    data: "biaya_pemesanan",
+                    data: "tanggal_pengiriman",
                     render: function(data, type, row) {
-                        return rupiah(data);
+                        let date = new Date(data);
+                        let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
+                            'id'
+                        ], {
+                            dateStyle: 'long',
+                            timeZone: 'Asia/Jakarta'
+                        }).format(date);
+                        return tanggal_penjualan;
                     }
                 },
                 {
-                    data: "action",
+                    data: "name"
                 }
             ],
         });
@@ -112,23 +96,21 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    @if ($user->role == 'gudang')
-                        <div class="d-flex justify-content-end mb-4">
-                            <a href="{{ route('pemesanan.create') }}" class="btn btn-primary waves-effect waves-light">
-                                <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
-                            </a>
-                        </div>
-                    @endif
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
-                                <th>ID Pemesanan</th>
-                                <th>Status Pemesanan</th>
-                                <th>Tanggal Pemesanan</th>
-                                <th>Biaya Pemesanan</th>
-                                <th>Action</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah Dikirim</th>
+                                <th>Tanggal Permintaan</th>
+                                <th>Tanggal Dikirim</th>
+                                <th>Dikirim Ke</th>
+                                {{-- @if ($user->role == 'gudang')
+                                    <th>Action</th>
+                                @endif --}}
                             </tr>
                         </thead>
+
+
                         <tbody>
                         </tbody>
                     </table>

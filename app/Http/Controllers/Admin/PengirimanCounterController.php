@@ -10,6 +10,7 @@ use App\Models\Admin\PermintaanCounter;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Yajra\DataTables\DataTables;
 
 class PengirimanCounterController extends Controller
 {
@@ -74,5 +75,31 @@ class PengirimanCounterController extends Controller
             DB::rollBack();
         }
         return redirect()->route('permintaan-counter');
+    }
+
+    public function indexBarangDiambil(Request $request)
+    {
+        $user = $this->userAuth();
+        if ($request->ajax()) {
+            $counter = DB::table('counters')
+                ->where('user_id', $user->user_id)
+                ->first();
+
+            $barang_diambil = DB::table('detail_pengiriman_counters as dp')
+                ->join('pengiriman_counters as pg', 'dp.pengiriman_counter_id', '=', 'pg.pengiriman_counter_id')
+                ->join('permintaan_counters as pm', 'pg.permintaan_counter_id', '=', 'pm.permintaan_counter_id')
+                ->join('barangs as b', 'dp.barang_id', '=', 'b.barang_id')
+                ->join('barang_counters as bc', 'b.barang_id', '=', 'bc.barang_id')
+                ->join('counters as c', 'pm.counter_id', '=', 'c.counter_id')
+                ->join('users as u', 'c.user_id', '=', 'u.user_id')
+                ->selectRaw('DISTINCT b.nama_barang, pm.tanggal_permintaan,dp.jumlah_pengiriman, u.name, pg.tanggal_pengiriman')
+                ->where('dp.counter_id', $counter->counter_id)
+                ->get();
+
+            return DataTables::of($barang_diambil)->make(true);
+        }
+
+
+        return view('pages.history.barang-diambil', compact('user'));
     }
 }

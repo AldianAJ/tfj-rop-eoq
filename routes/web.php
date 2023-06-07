@@ -71,15 +71,19 @@ Route::middleware('user')->group(function () {
     Route::controller(PemesananController::class)->group(function () {
         Route::get('/pemesanan', 'index')->name('pemesanan');
         Route::get('/pemesanan/persediaan-baru', 'createNewPersediaan')->name('pemesanan.create.new-persediaan');
-        // Route::get('/pemesanan/persediaan-baru/store', 'createNewPersediaan')->name('pemesanan.store.new-persediaan');
         Route::get('/pemesanan/create', 'create')->name('pemesanan.create');
         Route::post('/pemesanan/store', 'store')->name('pemesanan.store');
         Route::post('/pemesanan/hitung', 'hitungEOQ')->name('pemesanan.hitung');
-        // Route::get('/pemesanan/persediaan-baru/store', 'createNewPersediaan')->name('pemesanan.store.new-persediaan');
+        Route::get('/pemesanan/detail/{slug}', 'detail')->name('pemesanan.detail');
+        Route::post('/pemesanan/persetujuan', 'persetujuan')->name('pemesanan.persetujuan');
+        Route::get('/pemesanan/dipesan/{slug}', 'dipesan')->name('pemesanan.dipesan');
     });
 
     Route::controller(PersediaanMasukController::class)->group(function () {
         Route::get('/persediaan-masuk', 'index')->name('persediaan-masuk');
+        Route::get('/persediaan-masuk/detail/{slug}', 'detail')->name('persediaan-masuk.detail');
+        Route::get('/persediaan-masuk/diterima/{slug}/{id}', 'addDiterimaTemporary')->name('persediaan-masuk.add');
+        Route::get('/persediaan-masuk/store/{slug}', 'store')->name('persediaan-masuk.store');
     });
 
     Route::controller(PermintaanCounterController::class)->group(function () {
@@ -97,6 +101,7 @@ Route::middleware('user')->group(function () {
         Route::get('/pengiriman-counter', 'index')->name('pengiriman-counter');
         Route::get('/pengiriman-counter/detail/{slug}', 'show')->name('pengiriman-counter.detail');
         Route::get('/pengiriman-counter/store/penerimaan/{slug}', 'storePenerimaan')->name('pengiriman-counter.penerimaan');
+        Route::get('/pengiriman-counter/keep/counter', 'indexBarangDiambil')->name('pengiriman-counter.barangDiambil');
     });
 
     Route::controller(PenjualanController::class)->group(function () {

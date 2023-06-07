@@ -150,6 +150,7 @@
             let id_barang = selectedData.barang_id;
             changeBarangAfterAddKasir(id_barang);
             pemesananDatatable = viewPemesananDataTable(pemesanan);
+            // console.log(pemesanan);
         });
 
         $('#btn-save-add').on('click', function(e) {
@@ -201,6 +202,62 @@
             changeNumberDelKasir();
             pemesananDatatable = viewPemesananDataTable(pemesanan);
         });
+
+        // $('.check-eoq').each(function(index, element) {
+        //     // element == this
+        //     $(this).click(function(el) {
+        //         if ($(this).prop('checked') == true) {
+        //             // tkiCheck.push($(this).val());
+        //             // noCheck.push($(this).closest('tr').find('.no').html());
+        //             alert($(this).closest('tr'));
+        //         } else {
+        //             // let indexTkiCheck = tkiCheck.indexOf($(this).val());
+        //             // let indexNoCheck = noCheck.indexOf($(this).closest('tr').find('.no').html());
+        //             // tkiCheck.splice(indexTkiCheck, 1);
+        //             // noCheck.splice(indexNoCheck, 1);
+        //             alert($(this).closest('tr'));
+        //         }
+        //         propHitung();
+        //     });
+        // });
+
+        // $('#datatable-pemesanan').on('click', '.check-eoq', function() {
+        //     let indexRow = pemesananDatatable.rows().nodes().to$().index($(this).closest('tr'));
+        //     if ($(this).prop('checked') == true) {
+        //         // $(this).attr('checked');
+        //         pemesanan[indexRow].jumlah = pemesanan[indexRow].eoq;
+        //         // selectedKeranjang = '';
+        //         // selectedKeranjang = pemesananDatatable.row(indexRow).data();
+        //         // pemesanan[indexRow].eoq;S
+        //         // console.log(pemesanan[indexRow].eoq);
+        //         // console.log(indexRow + " checked");
+        //         pemesananDatatable = viewPemesananDataTable(pemesanan);
+        //     } else {
+        //         pemesanan[indexRow].jumlah = 0;
+        //         // console.log(pemesanan[indexRow].eoq);
+        //         // console.log(indexRow + " unchecked");
+        //         pemesananDatatable = viewPemesananDataTable(pemesanan);
+        //     }
+
+        // });
+
+        // $('.check-eoq').each(function(index, element) {
+        //     // element == this
+        //     $(this).on('click', function(e) {
+        //         let indexRow = pemesananDatatable.rows().nodes().to$().index($(this).closest('tr'));
+        //         if ($(this).prop('checked') == true) {
+        //             selectedKeranjang = '';
+        //             selectedKeranjang = pemesananDatatable.row(indexRow).data();
+        //             console.log(selectedData);
+        //         } else {
+        //             // let indexTkiCheck = tkiCheck.indexOf($(this).val());
+        //             // let indexNoCheck = noCheck.indexOf($(this).closest('tr').find('.no').html());
+        //             // tkiCheck.splice(indexTkiCheck, 1);
+        //             // noCheck.splice(indexNoCheck, 1);
+        //             console.log(0);
+        //         }
+        //     });
+        // });
 
         $('.btn-close').on('click', function() {
             $('.alert').hide();
@@ -275,16 +332,16 @@
                     },
                     dataType: "json",
                     success: function(response) {
-                        console.log(response.pemesanan);
+                        // console.log(response.pemesanan);
                         pemesanan = [];
                         let data = response.pemesanan;
                         data.forEach(element => {
-                            console.log(element.no);
+                            // console.log(element.no);
                             let pemesananTemp = {
                                 "no": element.no,
                                 "id_barang": element.id_barang,
                                 "nama_barang": element.nama_barang,
-                                "jumlah": element.jumlah,
+                                "jumlah": element.eoq,
                                 "eoq": element.eoq
                             };
                             pemesanan.push(pemesananTemp);
@@ -371,6 +428,7 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>EOQ</th>
+                                {{-- <th>Pilih EOQ</th> --}}
                                 <th>Jumlah Pemesanan</th>
                                 <th>Action</th>
                             </tr>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Pemesanan Persediaan
+    Persediaan Masuk
 @endsection
 
 @push('before-app-style')
@@ -32,42 +32,24 @@
                 currency: "IDR"
             }).format(number);
         }
-
         $('#datatable').DataTable({
-            "ordering": false,
-            ajax: "{{ route('pemesanan') }}",
+            ordering: false,
+            ajax: "{{ route('persediaan-masuk') }}",
             columns: [{
                     data: "pemesanan_id"
                 },
                 {
-                    data: "status_pemesanan",
-                    render: function(data, type, row) {
-                        let html = '';
-                        if (data == 'Menunggu Persetujuan') {
-                            html = '<span class="badge rounded-pill badge-soft-secondary font-size-14">' +
-                                data +
-                                '</span>';
-                        } else if (data == 'Disetujui') {
-                            html = '<span class="badge rounded-pill badge-soft-primary font-size-14">' +
-                                data +
-                                '</span>';
-                        } else if (data == 'Dipesan') {
-                            html = '<span class="badge rounded-pill badge-soft-success font-size-14">' +
-                                data +
-                                '</span>';
-                        }
-                        return html;
-                    }
+                    data: "status_pemesanan"
                 },
                 {
                     data: "tanggal_pemesanan",
                     render: function(data, type, row) {
                         let date = new Date(data);
-                        let tanggal_pemesanan = new Intl.DateTimeFormat(['ban', 'id'], {
+                        let tanggal_permintaan = new Intl.DateTimeFormat(['ban', 'id'], {
                             dateStyle: 'long',
                             timeZone: 'Asia/Jakarta'
                         }).format(date);
-                        return tanggal_pemesanan;
+                        return tanggal_permintaan;
                     }
                 },
                 {
@@ -77,7 +59,7 @@
                     }
                 },
                 {
-                    data: "action",
+                    data: "action"
                 }
             ],
         });
@@ -112,13 +94,6 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    @if ($user->role == 'gudang')
-                        <div class="d-flex justify-content-end mb-4">
-                            <a href="{{ route('pemesanan.create') }}" class="btn btn-primary waves-effect waves-light">
-                                <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
-                            </a>
-                        </div>
-                    @endif
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
@@ -132,7 +107,6 @@
                         <tbody>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div> <!-- end col -->

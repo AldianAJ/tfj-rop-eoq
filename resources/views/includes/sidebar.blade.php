@@ -50,6 +50,12 @@
                             <span key="t-kasir">Kasir</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('pengiriman-counter.barangDiambil') }}" class="waves-effect">
+                            <i class="bx bx-notepad"></i>
+                            <span key="t-kasir">Barang Counter Diambil</span>
+                        </a>
+                    </li>
                 @endif
 
                 @if ($user->role == 'counter' || $user->role == 'gudang')
@@ -77,7 +83,7 @@
                 @endif
                 @if ($user->role == 'gudang')
                     <li>
-                        <a href="chat.html" class="waves-effect">
+                        <a href="{{ route('persediaan-masuk') }}" class="waves-effect">
                             <i class="bx bxs-widget"></i>
                             <span key="t-pemesanan">Persediaan Masuk</span>
                         </a>
@@ -99,7 +105,6 @@
                         <span key="t-kasir">Permintaan Counter</span>
                     </a>
                 </li>
-
                 {{-- <li>
                     <a href="chat.html" class="waves-effect">
                         <i class="bx bx-book-content"></i>

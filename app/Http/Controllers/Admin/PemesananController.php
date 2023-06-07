@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Barang;
 use Illuminate\Http\Request;
 use App\Models\Admin\Pemesanan;
 use Illuminate\Support\Facades\DB;
@@ -35,18 +36,18 @@ class PemesananController extends Controller
             return DataTables::of($pemesanans)
                 ->addColumn('action', function ($object) use ($path, $user) {
                     if ($user->role == 'owner' && $object->status_pemesanan == 'Menunggu Persetujuan') {
-                        $html = ' <a href="" class="btn btn-success waves-effect waves-light">'
+                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
                             . ' <i class="bx bx-transfer-alt align-middle me-2 font-size-18"></i>Persetujuan</a>';
                         return $html;
-                    } elseif ($object->status_pemesanan == 'Disetujui') {
-                        $html = ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
-                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</button>';
-                        $html .= ' <a href="" class="btn btn-primary waves-effect waves-light">'
-                            . ' <i class="bx bxs-package align-middle me-2 font-size-18"></i> Pesan</a>';
+                    } elseif ($user->role == 'gudang' && $object->status_pemesanan == 'Disetujui') {
+                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-info waves-effect waves-light btn-detail">
+                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
+                        $html .= ' <a href="' . route($path . '.dipesan', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light btn-detail">
+                        <i class="bx bxs-send font-size-18 align-middle me-2"></i> Dipesan</a>';
                         return $html;
                     } else {
-                        $html = ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
-                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</button>';
+                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-info waves-effect waves-light btn-detail">
+                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
                         return $html;
                     }
                 })
@@ -203,5 +204,154 @@ class PemesananController extends Controller
             DB::rollBack();
             return response()->json($ex->getMessage(), 400);
         }
+    }
+
+    public function jumlahHari($bulan_tahun)
+    {
+        # code...
+        $jumlah = date('t', strtotime(substr($bulan_tahun, 3, 4) . "-" . substr($bulan_tahun, 0, 2) . "-01"));
+        return $jumlah;
+    }
+
+    public function detail($slug)
+    {
+        $user = $this->userAuth();
+        $detail_persetujuans = [];
+        $no = 1;
+        $pemesanan = DB::table('pemesanans')
+            ->where('slug', $slug)
+            ->first();
+
+        $details = DB::table('pemesanans as p')
+            ->join('detail_pemesanans as dp', 'p.pemesanan_id', '=', 'dp.pemesanan_id')
+            ->join('barangs as b', 'dp.barang_id', '=', 'b.barang_id')
+            ->selectRaw('b.barang_id,b.nama_barang, dp.jumlah_pemesanan, p.slug, dp.eoq, ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = b.barang_id GROUP BY barang_id)) as qty_total')
+            ->where('p.slug', $slug)
+            ->get();
+
+        $bulan_tahun = DB::table('penjualans')
+            ->selectRaw('DATE_FORMAT(MAX(tanggal_penjualan),"%m-%Y") as bulan')
+            ->whereRaw('DATE_FORMAT(tanggal_penjualan, "%m-%Y") < DATE_FORMAT(now(), "%m-%Y")')
+            ->first();
+
+        $subdate = Carbon::createFromFormat('d-m-Y', '01' . "-" . $bulan_tahun->bulan)->format('Y-m-d H:i:s');
+        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDay($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
+        $avg_date = DB::table('pemesanans as p')
+            ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
+            ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')
+            ->where('p.status_pemesanan', 'Selesai')
+            ->whereBetween('pm.tanggal_persediaan_masuk', [$subdate, $lastdate])
+            ->first();
+        foreach ($details as $detail) {
+            $data = DB::table('detail_penjualans as dp')
+                ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
+                ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
+                ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
+                ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+                ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
+            $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
+            $ss = ($data->max - $data->avg) * $lead_time;
+            $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
+            $d = (int)round($data->total / $jumlah_hari);
+            $rop = ($d * $lead_time) + $ss;
+
+            $temp = (object)[
+                'no' => $no++,
+                'barang_id' => $detail->barang_id,
+                'nama_barang' => $detail->nama_barang,
+                'jumlah_pemesanan' => $detail->jumlah_pemesanan,
+                'stok' => $detail->qty_total,
+                'eoq' => $detail->eoq,
+                'rop' => $rop,
+                'max' => $data->max,
+                'avg' => $data->avg,
+                'sum' => $data->total,
+                'd' => $d,
+                'lead_time' => $lead_time,
+                'ss' => $ss
+            ];
+
+            array_push($detail_persetujuans, $temp);
+        }
+
+        // dd($detail_persetujuans);
+        return view('pages.pemesanan.detail', compact('user', 'pemesanan', 'details', 'detail_persetujuans'));
+    }
+
+    public function persetujuan(Request $request)
+    {
+        $pemesanan_id = $request->pemesanan_id;
+        $persetujuan = $request->persetujuan;
+        DB::beginTransaction();
+        try {
+            $pemesanan = DB::table('pemesanans')
+                ->where('pemesanan_id', $pemesanan_id)
+                ->first();
+
+            $details = DB::table('pemesanans as p')
+                ->join('detail_pemesanans as dp', 'p.pemesanan_id', '=', 'dp.pemesanan_id')
+                ->join('barangs as b', 'dp.barang_id', '=', 'b.barang_id')
+                ->selectRaw('b.barang_id,b.nama_barang, dp.jumlah_pemesanan, p.slug, dp.eoq, ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = b.barang_id GROUP BY barang_id)) as qty_total')
+                ->where('p.pemesanan_id', $pemesanan_id)
+                ->get();
+
+            $bulan_tahun = DB::table('penjualans')
+                ->selectRaw('DATE_FORMAT(MAX(tanggal_penjualan),"%m-%Y") as bulan')
+                ->whereRaw('DATE_FORMAT(tanggal_penjualan, "%m-%Y") < DATE_FORMAT(now(), "%m-%Y")')
+                ->first();
+
+            $subdate = Carbon::createFromFormat('d-m-Y', '01' . "-" . $bulan_tahun->bulan)->format('Y-m-d H:i:s');
+            $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDay($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
+            $avg_date = DB::table('pemesanans as p')
+                ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
+                ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')
+                ->where('p.status_pemesanan', 'Selesai')
+                ->whereBetween('pm.tanggal_persediaan_masuk', [$subdate, $lastdate])
+                ->first();
+            if ($persetujuan == 'Disetujui') {
+                foreach ($details as $detail) {
+                    $data = DB::table('detail_penjualans as dp')
+                        ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
+                        ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
+                        ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
+                        ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+                        ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
+                    $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
+                    $ss = ($data->max - $data->avg) * $lead_time;
+                    $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
+                    $d = (int)round($data->total / $jumlah_hari);
+                    $rop = ($d * $lead_time) + $ss;
+                    $barang = Barang::where('barang_id',  $detail->barang_id)->first();
+                    $barang->rop = $rop;
+                    $barang->ss = $ss;
+                    $barang->save();
+                }
+            }
+            $pemesanan = Pemesanan::where('pemesanan_id', $pemesanan_id)->first();
+            $pemesanan->status_pemesanan = $persetujuan;
+            $pemesanan->save();
+            DB::commit();
+            return response()->json([], 200);
+        } catch (\Exception $ex) {
+            DB::rollBack();
+            return response()->json([], $ex->getMessage());
+        }
+    }
+
+    public function dipesan($slug)
+    {
+        DB::beginTransaction();
+        try {
+            $pemesanan = Pemesanan::where('slug', $slug)->first();
+            $pemesanan->status_pemesanan = 'Dipesan';
+            $pemesanan->save();
+            DB::commit();
+        } catch (\Exception $ex) {
+            //throw $th;
+            echo $ex->getMessage();
+            DB::rollBack();
+        }
+
+        return redirect()->route('pemesanan')->with("msg", "Berhasil merubah status pemesanan");
     }
 }
