@@ -51,6 +51,7 @@ Route::middleware('user')->group(function () {
         Route::get('/barang/destroy/{slug}', 'destroy')->name('barang.destroy');
         Route::post('/barang/biayapenyimpanan', 'biayaPenyimpanan')->name('barang.biayapenyimpanan');
         Route::post('/barang/detail', 'detailQuantity')->name('barang.detail');
+        Route::get('/barang/checkrop', 'checkROP')->name('barang.checkROP');
     });
 
     Route::controller(GudangController::class)->group(function () {
