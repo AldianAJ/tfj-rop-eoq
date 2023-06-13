@@ -34,7 +34,11 @@ class UserAuthController extends Controller
         }
 
         if (Auth::guard('user')->attempt(['username' => $request->username, 'password' => $request->password])) {
-            return redirect()->intended('/');
+            if (Auth::guard('user')->user()->role == 'counter') {
+                return redirect()->route('barang');
+            } else {
+                return redirect()->intended('/');
+            }
         } else {
             return redirect()->route('auth')->with('msg', 'Akun tidak ditemukan, periksa kembali username/password Anda');
         }
