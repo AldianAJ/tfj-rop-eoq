@@ -25,7 +25,7 @@
     },
     {
         "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "8",
+        "quantity": "2",
         "tanggal_penjualan": "01/11/2022",
         "counter": "Counter 1"
     },
@@ -463,7 +463,7 @@
     },
     {
         "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "9",
+        "quantity": "5",
         "tanggal_penjualan": "13/11/2022",
         "counter": "Counter 2"
     },
@@ -475,7 +475,7 @@
     },
     {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "4",
+        "quantity": "2",
         "tanggal_penjualan": "13/11/2022",
         "counter": "Counter 3"
     },
@@ -931,7 +931,7 @@
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "2",
+        "quantity": "4",
         "tanggal_penjualan": "24/11/2022",
         "counter": "Counter 2"
     },
@@ -949,7 +949,7 @@
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "1",
+        "quantity": "5",
         "tanggal_penjualan": "25/11/2022",
         "counter": "Counter 3"
     },
@@ -973,7 +973,7 @@
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "1",
+        "quantity": "6",
         "tanggal_penjualan": "26/11/2022",
         "counter": "Counter 1"
     },
@@ -1069,7 +1069,7 @@
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "1",
+        "quantity": "6",
         "tanggal_penjualan": "29/11/2022",
         "counter": "Counter 1"
     },
@@ -1171,7 +1171,7 @@
     },
     {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "9",
+        "quantity": "1",
         "tanggal_penjualan": "30/11/2022",
         "counter": "Counter 3"
     },
@@ -1309,7 +1309,7 @@
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "13",
+        "quantity": "11",
         "tanggal_penjualan": "04/12/2022",
         "counter": "Counter 3"
     },
@@ -1399,7 +1399,7 @@
     },
     {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "1",
+        "quantity": "6",
         "tanggal_penjualan": "06/12/2022",
         "counter": "Counter 3"
     },
@@ -2695,7 +2695,7 @@
     },
     {
         "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "4",
+        "quantity": "8",
         "tanggal_penjualan": "10/01/2023",
         "counter": "Counter 1"
     },
@@ -3433,7 +3433,7 @@
     },
     {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "1",
+        "quantity": "10",
         "tanggal_penjualan": "27/01/2023",
         "counter": "Counter 2"
     },

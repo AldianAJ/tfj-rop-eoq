@@ -58,15 +58,13 @@ class PenjualanController extends Controller
             }
         } elseif ($request->ajax() && !empty($request->type)) {
             if ($user->role == 'gudang' || $user->role == 'owner') {
-                $penjualan = DB::table('penjualans as p')
-                    ->join('detail_penjualans as dp', 'p.penjualan_id', '=', 'dp.penjualan_id')
+                $penjualan = DB::table('detail_penjualans as dp')
+                    ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                     ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                     ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-                    ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
-                    ->join('users as u', 'c.user_id', '=', 'u.user_id')
-                    ->select('p.penjualan_id', 'p.slug', 'u.name', 'p.grand_total', 'p.tanggal_penjualan', 'b.nama_barang', 'dp.quantity', 'dp.subtotal')
-                    ->orderByDesc('p.tanggal_penjualan')
-                    ->orderByDesc('p.penjualan_id')
+                    ->selectRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") as tanggal_penjualan, b.nama_barang, SUM(quantity) as total_penjualan')
+                    ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
+                    ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
                     $html = ' <a href="" class="btn btn-info waves-effect waves-light">'

@@ -24,6 +24,9 @@ return new class extends Migration
                 ->on('counters')->onDelete('cascade');
 
             $table->timestamps();
+            $table->index(['penjualan_id']);
+            $table->index(['counter_id']);
+            $table->index(['tanggal_penjualan']);
         });
     }
 

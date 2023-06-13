@@ -186,13 +186,22 @@
                         columnDefs: [
                             @if ($user->role == 'gudang' || $user->role == 'owner')
                                 {
+                                    "visible": false,
+                                    "targets": 0
+                                }, {
+                                    "visible": false,
+                                    "targets": 1
+                                }, {
+                                    "visible": true,
+                                    "targets": 2
+                                }, {
                                     "visible": true,
                                     "targets": 3
                                 }, {
                                     "visible": true,
                                     "targets": 4
                                 }, {
-                                    "visible": true,
+                                    "visible": false,
                                     "targets": 5
                                 }, {
                                     "visible": false,
@@ -229,22 +238,24 @@
                             }
                         },
                         columns: [{
-                                data: "penjualan_id"
+                                data: null
                             },
                             @if ($user->role == 'gudang' || $user->role == 'owner')
                                 {
-                                    data: "name"
+                                    data: null
                                 },
                             @endif {
                                 data: "tanggal_penjualan",
                                 render: function(data, type, row) {
                                     let date = new Date(data);
+                                    let options = {
+                                        year: "numeric",
+                                        month: "long",
+                                        timeZone: 'Asia/Jakarta'
+                                    };
                                     let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
                                         'id'
-                                    ], {
-                                        dateStyle: 'long',
-                                        timeZone: 'Asia/Jakarta'
-                                    }).format(date);
+                                    ], options).format(date);
                                     return tanggal_penjualan;
                                 }
                             },
@@ -252,22 +263,16 @@
                                 data: "nama_barang"
                             },
                             {
-                                data: "quantity"
+                                data: "total_penjualan"
                             },
                             {
-                                data: "subtotal",
-                                render: function(data, type, row) {
-                                    return rupiah(data);
-                                }
+                                data: null
                             },
                             {
-                                data: "grand_total",
-                                render: function(data, type, row) {
-                                    return rupiah(data);
-                                }
+                                data: null
                             },
                             {
-                                data: "action"
+                                data: null
                             }
                         ],
                     });

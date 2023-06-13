@@ -27,6 +27,8 @@ return new class extends Migration
                 ->on('barang_counters')->onDelete('cascade');
 
             $table->timestamps();
+            $table->index(['penjualan_id']);
+            $table->index(['barang_counter_id']);
         });
     }
 
