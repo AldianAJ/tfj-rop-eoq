@@ -8,6 +8,8 @@ use App\Models\Admin\Penjualan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 class PenjualanController extends Controller
 {
@@ -98,5 +100,74 @@ class PenjualanController extends Controller
         // dd($penjualan_id);
 
         return view('pages.history.penjualan', compact('user'));
+    }
+
+    public function filter(Request $request)
+    {
+        $bulan_tahun = $request->bulan_tahun;
+        $path = 'penjualan';
+        $penjualan = DB::table('detail_penjualans as dp')
+            ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
+            ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
+            ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
+            ->selectRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") as tanggal_penjualan, b.nama_barang, SUM(quantity) as total_penjualan')
+            ->whereRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") = "' . $bulan_tahun . '"')
+            ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
+            ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
+            ->get();
+        return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
+            $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
+                . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+            return $html;
+        })
+            ->rawColumns(['action'])
+            ->make(true);
+    }
+
+    /**
+     * undocumented function summary
+     *
+     * Undocumented function long description
+     *
+     * @param Type $var Description
+     * @return type
+     * @throws conditon
+     **/
+    public function exportPDF(Request $request)
+    {
+        # code...
+        $bulan_tahun = $request->bulan_tahun;
+        $tahun = substr($bulan_tahun, 0, 4);
+        $bulan = substr($bulan_tahun, 5);
+
+        $month = [
+            "01" => "Januari",
+            "02" => "Februari",
+            "03" => "Maret",
+            "04" => "April",
+            "05" => "Mei",
+            "06" => "Juni",
+            "07" => "Juli",
+            "08" => "Agustus",
+            "09" => "September",
+            "10" => "Oktober",
+            "11" => "November",
+            "12" => "Desember",
+        ];
+
+        $title = 'Laporan Penjualan ' . $month[$bulan] . ' ' . $tahun;
+        $tanggal = $month[Carbon::now()->format('m')] . ' ' . Carbon::now()->format('Y');
+        $penjualans = DB::table('detail_penjualans as dp')
+            ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
+            ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
+            ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
+            ->selectRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") as tanggal_penjualan, b.nama_barang, SUM(quantity) as total_penjualan')
+            ->whereRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") = "' . $bulan_tahun . '"')
+            ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
+            ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
+            ->get();
+
+        $pdf = Pdf::loadView('pages.export.penjualan', compact('penjualans', 'title', 'tanggal', 'month'));
+        return $pdf->download($title . ".pdf");
     }
 }

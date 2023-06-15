@@ -52,12 +52,7 @@
                                 '</div>';
                         }
                     }
-                },
-                @if ($user->role == 'gudang')
-                    {
-                        data: "action"
-                    }
-                @endif
+                }
             ],
         });
     </script>
@@ -164,9 +159,6 @@
                                 <th>ROP</th>
                                 <th>Rata-Rata Penjualan</th>
                                 <th>Label</th>
-                                @if ($user->role == 'gudang')
-                                    <th>Action</th>
-                                @endif
                             </tr>
                         </thead>
                         <tbody>

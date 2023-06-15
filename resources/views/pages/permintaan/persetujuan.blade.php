@@ -125,7 +125,9 @@
                                 <select name="sumber" id="sumber" class="form-select" disabled>
                                     <option value="">-- Pilih Sumber --</option>
                                     @foreach ($sumbers as $sumber)
-                                        <option value="{{ $sumber->sumber_id }}">{{ $sumber->nama }}</option>
+                                        @if ($sumber->quantity > 0)
+                                            <option value="{{ $sumber->sumber_id }}">{{ $sumber->nama }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>

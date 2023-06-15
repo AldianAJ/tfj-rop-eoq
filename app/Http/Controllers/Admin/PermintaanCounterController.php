@@ -212,12 +212,12 @@ class PermintaanCounterController extends Controller
         JOIN barang_counters as bc on b.barang_id = bc.barang_id
         JOIN gudangs as g on bg.gudang_id = g.gudang_id
         JOIN counters as c on bc.counter_id = c.counter_id
-        JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.barang_id = "' . $permintaan->barang_id . '" AND (bg.stok_masuk - bg.stok_keluar > "' . $permintaan->jumlah_permintaan . '" or bc.stok_masuk - bc.stok_keluar > "' . $permintaan->jumlah_permintaan . '") and c.counter_id <> "' . $permintaan->counter_id . '"
+        JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id WHERE b.barang_id = "' . $permintaan->barang_id . '" AND (bg.stok_masuk - bg.stok_keluar >= "' . $permintaan->jumlah_permintaan . '" or bc.stok_masuk - bc.stok_keluar >= "' . $permintaan->jumlah_permintaan . '") and c.counter_id <> "' . $permintaan->counter_id . '"
         GROUP BY nama, quantity, sumber_id, nama_barang
         ';
         $sumbers = DB::select($query);
 
-
+        // dd($sumbers);
         return view('pages.permintaan.persetujuan', compact('barang_counter', 'permintaan', 'user', 'sumbers'));
     }
 

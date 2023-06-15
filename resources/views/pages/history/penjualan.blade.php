@@ -33,10 +33,25 @@
             }).format(number);
         }
 
+        $("#filter-month").css("visibility", "hidden");
+        $("#btn-filter").css("visibility", "hidden");
+        $("#wrap-btn-cetak").css("visibility", "hidden");
+
+        let changeButton = (param) => {
+            @if ($user->role == 'gudang' || $user->role == 'owner')
+                if (param == 'ungroup') {
+                    $("#filter-month").css("visibility", "visible");
+                    $("#btn-filter").css("visibility", "visible");
+                    $("#wrap-btn-cetak").css("visibility", "visible");
+                } else {
+                    $("#filter-month").css("visibility", "hidden");
+                    $("#btn-filter").css("visibility", "hidden");
+                    $("#wrap-btn-cetak").css("visibility", "hidden");
+                }
+            @endif
+        }
+
         let mainTable = $('#datatable').DataTable({
-            // order: [
-            //     [2, 'desc']
-            // ],
             "ordering": false,
             columnDefs: [
                 @if ($user->role == 'gudang' || $user->role == 'owner')
@@ -108,7 +123,7 @@
             $(this).on('change', function(e) {
                 $('#datatable').DataTable().clear();
                 $('#datatable').DataTable().destroy();
-                console.log("la");
+                // console.log("la");
                 let type = $(e.target).val();
                 console.log(type);
                 if (type == 'group') {
@@ -277,9 +292,131 @@
                         ],
                     });
                 }
+                changeButton(type);
             });
 
         });
+
+        $('#btn-filter').on('click', function() {
+            let monthYear = $('#month-year').val();
+            $('#datatable').DataTable().clear();
+            $('#datatable').DataTable().destroy();
+            mainTable = $('#datatable').DataTable({
+                "ordering": false,
+                columnDefs: [
+                    @if ($user->role == 'gudang' || $user->role == 'owner')
+                        {
+                            "visible": false,
+                            "targets": 0
+                        }, {
+                            "visible": false,
+                            "targets": 1
+                        }, {
+                            "visible": true,
+                            "targets": 2
+                        }, {
+                            "visible": true,
+                            "targets": 3
+                        }, {
+                            "visible": true,
+                            "targets": 4
+                        }, {
+                            "visible": false,
+                            "targets": 5
+                        }, {
+                            "visible": false,
+                            "targets": 6
+                        }, {
+                            "visible": false,
+                            "targets": 7
+                        }
+                    @else
+                        {
+                            "visible": true,
+                            "targets": 2
+                        }, {
+                            "visible": true,
+                            "targets": 3
+                        }, {
+                            "visible": true,
+                            "targets": 4
+                        }, {
+                            "visible": false,
+                            "targets": 5
+                        }, {
+                            "visible": false,
+                            "targets": 6
+                        },
+                    @endif
+                ],
+                ajax: {
+                    "type": "POST",
+                    "url": "{{ route('penjualan.filter') }}",
+                    "data": {
+                        '_token': "{{ csrf_token() }}",
+                        'bulan_tahun': monthYear
+                    }
+                },
+                columns: [{
+                        data: null
+                    },
+                    @if ($user->role == 'gudang' || $user->role == 'owner')
+                        {
+                            data: null
+                        },
+                    @endif {
+                        data: "tanggal_penjualan",
+                        render: function(data, type, row) {
+                            let date = new Date(data);
+                            let options = {
+                                year: "numeric",
+                                month: "long",
+                                timeZone: 'Asia/Jakarta'
+                            };
+                            let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
+                                'id'
+                            ], options).format(date);
+                            return tanggal_penjualan;
+                        }
+                    },
+                    {
+                        data: "nama_barang"
+                    },
+                    {
+                        data: "total_penjualan"
+                    },
+                    {
+                        data: null
+                    },
+                    {
+                        data: null
+                    },
+                    {
+                        data: null
+                    }
+                ],
+            });
+            $('#bulan_tahun').val(monthYear);
+        });
+
+        // $('#btn-cetak').on('click', function() {
+        //     let monthYear = $('#month-year').val();
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "{{ route('penjualan.exportPDF') }}",
+        //         data: {
+        //             '_token': "{{ csrf_token() }}",
+        //             'bulan_tahun': monthYear
+        //         },
+        //         success: function(response) {
+        //             var blob = new Blob([response]);
+        //             var link = document.createElement('a');
+        //             link.href = window.URL.createObjectURL(blob);
+        //             link.download = "techsolutionstuff.pdf";
+        //             link.click();
+        //         }
+        //     });
+        // });
     </script>
 @endpush
 
@@ -311,19 +448,42 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    <div class="row mb-1 mt-1">
-                        <div class="col d-flex justify-content-center">
+                    <div class="row mb-4 mt-1">
+                        <div class="col-3">
                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                 <input type="radio" class="btn-check" name="btnradio" value="group" id="btnradio4"
                                     autocomplete="off" checked>
-                                <label class="btn btn-outline-primary" for="btnradio4">Kelompokkan</label>
+                                <label class="btn btn-outline-primary" for="btnradio4">Pertransaksi</label>
 
                                 <input type="radio" class="btn-check" name="btnradio" value="ungroup" id="btnradio5"
                                     autocomplete="off">
-                                <label class="btn btn-outline-primary" for="btnradio5">Pisahkan</label>
+                                <label class="btn btn-outline-primary" for="btnradio5">Perbarang</label>
+                            </div>
+                        </div>
+                        <div class="col-5 d-flex justify-content-end" id="filter-month">
+                            <label for="example-month-input" class="col-md-2 col-form-label">Month</label>
+                            <div class="col-md-5">
+                                <input class="form-control" type="month" value="2019-08" id="month-year">
+                            </div>
+                        </div>
+                        <div class="col">
+
+                            <button type="submit" class="btn btn-info" id="btn-filter">Filter</button>
+                        </div>
+
+                        <div class="col" id="wrap-btn-cetak">
+                            <div class="d-flex justify-content-end">
+                                <form action="{{ route('penjualan.exportPDF') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="bulan_tahun" id="bulan_tahun">
+                                    <button class="btn btn-primary waves-effect waves-light" id="btn-cetak">
+                                        <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
+
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
@@ -336,19 +496,15 @@
                                 <th>Quantity</th>
                                 <th>Subtotal</th>
                                 <th>Grand Total</th>
-                                {{-- @if ($user->role == 'gudang') --}}
                                 <th>Action</th>
-                                {{-- @endif --}}
                             </tr>
                         </thead>
-
-
                         <tbody>
                         </tbody>
                     </table>
-
                 </div>
             </div>
-        </div> <!-- end col -->
+        </div>
+    </div> <!-- end col -->
     </div>
 @endsection
