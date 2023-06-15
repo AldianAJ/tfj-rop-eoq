@@ -34,8 +34,8 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+                    $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -51,8 +51,8 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+                    $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -69,8 +69,8 @@ class PenjualanController extends Controller
                     ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+                    $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -89,8 +89,8 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+                    $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -116,8 +116,8 @@ class PenjualanController extends Controller
             ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
             ->get();
         return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-            $html = ' <a href="" class="btn btn-info waves-effect waves-light">'
-                . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
+            $html = ' <button class="btn btn-info waves-effect waves-light btn-detail">'
+                . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
             return $html;
         })
             ->rawColumns(['action'])
@@ -169,5 +169,19 @@ class PenjualanController extends Controller
 
         $pdf = Pdf::loadView('pages.export.penjualan', compact('penjualans', 'title', 'tanggal', 'month'));
         return $pdf->download($title . ".pdf");
+    }
+
+    public function detail(Request $request)
+    {
+        # code...
+        $detail_penjualans = DB::table('detail_penjualans as dp')
+            ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
+            ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
+            ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
+            ->selectRaw('b.nama_barang, b.harga_barang, dp.quantity, dp.subtotal')
+            ->where('p.slug', $request->slug)
+            ->get();
+
+        return DataTables::of($detail_penjualans)->make(true);
     }
 }

@@ -399,24 +399,48 @@
             $('#bulan_tahun').val(monthYear);
         });
 
-        // $('#btn-cetak').on('click', function() {
-        //     let monthYear = $('#month-year').val();
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "{{ route('penjualan.exportPDF') }}",
-        //         data: {
-        //             '_token': "{{ csrf_token() }}",
-        //             'bulan_tahun': monthYear
-        //         },
-        //         success: function(response) {
-        //             var blob = new Blob([response]);
-        //             var link = document.createElement('a');
-        //             link.href = window.URL.createObjectURL(blob);
-        //             link.download = "techsolutionstuff.pdf";
-        //             link.click();
-        //         }
-        //     });
-        // });
+        $('#datatable').on('click', '.btn-detail', function() {
+            let selectedData = '';
+            let slug = '';
+            let indexRow = mainTable.rows().nodes().to$().index($(this).closest('tr'));
+            selectedData = mainTable.row(indexRow).data();
+            slug = selectedData.slug;
+            $("#id-penjualan").text(selectedData.penjualan_id);
+            $('#detail-datatable').DataTable().clear();
+            $('#detail-datatable').DataTable().destroy();
+            $('#detail-datatable').DataTable({
+                ajax: {
+                    "type": "POST",
+                    "url": "{{ route('penjualan.detail') }}",
+                    "data": {
+                        '_token': "{{ csrf_token() }}",
+                        'slug': slug
+                    }
+                },
+                lengthMenu: [5],
+                columns: [{
+                        data: "nama_barang",
+                        name: "nama_barang"
+                    },
+                    {
+                        data: "harga_barang",
+                        render: function(data, type, row) {
+                            return rupiah(data);
+                        }
+                    },
+                    {
+                        data: "quantity",
+                        name: "quantity"
+                    },
+                    {
+                        data: "subtotal",
+                        render: function(data, type, row) {
+                            return rupiah(data);
+                        }
+                    }
+                ],
+            });
+        });
     </script>
 @endpush
 
@@ -506,5 +530,32 @@
             </div>
         </div>
     </div> <!-- end col -->
+    {{-- </div> --}}
+    <div class="modal modal-lg fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail <span id="id-penjualan"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered dt-responsive nowrap w-100" id="detail-datatable">
+                        <thead>
+                            <tr>
+                                <th>Nama Barang</th>
+                                <th>Harga</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

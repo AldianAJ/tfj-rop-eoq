@@ -79,9 +79,10 @@
             }).format(number);
         }
 
-        $('.alert-success').hide();
+        $('.stok').hide();
         $('.alert-warning').hide();
         $('.zero').hide();
+        $('.alert-success').hide();
 
         function viewKeranjangDataTable(paramOne) {
             $('#datatable-keranjang').DataTable().clear();
@@ -183,7 +184,7 @@
             let id_barang = selectedData.barang_id;
             if (jumlah_pembelian > selectedData.quantity) {
                 $('#quantityModal').modal('toggle');
-                $('.alert-warning').show();
+                $('.stok').show();
             } else if (jumlah_pembelian == "") {
                 $('#quantityModal').modal('toggle');
                 $('.zero').show();
@@ -309,7 +310,7 @@
             Transaksi berhasil disimpan
             <button type="button" class="btn-close" aria-label="Close"></button>
         </div>
-        <div class="alert alert-warning alert-dismissible" role="alert">
+        <div class="alert alert-warning alert-dismissible stok" role="alert">
             <i class="mdi mdi-alert-outline me-2"></i>
             Stok barang counter tidak cukup!!
             <button type="button" class="btn-close" aria-label="Close"></button>

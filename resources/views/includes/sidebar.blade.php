@@ -124,7 +124,7 @@
                     <li>
                         <a href="chat.html" class="waves-effect">
                             <i class="bx bx-task"></i>
-                            <span key="t-kasir">Persediaan Masuk</span>
+                            <span key="t-kasir">Pengiriman Counter</span>
                         </a>
                     </li>
                 @endif

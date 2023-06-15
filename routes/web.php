@@ -108,6 +108,7 @@ Route::middleware('user')->group(function () {
     Route::controller(PenjualanController::class)->group(function () {
         Route::get('/penjualan', 'index')->name('penjualan');
         Route::post('/penjualan/filter', 'filter')->name('penjualan.filter');
+        Route::post('/penjualan/detail', 'detail')->name('penjualan.detail');
         Route::post('/penjualan/exportPDF', 'exportPDF')->name('penjualan.exportPDF');
     });
 
