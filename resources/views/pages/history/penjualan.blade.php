@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Transaksi Penjualan
+    History Transaksi Penjualan
 @endsection
 
 @push('before-app-style')
@@ -517,7 +517,7 @@
                                 @endif
                                 <th>Tanggal Penjualan</th>
                                 <th>Nama Barang</th>
-                                <th>Quantity</th>
+                                <th>Total Penjualan</th>
                                 <th>Subtotal</th>
                                 <th>Grand Total</th>
                                 <th>Action</th>

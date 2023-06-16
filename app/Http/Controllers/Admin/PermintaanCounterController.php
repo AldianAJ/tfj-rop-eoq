@@ -144,7 +144,7 @@ class PermintaanCounterController extends Controller
         $details = DB::table('permintaan_counters as a')
             ->join('detail_permintaan_counters as b', 'a.permintaan_counter_id', '=', 'b.permintaan_counter_id')
             ->join('barangs as c', 'b.barang_id', '=', 'c.barang_id')
-            ->select('c.nama_barang as nama', 'jumlah_permintaan as quantity')
+            ->select('c.nama_barang', 'jumlah_permintaan as quantity')
             ->where('a.slug', $slug)
             ->get();
 
@@ -361,4 +361,60 @@ class PermintaanCounterController extends Controller
         session()->forget("temporary_persetujuan");
         return redirect()->route('permintaan-counter');
     }
+
+    public function indexHistory(Request $request)
+    {
+        $user = $this->userAuth();
+        $path = "permintaans";
+        if ($request->ajax()) {
+            if ($user->role == 'gudang' || $user->role == 'owner') {
+                $permintaans = DB::table('permintaan_counters as p')
+                    ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
+                    ->join('users as u', 'c.user_id', '=', 'u.user_id')
+                    ->selectRaw('p.permintaan_counter_id, u.name, p.tanggal_permintaan, p.slug, p.status')
+                    ->where('p.status', 'Diterima/Selesai')
+                    ->orderBy('p.tanggal_permintaan', 'desc')
+                    ->get();
+                return DataTables::of($permintaans)
+                    ->addColumn('action', function ($object) use ($path) {
+                        $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                        $html .= ' <a href="" class="btn btn-primary waves-effect waves-light">'
+                            . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
+                        return $html;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            } else {
+                $counter = DB::table('counters')
+                    ->where('user_id', $user->user_id)
+                    ->first();
+                $permintaans = DB::table('permintaan_counters as p')
+                    ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
+                    ->join('users as u', 'c.user_id', '=', 'u.user_id')
+                    ->selectRaw('p.permintaan_counter_id, u.name, p.tanggal_permintaan, p.slug, p.status')
+                    ->where('c.counter_id', $counter->counter_id)
+                    ->orderBy('p.tanggal_permintaan', 'desc')
+                    ->get();
+                return DataTables::of($permintaans)
+                    ->addColumn('action', function ($object) use ($path) {
+                        $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                        $html .= ' <a href="" class="btn btn-primary waves-effect waves-light">'
+                            . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
+                        return $html;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            }
+        }
+
+        return view('pages.history.permintaan-counter', compact('user'));
+    }
+
+    // public function detailHistory(Request $request)
+    // {
+    //     $permintaan = DB::table('detail_permintaan_counters')
+    //     ->join('')
+    // }
 }

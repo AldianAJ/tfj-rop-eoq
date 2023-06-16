@@ -102,7 +102,7 @@
                 </li>
 
                 <li>
-                    <a href="chat.html" class="waves-effect">
+                    <a href="{{ route('permintaan-counter.history') }}" class="waves-effect">
                         <i class="bx bx-notepad"></i>
                         <span key="t-kasir">Permintaan Counter</span>
                     </a>
