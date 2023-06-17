@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Str;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PermintaanCounterController extends Controller
 {
@@ -365,7 +366,7 @@ class PermintaanCounterController extends Controller
     public function indexHistory(Request $request)
     {
         $user = $this->userAuth();
-        $path = "permintaans";
+        $path = "permintaan-counter";
         if ($request->ajax()) {
             if ($user->role == 'gudang' || $user->role == 'owner') {
                 $permintaans = DB::table('permintaan_counters as p')
@@ -379,7 +380,7 @@ class PermintaanCounterController extends Controller
                     ->addColumn('action', function ($object) use ($path) {
                         $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
                             . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                        $html .= ' <a href="" class="btn btn-primary waves-effect waves-light">'
+                        $html .= ' <a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
                             . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                         return $html;
                     })
@@ -400,8 +401,8 @@ class PermintaanCounterController extends Controller
                     ->addColumn('action', function ($object) use ($path) {
                         $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
                             . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                        $html .= ' <a href="" class="btn btn-primary waves-effect waves-light">'
-                            . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
+                        // $html .= ' <a href="'.route('permintaan-counter.exportPDF',[]).'" class="btn btn-primary waves-effect waves-light">'
+                        //     . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                         return $html;
                     })
                     ->rawColumns(['action'])
@@ -412,9 +413,49 @@ class PermintaanCounterController extends Controller
         return view('pages.history.permintaan-counter', compact('user'));
     }
 
-    // public function detailHistory(Request $request)
-    // {
-    //     $permintaan = DB::table('detail_permintaan_counters')
-    //     ->join('')
-    // }
+    public function exportPDF($slug)
+    {
+        $month = [
+            "01" => "Januari",
+            "02" => "Februari",
+            "03" => "Maret",
+            "04" => "April",
+            "05" => "Mei",
+            "06" => "Juni",
+            "07" => "Juli",
+            "08" => "Agustus",
+            "09" => "September",
+            "10" => "Oktober",
+            "11" => "November",
+            "12" => "Desember",
+        ];
+
+        $tanggal = Carbon::now()->format('d') . ' ' . $month[Carbon::now()->format('m')] . ' ' . Carbon::now()->format('Y');
+
+        $permintaan = DB::table('permintaan_counters as p')
+            ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
+            ->join('users as u', 'c.user_id', '=', 'u.user_id')
+            ->selectRaw('DATE_FORMAT(tanggal_permintaan, "%d-%m-%Y") as tanggal_permintaan, u.name')
+            ->where('p.slug', $slug)
+            ->first();
+
+        $details = DB::table('permintaan_counters as a')
+            ->join('detail_permintaan_counters as b', 'a.permintaan_counter_id', '=', 'b.permintaan_counter_id')
+            ->join('barangs as c', 'b.barang_id', '=', 'c.barang_id')
+            ->select('c.nama_barang', 'jumlah_permintaan as quantity')
+            ->where('a.slug', $slug)
+            ->get();
+
+        $day = substr($permintaan->tanggal_permintaan, 0, 2);
+        $months = substr($permintaan->tanggal_permintaan, 3, 2);
+        $year = substr($permintaan->tanggal_permintaan, 6, 4);
+        $counter = $permintaan->name;
+
+        $title = 'Laporan Permintaan ' . $counter . ' Tanggal ' . $day . ' ' . $month[$months] . ' ' . $year;
+        // dd($title);
+        // $title = 'Laporan Penjualan ' . $month[$bulan] . ' ' . $tahun;
+
+        $pdf = Pdf::loadView('pages.export.permintaan-counter', compact('details', 'title', 'tanggal', 'permintaan'));
+        return $pdf->download($title . ".pdf");
+    }
 }

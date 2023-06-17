@@ -71,7 +71,7 @@
     </center>
     <table width="100%" style="border: 1px solid; border-collapse: collapse; margin-right: 10px;">
         <thead>
-            <th style="border: 1px solid;">Tanggal Penjualan</th>
+            <th style="border: 1px solid;">No</th>
             <th style="border: 1px solid;">Nama Barang</th>
             <th style="border: 1px solid;">Total Terjual</th>
         </thead>
@@ -82,15 +82,19 @@
                 @endphp
                 @foreach ($penjualans as $penjualan)
                     <tr>
-                        {{-- <td style="border: 1px solid; text-align: center;">{{ $no++ }}</td> --}}
-                        <td style="border: 1px solid; text-align: center;">
-                            {{ $month[substr($penjualan->tanggal_penjualan, 5)] . ' ' . substr($penjualan->tanggal_penjualan, 0, 4) }}
+                        <td style="border: 1px solid; text-align: justify;">
+                            {{ $no++ }}
                         </td>
-                        <td style="border: 1px solid; text-align: center;">{{ $penjualan->nama_barang }}</td>
+                        <td style="border: 1px solid; text-align: justify;">{{ $penjualan->nama_barang }}</td>
                         <td style="border: 1px solid; text-align: center;">{{ $penjualan->total_penjualan }}</td>
                     </tr>
                 @endforeach
             @endif
+            <tr>
+                <td colspan="2" style="border: 1px solid; text-align: center; font-weight: 100;">Total Penjualan
+                    Semua Barang</td>
+                <td style="border: 1px solid; text-align: center;">{{ $total->total }}</td>
+            </tr>
         </tbody>
     </table>
     {{-- <table width="500">

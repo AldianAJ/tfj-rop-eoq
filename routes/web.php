@@ -97,6 +97,7 @@ Route::middleware('user')->group(function () {
         Route::post('/permintaan-counter/temp/persetujuan', 'temporaryPersetujuan')->name('permintaan-counter.tmpPersetujuan');
         Route::get('/permintaan-counter/pengiriman/store/{slug}', 'storePengiriman')->name('permintaan-counter.storePersetujuan');
         Route::get('/permintaan-counter/history', 'indexHistory')->name('permintaan-counter.history');
+        Route::get('/permintaan-counter/exportPDF/{slug}', 'exportPDF')->name('permintaan-counter.exportPDF');
     });
 
     Route::controller(PengirimanCounterController::class)->group(function () {

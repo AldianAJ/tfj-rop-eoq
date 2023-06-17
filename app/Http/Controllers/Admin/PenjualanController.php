@@ -156,7 +156,7 @@ class PenjualanController extends Controller
         ];
 
         $title = 'Laporan Penjualan ' . $month[$bulan] . ' ' . $tahun;
-        $tanggal = $month[Carbon::now()->format('m')] . ' ' . Carbon::now()->format('Y');
+        $tanggal = Carbon::now()->format('d') . ' ' . $month[Carbon::now()->format('m')] . ' ' . Carbon::now()->format('Y');
         $penjualans = DB::table('detail_penjualans as dp')
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
@@ -167,7 +167,17 @@ class PenjualanController extends Controller
             ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
             ->get();
 
-        $pdf = Pdf::loadView('pages.export.penjualan', compact('penjualans', 'title', 'tanggal', 'month'));
+        $total = DB::table('detail_penjualans as dp')
+            ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
+            ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
+            ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
+            ->selectRaw('SUM(quantity) as total')
+            ->whereRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") = "' . $bulan_tahun . '"')
+            // ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
+            // ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
+            ->first();
+
+        $pdf = Pdf::loadView('pages.export.penjualan', compact('penjualans', 'title', 'tanggal', 'month', 'total'));
         return $pdf->download($title . ".pdf");
     }
 

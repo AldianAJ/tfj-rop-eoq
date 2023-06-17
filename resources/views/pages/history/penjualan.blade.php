@@ -52,7 +52,7 @@
         }
 
         let mainTable = $('#datatable').DataTable({
-            "ordering": false,
+            // "ordering": false,
             columnDefs: [
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     {
