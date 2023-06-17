@@ -28,11 +28,11 @@ class BarangController extends Controller
 
         if ($user->role == 'gudang' || $user->role == 'owner') {
             if ($request->ajax() && empty($request->target)) {
-                $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
+                $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_awal) + SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_awal) + SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
                 FROM barangs as a
                 JOIN barang_gudangs as b on a.barang_id = b.barang_id
                 JOIN barang_counters as c on a.barang_id = c.barang_id
-                GROUP BY a.barang_id, a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY a.barang_id ASC;";
+                GROUP BY a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY a.barang_id ASC;";
                 $barangs = DB::select($query);
 
                 return DataTables::of($barangs)
@@ -260,7 +260,7 @@ class BarangController extends Controller
         $query = 'SELECT DISTINCT u.name as nama, 
         CASE u.name
         WHEN "' . $gudang->name . '" THEN
-        (bg.stok_masuk - bg.stok_keluar)
+        (bg.stok_awal + bg.stok_masuk - bg.stok_keluar)
         ELSE
         (bc.stok_masuk - bc.stok_keluar)
         END as quantity

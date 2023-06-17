@@ -122,7 +122,7 @@
                     </li>
 
                     <li>
-                        <a href="chat.html" class="waves-effect">
+                        <a href="{{ route('pengiriman-counter.history') }}" class="waves-effect">
                             <i class="bx bx-task"></i>
                             <span key="t-kasir">Pengiriman Counter</span>
                         </a>

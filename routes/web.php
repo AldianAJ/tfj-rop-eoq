@@ -108,6 +108,9 @@ Route::middleware('user')->group(function () {
         Route::get('/pengiriman-counter/detail/{slug}', 'show')->name('pengiriman-counter.detail');
         Route::get('/pengiriman-counter/store/penerimaan/{slug}', 'storePenerimaan')->name('pengiriman-counter.penerimaan');
         Route::get('/pengiriman-counter/keep/counter', 'indexBarangDiambil')->name('pengiriman-counter.barangDiambil');
+        Route::get('/pengiriman-counter/history', 'indexHistory')->name('pengiriman-counter.history');
+        Route::post('/pengiriman-counter/history/detail', 'detailHistory')->name('pengiriman-counter.detailHistory');
+        Route::get('/pengiriman-counter/exportPDF/{slug}', 'exportPDF')->name('pengiriman-counter.exportPDF');
     });
 
     Route::controller(PenjualanController::class)->group(function () {
