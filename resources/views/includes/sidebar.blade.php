@@ -115,7 +115,7 @@
                 </li> --}}
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     <li>
-                        <a href="chat.html" class="waves-effect">
+                        <a href="{{ route('pemesanan.history') }}" class="waves-effect">
                             <i class="bx bx-detail"></i>
                             <span key="t-kasir">Pemesanan Persediaan</span>
                         </a>
