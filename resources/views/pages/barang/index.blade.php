@@ -180,7 +180,7 @@
                 evt.preventDefault();
             }
         });
-        $('.alert-success').hide();
+        $('.alert-penyimpanan').hide();
         $('.alert-warning').hide();
         $('#btn-save').on('click', function() {
             let total_biaya = $('#biaya_penyimpanan').val();

@@ -43,7 +43,7 @@ class BarangController extends Controller
                                 . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i></a>';
                             $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
                                 . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i></a>';
-                            $html .= '<button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
+                            $html .= ' <button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
                                 <i class="bx bx-detail font-size-18 align-middle me-2"></i></button>';
                         } else {
                             $html .= '<button type="button" class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
