@@ -61,10 +61,7 @@
                     }, {
                         "visible": false,
                         "targets": 4
-                    }, {
-                        "visible": false,
-                        "targets": 5
-                    }
+                    },
                 @else
                     {
                         "visible": false,
@@ -104,9 +101,6 @@
                     data: null
                 },
                 {
-                    data: null
-                },
-                {
                     data: "grand_total",
                     render: function(data, type, row) {
                         return rupiah(data);
@@ -127,7 +121,7 @@
                 let type = $(e.target).val();
                 console.log(type);
                 if (type == 'group') {
-                    mainTable = $('#datatable').DataTable({
+                    let mainTable = $('#datatable').DataTable({
                         "ordering": false,
                         columnDefs: [
                             @if ($user->role == 'gudang' || $user->role == 'owner')
@@ -137,10 +131,7 @@
                                 }, {
                                     "visible": false,
                                     "targets": 4
-                                }, {
-                                    "visible": false,
-                                    "targets": 5
-                                }
+                                },
                             @else
                                 {
                                     "visible": false,
@@ -174,9 +165,6 @@
                                     }).format(date);
                                     return tanggal_penjualan;
                                 }
-                            },
-                            {
-                                data: null
                             },
                             {
                                 data: null
@@ -221,26 +209,26 @@
                                 }, {
                                     "visible": false,
                                     "targets": 6
-                                }, {
-                                    "visible": false,
-                                    "targets": 7
                                 }
                             @else
                                 {
+                                    "visible": false,
+                                    "targets": 0
+                                }, {
+                                    "visible": true,
+                                    "targets": 1
+                                }, {
                                     "visible": true,
                                     "targets": 2
                                 }, {
                                     "visible": true,
                                     "targets": 3
                                 }, {
-                                    "visible": true,
+                                    "visible": false,
                                     "targets": 4
                                 }, {
                                     "visible": false,
                                     "targets": 5
-                                }, {
-                                    "visible": false,
-                                    "targets": 6
                                 },
                             @endif
                         ],
@@ -285,10 +273,8 @@
                             },
                             {
                                 data: null
-                            },
-                            {
-                                data: null
                             }
+
                         ],
                     });
                 }
@@ -518,7 +504,6 @@
                                 <th>Tanggal Penjualan</th>
                                 <th>Nama Barang</th>
                                 <th>Total Penjualan</th>
-                                <th>Subtotal</th>
                                 <th>Grand Total</th>
                                 <th>Action</th>
                             </tr>

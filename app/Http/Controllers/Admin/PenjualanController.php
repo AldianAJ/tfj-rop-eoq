@@ -83,10 +83,10 @@ class PenjualanController extends Controller
                     ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
                     ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
                     ->join('users as u', 'c.user_id', '=', 'u.user_id')
-                    ->select('p.penjualan_id', 'p.slug', 'u.name', 'p.grand_total', 'p.tanggal_penjualan', 'b.nama_barang', 'dp.quantity', 'dp.subtotal')
+                    ->selectRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") as tanggal_penjualan, b.nama_barang, SUM(quantity) as total_penjualan')
                     ->where('p.counter_id', $counter->counter_id)
-                    ->orderByDesc('p.tanggal_penjualan')
-                    ->orderByDesc('p.penjualan_id')
+                    ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
+                    ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
                     $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
