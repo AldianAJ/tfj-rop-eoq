@@ -111,6 +111,7 @@ Route::middleware('user')->group(function () {
         Route::get('/pengiriman-counter/history', 'indexHistory')->name('pengiriman-counter.history');
         Route::post('/pengiriman-counter/history/detail', 'detailHistory')->name('pengiriman-counter.detailHistory');
         Route::get('/pengiriman-counter/exportPDF/{slug}', 'exportPDF')->name('pengiriman-counter.exportPDF');
+        Route::get('/pengiriman_counter/update/status/{pengiriman_counter_id}/{barang_id}', 'updateStatus')->name('pengiriman-counter.updateStatus');
     });
 
     Route::controller(PenjualanController::class)->group(function () {

@@ -317,6 +317,7 @@ class PermintaanCounterController extends Controller
                         $detail->jumlah_pengiriman = $temp['jumlah_pengiriman'];
                         $detail->gudang_id = $temp['id_sumber'];
                         $detail->catatan = $temp['catatan'];
+                        $detail->status_pengiriman = 'Dikirim';
                         $detail->save();
                         $barang_gudang = BarangGudang::where('barang_id', $temp['barang_id'])->first();
                         $barang_gudang->stok_keluar += $temp['jumlah_pengiriman'];
@@ -329,6 +330,7 @@ class PermintaanCounterController extends Controller
                         $detail->jumlah_pengiriman = $temp['jumlah_pengiriman'];
                         $detail->counter_id = $temp['id_sumber'];
                         $detail->catatan = $temp['catatan'];
+                        $detail->status_pengiriman = 'Menunggu Dikirim';
                         $detail->save();
                         $barang_counter = BarangCounter::where(['barang_id' => $temp['barang_id'], 'counter_id' => $temp['id_sumber']])->first();
                         $barang_counter->stok_keluar += $temp['jumlah_pengiriman'];

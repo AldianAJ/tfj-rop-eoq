@@ -48,20 +48,18 @@
                     }
                 },
                 {
-                    data: "tanggal_pengiriman",
-                    render: function(data, type, row) {
-                        let date = new Date(data);
-                        let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
-                            'id'
-                        ], {
-                            dateStyle: 'long',
-                            timeZone: 'Asia/Jakarta'
-                        }).format(date);
-                        return tanggal_penjualan;
-                    }
-                },
-                {
                     data: "name"
+                }, {
+                    data: "status_pengiriman",
+                    render: function(data, type, row) {
+                        if (data == 'Menunggu Dikirim') {
+                            return "<a href='/pengiriman_counter/update/status/" + row
+                                .pengiriman_counter_id + "/" + row.barang_id +
+                                "' class='btn btn-primary'>Kirim </a>";
+                        } else {
+                            return '<span class="badge rounded-pill badge-soft-primary font-size-14">Dikirim</span>';
+                        }
+                    }
                 }
             ],
         });
@@ -102,8 +100,9 @@
                                 <th>Nama Barang</th>
                                 <th>Jumlah Dikirim</th>
                                 <th>Tanggal Permintaan</th>
-                                <th>Tanggal Dikirim</th>
+                                {{-- <th>Tanggal Dikirim</th> --}}
                                 <th>Dikirim Ke</th>
+                                <th>Action</th>
                                 {{-- @if ($user->role == 'gudang')
                                     <th>Action</th>
                                 @endif --}}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\BarangCounter;
+use App\Models\Admin\DetailPengirimanCounter;
 use Illuminate\Http\Request;
 use App\Models\Admin\PengirimanCounter;
 use App\Models\Admin\PermintaanCounter;
@@ -93,13 +94,48 @@ class PengirimanCounterController extends Controller
                 ->join('barang_counters as bc', 'b.barang_id', '=', 'bc.barang_id')
                 ->join('counters as c', 'pm.counter_id', '=', 'c.counter_id')
                 ->join('users as u', 'c.user_id', '=', 'u.user_id')
-                ->selectRaw('DISTINCT b.nama_barang, pm.tanggal_permintaan,dp.jumlah_pengiriman, u.name, pg.tanggal_pengiriman')
+                ->selectRaw('DISTINCT pg.pengiriman_counter_id, pm.permintaan_counter_id, b.barang_id, b.nama_barang, pm.tanggal_permintaan, dp.jumlah_pengiriman, u.name, dp.status_pengiriman')
                 ->where('dp.counter_id', $counter->counter_id)
                 ->get();
 
             return DataTables::of($barang_diambil)->make(true);
         }
         return view('pages.history.barang-diambil', compact('user'));
+    }
+
+    public function updateStatus($pengiriman_counter_id, $barang_id)
+    {
+        DB::beginTransaction();
+        try {
+            $detail_pengiriman = DetailPengirimanCounter::where(['pengiriman_counter_id' => $pengiriman_counter_id, 'barang_id' => $barang_id])->first();
+            $detail_pengiriman->status_pengiriman = 'Dikirim';
+            $detail_pengiriman->save();
+
+            $barang_diambil = DB::table('detail_pengiriman_counters as dp')
+                ->join('pengiriman_counters as pg', 'dp.pengiriman_counter_id', '=', 'pg.pengiriman_counter_id')
+                ->join('permintaan_counters as pm', 'pg.permintaan_counter_id', '=', 'pm.permintaan_counter_id')
+                ->join('barangs as b', 'dp.barang_id', '=', 'b.barang_id')
+                ->join('barang_counters as bc', 'b.barang_id', '=', 'bc.barang_id')
+                ->join('counters as c', 'pm.counter_id', '=', 'c.counter_id')
+                ->join('users as u', 'c.user_id', '=', 'u.user_id')
+                ->selectRaw('DISTINCT pg.pengiriman_counter_id, pm.permintaan_counter_id, b.barang_id, b.nama_barang, pm.tanggal_permintaan, dp.jumlah_pengiriman, u.name, dp.status_pengiriman')
+                ->where(['pg.pengiriman_counter_id' => $pengiriman_counter_id, 'dp.persetujuan' => 'setuju', 'dp.status_pengiriman' => 'Menunggu Dikirim'])
+                ->get();
+            // dd($barang_diambil);
+            if (count($barang_diambil) < 1) {
+                // dd($barang_diambil);
+                $pengiriman = DB::table('pengiriman_counters')->where('pengiriman_counter_id', $pengiriman_counter_id)->first();
+                $permintaan = PermintaanCounter::where('permintaan_counter_id', $pengiriman->permintaan_counter_id)->first();
+                $permintaan->status = 'Dikirim';
+                $permintaan->save();
+            }
+            DB::commit();
+            return redirect()->route('pengiriman-counter.barangDiambil');
+        } catch (\Exception $ex) {
+            //throw $th;
+            echo $ex->getMessage();
+            DB::rollBack();
+        }
     }
 
     public function indexHistory(Request $request)

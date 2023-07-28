@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('gudang_id')->nullable();
             $table->string('counter_id')->nullable();
             $table->string('catatan')->nullable();
+            $table->string('status_pengiriman')->nullable();
 
             $table->foreign('pengiriman_counter_id')
                 ->references('pengiriman_counter_id')
