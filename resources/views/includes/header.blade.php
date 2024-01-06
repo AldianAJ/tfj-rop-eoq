@@ -2,23 +2,14 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            <div class="navbar-brand-box">
-                {{-- <a href="index.html" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="assets/images/logo.svg" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17">
-                    </span>
-                </a> --}}
-
+            <div class="navbar-brand-box text center">
                 <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
+                    {{-- <span class="logo-sm">
                         <img src="{{ asset('assets/images/logo-yms.png') }}" alt="" height="50">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo-yms.png') }}" alt="" height="50">
-                        Young Multi Sarana
+                    </span> --}}
+                    <span class="logo-lg fw-bold ">
+                        <img src="{{ asset('assets/images/logo-tfj.png') }}" alt="" height="50">
+                        Toko Fadhil Jaya 
                     </span>
                 </a>
             </div>

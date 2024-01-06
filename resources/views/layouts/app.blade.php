@@ -3,7 +3,7 @@
 
 <head>
     @include('includes.meta')
-    <title>YMS - @yield('title')</title>
+    <title>TFJ - @yield('title')</title>
 
     @stack('before-app-style')
     @include('includes.style')

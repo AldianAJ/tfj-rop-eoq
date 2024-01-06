@@ -1,33 +1,25 @@
 [
     {
-        "name": "Gudang Pusat",
-        "address": "Jl. Kyai Tambak Deres No.229, Kota Surabaya, Jawa Timur",
-        "username": "gudangpusat",
-        "password": "gudangpusat",
+        "name": "Gudang",
+        "address": "Jl. Bulak Rukem Timur 1 No.47, Kota Surabaya, Jawa Timur",
+        "username": "gudang",
+        "password": "gudang",
         "role": "gudang",
         "status": "Active"
     },
     {
         "name": "Counter 1",
-        "address": "Jl. Keputih Tegal No.29, Kota Surabaya, Jawa Timur",
+        "address": "Jl. Bulak Rukem Timur 1 No.47, Kota Surabaya, Jawa Timur",
         "username": "counter1",
-        "password": "counter",
+        "password": "counter1",
         "role": "counter",
         "status": "Active"
     },
     {
         "name": "Counter 2",
-        "address": "Jl. Raya Wiyung No.674, Kota Surabaya, Jawa Timur",
+        "address": "Jl. Bulak Cumpat Barat , Kota Surabaya, Jawa Timur",
         "username": "counter2",
-        "password": "counter",
-        "role": "counter",
-        "status": "Active"
-    },
-    {
-        "name": "Counter 3",
-        "address": "Jl. Rungkut Asri Tengah No.21, Kota Surabaya, Jawa Timur",
-        "username": "counter3",
-        "password": "counter",
+        "password": "counter2",
         "role": "counter",
         "status": "Active"
     },
