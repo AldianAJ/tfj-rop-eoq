@@ -28,11 +28,6 @@ class BarangCounterSeeder extends Seeder
                     $barang_counter->counter_id = $counter->counter_id;
                     $barang_counter->slug = Str::random(16);
                     $barang_counter->barang_id = $data->barang_id;
-                    if ($data->nama_barang == 'Buku Tulis BigBoss Campus 50 Lembar' || $data->nama_barang == 'Buku Tulis Sidu 38 Lembar') {
-                        $barang_counter->stok_masuk = 20;
-                    } else {
-                        $barang_counter->stok_masuk = 15;
-                    }
                     $barang_counter->save();
                     DB::commit();
                 } catch (\Exception $ex) {

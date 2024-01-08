@@ -27,27 +27,7 @@
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
         $('#datatable').DataTable(
-            //     {
-            //     ajax: "{{ route('gudang') }}",
-            //     columns: [{
-            //             data: "gudang_id"
-            //         },
-            //         {
-            //             data: "name"
-            //         },
-            //         {
-            //             data: "address"
-            //         },
-            //         {
-            //             data: "username"
-            //         },
-            //         @if ($user->role == 'gudang')
-            //             {
-            //                 data: "action"
-            //             }
-            //         @endif
-            //     ],
-            // }
+            
         );
     </script>
 @endpush

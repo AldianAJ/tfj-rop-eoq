@@ -156,18 +156,6 @@
                             {
                                 data: "quantity",
                             },
-                            // {
-                            //     data: "rop",
-                            //     name: "rop"
-                            // },
-                            // {
-                            //     data: "qty_total",
-                            //     name: "qty_total"
-                            // },
-                            // {
-                            //     data: "action",
-                            //     name: "action"
-                            // }
                         ],
                     });
                 }
@@ -340,10 +328,6 @@
                                     <input type="radio" class="btn-check" name="btnradio" value="gudang" id="btnradio5"
                                         autocomplete="off">
                                     <label class="btn btn-outline-primary" for="btnradio5">Barang Gudang</label>
-                                    {{-- 
-                                    <input type="radio" class="btn-check" name="btnradio" value="counter" id="btnradio6"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btnradio6">Barang Counter</label> --}}
                                 </div>
                             </div>
 

@@ -39,8 +39,6 @@ class PenjualanSeeder extends Seeder
                 $tahun = Carbon::createFromFormat('d/m/Y', $data->tanggal_penjualan)->format('Y');
                 $tanggal = Carbon::createFromFormat('d/m/Y', $data->tanggal_penjualan)->format('Y-m-d');
                 $penjualan_id = Penjualan::generatePenjualanCounterId($counter->counter_id, $tahun);
-                // echo $barang_counter->barang_counter_id . "\n";
-                // echo $data->nama_barang . "\n";
                 $penjualan_id = Penjualan::generatePenjualanCounterId($counter->counter_id, $tahun);
                 $penjualan = new Penjualan;
                 $penjualan->penjualan_id = $penjualan_id;
@@ -62,43 +60,5 @@ class PenjualanSeeder extends Seeder
             DB::rollBack();
         }
 
-        // foreach ($datas as $data) {
-        //     $counter = DB::table('counters as c')
-        //         ->join('users as u', 'c.user_id', '=', 'u.user_id')
-        //         ->select('c.counter_id')
-        //         ->where('u.name', $data->counter)
-        //         ->first();
-        //     $barang_counter = DB::table('barang_counters as bc')
-        //         ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-        //         ->select('bc.barang_counter_id')
-        //         ->where('b.nama_barang', $data->nama_barang)
-        //         ->first();
-        //     $tahun = substr($data->tanggal_penjualan, 6, 4);
-
-        //     DB::beginTransaction();
-        //     try {
-
-        //         $tanggal = strtotime($data->tanggal_penjualan);
-        //         $penjualan = new Penjualan;
-        //         $penjualan_id = Penjualan::generatePenjualanCounterId($counter->counter_id, $tahun);
-        //         $penjualan->penjualan_id = $penjualan_id;
-        //         $penjualan->slug = Str::random(16);
-        //         $penjualan->counter_id = $counter->counter_id;
-        //         $penjualan->grand_total = $data->subtotal;
-        //         $penjualan->tanggal_penjualan = date('Y-m-d', $tanggal);
-        //         $penjualan->save();
-        //         $detail = new DetailPenjualan;
-        //         $detail->penjualan_id = $penjualan_id;
-        //         $detail->barang_counter_id = $barang_counter->barang_counter_id;
-        //         $detail->quantity = $data->quantity;
-        //         $detail->subtotal = $data->subtotal;
-        //         $detail->save();
-        //         DB::commit();
-        //     } catch (\Exception $ex) {
-        //         //throw $th;
-        //         echo $ex->getMessage();
-        //         DB::rollBack();
-        //     }
-        // }
     }
 }

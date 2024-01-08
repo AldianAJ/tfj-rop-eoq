@@ -42,11 +42,11 @@
                     data: "avg",
                     render: function(data, type, row) {
                         if (parseInt(row.qty_total) <= parseInt(row.rop)) {
-                            return '<div class="alert alert-danger d-flex align-items-center fw-bold" role="alert">Lakukan Pemesanan</div>';
+                            return '<div class="alert alert-danger d-flex align-items-center fw-bold" role="alert"></div>';
                         } else if (parseInt(row.qty_total) <= parseInt(data)) {
-                            return '<div class="alert alert-warning d-flex align-items-center fw-bold" role="alert">Segera Memesan</div>';
+                            return '<div class="alert alert-warning d-flex align-items-center fw-bold" role="alert"></div>';
                         } else {
-                            return '<div class="alert alert-success d-flex align-items-center fw-bold" role="alert">Aman</div>';
+                            return '<div class="alert alert-success d-flex align-items-center fw-bold" role="alert"></div>';
                         }
                     }
                 }

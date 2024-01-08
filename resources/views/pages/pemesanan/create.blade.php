@@ -472,7 +472,7 @@
                 <div class="modal-body">
                     {{-- <label for="nama_barang" class="form-label font-weight-bold" id="nama-barang"></label> --}}
                     <input class="form-control" type="text" value="" id="biaya_pemesanan"
-                        placeholder="Masukkan Total Biaya Penyimpanan">
+                        placeholder="Masukkan Biaya Pemesanan">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>

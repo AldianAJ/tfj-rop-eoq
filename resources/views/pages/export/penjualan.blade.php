@@ -33,26 +33,16 @@
     <center>
         <table width="100%">
             <tr>
-                <td><img src="{{ public_path('assets/images/logo-yms.png') }}" width="100%" height="130"></td>
+                <td><img src="{{ public_path('assets/images/logo-tfj.png') }}" width="100%" height="130"></td>
                 <td style="padding-right: 4rem;">
                     <center>
-                        <font size="6"><b>PT Young Multi Sarana</b></font><br>
-                        <font size="3">Jl. Kyai Tambak Deres No.229, Bulak, Kec. Bulak, Surabaya, Jawa Timur 60124
+                        <font size="6"><b>Toko Fadhil Jaya</b></font><br>
+                        <font size="3">Jl. Bulak Rukem Timur I No.47, Bulak, Kec. Bulak, Surabaya, Jawa Timur
+                            60134
                         </font>
                     </center>
                 </td>
-                {{-- <td></td> --}}
             </tr>
-            {{-- <tr>
-                <td colspan="2">
-                    <hr>
-                </td>
-            </tr> --}}
-            {{-- <table width="500">
-                <tr>
-                    <td class="text2">Jember, 16 mei 2019</td>
-                </tr>
-            </table> --}}
         </table>
         <hr>
 
@@ -97,59 +87,6 @@
             </tr>
         </tbody>
     </table>
-    {{-- <table width="500">
-            <tr>
-                <td>
-                    <font size="2">Kpd yth.<br>Siswa Smk Baitul Hikmah kelas x<br>Di tempat</font>
-                </td>
-            </tr>
-        </table>
-        <br> --}}
-    {{-- <table width="520">
-            <tr>
-                <td>
-                    <font size="2">Assalamu'alaikum wr.wb<br>Dalam rangka praktikum simulasi digital yg jatuh pada
-                        tanggal 16 mei 2019
-                        Siswa smk baitul hikmah <b>kelas X</b> akan mengadakan peraktikum, jadi di harapkan siswa di
-                        minta hadir
-                        pada tempat yang sudah di siapkan.</font>
-                </td>
-            </tr>
-        </table>
-        <br>
-        </table>
-        <table>
-            <tr class="text2">
-                <td>Hari Tanggal</td>
-                <td width="520">: <b>Selasa/16 mei 2019</b></td>
-            </tr>
-            <tr>
-                <td>Jam</td>
-                <td width="520">: 08:30</td>
-            </tr>
-            <tr>
-                <td>Tempat</td>
-                <td width="520">: Ruang lap komputer</td>
-            </tr>
-        </table>
-        <br>
-        <table width="520">
-            <tr>
-                <td>
-                    <font size="2">Diharapkan atas kehadiranya, Demikian surat ini di sampaikan, atas perhatian
-                        dan kerjasamanya kami
-                        ucapkan terima kasih.<br><br>Wassalamu'alaikum wr.wb.
-                    </font>
-                </td>
-            </tr>
-        </table>
-        <br> --}}
-    {{-- <table width="520">
-            <tr>
-                <td width="430"><br><br><br><br></td>
-                <td class="text" align="center">Wali kelas<br><br><br><br>Bpk Fauzy.s.kom</td>
-            </tr>
-        </table> --}}
 
 </body>
 

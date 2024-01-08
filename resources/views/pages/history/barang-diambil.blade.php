@@ -100,16 +100,10 @@
                                 <th>Nama Barang</th>
                                 <th>Jumlah Dikirim</th>
                                 <th>Tanggal Permintaan</th>
-                                {{-- <th>Tanggal Dikirim</th> --}}
                                 <th>Dikirim Ke</th>
                                 <th>Action</th>
-                                {{-- @if ($user->role == 'gudang')
-                                    <th>Action</th>
-                                @endif --}}
                             </tr>
                         </thead>
-
-
                         <tbody>
                         </tbody>
                     </table>

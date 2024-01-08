@@ -33,15 +33,15 @@
     <center>
         <table width="100%">
             <tr>
-                <td><img src="{{ public_path('assets/images/logo-yms.png') }}" width="100%" height="130"></td>
+                <td><img src="{{ public_path('assets/images/logo-tfj.png') }}" width="100%" height="130"></td>
                 <td style="padding-right: 4rem;">
                     <center>
-                        <font size="6"><b>PT Young Multi Sarana</b></font><br>
-                        <font size="3">Jl. Kyai Tambak Deres No.229, Bulak, Kec. Bulak, Surabaya, Jawa Timur 60124
+                        <font size="6"><b>Toko Fadhil Jaya</b></font><br>
+                        <font size="3">Jl. Bulak Rukem Timur I No.47, Bulak, Kec. Bulak, Surabaya, Jawa Timur
+                            60134
                         </font>
                     </center>
                 </td>
-                {{-- <td></td> --}}
             </tr>
         </table>
         <hr>

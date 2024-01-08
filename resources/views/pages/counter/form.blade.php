@@ -1,7 +1,4 @@
 <h4 class="card-title">Form @yield('title')</h4>
-{{-- <p class="card-title-desc">Here are examples of <code>.form-control</code> applied to_counter
-    each
-    textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p> --}}
 
 <div class="mt-4 mb-3 row">
     <label for="id_counter" class="col-md-2 col-form-label">ID Counter</label>

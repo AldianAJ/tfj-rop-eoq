@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-3 d-grid">
-                                        <button class="btn btn-dark waves-effect waves-light" type="submit">Log
+                                        <button class="btn btn-success waves-effect waves-light" type="submit">Log
                                             In</button>
                                     </div>
 

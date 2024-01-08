@@ -80,44 +80,6 @@ class PemesananController extends Controller
         dd($eoq);
     }
 
-    // public function createNewPersediaan(Request $request)
-    // {
-
-    //     // $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
-    //     //         FROM barangs as a
-    //     //         JOIN barang_gudangs as b on a.barang_id = b.barang_id
-    //     //         JOIN barang_counters as c on a.barang_id = c.barang_id
-    //     //         WHERE ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) < 1
-    //     //         GROUP BY a.barang_id, a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY a.barang_id ASC;";
-    //     // $barangs = DB::select($query);
-    //     // dd($barangs);
-
-
-    //     if ($request->ajax()) {
-    //         $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
-    //             FROM barangs as a
-    //             JOIN barang_gudangs as b on a.barang_id = b.barang_id
-    //             JOIN barang_counters as c on a.barang_id = c.barang_id
-    //             WHERE ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) < 1
-    //             GROUP BY a.barang_id, a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY a.barang_id ASC;";
-    //         $barangs = DB::select($query);
-    //         return DataTables::of($barangs)
-    //             ->addColumn('action', function ($object) {
-    //                 $html = '<button class="btn btn-success waves-effect waves-light btn-add" data-bs-toggle="modal"' .
-    //                     'data-bs-target="#jumlahModal"><i class="bx bx-plus-circle align-middle font-size-18"></i></button>';
-    //                 return $html;
-    //             })
-    //             ->rawColumns(['action'])
-    //             ->make(true);
-    //     }
-    //     return view('pages.pemesanan.create-new-persediaan', compact('user'));
-    // }
-
-    // public function storeNewPersediaan(Request $request)
-    // {
-    //     # code...
-    // }
-
     public function create(Request $request)
     {
         $user = $this->userAuth();
@@ -275,7 +237,6 @@ class PemesananController extends Controller
             array_push($detail_persetujuans, $temp);
         }
 
-        // dd($detail_persetujuans);
         return view('pages.pemesanan.detail', compact('user', 'pemesanan', 'details', 'detail_persetujuans'));
     }
 

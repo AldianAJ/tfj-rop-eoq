@@ -82,7 +82,7 @@ class BarangController extends Controller
                 $query = 'SELECT a.barang_counter_id as barang_id, b.nama_barang, b.harga_barang, a.slug, (a.stok_masuk-a.stok_keluar) as quantity
                 FROM barang_counters as a
                 JOIN barangs as b on a.barang_id = b.barang_id
-                WHERE a.counter_id = "' . $counters->counter_id  . '" ORDER BY a.barang_counter_id ASC';
+                WHERE a.counter_id = "' . $counters->counter_id . '" ORDER BY a.barang_counter_id ASC';
                 $barangs = DB::select($query);
                 return DataTables::of($barangs)->make(true);
             }
@@ -239,12 +239,10 @@ class BarangController extends Controller
 
         DB::beginTransaction();
         try {
-            //code... 
             DB::table('barangs')->update(array('biaya_penyimpanan' => $biaya_penyimpanan_perunit));
             DB::commit();
             return response()->json([], 200);
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
