@@ -2,12 +2,9 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            <div class="navbar-brand-box text center">
+            <div class="navbar-brand-box text center bg-dark">
                 <a href="index.html" class="logo logo-light">
-                    {{-- <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo-yms.png') }}" alt="" height="50">
-                    </span> --}}
-                    <span class="logo-lg fw-bold ">
+                    <span class="logo-lg fw-bold text-light">
                         <img src="{{ asset('assets/images/logo-tfj.png') }}" alt="" height="50">
                         Toko Fadhil Jaya 
                     </span>

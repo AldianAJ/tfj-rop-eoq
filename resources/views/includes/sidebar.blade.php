@@ -1,6 +1,6 @@
 <div class="vertical-menu">
 
-    <div data-simplebar class="h-100">
+    <div data-simplebar class="h-100 bg-dark">
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -67,12 +67,6 @@
                             <span key="t-permintaan">Permintaan Counter</span>
                         </a>
                     </li>
-                    {{-- <li>
-                        <a href="chat.html" class="waves-effect">
-                            <i class="bx bxs-truck"></i>
-                            <span key="t-pengiriman">Pengiriman Counter</span>
-                        </a>
-                    </li> --}}
                 @endif
 
                 @if ($user->role == 'gudang' || $user->role == 'owner')
@@ -107,12 +101,6 @@
                         <span key="t-kasir">Permintaan Counter</span>
                     </a>
                 </li>
-                {{-- <li>
-                    <a href="chat.html" class="waves-effect">
-                        <i class="bx bx-book-content"></i>
-                        <span key="t-kasir">Pengiriman Counter</span>
-                    </a>
-                </li> --}}
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     <li>
                         <a href="{{ route('pemesanan.history') }}" class="waves-effect">

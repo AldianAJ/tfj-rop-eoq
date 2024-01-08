@@ -79,7 +79,6 @@
             console.log(selectedData);
             slug = selectedData.slug;
             if (selectedData.status == 'Dikirim') {
-                // $('#detailModal').modal('toggle');
                 window.location = '/pengiriman-counter/detail/' + slug;
             } else if (selectedData.status == 'Pending') {
                 $("#id_permintaan").text(selectedData.permintaan_id);

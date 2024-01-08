@@ -50,7 +50,6 @@
                             }).format(date);
                             return tanggal_penjualan;
                         }
-
                     }
                 },
                 {

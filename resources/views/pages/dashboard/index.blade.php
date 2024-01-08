@@ -87,12 +87,6 @@
                                     <p class="text-muted mb-2">Total Jenis Barang</p>
                                     <h5 class="mb-0">{{ $jumlah_jenis }}</h5>
                                 </div>
-
-                                {{-- <div class="avatar-sm ms-auto">
-                                    <div class="avatar-title bg-light rounded-circle text-primary font-size-20">
-                                        <i class="bx bxs-book-bookmark"></i>
-                                    </div>
-                                </div> --}}
                             </div>
 
                         </div>
