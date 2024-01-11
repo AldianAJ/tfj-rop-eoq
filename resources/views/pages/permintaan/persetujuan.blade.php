@@ -133,14 +133,6 @@
                             </div>
                         </div>
 
-                        {{-- <div class="mt-4 mb-3 row">
-                            <label for="harga_barang" class="col-md-2 col-form-label">Jumlah Pengiriman</label>
-                            <div class="col-md-10">
-                                <input class="form-control" type="text" id="jumlah_pengiriman" name="jumlah_pengiriman"
-                                    disabled>
-                            </div>
-                        </div> --}}
-
                         <div class="mt-4 mb-3 row">
                             <label for="harga_barang" class="col-md-2 col-form-label">Catatan</label>
                             <div class="col-md-10">

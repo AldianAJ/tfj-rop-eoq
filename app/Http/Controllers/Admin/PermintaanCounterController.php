@@ -68,7 +68,6 @@ class PermintaanCounterController extends Controller
                 $path = 'permintaan-counter';
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
-                        // ' . route($path . ".confirm", ["slug" => $object->slug]) . '
                         $html = '';
                         if ($object->status == 'Pending') {
                             $html = ' <a href="' . route($path . '.detailByGudang', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">'
@@ -403,8 +402,6 @@ class PermintaanCounterController extends Controller
                     ->addColumn('action', function ($object) use ($path) {
                         $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
                             . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                        // $html .= ' <a href="'.route('permintaan-counter.exportPDF',[]).'" class="btn btn-primary waves-effect waves-light">'
-                        //     . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                         return $html;
                     })
                     ->rawColumns(['action'])
@@ -454,8 +451,6 @@ class PermintaanCounterController extends Controller
         $counter = $permintaan->name;
 
         $title = 'Laporan Permintaan ' . $counter . ' Tanggal ' . $day . ' ' . $month[$months] . ' ' . $year;
-        // dd($title);
-        // $title = 'Laporan Penjualan ' . $month[$bulan] . ' ' . $tahun;
 
         $pdf = Pdf::loadView('pages.export.permintaan-counter', compact('details', 'title', 'tanggal', 'permintaan'));
         return $pdf->download($title . ".pdf");

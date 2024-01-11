@@ -36,18 +36,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "9",
-        "tanggal_penjualan": "01/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "quantity": "6",
-        "tanggal_penjualan": "01/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Serutan Pensil Meja Joyko (A5M)",
         "quantity": "15",
         "tanggal_penjualan": "01/11/2022",
@@ -90,12 +78,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "3",
-        "tanggal_penjualan": "02/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
         "quantity": "8",
         "tanggal_penjualan": "02/11/2022",
@@ -112,12 +94,6 @@
         "quantity": "6",
         "tanggal_penjualan": "02/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Papan Tulis Kapur Mini",
-        "quantity": "1",
-        "tanggal_penjualan": "02/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
@@ -174,18 +150,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "13",
-        "tanggal_penjualan": "04/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "8",
-        "tanggal_penjualan": "05/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
         "quantity": "13",
         "tanggal_penjualan": "05/11/2022",
@@ -210,18 +174,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "2",
-        "tanggal_penjualan": "06/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
-        "quantity": "2",
-        "tanggal_penjualan": "06/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Steadtler",
         "quantity": "4",
         "tanggal_penjualan": "06/11/2022",
@@ -232,18 +184,6 @@
         "quantity": "20",
         "tanggal_penjualan": "06/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "quantity": "17",
-        "tanggal_penjualan": "06/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "9",
-        "tanggal_penjualan": "07/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Steadtler",
@@ -264,12 +204,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "5",
-        "tanggal_penjualan": "08/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Joyko",
         "quantity": "2",
         "tanggal_penjualan": "08/11/2022",
@@ -312,28 +246,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "15",
-        "tanggal_penjualan": "09/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "8",
-        "tanggal_penjualan": "09/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil Warna Faber Castell 48 Classic",
         "quantity": "3",
         "tanggal_penjualan": "09/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
-        "quantity": "1",
-        "tanggal_penjualan": "09/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Joyko",
@@ -342,22 +258,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "4",
-        "tanggal_penjualan": "09/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
         "quantity": "6",
         "tanggal_penjualan": "09/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "16",
-        "tanggal_penjualan": "10/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
@@ -376,12 +280,6 @@
         "quantity": "9",
         "tanggal_penjualan": "10/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "quantity": "9",
-        "tanggal_penjualan": "10/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
@@ -450,12 +348,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "12",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
         "quantity": "6",
         "tanggal_penjualan": "13/11/2022",
@@ -474,12 +366,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "2",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Kertas Faber Castell",
         "quantity": "5",
         "tanggal_penjualan": "13/11/2022",
@@ -498,40 +384,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "4",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
-        "quantity": "2",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "quantity": "2",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Cair Joyko (JK-01)",
         "quantity": "7",
         "tanggal_penjualan": "13/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "quantity": "2",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Papan Tulis Kapur Mini",
-        "quantity": "1",
-        "tanggal_penjualan": "13/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
@@ -564,40 +420,16 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Penghapus Pensil Steadtler",
-        "quantity": "5",
-        "tanggal_penjualan": "14/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Cair Joyko (JK-01)",
         "quantity": "1",
         "tanggal_penjualan": "14/11/2022",
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "6",
-        "tanggal_penjualan": "14/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "9",
-        "tanggal_penjualan": "14/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
         "quantity": "2",
         "tanggal_penjualan": "15/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "2",
-        "tanggal_penjualan": "15/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
@@ -610,18 +442,6 @@
         "quantity": "2",
         "tanggal_penjualan": "16/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "5",
-        "tanggal_penjualan": "16/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "5",
-        "tanggal_penjualan": "16/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Serutan Pensil Meja Joyko (A5M)",
@@ -642,42 +462,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "5",
-        "tanggal_penjualan": "17/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "3",
-        "tanggal_penjualan": "17/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "17/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "9",
-        "tanggal_penjualan": "17/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
-        "quantity": "2",
-        "tanggal_penjualan": "17/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "8",
-        "tanggal_penjualan": "17/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
         "quantity": "2",
         "tanggal_penjualan": "17/11/2022",
@@ -690,28 +474,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "10",
-        "tanggal_penjualan": "18/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
         "quantity": "20",
         "tanggal_penjualan": "18/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "18/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "4",
-        "tanggal_penjualan": "18/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Map Plastik Snelhecter",
@@ -724,12 +490,6 @@
         "quantity": "10",
         "tanggal_penjualan": "18/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "5",
-        "tanggal_penjualan": "18/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Steadtler",
@@ -750,22 +510,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "3",
-        "tanggal_penjualan": "18/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Joyko",
         "quantity": "7",
         "tanggal_penjualan": "19/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "3",
-        "tanggal_penjualan": "19/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
@@ -778,24 +526,6 @@
         "quantity": "1",
         "tanggal_penjualan": "19/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "7",
-        "tanggal_penjualan": "19/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "3",
-        "tanggal_penjualan": "19/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "9",
-        "tanggal_penjualan": "20/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
@@ -822,24 +552,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "6",
-        "tanggal_penjualan": "20/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "4",
-        "tanggal_penjualan": "20/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "1",
-        "tanggal_penjualan": "21/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
         "quantity": "2",
         "tanggal_penjualan": "22/11/2022",
@@ -850,12 +562,6 @@
         "quantity": "6",
         "tanggal_penjualan": "22/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "3",
-        "tanggal_penjualan": "22/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
@@ -874,12 +580,6 @@
         "quantity": "9",
         "tanggal_penjualan": "22/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
-        "quantity": "9",
-        "tanggal_penjualan": "22/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Spidol White Board Snowman Warna",
@@ -936,22 +636,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "quantity": "9",
-        "tanggal_penjualan": "24/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
         "quantity": "1",
         "tanggal_penjualan": "24/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "5",
-        "tanggal_penjualan": "25/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Spidol White Board Snowman Warna",
@@ -964,12 +652,6 @@
         "quantity": "5",
         "tanggal_penjualan": "25/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "8",
-        "tanggal_penjualan": "26/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
@@ -996,24 +678,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "9",
-        "tanggal_penjualan": "26/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "11",
-        "tanggal_penjualan": "26/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "2",
-        "tanggal_penjualan": "26/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
         "quantity": "5",
         "tanggal_penjualan": "26/11/2022",
@@ -1032,22 +696,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "9",
-        "tanggal_penjualan": "27/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Penghapus Pensil Joyko",
         "quantity": "15",
         "tanggal_penjualan": "27/11/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "15",
-        "tanggal_penjualan": "28/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Spidol White Board Snowman Warna",
@@ -1075,12 +727,6 @@
     },
     {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "11",
-        "tanggal_penjualan": "29/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
         "quantity": "6",
         "tanggal_penjualan": "29/11/2022",
         "counter": "Counter 1"
@@ -1092,28 +738,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "3",
-        "tanggal_penjualan": "29/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "12",
-        "tanggal_penjualan": "29/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
         "quantity": "5",
         "tanggal_penjualan": "29/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "2",
-        "tanggal_penjualan": "29/11/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
@@ -1152,52 +780,16 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "5",
-        "tanggal_penjualan": "29/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
-        "quantity": "6",
-        "tanggal_penjualan": "29/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
         "quantity": "5",
         "tanggal_penjualan": "30/11/2022",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "1",
-        "tanggal_penjualan": "30/11/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "1",
-        "tanggal_penjualan": "30/11/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
         "quantity": "6",
         "tanggal_penjualan": "30/11/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "3",
-        "tanggal_penjualan": "01/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "7",
-        "tanggal_penjualan": "01/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Steadtler",
@@ -1224,12 +816,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "7",
-        "tanggal_penjualan": "02/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Faber Castell",
         "quantity": "15",
         "tanggal_penjualan": "02/12/2022",
@@ -1240,12 +826,6 @@
         "quantity": "3",
         "tanggal_penjualan": "02/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "2",
-        "tanggal_penjualan": "02/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Steadtler",
@@ -1260,12 +840,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "1",
-        "tanggal_penjualan": "02/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
         "quantity": "2",
         "tanggal_penjualan": "03/12/2022",
@@ -1276,18 +850,6 @@
         "quantity": "18",
         "tanggal_penjualan": "03/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
-        "quantity": "6",
-        "tanggal_penjualan": "03/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "12",
-        "tanggal_penjualan": "03/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Faber Castell",
@@ -1306,12 +868,6 @@
         "quantity": "8",
         "tanggal_penjualan": "03/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "11",
-        "tanggal_penjualan": "04/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
@@ -1344,24 +900,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "4",
-        "tanggal_penjualan": "04/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "quantity": "1",
-        "tanggal_penjualan": "04/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "8",
-        "tanggal_penjualan": "05/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Joyko",
         "quantity": "5",
         "tanggal_penjualan": "05/12/2022",
@@ -1380,52 +918,16 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "10",
-        "tanggal_penjualan": "05/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
         "quantity": "6",
         "tanggal_penjualan": "05/12/2022",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "5",
-        "tanggal_penjualan": "06/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "6",
-        "tanggal_penjualan": "06/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
         "quantity": "6",
         "tanggal_penjualan": "06/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "4",
-        "tanggal_penjualan": "06/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "9",
-        "tanggal_penjualan": "06/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
-        "quantity": "10",
-        "tanggal_penjualan": "06/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
@@ -1446,40 +948,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "14",
-        "tanggal_penjualan": "07/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Cair Faber Castell",
         "quantity": "8",
         "tanggal_penjualan": "07/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Papan Tulis Kapur Mini",
-        "quantity": "1",
-        "tanggal_penjualan": "07/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "3",
-        "tanggal_penjualan": "07/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "4",
-        "tanggal_penjualan": "08/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "16",
-        "tanggal_penjualan": "08/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil 2B Joyko",
@@ -1494,40 +966,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "7",
-        "tanggal_penjualan": "08/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "3",
-        "tanggal_penjualan": "08/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "quantity": "9",
-        "tanggal_penjualan": "08/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
         "quantity": "5",
         "tanggal_penjualan": "09/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "20",
-        "tanggal_penjualan": "09/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "5",
-        "tanggal_penjualan": "09/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
@@ -1546,12 +988,6 @@
         "quantity": "10",
         "tanggal_penjualan": "09/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "6",
-        "tanggal_penjualan": "09/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Joyko",
@@ -1576,12 +1012,6 @@
         "quantity": "8",
         "tanggal_penjualan": "10/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "11",
-        "tanggal_penjualan": "10/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
@@ -1651,33 +1081,15 @@
     },
     {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "5",
-        "tanggal_penjualan": "13/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
         "quantity": "9",
         "tanggal_penjualan": "13/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "7",
-        "tanggal_penjualan": "13/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
         "quantity": "6",
         "tanggal_penjualan": "13/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "2",
-        "tanggal_penjualan": "13/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
@@ -1696,12 +1108,6 @@
         "quantity": "1",
         "tanggal_penjualan": "13/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "3",
-        "tanggal_penjualan": "14/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
@@ -1728,12 +1134,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "quantity": "2",
-        "tanggal_penjualan": "14/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Spidol White Board Snowman Warna",
         "quantity": "9",
         "tanggal_penjualan": "15/12/2022",
@@ -1746,40 +1146,16 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "2",
-        "tanggal_penjualan": "15/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil Warna Faber Castell 48 Classic",
         "quantity": "1",
         "tanggal_penjualan": "15/12/2022",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "1",
-        "tanggal_penjualan": "16/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "12",
-        "tanggal_penjualan": "16/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Spidol White Board Snowman Warna",
         "quantity": "3",
         "tanggal_penjualan": "16/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "18",
-        "tanggal_penjualan": "16/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil Warna Faber Castell 48 Classic",
@@ -1798,30 +1174,6 @@
         "quantity": "5",
         "tanggal_penjualan": "16/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "9",
-        "tanggal_penjualan": "17/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "1",
-        "tanggal_penjualan": "17/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "5",
-        "tanggal_penjualan": "17/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "2",
-        "tanggal_penjualan": "17/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
@@ -1866,12 +1218,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "7",
-        "tanggal_penjualan": "18/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
         "quantity": "1",
         "tanggal_penjualan": "18/12/2022",
@@ -1882,12 +1228,6 @@
         "quantity": "3",
         "tanggal_penjualan": "18/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "8",
-        "tanggal_penjualan": "18/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
@@ -1950,12 +1290,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "4",
-        "tanggal_penjualan": "21/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
         "quantity": "15",
         "tanggal_penjualan": "21/12/2022",
@@ -1974,12 +1308,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
-        "quantity": "1",
-        "tanggal_penjualan": "21/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Map Plastik Snelhecter",
         "quantity": "8",
         "tanggal_penjualan": "21/12/2022",
@@ -1992,28 +1320,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "15",
-        "tanggal_penjualan": "22/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "8",
-        "tanggal_penjualan": "22/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Cair Faber Castell",
         "quantity": "8",
         "tanggal_penjualan": "22/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "7",
-        "tanggal_penjualan": "22/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
@@ -2052,34 +1362,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "24/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "2",
-        "tanggal_penjualan": "24/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
         "quantity": "1",
         "tanggal_penjualan": "24/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "1",
-        "tanggal_penjualan": "24/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "24/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
@@ -2104,12 +1390,6 @@
         "quantity": "6",
         "tanggal_penjualan": "24/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "2",
-        "tanggal_penjualan": "25/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
@@ -2136,12 +1416,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Serutan Pensil Meja Joyko (A5M)",
-        "quantity": "6",
-        "tanggal_penjualan": "25/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
         "quantity": "1",
         "tanggal_penjualan": "25/12/2022",
@@ -2158,12 +1432,6 @@
         "quantity": "3",
         "tanggal_penjualan": "26/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "5",
-        "tanggal_penjualan": "26/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
@@ -2196,22 +1464,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "4",
-        "tanggal_penjualan": "27/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Spidol White Board Snowman Warna",
         "quantity": "2",
         "tanggal_penjualan": "27/12/2022",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "11",
-        "tanggal_penjualan": "27/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
@@ -2226,22 +1482,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "12",
-        "tanggal_penjualan": "28/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Spidol Permanen Snowman G-12",
         "quantity": "9",
         "tanggal_penjualan": "28/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "quantity": "5",
-        "tanggal_penjualan": "28/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Steadtler",
@@ -2254,12 +1498,6 @@
         "quantity": "2",
         "tanggal_penjualan": "29/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "2",
-        "tanggal_penjualan": "29/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Cair Faber Castell",
@@ -2278,12 +1516,6 @@
         "quantity": "8",
         "tanggal_penjualan": "29/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "1",
-        "tanggal_penjualan": "29/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
@@ -2322,36 +1554,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "1",
-        "tanggal_penjualan": "30/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "1",
-        "tanggal_penjualan": "30/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "1",
-        "tanggal_penjualan": "30/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Steadtler",
-        "quantity": "6",
-        "tanggal_penjualan": "30/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "1",
-        "tanggal_penjualan": "30/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Spidol White Board Snowman Warna",
         "quantity": "5",
         "tanggal_penjualan": "31/12/2022",
@@ -2364,34 +1566,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "31/12/2022",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
         "quantity": "5",
         "tanggal_penjualan": "31/12/2022",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "5",
-        "tanggal_penjualan": "31/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "quantity": "4",
-        "tanggal_penjualan": "31/12/2022",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "5",
-        "tanggal_penjualan": "31/12/2022",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Tipe-X Kertas Faber Castell",
@@ -2430,28 +1608,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "4",
-        "tanggal_penjualan": "02/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Spidol White Board Snowman Warna",
         "quantity": "5",
         "tanggal_penjualan": "02/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "6",
-        "tanggal_penjualan": "02/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "8",
-        "tanggal_penjualan": "02/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Joyko",
@@ -2464,12 +1624,6 @@
         "quantity": "2",
         "tanggal_penjualan": "03/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "15",
-        "tanggal_penjualan": "03/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
@@ -2490,12 +1644,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "quantity": "4",
-        "tanggal_penjualan": "03/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
         "quantity": "7",
         "tanggal_penjualan": "04/01/2023",
@@ -2514,46 +1662,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "7",
-        "tanggal_penjualan": "04/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Serutan Pensil Meja Joyko (A5M)",
-        "quantity": "9",
-        "tanggal_penjualan": "04/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Penghapus Pensil Steadtler",
         "quantity": "7",
         "tanggal_penjualan": "04/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "6",
-        "tanggal_penjualan": "05/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
-        "quantity": "1",
-        "tanggal_penjualan": "05/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "8",
-        "tanggal_penjualan": "05/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "quantity": "2",
-        "tanggal_penjualan": "05/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
@@ -2574,12 +1686,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "9",
-        "tanggal_penjualan": "06/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Penghapus Pensil Steadtler",
         "quantity": "9",
         "tanggal_penjualan": "06/01/2023",
@@ -2602,18 +1708,6 @@
         "quantity": "12",
         "tanggal_penjualan": "07/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "2",
-        "tanggal_penjualan": "07/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "6",
-        "tanggal_penjualan": "07/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
@@ -2640,12 +1734,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "13",
-        "tanggal_penjualan": "09/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Penghapus Pensil Steadtler",
         "quantity": "7",
         "tanggal_penjualan": "09/01/2023",
@@ -2664,12 +1752,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "quantity": "10",
-        "tanggal_penjualan": "09/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Penghapus Pensil Joyko",
         "quantity": "2",
         "tanggal_penjualan": "09/01/2023",
@@ -2686,12 +1768,6 @@
         "quantity": "1",
         "tanggal_penjualan": "10/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
-        "quantity": "9",
-        "tanggal_penjualan": "10/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Faber Castell",
@@ -2730,18 +1806,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "5",
-        "tanggal_penjualan": "11/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "10",
-        "tanggal_penjualan": "11/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Faber Castell",
         "quantity": "4",
         "tanggal_penjualan": "11/01/2023",
@@ -2764,18 +1828,6 @@
         "quantity": "2",
         "tanggal_penjualan": "11/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
-        "quantity": "2",
-        "tanggal_penjualan": "11/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "quantity": "8",
-        "tanggal_penjualan": "11/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
@@ -2790,30 +1842,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "quantity": "1",
-        "tanggal_penjualan": "12/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "quantity": "1",
-        "tanggal_penjualan": "12/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "10",
-        "tanggal_penjualan": "12/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "3",
-        "tanggal_penjualan": "12/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Cair Faber Castell",
         "quantity": "4",
         "tanggal_penjualan": "12/01/2023",
@@ -2826,22 +1854,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "6",
-        "tanggal_penjualan": "12/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
         "quantity": "5",
         "tanggal_penjualan": "13/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "5",
-        "tanggal_penjualan": "13/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Spidol White Board Snowman Warna",
@@ -2886,30 +1902,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "13/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "3",
-        "tanggal_penjualan": "14/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "7",
-        "tanggal_penjualan": "14/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
-        "quantity": "5",
-        "tanggal_penjualan": "14/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
         "quantity": "6",
         "tanggal_penjualan": "14/01/2023",
@@ -2920,12 +1912,6 @@
         "quantity": "9",
         "tanggal_penjualan": "14/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "4",
-        "tanggal_penjualan": "15/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
@@ -2940,12 +1926,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "9",
-        "tanggal_penjualan": "16/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
         "quantity": "2",
         "tanggal_penjualan": "16/01/2023",
@@ -2958,40 +1938,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "7",
-        "tanggal_penjualan": "16/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Papan Tulis Kapur Mini",
         "quantity": "1",
         "tanggal_penjualan": "16/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "3",
-        "tanggal_penjualan": "17/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "5",
-        "tanggal_penjualan": "17/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "quantity": "4",
-        "tanggal_penjualan": "17/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "3",
-        "tanggal_penjualan": "17/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Spidol White Board Snowman Warna",
@@ -3004,18 +1954,6 @@
         "quantity": "9",
         "tanggal_penjualan": "17/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "quantity": "2",
-        "tanggal_penjualan": "18/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "6",
-        "tanggal_penjualan": "18/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil 2B Faber Castell",
@@ -3042,22 +1980,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "18/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
         "quantity": "3",
         "tanggal_penjualan": "18/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "15",
-        "tanggal_penjualan": "19/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Faber Castell True Gel 0.7",
@@ -3096,12 +2022,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil 2B Steadtler",
-        "quantity": "6",
-        "tanggal_penjualan": "19/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
         "quantity": "10",
         "tanggal_penjualan": "19/01/2023",
@@ -3118,12 +2038,6 @@
         "quantity": "1",
         "tanggal_penjualan": "20/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Steadtler",
-        "quantity": "6",
-        "tanggal_penjualan": "20/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil 2B Faber Castell",
@@ -3150,22 +2064,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "2",
-        "tanggal_penjualan": "22/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Tipe-X Kertas Joyko (CT508)",
         "quantity": "5",
         "tanggal_penjualan": "22/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "7",
-        "tanggal_penjualan": "22/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
@@ -3192,18 +2094,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "quantity": "10",
-        "tanggal_penjualan": "22/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "7",
-        "tanggal_penjualan": "23/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Faber Castell",
         "quantity": "2",
         "tanggal_penjualan": "23/01/2023",
@@ -3220,12 +2110,6 @@
         "quantity": "7",
         "tanggal_penjualan": "23/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "8",
-        "tanggal_penjualan": "23/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Serutan Pensil Meja Joyko (A5M)",
@@ -3264,12 +2148,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "6",
-        "tanggal_penjualan": "24/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
         "quantity": "2",
         "tanggal_penjualan": "24/01/2023",
@@ -3294,12 +2172,6 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Pensil 2B Joyko",
-        "quantity": "8",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Buku Tulis Sidu 38 Lembar",
         "quantity": "5",
         "tanggal_penjualan": "25/01/2023",
@@ -3318,34 +2190,10 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "4",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "quantity": "1",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "quantity": "2",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Faber Castell",
         "quantity": "3",
         "tanggal_penjualan": "25/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
-        "quantity": "6",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
@@ -3354,28 +2202,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "quantity": "11",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "quantity": "9",
-        "tanggal_penjualan": "25/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Map Plastik Snelhecter",
         "quantity": "9",
         "tanggal_penjualan": "25/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "quantity": "2",
-        "tanggal_penjualan": "26/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
@@ -3384,34 +2214,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "quantity": "2",
-        "tanggal_penjualan": "26/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "quantity": "7",
-        "tanggal_penjualan": "26/01/2023",
-        "counter": "Counter 3"
-    },
-    {
-        "nama_barang": "Papan Tulis Kapur Mini",
-        "quantity": "2",
-        "tanggal_penjualan": "26/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Penghapus Pensil Faber Castell",
         "quantity": "10",
         "tanggal_penjualan": "26/01/2023",
         "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "quantity": "9",
-        "tanggal_penjualan": "26/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Penghapus Pensil Joyko",
@@ -3474,12 +2280,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Map Plastik Snelhecter",
-        "quantity": "7",
-        "tanggal_penjualan": "28/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pensil 2B Steadtler",
         "quantity": "13",
         "tanggal_penjualan": "28/01/2023",
@@ -3492,12 +2292,6 @@
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "quantity": "1",
-        "tanggal_penjualan": "29/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
         "quantity": "1",
         "tanggal_penjualan": "29/01/2023",
@@ -3508,12 +2302,6 @@
         "quantity": "3",
         "tanggal_penjualan": "29/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "2",
-        "tanggal_penjualan": "29/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Spidol White Board Snowman Warna",
@@ -3552,22 +2340,10 @@
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "quantity": "1",
-        "tanggal_penjualan": "30/01/2023",
-        "counter": "Counter 3"
-    },
-    {
         "nama_barang": "Pulpen Standard AE7 Gel 0.5",
         "quantity": "2",
         "tanggal_penjualan": "30/01/2023",
         "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "quantity": "1",
-        "tanggal_penjualan": "31/01/2023",
-        "counter": "Counter 3"
     },
     {
         "nama_barang": "Map Plastik Snelhecter",

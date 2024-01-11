@@ -31,7 +31,7 @@
                         <div class="p-3 out-simple">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    <h6 class="m-0" key="t-notifications">Notifications </h6>
                                 </div>
                             </div>
                         </div>

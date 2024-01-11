@@ -14,6 +14,7 @@ use App\Models\Admin\DetailPemesanan;
 use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
 
+
 class PemesananController extends Controller
 {
 
@@ -198,7 +199,7 @@ class PemesananController extends Controller
             ->first();
 
         $subdate = Carbon::createFromFormat('d-m-Y', '01' . "-" . $bulan_tahun->bulan)->format('Y-m-d H:i:s');
-        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDay($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
+        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDays($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
         $avg_date = DB::table('pemesanans as p')
             ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
             ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')
@@ -237,6 +238,7 @@ class PemesananController extends Controller
             array_push($detail_persetujuans, $temp);
         }
 
+        // dd($detail_persetujuans);
         return view('pages.pemesanan.detail', compact('user', 'pemesanan', 'details', 'detail_persetujuans'));
     }
 
@@ -263,7 +265,7 @@ class PemesananController extends Controller
                 ->first();
 
             $subdate = Carbon::createFromFormat('d-m-Y', '01' . "-" . $bulan_tahun->bulan)->format('Y-m-d H:i:s');
-            $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDay($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
+            $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDays($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
             $avg_date = DB::table('pemesanans as p')
                 ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
                 ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')
@@ -363,7 +365,7 @@ class PemesananController extends Controller
             ->first();
 
         $subdate = Carbon::createFromFormat('d-m-Y', '01' . "-" . $bulan_tahun->bulan)->format('Y-m-d H:i:s');
-        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDay($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
+        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDays($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
         $avg_date = DB::table('pemesanans as p')
             ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
             ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')
@@ -441,7 +443,7 @@ class PemesananController extends Controller
             ->first();
 
         $subdate = Carbon::createFromFormat('d-m-Y', '01' . "-" . $bulan_tahun->bulan)->format('Y-m-d H:i:s');
-        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDay($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
+        $lastdate = Carbon::createFromFormat('d-m-Y H:i:s', '01' . "-" . $bulan_tahun->bulan . " 00:00:00")->addDays($this->jumlahHari($bulan_tahun->bulan))->format('Y-m-d H:i:s');
         $avg_date = DB::table('pemesanans as p')
             ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
             ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')

@@ -80,7 +80,6 @@
             $('#datatable-pemesanan').DataTable().clear();
             $('#datatable-pemesanan').DataTable().destroy();
             if (paramOne.length > 0) {
-                // $('#grandTotal').text(rupiah(grandTotal));
                 return $('#datatable-pemesanan').DataTable({
                     lengthMenu: [5, 10, 20, 50, 100],
                     data: paramOne,
@@ -150,7 +149,6 @@
             let id_barang = selectedData.barang_id;
             changeBarangAfterAddKasir(id_barang);
             pemesananDatatable = viewPemesananDataTable(pemesanan);
-            // console.log(pemesanan);
         });
 
         $('#btn-save-add').on('click', function(e) {
@@ -203,62 +201,6 @@
             pemesananDatatable = viewPemesananDataTable(pemesanan);
         });
 
-        // $('.check-eoq').each(function(index, element) {
-        //     // element == this
-        //     $(this).click(function(el) {
-        //         if ($(this).prop('checked') == true) {
-        //             // tkiCheck.push($(this).val());
-        //             // noCheck.push($(this).closest('tr').find('.no').html());
-        //             alert($(this).closest('tr'));
-        //         } else {
-        //             // let indexTkiCheck = tkiCheck.indexOf($(this).val());
-        //             // let indexNoCheck = noCheck.indexOf($(this).closest('tr').find('.no').html());
-        //             // tkiCheck.splice(indexTkiCheck, 1);
-        //             // noCheck.splice(indexNoCheck, 1);
-        //             alert($(this).closest('tr'));
-        //         }
-        //         propHitung();
-        //     });
-        // });
-
-        // $('#datatable-pemesanan').on('click', '.check-eoq', function() {
-        //     let indexRow = pemesananDatatable.rows().nodes().to$().index($(this).closest('tr'));
-        //     if ($(this).prop('checked') == true) {
-        //         // $(this).attr('checked');
-        //         pemesanan[indexRow].jumlah = pemesanan[indexRow].eoq;
-        //         // selectedKeranjang = '';
-        //         // selectedKeranjang = pemesananDatatable.row(indexRow).data();
-        //         // pemesanan[indexRow].eoq;S
-        //         // console.log(pemesanan[indexRow].eoq);
-        //         // console.log(indexRow + " checked");
-        //         pemesananDatatable = viewPemesananDataTable(pemesanan);
-        //     } else {
-        //         pemesanan[indexRow].jumlah = 0;
-        //         // console.log(pemesanan[indexRow].eoq);
-        //         // console.log(indexRow + " unchecked");
-        //         pemesananDatatable = viewPemesananDataTable(pemesanan);
-        //     }
-
-        // });
-
-        // $('.check-eoq').each(function(index, element) {
-        //     // element == this
-        //     $(this).on('click', function(e) {
-        //         let indexRow = pemesananDatatable.rows().nodes().to$().index($(this).closest('tr'));
-        //         if ($(this).prop('checked') == true) {
-        //             selectedKeranjang = '';
-        //             selectedKeranjang = pemesananDatatable.row(indexRow).data();
-        //             console.log(selectedData);
-        //         } else {
-        //             // let indexTkiCheck = tkiCheck.indexOf($(this).val());
-        //             // let indexNoCheck = noCheck.indexOf($(this).closest('tr').find('.no').html());
-        //             // tkiCheck.splice(indexTkiCheck, 1);
-        //             // noCheck.splice(indexNoCheck, 1);
-        //             console.log(0);
-        //         }
-        //     });
-        // });
-
         $('.btn-close').on('click', function() {
             $('.alert').hide();
         });
@@ -279,35 +221,6 @@
                         $('.alert-success').show();
                         pemesananDatatable = viewPemesananDataTable(pemesanan);
                         $('#biaya').text('');
-                        // mainTable.clear();
-                        // mainTable.destroy();
-                        // mainTable = $('#datatable').DataTable({
-                        //     lengthMenu: [5, 10, 20, 50, 100],
-                        //     ajax: "{{ route('kasir') }}",
-                        //     "columnDefs": [{
-                        //         className: "nama-barang",
-                        //         "targets": [1]
-                        //     }],
-                        //     columns: [{
-                        //             data: 'barang_counter_id',
-                        //             name: 'ID Barang'
-                        //         },
-                        //         {
-                        //             data: 'nama_barang',
-                        //             name: 'Nama Barang'
-                        //         },
-                        //         {
-                        //             data: 'quantity',
-                        //             name: 'Quantity'
-                        //         },
-                        //         {
-                        //             data: 'action',
-                        //             name: 'action',
-                        //             orderable: false,
-                        //             searchable: false
-                        //         },
-                        //     ]
-                        // });
                     }
                 });
             }
@@ -428,7 +341,6 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>EOQ</th>
-                                {{-- <th>Pilih EOQ</th> --}}
                                 <th>Jumlah Pemesanan</th>
                                 <th>Action</th>
                             </tr>
@@ -470,7 +382,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    {{-- <label for="nama_barang" class="form-label font-weight-bold" id="nama-barang"></label> --}}
                     <input class="form-control" type="text" value="" id="biaya_pemesanan"
                         placeholder="Masukkan Biaya Pemesanan">
                 </div>

@@ -25,15 +25,12 @@ class PersediaanMasukController extends Controller
 
     public function jumlahHari($bulan_tahun)
     {
-        # code...
         $jumlah = date('t', strtotime("06-2023" . "01"));
         return $jumlah;
     }
 
     public function hitung()
     {
-        // $persediaan_masuk_id = PersediaanMasuk::generatePersediaanMasukId();
-        // dd($persediaan_masuk_id);
         $bulan_tahun = DB::table('penjualans')
             ->selectRaw('DATE_FORMAT(MAX(tanggal_penjualan),"%m-%Y") as bulan')
             ->whereRaw('DATE_FORMAT(tanggal_penjualan, "%m-%Y") < DATE_FORMAT(now(), "%m-%Y")')
@@ -46,7 +43,7 @@ class PersediaanMasukController extends Controller
             ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
             ->whereRaw("b.barang_id = '" . $barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
         $now = Carbon::now();
-        $subdate = Carbon::now()->subDay(7);
+        $subdate = Carbon::now()->subDays(7);
         $avg_date = DB::table('pemesanans as p')
             ->join('persediaan_masuks as pm', 'p.pemesanan_id', '=', 'pm.pemesanan_id')
             ->selectRaw('round(avg(DATEDIFF( pm.tanggal_persediaan_masuk, p.tanggal_pemesanan))) as lead_time')

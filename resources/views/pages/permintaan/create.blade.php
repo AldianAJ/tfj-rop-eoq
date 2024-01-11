@@ -219,13 +219,6 @@
             <button type="button" class="btn-close" aria-label="Close"></button>
         </div>
         <div class="col-6">
-            {{-- @if (session()->has('msg'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-check-all me-2"></i>
-                    {{ session('msg') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif --}}
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">Data Barang</h4>
@@ -245,13 +238,6 @@
             </div>
         </div>
         <div class="col-6">
-            {{-- @if (session()->has('msg'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-check-all me-2"></i>
-                    {{ session('msg') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif --}}
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">List Permintaan Barang</h4>

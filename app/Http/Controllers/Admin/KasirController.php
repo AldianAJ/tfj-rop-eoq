@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
+
 class KasirController extends Controller
 {
     public function userAuth()
@@ -79,7 +80,6 @@ class KasirController extends Controller
             DB::commit();
             return response()->json([], 200);
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }

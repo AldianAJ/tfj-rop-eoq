@@ -37,9 +37,7 @@
                 <td style="padding-right: 4rem;">
                     <center>
                         <font size="6"><b>Toko Fadhil Jaya</b></font><br>
-                        <font size="3">Jl. Bulak Rukem Timur I No.47, Bulak, Kec. Bulak, Surabaya, Jawa Timur
-                            60134
-                        </font>
+                        <font size="3">Jl. Bulak Rukem Timur I No.47, Bulak, Kec. Bulak, Surabaya, Jawa Timur</font>
                     </center>
                 </td>
             </tr>

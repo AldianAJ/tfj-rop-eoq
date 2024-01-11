@@ -25,6 +25,7 @@ class BarangGudangSeeder extends Seeder
                 $barang_gudang->barang_gudang_id = $barang_gudang_id;
                 $barang_gudang->slug = Str::random(16);
                 $barang_gudang->barang_id = $data->barang_id;
+                $barang_gudang->gudang_id = 'G00001';
                 $barang_gudang->save();
                 DB::commit();
             } catch (\Exception $ex) {

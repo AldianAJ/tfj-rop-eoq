@@ -11,6 +11,7 @@ use Yajra\DataTables\DataTables;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 
+
 class PenjualanController extends Controller
 {
 
@@ -124,15 +125,6 @@ class PenjualanController extends Controller
             ->make(true);
     }
 
-    /**
-     * undocumented function summary
-     *
-     * Undocumented function long description
-     *
-     * @param Type $var Description
-     * @return type
-     * @throws conditon
-     **/
     public function exportPDF(Request $request)
     {
         # code...
@@ -173,8 +165,6 @@ class PenjualanController extends Controller
             ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
             ->selectRaw('SUM(quantity) as total')
             ->whereRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") = "' . $bulan_tahun . '"')
-            // ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
-            // ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
             ->first();
 
         $pdf = Pdf::loadView('pages.export.penjualan', compact('penjualans', 'title', 'tanggal', 'month', 'total'));

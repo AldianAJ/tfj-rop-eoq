@@ -39,6 +39,7 @@ class PenjualanSeeder extends Seeder
                 $tahun = Carbon::createFromFormat('d/m/Y', $data->tanggal_penjualan)->format('Y');
                 $tanggal = Carbon::createFromFormat('d/m/Y', $data->tanggal_penjualan)->format('Y-m-d');
                 $penjualan_id = Penjualan::generatePenjualanCounterId($counter->counter_id, $tahun);
+                
                 $penjualan_id = Penjualan::generatePenjualanCounterId($counter->counter_id, $tahun);
                 $penjualan = new Penjualan;
                 $penjualan->penjualan_id = $penjualan_id;
