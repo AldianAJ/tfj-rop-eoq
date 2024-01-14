@@ -257,9 +257,6 @@
                                     "targets": [2]
                                 },
                             ],
-                            // order: [
-                            //     [1, 'desc']
-                            // ],
                             columns: [{
                                     data: 'barang_counter_id',
                                     name: 'ID Barang'

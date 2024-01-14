@@ -178,7 +178,6 @@ class BarangController extends Controller
             DB::commit();
             return redirect()->route('barang')->with('msg', 'Data barang baru berhasil ditambahkan');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -208,7 +207,6 @@ class BarangController extends Controller
             DB::commit();
             return redirect()->route('barang')->with('msg', 'Data barang berhasil di ubah');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -222,7 +220,6 @@ class BarangController extends Controller
             DB::commit();
             return redirect(route('barang'))->with('msg', 'Data barang berhasil dihapus');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -291,7 +288,6 @@ class BarangController extends Controller
         ];
 
         $result = (object) $result;
-        // dd($result);
 
         return response()->json($result, 200);
     }

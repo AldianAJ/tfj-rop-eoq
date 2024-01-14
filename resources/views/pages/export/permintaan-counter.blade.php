@@ -7,56 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
     <style type="text/css">
-        table {
-            border-style: double;
-            border-width: 3px;
-            border-color: white;
+        body {
+            font-family: "source_sans_proregular", Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
         }
-
-        table tr .text2 {
-            text-align: right;
-            font-size: 13px;
-        }
-
-        table tr .text {
-            text-align: center;
-            font-size: 13px;
-        }
-
         table tr td {
-            font-size: 13px;
+            font-size: 12px;
         }
     </style>
 </head>
 
 <body>
     <center>
-        <table width="100%">
-            <tr>
-                <td><img src="{{ public_path('assets/images/logo-tfj.png') }}" width="100%" height="100"></td>
-                <td style="padding-right: 4rem;">
-                    <center>
-                        <font size="6"><b>Toko Fadhil Jaya</b></font><br>
-                        <font size="2">Jl. Bulak Rukem Timur I No.47, Bulak, Kec. Bulak, Surabaya, Jawa Timur</font>
-                    </center>
-                </td>
-            </tr>
-        </table>
-        <hr>
-
-        <table style="margin-top: 30px;">
-            <tr class="text2">
-                <td>Tanggal Cetak</td>
-                <td>: {{ $tanggal }}</td>
-            </tr>
-            <tr>
-                <td>Perihal</td>
-                <td>: Laporan Permintaan</td>
-            </tr>
-        </table>
-        <br>
         <h3>{{ $title }}</h3>
     </center>
+    <table width="100%">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td rowspan="3" style="width: 10%"><img src="{{ public_path('assets/images/logo-tfj.png') }}"
+                                width="70" height="70"></td>
+                        <td style="width: 40%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 40%" ><b>Toko Fadhil Jaya <span style="display: inline-block; margin-right: 43%"></span> Jl. Bulak Rukem Timur I No.47, Bulak, Surabaya, Jawa Timur</b></td>
+                    </tr>
+                    <tr>
+                        <td style="width= 40%"></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width:30%"></td>
+            <td style="width:30%">
+                <table>
+                    <tr>
+                        <td>Tanggal Cetak</td>
+                        <td>: {{ $tanggal }}</td>
+                    </tr>
+                    <tr>
+                        <td>Perihal</td>
+                        <td>: Laporan Permintaan</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
     <table width="100%" style="border: 1px solid; border-collapse: collapse; margin-right: 10px;">
         <thead>
             <th style="border: 1px solid;">Nama Barang</th>
@@ -69,7 +64,7 @@
                 @endphp
                 @foreach ($details as $detail)
                     <tr>
-                        <td style="border: 1px solid; text-align: center;">{{ $detail->nama_barang }}</td>
+                        <td style="border: 1px solid; text-align: left;">{{ $detail->nama_barang }}</td>
                         <td style="border: 1px solid; text-align: center;">{{ $detail->quantity }}</td>
                     </tr>
                 @endforeach

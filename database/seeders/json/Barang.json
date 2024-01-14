@@ -1,102 +1,223 @@
 [
     {
-        "nama_barang": "Pensil 2B Faber Castell",
-        "harga_barang": "4000"
+        "nama_barang": "Beras Lopo IJo 25kg",
+        "harga_barang": "360000"
     },
     {
-        "nama_barang": "Pensil 2B Steadtler",
-        "harga_barang": "3750"
+        "nama_barang": "Beras Raja Lele 25kg",
+        "harga_barang": "330000"
     },
     {
-        "nama_barang": "Pensil 2B Joyko",
-        "harga_barang": "3000"
+        "nama_barang": "Beras Pak Tani 25kg",
+        "harga_barang": "350000"
     },
     {
-        "nama_barang": "Penghapus Pensil Faber Castell",
-        "harga_barang": "2700"
+        "nama_barang": "Beras Mangga 25kg",
+        "harga_barang": "275000"
     },
     {
-        "nama_barang": "Penghapus Pensil Steadtler",
-        "harga_barang": "2500"
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "harga_barang": "75000"
     },
     {
-        "nama_barang": "Penghapus Pensil Joyko",
-        "harga_barang": "1000"
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "harga_barang": "45000"
     },
     {
-        "nama_barang": "Pulpen Faber Castell True Gel 0.7",
-        "harga_barang": "6000"
+        "nama_barang": "Gula 50kg",
+        "harga_barang": "650000"
     },
     {
-        "nama_barang": "Pulpen Pena Joyko GP-291 Master Gel 0.7 mm",
-        "harga_barang": "5500"
+        "nama_barang": "Minyak Sania 2ltr",
+        "harga_barang": "210000"
     },
     {
-        "nama_barang": "Pulpen Standard AE7 Gel 0.5",
-        "harga_barang": "3500"
+        "nama_barang": "Minyak Sunco 2ltr",
+        "harga_barang": "231000"
     },
     {
-        "nama_barang": "Tipe-X Cair Joyko (JK-01)",
-        "harga_barang": "3500"
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "harga_barang": "216000"
     },
     {
-        "nama_barang": "Tipe-X Cair Faber Castell",
-        "harga_barang": "3750"
+        "nama_barang": "Mie Sedap Goreng",
+        "harga_barang": "140000"
     },
     {
-        "nama_barang": "Tipe-X Kertas Joyko (CT508)",
-        "harga_barang": "6000"
+        "nama_barang": "Mie Indomie Goreng",
+        "harga_barang": "140000"
     },
     {
-        "nama_barang": "Tipe-X Kertas Faber Castell",
-        "harga_barang": "7500"
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "harga_barang": "140000"
     },
     {
-        "nama_barang": "Pensil Warna Faber Castell 48 Classic",
-        "harga_barang": "99000"
+        "nama_barang": "Mie Sedap Soto",
+        "harga_barang": "140000"
     },
     {
-        "nama_barang": "Pensil Warna Staedtler Luna 24 Warna Ukuran Panjang",
-        "harga_barang": "57000"
+        "nama_barang": "Tepung Tapioka Rose Brand 25kg",
+        "harga_barang": "250000"
     },
     {
-        "nama_barang": "Rautan Pensil Tong 1 Lubang Joyko (B-167)",
-        "harga_barang": "2000"
+        "nama_barang": "Tepung Terigu Payung 25kg",
+        "harga_barang": "275000"
     },
     {
-        "nama_barang": "Serutan Pensil Meja Joyko (A5M)",
-        "harga_barang": "48000"
+        "nama_barang": "Tepung Beras Rose Brand 500gr",
+        "harga_barang": "150000"
     },
     {
-        "nama_barang": "Buku Tulis Sidu 38 Lembar",
-        "harga_barang": "4500"
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "harga_barang": "160000"
     },
     {
-        "nama_barang": "Buku Tulis BigBoss Campus 50 Lembar",
-        "harga_barang": "6000"
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "harga_barang": "108000"
     },
     {
-        "nama_barang": "Double Tape 12MM 1/2INCH Joyko",
-        "harga_barang": "3500"
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "harga_barang": "84000"
     },
     {
-        "nama_barang": "Papan Tulis 60 x 100 cm Whiteboard - MDF",
-        "harga_barang": "90000"
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "harga_barang": "46000"
     },
     {
-        "nama_barang": "Papan Tulis Kapur Mini",
-        "harga_barang": "26000"
+        "nama_barang": "Garam Kapal 250gr",
+        "harga_barang": "120000"
     },
     {
-        "nama_barang": "Spidol Permanen Snowman G-12",
-        "harga_barang": "9000"
+        "nama_barang": "Micin Sasa 30gr",
+        "harga_barang": "40000"
     },
     {
-        "nama_barang": "Spidol White Board Snowman Warna",
-        "harga_barang": "8500"
+        "nama_barang": "Masako Sapi 8,5gr",
+        "harga_barang": "360000"
     },
     {
-        "nama_barang": "Map Plastik Snelhecter",
-        "harga_barang": "2500"
+        "nama_barang": "Masako Ayam 8,5gr",
+        "harga_barang": "360000"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "harga_barang": "288000"
+    },
+    {
+        "nama_barang": "Royco Ayam 8,5gr",
+        "harga_barang": "288000"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "harga_barang": "360000"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "harga_barang": "576000"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "harga_barang": "432000"
+    },
+    {
+        "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
+        "harga_barang": "432000"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 170ml",
+        "harga_barang": "432000"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "harga_barang": "480000"
+    },
+    {
+        "nama_barang": "Molto 780ml",
+        "harga_barang": "144000"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "harga_barang": "720000"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "harga_barang": "600000"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "harga_barang": "216000"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "harga_barang": "204000"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "harga_barang": "96000"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "harga_barang": "204000"
+    },
+    {
+        "nama_barang": "Vixal 755ml",
+        "harga_barang": "216000"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "harga_barang": "210000"
+    },
+    {
+        "nama_barang": "Sabun Giv 76g",
+        "harga_barang": "216000"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "harga_barang": "216000"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "harga_barang": "216000"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "harga_barang": "150000"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "harga_barang": "150000"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "harga_barang": "288000"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "harga_barang": "360000"
+    },
+    {
+        "nama_barang": "Saus ABC 135ml",
+        "harga_barang": "336000"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "harga_barang": "208000"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "harga_barang": "360000"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "harga_barang": "222000"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "harga_barang": "220000"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "harga_barang": "220000"
     }
+
 ]

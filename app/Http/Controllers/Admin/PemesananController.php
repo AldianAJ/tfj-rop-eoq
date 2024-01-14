@@ -238,7 +238,6 @@ class PemesananController extends Controller
             array_push($detail_persetujuans, $temp);
         }
 
-        // dd($detail_persetujuans);
         return view('pages.pemesanan.detail', compact('user', 'pemesanan', 'details', 'detail_persetujuans'));
     }
 
