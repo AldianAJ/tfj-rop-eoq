@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    History Pengiriman Counter
+    History Pengiriman Barang Counter ke Counter
 @endsection
 
 @push('before-app-style')

@@ -5,16 +5,11 @@
             <div class="navbar-brand-box text center bg-dark">
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-lg fw-bold text-light">
-                        <img src="{{ asset('assets/images/logo-tfj.png') }}" alt="" height="50">
+                        <img src="{{ asset('assets/images/logo-tfj.png') }}" alt="" height="50" style="margin-right: 5px">
                         Toko Fadhil Jaya 
                     </span>
                 </a>
             </div>
-
-            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                <i class="fa fa-fw fa-bars"></i>
-            </button>
-
         </div>
 
         <div class="d-flex">

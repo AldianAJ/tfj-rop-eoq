@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    History Permintaan Counter
+    History Permintaan Counter ke Gudang
 @endsection
 
 @push('before-app-style')

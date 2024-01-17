@@ -98,7 +98,7 @@
                 <li>
                     <a href="{{ route('permintaan-counter.history') }}" class="waves-effect">
                         <i class="bx bx-notepad"></i>
-                        <span key="t-kasir">Permintaan Counter</span>
+                        <span key="t-kasir">Permintaan Counter ke Gudang</span>
                     </a>
                 </li>
                 @if ($user->role == 'gudang' || $user->role == 'owner')
@@ -112,7 +112,7 @@
                     <li>
                         <a href="{{ route('pengiriman-counter.history') }}" class="waves-effect">
                             <i class="bx bx-task"></i>
-                            <span key="t-kasir">Pengiriman Counter</span>
+                            <span key="t-kasir">Pengiriman Counter ke Counter</span>
                         </a>
                     </li>
                 @endif
