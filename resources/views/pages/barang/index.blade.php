@@ -314,7 +314,7 @@
                     @if ($user->role == 'gudang')
                         <div class="row mb-4 mt-1">
                             <div class="col-3">
-                                <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#biayaModal">
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#biayaModal">
                                     <i class="bx bx-money align-middle me-2 font-size-18"></i>
                                     Biaya Penyimpanan
                                 </button>

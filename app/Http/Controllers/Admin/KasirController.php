@@ -38,7 +38,7 @@ class KasirController extends Controller
 
             return DataTables::of($data)
                 ->addColumn('action', function ($object) {
-                    $html = '<button class="btn btn-success waves-effect waves-light btn-add" data-bs-toggle="modal"' .
+                    $html = '<button class="btn btn-primary waves-effect waves-light btn-add" data-bs-toggle="modal"' .
                         'data-bs-target="#quantityModal"><i class="bx bxs-cart align-middle font-size-18"></i></button>';
                     return $html;
                 })

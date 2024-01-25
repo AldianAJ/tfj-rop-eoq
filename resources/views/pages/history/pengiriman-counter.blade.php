@@ -72,7 +72,7 @@
                     data: "status",
                     render: function(data, type, row) {
                         if (data != 'Ditolak') {
-                            return '<span class="badge rounded-pill badge-soft-primary font-size-14">Selesai</span>';
+                            return '<span class="badge rounded-pill badge-soft-success font-size-14">Selesai</span>';
                         } else {
                             return '<span class="badge rounded-pill badge-soft-danger font-size-14">Ditolak</span>';
                         }

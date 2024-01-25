@@ -163,13 +163,10 @@ class PermintaanCounterController extends Controller
             ->select('a.permintaan_counter_id', 'c.barang_id', 'b.id', 'a.slug', 'c.nama_barang as nama', 'jumlah_permintaan as quantity')
             ->where('a.slug', $slug)
             ->get();
-        // dd($details);
         $permintaans = DB::table('permintaan_counters')->where('slug', $slug)->first();
-        // session()->forget("temporary_persetujuan");
         $count_detail = count($details);
         $count_tmp = (array)$temporary_persetujuan;
         $count_tmp = count($count_tmp);
-        // dd(session("temporary_persetujuan"));
 
         return view('pages.permintaan.detail', compact('details', 'user', 'permintaans', 'temporary_persetujuan', 'count_detail', 'count_tmp'));
     }
@@ -217,7 +214,6 @@ class PermintaanCounterController extends Controller
         ';
         $sumbers = DB::select($query);
 
-        // dd($sumbers);
         return view('pages.permintaan.persetujuan', compact('barang_counter', 'permintaan', 'user', 'sumbers'));
     }
 
@@ -251,7 +247,6 @@ class PermintaanCounterController extends Controller
 
             session(["temporary_persetujuan" => $temporary_persetujuan]);
 
-            // session()->flush();
             return redirect()->route('permintaan-counter.detailByGudang', ["slug" => $slug]);
         } else if ($persetujuan == 'Tidak Setuju' && !empty($request->catatan)) {
             $permintaan = DB::table('permintaan_counters')
@@ -379,8 +374,8 @@ class PermintaanCounterController extends Controller
                     ->get();
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
-                        $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                            . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                        $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
                         $html .= ' <a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
                             . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                         return $html;
@@ -400,8 +395,8 @@ class PermintaanCounterController extends Controller
                     ->get();
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
-                        $html = ' <button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                            . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                        $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
                         return $html;
                     })
                     ->rawColumns(['action'])

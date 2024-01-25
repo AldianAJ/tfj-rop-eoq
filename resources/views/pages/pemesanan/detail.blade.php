@@ -98,17 +98,17 @@
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                     <input type="radio" class="btn-check" name="btnradio" value="Disetujui" id="btnradio4"
                                         autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="btnradio4">Disetujui</label>
+                                    <label class="btn btn-outline-success" for="btnradio4">Disetujui</label>
 
                                     <input type="radio" class="btn-check" name="btnradio" value="Ditolak" id="btnradio5"
                                         autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btnradio5">Ditolak</label>
+                                    <label class="btn btn-outline-danger" for="btnradio5">Ditolak</label>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="d-flex justify-content-end">
-                                    <button class="btn btn-primary waves-effect waves-light" id="save-persetujuan">
+                                    <button class="btn btn-success waves-effect waves-light" id="save-persetujuan">
                                         <i class="bx bx-save align-middle me-2 font-size-18"></i>Simpan
                                     </button>
                                 </div>
@@ -120,8 +120,8 @@
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>Stok Sekarang</th>
-                                <th>EOQ</th>
                                 <th>ROP</th>
+                                <th>EOQ</th>
                                 <th>Jumlah Pemesanan</th>
                             </tr>
                         </thead>
@@ -135,10 +135,10 @@
                                         {{ $detail_persetujuan->stok }}
                                     </td>
                                     <td>
-                                        {{ $detail_persetujuan->eoq }}
+                                        {{ $detail_persetujuan->rop }}
                                     </td>
                                     <td>
-                                        {{ $detail_persetujuan->rop }}
+                                        {{ $detail_persetujuan->eoq }}
                                     </td>
                                     <td>
                                         {{ $detail_persetujuan->jumlah_pemesanan }}

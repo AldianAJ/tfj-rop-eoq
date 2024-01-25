@@ -158,7 +158,6 @@ class PersediaanMasukController extends Controller
             session()->forget("temporary_masuk");
             return redirect()->route('persediaan-masuk');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }

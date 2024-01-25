@@ -114,7 +114,7 @@
                 <div class="card-body">
                     @if ($user->role == 'gudang')
                         <div class="d-flex justify-content-end mb-4">
-                            <a href="{{ route('pemesanan.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <a href="{{ route('pemesanan.create') }}" class="btn btn-primary waves-effect waves-light fw-bo">
                                 <i class="bx bx-list-plus align-middle me-2 font-size-18"></i>Tambah
                             </a>
                         </div>

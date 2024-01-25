@@ -322,7 +322,7 @@
                     <h4 class="card-title mb-4">List Pemesanan Persediaan</h4>
                     <div class="row mb-3 mt-1">
                         <div class="col-3">
-                            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#biayaModal"
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#biayaModal"
                                 id="btn-biaya-pemesanan">
                                 <i class="bx bx-money align-middle me-2 font-size-18"></i>
                                 Biaya Pemesanan

@@ -471,13 +471,12 @@
                             </div>
                         </div>
                         <div class="col-5 d-flex justify-content-end" id="filter-month">
-                            <label for="example-month-input" class="col-md-2 col-form-label">Month</label>
+                            <label for="example-month-input" class="col-md-2 col-form-label">Bulan</label>
                             <div class="col-md-5">
-                                <input class="form-control" type="month" value="2019-08" id="month-year">
+                                <input class="form-control" type="month" value="2023-12" id="month-year">
                             </div>
                         </div>
                         <div class="col">
-
                             <button type="submit" class="btn btn-info" id="btn-filter">Filter</button>
                         </div>
 
