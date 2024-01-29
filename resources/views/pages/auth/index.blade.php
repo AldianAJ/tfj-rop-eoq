@@ -27,7 +27,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-5">
                     <div class="card overflow-hidden">
-                        <div class="bg-soft" style="background-color: #B31312">
+                        <div class="bg-info">
                             <div class="row">
                                 @if (session()->has('msg'))
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -37,9 +37,9 @@
                                             aria-label="Close"></button>
                                     </div>
                                 @endif
-                                <div class="col-10">
-                                    <div class="text-light p-4">
-                                        <h5 class="text-light">Selamat Datang !</h5>
+                                <div class="col-12">
+                                    <div class="text-dark p-4 fw-bold fs-5 text-center">
+                                        <h5>Selamat Datang !</h5>
                                         <p>Jangan lupa tersenyum dengan pelanggan.</p>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-3 d-grid">
-                                        <button class="btn btn-primary waves-effect waves-light" type="submit" style="background-color: #B31312">Log
+                                        <button class="btn btn-info waves-effect waves-light" type="submit">Log
                                             In</button>
                                     </div>
 
@@ -75,9 +75,9 @@
 
                         </div>
                     </div>
-                    <div class="mt-5 text-center fw-bold">
+                    <div class="mt-5 text-center fw-bold text-info">
                         <div>
-                            <p style="color: #B31312">Copyright©
+                            <p>Copyright©
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script> Toko Fadhil Jaya. All Rights Reserved.

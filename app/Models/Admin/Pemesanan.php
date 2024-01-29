@@ -39,7 +39,7 @@ class Pemesanan extends Model
             $addZero = "0";
         }
 
-        $newPemesananId = "PMP." . $now->year . "." . $addZero . $incrementPemesananId;
+        $newPemesananId = "PMSN." . $now->year . "." . $addZero . $incrementPemesananId;
         return $newPemesananId;
     }
 }

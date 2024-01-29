@@ -1,326 +1,326 @@
 [
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "2",
-      "tanggal_penjualan": "01/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "01/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "02/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "02/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "03/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "2",
-      "tanggal_penjualan": "04/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "04/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "05/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "05/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "06/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "6",
-      "tanggal_penjualan": "07/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "07/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "08/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "08/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "09/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "10/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "10/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "11/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "12/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "12/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "13/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "2",
-      "tanggal_penjualan": "13/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "14/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "6",
-      "tanggal_penjualan": "15/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "15/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "16/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "16/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "17/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "6",
-      "tanggal_penjualan": "18/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "18/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "19/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "19/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "2",
-      "tanggal_penjualan": "20/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "21/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "21/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "22/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "1",
-      "tanggal_penjualan": "22/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "23/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "6",
-      "tanggal_penjualan": "23/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "24/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "25/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "25/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "26/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "26/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "27/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "7",
-      "tanggal_penjualan": "27/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "4",
-      "tanggal_penjualan": "28/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "3",
-      "tanggal_penjualan": "28/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "8",
-      "tanggal_penjualan": "29/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "8",
-      "tanggal_penjualan": "29/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "17",
-      "tanggal_penjualan": "30/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "25",
-      "tanggal_penjualan": "30/12/2023",
-      "counter": "Counter 2"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "31/12/2023",
-      "counter": "Counter 1"
-  },
-  {
-      "nama_barang": "Beras Lopo Ijo 1kg",
-      "quantity": "5",
-      "tanggal_penjualan": "31/12/2023",
-      "counter": "Counter 2"
-  }
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "01/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "01/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "02/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "02/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "03/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "04/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "04/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "05/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "05/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "06/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "07/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "07/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "08/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "08/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "09/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "10/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "10/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "11/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "12/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "12/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "13/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "13/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "14/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "15/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "15/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "16/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "16/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "17/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "18/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "18/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "19/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "19/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "20/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "21/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "21/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "22/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "1",
+        "tanggal_penjualan": "22/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "23/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "23/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "24/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "25/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "25/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "26/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "26/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "27/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "7",
+        "tanggal_penjualan": "27/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "28/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "28/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "8",
+        "tanggal_penjualan": "29/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "8",
+        "tanggal_penjualan": "29/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "17",
+        "tanggal_penjualan": "30/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "25",
+        "tanggal_penjualan": "30/12/2023",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "31/12/2023",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "31/12/2023",
+        "counter": "Counter 2"
+    }
 ]

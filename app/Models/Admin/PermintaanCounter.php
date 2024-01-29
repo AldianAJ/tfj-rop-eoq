@@ -42,7 +42,7 @@ class PermintaanCounter extends Model
             $addZero = "0";
         }
 
-        $newPermintaanCounterId = "PMT." . $counter_id . "." . $now->year . "." . $addZero . $incrementPermintaanCounterId;
+        $newPermintaanCounterId = "PMC." . $counter_id . "." . $now->year . "." . $addZero . $incrementPermintaanCounterId;
         return $newPermintaanCounterId;
     }
 }

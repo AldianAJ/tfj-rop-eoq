@@ -43,7 +43,7 @@ class PengirimanCounter extends Model
             $addZero = "0";
         }
 
-        $newPengirimanCounterId = "PGM." . $counter_id . "." . $now->year . "." . $addZero . $incrementPengirimanCounterId;
+        $newPengirimanCounterId = "KRM." . $counter_id . "." . $now->year . "." . $addZero . $incrementPengirimanCounterId;
         return $newPengirimanCounterId;
     }
 }
