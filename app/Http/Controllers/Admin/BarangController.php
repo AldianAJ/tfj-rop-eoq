@@ -40,14 +40,14 @@ class BarangController extends Controller
                         $html = '';
                         if ($user->role == 'gudang') {
                             $html .= ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light">'
-                                . ' <i class="bx bx-edit align-middle me-2 font-size-18 fw-bold text-justify"></i></a>';
+                                . ' <i class="bx bx-edit align-middle me-2 font-size-18 text-justify"></i></a>';
                             $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
-                                . ' <i class="bx bx-trash align-middle me-2 font-size-18 fw-bold text-justify"></i></a>';
+                                . ' <i class="bx bx-trash align-middle me-2 font-size-18 text-justify"></i></a>';
                             $html .= ' <button type="button" class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
-                                <i class="bx bx-detail align-middle me-2 font-size-18 fw-bold text-justify"></i></button>';
+                                <i class="bx bx-detail align-middle me-2 font-size-18  text-justify"></i></button>';
                         } else {
-                            $html .= '<button type="button" class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
-                        <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i></button>';
+                            $html .= '<button type="button" class="btn btn-secondary waves-effect waves-light  btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">
+                        <i class="bx bx-detail font-size-18 align-middle me-2 "></i></button>';
                         }
                         return $html;
                     })

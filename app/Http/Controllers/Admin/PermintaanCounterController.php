@@ -374,8 +374,8 @@ class PermintaanCounterController extends Controller
                     ->get();
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
-                        $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                            . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                        $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                         $html .= ' <a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
                             . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                         return $html;
@@ -395,8 +395,8 @@ class PermintaanCounterController extends Controller
                     ->get();
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
-                        $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                            . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                        $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                            . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                         return $html;
                     })
                     ->rawColumns(['action'])

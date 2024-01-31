@@ -108,7 +108,7 @@
 
                             <div class="col">
                                 <div class="d-flex justify-content-end">
-                                    <button class="btn btn-success waves-effect waves-light" id="save-persetujuan">
+                                    <button class="btn btn-primary waves-effect waves-light" id="save-persetujuan">
                                         <i class="bx bx-save align-middle me-2 font-size-18"></i>Simpan
                                     </button>
                                 </div>
@@ -161,7 +161,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <span>Apakah anda yakin inbin menyimpan persetujuan dengan jawaban <span class="fw-bold"
+                    <span>Apakah anda yakin ingin menyimpan persetujuan dengan jawaban <span class="fw-bold"
                             id="answer"></span></span>
                 </div>
                 <div class="modal-footer">

@@ -25,7 +25,12 @@ class PersediaanMasukController extends Controller
 
     public function jumlahHari($bulan_tahun)
     {
-        $jumlah = date('t', strtotime("06-2023" . "01"));
+        // Ubah format bulan dan tahun menjadi "YYYY-MM"
+        $bulan_tahun_format = date('Y-m', strtotime($bulan_tahun));
+
+        // Hitung jumlah hari dalam bulan dan tahun yang diberikan
+        $jumlah = date('t', strtotime($bulan_tahun_format));
+
         return $jumlah;
     }
 
@@ -53,7 +58,7 @@ class PersediaanMasukController extends Controller
         $lead_time = !empty($avg_date) ? $avg_date->lead_time : 2;
         $ss = ($data->max - $data->avg) * $lead_time;
         $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
-        $d = (int)round($data->total / $jumlah_hari);
+        $d = (int) round($data->total / $jumlah_hari);
         $rop = ($d * $lead_time) + $ss;
         dd($jumlah_hari);
     }
@@ -97,7 +102,7 @@ class PersediaanMasukController extends Controller
 
         $temporary_masuk = session("temporary_masuk");
         $count_detail = count($details);
-        $count_tmp = (array)$temporary_masuk;
+        $count_tmp = (array) $temporary_masuk;
         $count_tmp = count($count_tmp);
 
         return view('pages.persediaan-masuk.detail', compact('user', 'pemesanan', 'details', 'temporary_masuk', 'count_detail', 'count_tmp'));

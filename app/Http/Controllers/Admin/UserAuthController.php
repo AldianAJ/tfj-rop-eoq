@@ -40,7 +40,7 @@ class UserAuthController extends Controller
                 return redirect()->intended('/');
             }
         } else {
-            return redirect()->route('auth')->with('msg', 'Akun tidak ditemukan, periksa kembali username/password Anda');
+            return redirect()->route('auth')->with('msg', 'User tidak ditemukan, periksa kembali username/password Anda');
         }
     }
 

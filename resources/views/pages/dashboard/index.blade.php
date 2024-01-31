@@ -33,10 +33,13 @@
                     data: "qty_total"
                 },
                 {
-                    data: "rop"
+                    data: "jumlah_pengiriman"
                 },
                 {
                     data: "avg"
+                },
+                {
+                    data: "rop"
                 },
                 {
                     data: "avg",
@@ -96,14 +99,12 @@
                 <div class="col-lg-3">
                     <div class="card blog-stats-wid">
                         <div class="card-body">
-
                             <div class="d-flex flex-wrap">
                                 <div class="me-3">
                                     <p class="text-muted mb-2">Total Transaksi ({{ $bulan_tahun }})</p>
                                     <h5 class="mb-0">{{ $total_transaksi }}</h5>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -144,11 +145,12 @@
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
-                                <th>ID Barang</th>
+                                <th>ID</th>
                                 <th>Nama Barang</th>
                                 <th>Stok</th>
+                                <th>Jumlah Permintaan</th>
+                                <th>Rata-Rata Permintaan</th>
                                 <th>ROP</th>
-                                <th>Rata-Rata Penjualan</th>
                                 <th>Label</th>
                             </tr>
                         </thead>

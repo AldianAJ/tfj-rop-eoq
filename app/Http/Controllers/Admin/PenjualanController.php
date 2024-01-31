@@ -35,8 +35,8 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -52,8 +52,8 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.penjualan_id')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -70,8 +70,8 @@ class PenjualanController extends Controller
                     ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -90,8 +90,8 @@ class PenjualanController extends Controller
                     ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
                 return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     return $html;
                 })
                     ->rawColumns(['action'])
@@ -117,8 +117,8 @@ class PenjualanController extends Controller
             ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
             ->get();
         return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-            $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail">'
-                . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+            $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail">'
+                . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
             return $html;
         })
             ->rawColumns(['action'])

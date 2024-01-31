@@ -35,7 +35,7 @@ class CounterController extends Controller
                 $barang_counters->save();
                 DB::commit();
             } catch (\Exception $ex) {
-                //throw $th;
+                
                 echo $ex->getMessage();
                 DB::rollBack();
             }
@@ -53,10 +53,10 @@ class CounterController extends Controller
                 ->get();
             return DataTables::of($counters)
                 ->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light fw-bold">'
-                        . ' <i class="bx bx-edit align-middle me-2 font-size-18 fw-bold"></i>Edit</a>';
-                    $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light fw-bold">'
-                        . ' <i class="bx bx-trash align-middle me-2 font-size-18 fw-bold"></i>Delete</a>';
+                    $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light">'
+                        . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
+                    $html .= ' <a href="' . route($path . ".destroy", ["slug" => $object->slug]) . '" class="btn btn-danger waves-effect waves-light">'
+                        . ' <i class="bx bx-trash align-middle me-2 font-size-18"></i>Delete</a>';
                     return $html;
                 })
                 ->rawColumns(['action'])

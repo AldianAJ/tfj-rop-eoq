@@ -1,0 +1,34 @@
+columns: [{
+                    data: "penjualan_id"
+                },
+                @if ($user->role == 'gudang' || $user->role == 'owner')
+                    {
+                        data: "name"
+                    },
+                @endif {
+                    data: "tanggal_penjualan",
+                    render: function(data, type, row) {
+                        let date = new Date(data);
+                        let tanggal_penjualan = new Intl.DateTimeFormat(['ban', 'id'], {
+                            dateStyle: 'long',
+                            timeZone: 'Asia/Jakarta'
+                        }).format(date);
+                        return tanggal_penjualan;
+                    }
+                },
+                {
+                    data: null
+                },
+                {
+                    data: null
+                },
+                {
+                    data: "grand_total",
+                    render: function(data, type, row) {
+                        return rupiah(data);
+                    }
+                },
+                {
+                    data: "action"
+                }
+            ],

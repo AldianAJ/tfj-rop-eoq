@@ -300,21 +300,13 @@
                         }, {
                             "visible": true,
                             "targets": 2
-                        }, {
-                            "visible": true,
-                            "targets": 3
-                        }, {
-                            "visible": true,
-                            "targets": 4
-                        }, {
+                        }
+                        , {
                             "visible": false,
                             "targets": 5
                         }, {
                             "visible": false,
                             "targets": 6
-                        }, {
-                            "visible": false,
-                            "targets": 7
                         }
                     @else
                         {
@@ -370,9 +362,6 @@
                     },
                     {
                         data: "total_penjualan"
-                    },
-                    {
-                        data: null
                     },
                     {
                         data: null
@@ -473,7 +462,7 @@
                         <div class="col-5 d-flex justify-content-end" id="filter-month">
                             <label for="example-month-input" class="col-md-2 col-form-label">Bulan</label>
                             <div class="col-md-5">
-                                <input class="form-control" type="month" value="2023-12" id="month-year">
+                                <input class="form-control" type="month" value="2024-01" id="month-year">
                             </div>
                         </div>
                         <div class="col">

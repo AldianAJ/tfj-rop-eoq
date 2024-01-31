@@ -42,14 +42,14 @@ class PemesananController extends Controller
                             . ' <i class="bx bx-transfer-alt align-middle me-2 font-size-18"></i>Persetujuan</a>';
                         return $html;
                     } elseif ($user->role == 'gudang' && $object->status_pemesanan == 'Disetujui') {
-                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-secondary waves-effect waves-light fw-bold btn-detail">
-                        <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i> Detail</a>';
+                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-secondary waves-effect waves-light btn-detail">
+                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
                         $html .= ' <a href="' . route($path . '.dipesan', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light btn-detail">
                         <i class="bx bxs-send font-size-18 align-middle me-2"></i> Dipesan</a>';
                         return $html;
                     } else {
-                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-secondary waves-effect waves-light fw-bold btn-detail">
-                        <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i> Detail</a>';
+                        $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-secondary waves-effect waves-light btn-detail">
+                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
                         return $html;
                     }
                 })
@@ -65,7 +65,7 @@ class PemesananController extends Controller
             ->selectRaw('DATE_FORMAT(MAX(tanggal_penjualan),"%m-%Y") as bulan')
             ->whereRaw('DATE_FORMAT(tanggal_penjualan, "%m-%Y") < DATE_FORMAT(now(), "%m-%Y")')
             ->first();
-        $barang_id = "B00002";
+        $barang_id = "B00001";
         $data = DB::table('detail_penjualans as dp')
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
@@ -329,8 +329,8 @@ class PemesananController extends Controller
                 ->get();
             return DataTables::of($pemesanans)
                 ->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light fw-bold btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2 fw-bold"></i>Detail</button>';
+                    $html = ' <button class="btn btn-secondary waves-effect waves-ligh btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
                     $html .= ' <a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
                         . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                     return $html;
