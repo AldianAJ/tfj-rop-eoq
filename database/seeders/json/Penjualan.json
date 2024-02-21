@@ -1,326 +1,3122 @@
 [
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "2",
-        "tanggal_penjualan": "01/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "01/12/2023",
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "9",
+        "tanggal_penjualan": "01/01/2024",
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "02/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "02/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "03/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "2",
-        "tanggal_penjualan": "04/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "04/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "05/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "05/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "06/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Wipol 755ml",
         "quantity": "6",
-        "tanggal_penjualan": "07/12/2023",
+        "tanggal_penjualan": "01/01/2024",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Royco Sapi 8,5gr",
         "quantity": "4",
-        "tanggal_penjualan": "07/12/2023",
-        "counter": "Counter 2"
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Beras Lopo Ijo 3kg",
         "quantity": "4",
-        "tanggal_penjualan": "08/12/2023",
+        "tanggal_penjualan": "01/01/2024",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "08/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "09/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "10/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "10/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "11/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "12/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "12/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "13/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "2",
-        "tanggal_penjualan": "13/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "14/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "6",
-        "tanggal_penjualan": "15/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "15/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "16/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "16/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "17/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "6",
-        "tanggal_penjualan": "18/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "18/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "19/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "19/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "2",
-        "tanggal_penjualan": "20/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "3",
-        "tanggal_penjualan": "21/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "21/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "22/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Vixal 755ml",
         "quantity": "1",
-        "tanggal_penjualan": "22/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "23/12/2023",
+        "tanggal_penjualan": "01/01/2024",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "6",
-        "tanggal_penjualan": "23/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "24/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "25/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "25/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Sabun Nuvo 76gr",
         "quantity": "3",
-        "tanggal_penjualan": "26/12/2023",
-        "counter": "Counter 1"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "26/12/2023",
+        "tanggal_penjualan": "01/01/2024",
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "4",
-        "tanggal_penjualan": "27/12/2023",
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "5",
+        "tanggal_penjualan": "01/01/2024",
         "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "3",
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 2"
     },
     {
         "nama_barang": "Beras Lopo Ijo 1kg",
         "quantity": "7",
-        "tanggal_penjualan": "27/12/2023",
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "10",
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "3",
+        "tanggal_penjualan": "01/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "3",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "4",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "7",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "quantity": "3",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Ayam 8,5gr",
+        "quantity": "7",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "8",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "5",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "5",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "quantity": "3",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "5",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sunco 2ltr",
+        "quantity": "3",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Ayam 8,5gr",
+        "quantity": "5",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "2",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "9",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "9",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "4",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "4",
+        "tanggal_penjualan": "02/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "3",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "3",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "2",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Ayam 8,5gr",
+        "quantity": "7",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "4",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "1",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "4",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "3",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "4",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "1",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "4",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "quantity": "2",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "8",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "5",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "25",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "5",
+        "tanggal_penjualan": "03/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "2",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "1",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "6",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "2",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "4",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "quantity": "1",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "1",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "1",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "quantity": "5",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "9",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "3",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sunco 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "quantity": "8",
+        "tanggal_penjualan": "04/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "3",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "6",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "7",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Ayam 8,5gr",
+        "quantity": "11",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Beras Rose Brand 500gr",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "2",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "2",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Saus ABC 135ml",
+        "quantity": "2",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "3",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Molto 780ml",
+        "quantity": "3",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "4",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "quantity": "3",
+        "tanggal_penjualan": "05/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "1",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "4",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "5",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "6",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "2",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Beras Rose Brand 500gr",
+        "quantity": "7",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "2",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "8",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "4",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "4",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "8",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "2",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "5",
+        "tanggal_penjualan": "06/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "1",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "9",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "1",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "3",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "10",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "7",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "8",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "4",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Soto",
+        "quantity": "6",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "2",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "4",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "4",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "3",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "3",
+        "tanggal_penjualan": "07/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "8",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "2",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "4",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "17",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "4",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "12",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Ayam 8,5gr",
+        "quantity": "15",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "5",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "4",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "25",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "4",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "08/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "15",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "8",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "5",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "9",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "7",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "4",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "3",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "7",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "3",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "3",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "3",
+        "tanggal_penjualan": "09/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "13",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Saus ABC 135ml",
+        "quantity": "4",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "2",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "8",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "3",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "15",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "2",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "1",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "7",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "5",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "2",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "14",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "8",
+        "tanggal_penjualan": "10/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "9",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "12",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "8",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "2",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "5",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "2",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "1",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "1",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Beras Rose Brand 500gr",
+        "quantity": "2",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "1",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "6",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "5",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "4",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "3",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "1",
+        "tanggal_penjualan": "11/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "1",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "3",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "3",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "3",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "1",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "4",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "3",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "4",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "2",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "1",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "6",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "4",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "2",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "2",
+        "tanggal_penjualan": "12/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "3",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "quantity": "4",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "4",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Ayam 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "1",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "2",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "7",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "1",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "7",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "8",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "4",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "4",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Molto 780ml",
+        "quantity": "2",
+        "tanggal_penjualan": "13/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "1",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "2",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "4",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "1",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "quantity": "3",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "4",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "10",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "6",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "2",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "2",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "3",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "3",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "4",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "3",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "2",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "5",
+        "tanggal_penjualan": "14/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "2",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "7",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "1",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "3",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "3",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "2",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "15/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "4",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Soto",
+        "quantity": "6",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "2",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "4",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "3",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "3",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "8",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "4",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "5",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "4",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "12",
+        "tanggal_penjualan": "16/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Ayam 8,5gr",
+        "quantity": "5",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "3",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "2",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "2",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Vixal 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "1",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "8",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "5",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "9",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "17/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "sabun nuvo 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "7",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "4",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "5",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "2",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Saus ABC 135ml",
+        "quantity": "4",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "2",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Molto 780ml",
+        "quantity": "3",
+        "tanggal_penjualan": "18/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "5",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "1",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "4",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "4",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "8",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "5",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "4",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "5",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "2",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "1",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "1",
+        "tanggal_penjualan": "19/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Beras Rose Brand 500gr",
+        "quantity": "2",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "1",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "6",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "4",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "3",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "1",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "1",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "3",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "3",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "5",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "10",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "2",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "3",
+        "tanggal_penjualan": "20/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "6",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "3",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "quantity": "4",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "4",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Ayam 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "1",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "7",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "2",
+        "tanggal_penjualan": "21/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "8",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "4",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "4",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Molto 780ml",
+        "quantity": "2",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "2",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "quantity": "6",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "3",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "quantity": "6",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "4",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "3",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "1",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "2",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "3",
+        "tanggal_penjualan": "22/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "6",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "6",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "3",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sunco 2ltr",
+        "quantity": "2",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
+        "quantity": "2",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "2",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "4",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "3",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "3",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "quantity": "3",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "2",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "4",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "4",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "3",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "3",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "4",
+        "tanggal_penjualan": "23/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "2",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "4",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "10",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "3",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "6",
+        "tanggal_penjualan": "24/01/2024",
         "counter": "Counter 2"
     },
     {
         "nama_barang": "Beras Lopo Ijo 1kg",
         "quantity": "4",
-        "tanggal_penjualan": "28/12/2023",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Vixal 755ml",
+        "quantity": "1",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "3",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "2",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "4",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Saus ABC 135ml",
+        "quantity": "3",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "7",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "8",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "1",
+        "tanggal_penjualan": "24/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "4",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "2",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "4",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "1",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "3",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "4",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sunco 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "quantity": "6",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "7",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "4",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "2",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 1kg",
+        "quantity": "14",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "10",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "1",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "3",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "3",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "8",
+        "tanggal_penjualan": "25/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 5kg",
+        "quantity": "5",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "3",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Beras Rose Brand 500gr",
+        "quantity": "4",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "2",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "quantity": "2",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sambal ABC 135ml",
+        "quantity": "2",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "1",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Lifebouy 70gr",
+        "quantity": "2",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "5",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Ketan Rose Brand 500gr",
+        "quantity": "1",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "7",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Vixal 755ml",
+        "quantity": "2",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Wipol 755ml",
+        "quantity": "1",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "2",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Keriting Doroku 600gr",
+        "quantity": "4",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Villa 2gr",
+        "quantity": "5",
+        "tanggal_penjualan": "26/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Kari Ayam",
+        "quantity": "3",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "5",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "2",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "1",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "1",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "2",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kunyit Bubuk Desaku 8gr",
+        "quantity": "3",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sunco 2ltr",
+        "quantity": "3",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Tepung Terigu Payung 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Soto",
+        "quantity": "2",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "4",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "4",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "4",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "2",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "2",
+        "tanggal_penjualan": "27/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "quantity": "5",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Sabun Dettol 100gr",
+        "quantity": "2",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "7",
+        "tanggal_penjualan": "28/01/2024",
         "counter": "Counter 1"
     },
     {
         "nama_barang": "Beras Lopo Ijo 1kg",
         "quantity": "3",
-        "tanggal_penjualan": "28/12/2023",
-        "counter": "Counter 2"
-    },
-    {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "8",
-        "tanggal_penjualan": "29/12/2023",
+        "tanggal_penjualan": "28/01/2024",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "8",
-        "tanggal_penjualan": "29/12/2023",
+        "nama_barang": "Sabun Nuvo 76gr",
+        "quantity": "4",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "5",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "2",
+        "tanggal_penjualan": "28/01/2024",
         "counter": "Counter 2"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "3",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Royco Ayam 8,5gr",
+        "quantity": "2",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "2",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Masako Ayam 8,5gr",
+        "quantity": "3",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "2",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Milo 22gr",
+        "quantity": "3",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "4",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "6",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "3",
+        "tanggal_penjualan": "28/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rexona roll 45ml",
+        "quantity": "4",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
         "quantity": "17",
-        "tanggal_penjualan": "30/12/2023",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "29/01/2024",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "25",
-        "tanggal_penjualan": "30/12/2023",
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "5",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Mangga 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Ladaku Merica Bubuk 3gr",
+        "quantity": "2",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "6",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "quantity": "2",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sabun Giv 76gr",
+        "quantity": "3",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "quantity": "9",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Bimoli 2ltr",
+        "quantity": "2",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "3",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "quantity": "2",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "8",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Vixal 755ml",
+        "quantity": "3",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
+        "quantity": "2",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "6",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Maggi Magic Lezat 7gr",
+        "quantity": "4",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Soto",
+        "quantity": "5",
+        "tanggal_penjualan": "29/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Sunlight 755ml",
+        "quantity": "3",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "5",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Micin Sasa 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Saus ABC 135ml",
+        "quantity": "3",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "7",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "6",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sunco 2ltr",
+        "quantity": "2",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Luwak White 20gr",
+        "quantity": "6",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "6",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "8",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Pak Tani 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "30/01/2024",
         "counter": "Counter 2"
     },
     {
         "nama_barang": "Beras Lopo Ijo 1kg",
-        "quantity": "5",
-        "tanggal_penjualan": "31/12/2023",
+        "quantity": "15",
+        "tanggal_penjualan": "30/01/2024",
         "counter": "Counter 1"
     },
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "4",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Energen 30gr",
+        "quantity": "6",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Garam Kapal 250gr",
+        "quantity": "4",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "3",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Shampoo Lifebouy 170ml",
+        "quantity": "2",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Molto 780ml",
+        "quantity": "4",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Pepsodent 75gr",
+        "quantity": "3",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Masako Sapi 8,5gr",
+        "quantity": "8",
+        "tanggal_penjualan": "30/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "10",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kecap Bango 550ml",
+        "quantity": "2",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Wangi 2gr",
+        "quantity": "8",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Gula KA 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Lopo Ijo 3kg",
+        "quantity": "3",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Mie Sedap Goreng",
+        "quantity": "11",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kecap Sedap 63ml",
         "quantity": "5",
-        "tanggal_penjualan": "31/12/2023",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Indomie Goreng",
+        "quantity": "15",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Good Day Freeze 30gr",
+        "quantity": "7",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Rinso 770gr",
+        "quantity": "2",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "3",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Vixal 755ml",
+        "quantity": "3",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Bihun Jagung Padamu 350gr",
+        "quantity": "2",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Teh Sari Murni 9gr",
+        "quantity": "8",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Beras Raja Lele 1kg",
+        "quantity": "5",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
+        "quantity": "3",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 1"
+    },
+    {
+        "nama_barang": "Kapal Api Mix 25gr",
+        "quantity": "5",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Mie Sedap Soto",
+        "quantity": "4",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Minyak Sania 2ltr",
+        "quantity": "3",
+        "tanggal_penjualan": "31/01/2024",
+        "counter": "Counter 2"
+    },
+    {
+        "nama_barang": "Royco Sapi 8,5gr",
+        "quantity": "4",
+        "tanggal_penjualan": "31/01/2024",
         "counter": "Counter 2"
     }
 ]

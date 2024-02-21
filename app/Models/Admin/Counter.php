@@ -16,28 +16,25 @@ class Counter extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'counter_id', 'slug', 'user_id'
+        'counter_id',
+        'slug',
+        'user_id'
     ];
 
     public static function generateCounterId()
     {
-        $counter_id = DB::table('counters')->max('counter_id');
-        $addZero = '';
-        $counter_id = str_replace("C", "", $counter_id);
-        $counter_id = (int) $counter_id + 1;
-        $incrementCounterId = $counter_id;
+        // Ambil ID counter terakhir
+        $lastCounterId = DB::table('counters')->max('counter_id');
 
-        if (strlen($counter_id) == 1) {
-            $addZero = "0000";
-        } elseif (strlen($counter_id) == 2) {
-            $addZero = "000";
-        } elseif (strlen($counter_id) == 3) {
-            $addZero = "00";
-        } elseif (strlen($counter_id) == 4) {
-            $addZero = "0";
-        }
+        // Jika tidak ada data counter sebelumnya, atur nomor urut menjadi 1
+        $incrementCounterId = !empty($lastCounterId) ? ((int) substr($lastCounterId, 1) + 1) : 1;
 
-        $newCounterId = "C" . $addZero . $incrementCounterId;
+        // Format nomor urut dengan tambahan nol di depan sesuai panjang
+        $incrementCounterIdFormatted = str_pad($incrementCounterId, 5, '0', STR_PAD_LEFT);
+
+        // Bangun ID counter baru dengan menambahkan awalan "C"
+        $newCounterId = "C" . $incrementCounterIdFormatted;
         return $newCounterId;
     }
+
 }

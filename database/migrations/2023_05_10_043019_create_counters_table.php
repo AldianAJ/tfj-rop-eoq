@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('counters', function (Blueprint $table) {
-            $table->string('counter_id');
-            $table->primary('counter_id');
+            $table->string('counter_id')->primary();
             $table->string('slug');
             $table->string('user_id');
 

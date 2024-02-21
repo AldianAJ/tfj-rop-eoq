@@ -70,10 +70,10 @@ class PemesananController extends Controller
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
             ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-            ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+            ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
             ->whereRaw("b.barang_id = '" . $barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
         $barang = DB::table('barangs')->where('barang_id', $barang_id)->first();
-        $s = 5000;
+        $s = 13000;
         $h = $barang->biaya_penyimpanan;
         $eoq = round(sqrt((2 * $data->total * $s) / $h));
 
@@ -107,9 +107,10 @@ class PemesananController extends Controller
     public function hitungEOQ(Request $request)
     {
         $bulan_tahun = DB::table('penjualans')
-            ->selectRaw('DATE_FORMAT(MAX(tanggal_penjualan),"%m-%Y") as bulan')
+            ->selectRaw('DATE_FORMAT(MAX(tanggal_penjualan), "%m-%Y") as bulan')
             ->whereRaw('DATE_FORMAT(tanggal_penjualan, "%m-%Y") < DATE_FORMAT(now(), "%m-%Y")')
             ->first();
+
         $hasil_hitung = [];
         $pemesanans = json_decode($request->pemesanan);
         $s = $request->biaya;
@@ -120,21 +121,26 @@ class PemesananController extends Controller
                 ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                 ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                 ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-                ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
-                ->whereRaw("b.barang_id = '" . $pemesanan->id_barang . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
-            $barang = DB::table('barangs')->where('barang_id', $pemesanan->id_barang)->first();
+                ->selectRaw('MAX(dp.quantity) as max, ROUND(SUM(dp.quantity) / 30, 2) as avg, SUM(dp.quantity) as total')
+                ->where('b.barang_id', $pemesanan->id_barang)
+                ->whereRaw("DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = ?", [$bulan_tahun->bulan])
+                ->first();
 
-            $h = $barang->biaya_penyimpanan;
-            $eoq = $data->total > 0 ? round(sqrt((2 * $data->total * $s) / $h)) : 0;
-            $hasil_eoq = [
-                'no' => $no++,
-                'id_barang' => $pemesanan->id_barang,
-                'nama_barang' => $pemesanan->nama_barang,
-                'eoq' => $eoq,
-                'jumlah' => 0
-            ];
+            if ($data) {
+                $barang = DB::table('barangs')->where('barang_id', $pemesanan->id_barang)->first();
+                $h = $barang->biaya_penyimpanan;
+                $eoq = $data->total > 0 ? round(sqrt((2 * $data->total * $s) / $h)) : 0;
 
-            array_push($hasil_hitung, $hasil_eoq);
+                $hasil_eoq = [
+                    'no' => $no++,
+                    'id_barang' => $pemesanan->id_barang,
+                    'nama_barang' => $pemesanan->nama_barang,
+                    'eoq' => $eoq,
+                    'jumlah' => 0
+                ];
+
+                array_push($hasil_hitung, $hasil_eoq);
+            }
         }
         return response()->json(['pemesanan' => $hasil_hitung], 200);
     }
@@ -211,15 +217,15 @@ class PemesananController extends Controller
                 ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                 ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                 ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-                ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+                ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
                 ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
             $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
             $ss = ($data->max - $data->avg) * $lead_time;
             $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
-            $d = (int)round($data->total / $jumlah_hari);
-            $rop = ($d * $lead_time) + $ss;
+            $avg_demand = (int) round($data->total / $jumlah_hari);
+            $rop = (int) round(($avg_demand * $lead_time) + $ss);
 
-            $temp = (object)[
+            $temp = (object) [
                 'no' => $no++,
                 'barang_id' => $detail->barang_id,
                 'nama_barang' => $detail->nama_barang,
@@ -230,7 +236,7 @@ class PemesananController extends Controller
                 'max' => $data->max,
                 'avg' => $data->avg,
                 'sum' => $data->total,
-                'd' => $d,
+                'avg_d' => $avg_demand,
                 'lead_time' => $lead_time,
                 'ss' => $ss
             ];
@@ -277,14 +283,14 @@ class PemesananController extends Controller
                         ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                         ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                         ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-                        ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+                        ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
                         ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
                     $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
                     $ss = ($data->max - $data->avg) * $lead_time;
                     $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
-                    $d = (int)round($data->total / $jumlah_hari);
-                    $rop = ($d * $lead_time) + $ss;
-                    $barang = Barang::where('barang_id',  $detail->barang_id)->first();
+                    $d = (int) round($data->total / $jumlah_hari);
+                    $rop = (int) round(($d * $lead_time) + $ss);
+                    $barang = Barang::where('barang_id', $detail->barang_id)->first();
                     $barang->rop = $rop;
                     $barang->ss = $ss;
                     $barang->save();
@@ -376,15 +382,15 @@ class PemesananController extends Controller
                 ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                 ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                 ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-                ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+                ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
                 ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
             $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
             $ss = ($data->max - $data->avg) * $lead_time;
             $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
-            $d = (int)round($data->total / $jumlah_hari);
-            $rop = ($d * $lead_time) + $ss;
+            $avg_demand = (int) round($data->total / $jumlah_hari);
+            $rop = (int) round(($avg_demand * $lead_time) + $ss);
 
-            $temp = (object)[
+            $temp = (object) [
                 'no' => $no++,
                 'barang_id' => $detail->barang_id,
                 'nama_barang' => $detail->nama_barang,
@@ -394,7 +400,7 @@ class PemesananController extends Controller
                 'max' => $data->max,
                 'avg' => $data->avg,
                 'sum' => $data->total,
-                'd' => $d,
+                'avg_d' => $avg_demand,
                 'lead_time' => $lead_time,
                 'ss' => $ss
             ];
@@ -454,15 +460,15 @@ class PemesananController extends Controller
                 ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                 ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                 ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-                ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+                ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
                 ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
             $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
             $ss = ($data->max - $data->avg) * $lead_time;
             $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
-            $d = (int)round($data->total / $jumlah_hari);
-            $rop = ($d * $lead_time) + $ss;
+            $avg_demand = (int) round($data->total / $jumlah_hari);
+            $rop = (int) round(($avg_demand * $lead_time) + $ss);
 
-            $temp = (object)[
+            $temp = (object) [
                 'no' => $no++,
                 'barang_id' => $detail->barang_id,
                 'nama_barang' => $detail->nama_barang,
@@ -472,14 +478,14 @@ class PemesananController extends Controller
                 'max' => $data->max,
                 'avg' => $data->avg,
                 'sum' => $data->total,
-                'd' => $d,
+                'avg_d' => $avg_demand,
                 'lead_time' => $lead_time,
                 'ss' => $ss
             ];
 
             array_push($detail_pemesanans, $temp);
         }
-        (object) $datas = (object)$detail_pemesanans;
+        (object) $datas = (object) $detail_pemesanans;
         $day = substr($pemesanan->tanggal_pemesanan, 8, 2);
         $months = substr($pemesanan->tanggal_pemesanan, 5, 2);
         $year = substr($pemesanan->tanggal_pemesanan, 0, 4);

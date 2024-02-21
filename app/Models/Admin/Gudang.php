@@ -16,28 +16,25 @@ class Gudang extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'gudang_id', 'slug', 'user_id'
+        'gudang_id',
+        'slug',
+        'user_id'
     ];
 
     public static function generateGudangId()
     {
-        $gudang_id = DB::table('gudangs')->max('gudang_id');
-        $addZero = '';
-        $gudang_id = str_replace("G", "", $gudang_id);
-        $gudang_id = (int) $gudang_id + 1;
-        $incrementGudangId = $gudang_id;
+        // Ambil ID gudang terakhir
+        $lastGudangId = DB::table('gudangs')->max('gudang_id');
 
-        if (strlen($gudang_id) == 1) {
-            $addZero = "0000";
-        } elseif (strlen($gudang_id) == 2) {
-            $addZero = "000";
-        } elseif (strlen($gudang_id) == 3) {
-            $addZero = "00";
-        } elseif (strlen($gudang_id) == 4) {
-            $addZero = "0";
-        }
+        // Jika tidak ada data gudang sebelumnya, atur nomor urut menjadi 1
+        $incrementGudangId = !empty($lastGudangId) ? ((int) substr($lastGudangId, 1) + 1) : 1;
 
-        $newGudangId = "G" . $addZero . $incrementGudangId;
+        // Format nomor urut dengan tambahan nol di depan sesuai panjang
+        $incrementGudangIdFormatted = str_pad($incrementGudangId, 5, '0', STR_PAD_LEFT);
+
+        // Bangun ID gudang baru dengan menambahkan awalan "G"
+        $newGudangId = "G" . $incrementGudangIdFormatted;
         return $newGudangId;
     }
+
 }

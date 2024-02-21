@@ -33,10 +33,10 @@
                     data: "qty_total"
                 },
                 {
-                    data: "jumlah_pengiriman"
+                    data: "avg"
                 },
                 {
-                    data: "avg"
+                    data: "ss"
                 },
                 {
                     data: "rop"
@@ -148,8 +148,8 @@
                                 <th>ID</th>
                                 <th>Nama Barang</th>
                                 <th>Stok</th>
-                                <th>Jumlah Permintaan</th>
                                 <th>Rata-Rata Permintaan</th>
+                                <th>Safety Stock</th>
                                 <th>ROP</th>
                                 <th>Label</th>
                             </tr>

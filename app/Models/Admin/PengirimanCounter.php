@@ -11,13 +11,17 @@ class PengirimanCounter extends Model
 {
     use HasFactory;
 
-    protected $table = 'pengiriman_counters';
+    protected $table = 'pengiriman_counter';
     protected $primaryKey = 'pengiriman_counter_id';
     public $incrementing = false;
     protected $keyType = 'string';
 
     protected $fillable = [
-        'pengiriman_counter_id', 'slug', 'permintaan_counter_id', 'tanggal_pengiriman', 'tanggal_penerimaan'
+        'pengiriman_counter_id',
+        'slug',
+        'permintaan_counter_id',
+        'tanggal_pengiriman',
+        'tanggal_penerimaan'
     ];
 
     public static function generatePengirimanCounterId($counter_id)
@@ -28,22 +32,17 @@ class PengirimanCounter extends Model
             ->whereYear('pg.tanggal_pengiriman', $now->year)
             ->where('pm.counter_id', $counter_id)
             ->max('pg.pengiriman_counter_id');
-        $addZero = '';
-        $pengiriman_counter_id = substr($pengiriman_counter_id, 16, 5);
-        $pengiriman_counter_id = (int) $pengiriman_counter_id + 1;
-        $incrementPengirimanCounterId = $pengiriman_counter_id;
 
-        if (strlen($pengiriman_counter_id) == 1) {
-            $addZero = "0000";
-        } elseif (strlen($pengiriman_counter_id) == 2) {
-            $addZero = "000";
-        } elseif (strlen($pengiriman_counter_id) == 3) {
-            $addZero = "00";
-        } elseif (strlen($pengiriman_counter_id) == 4) {
-            $addZero = "0";
-        }
+        // Jika tidak ada pengiriman sebelumnya pada tahun ini, atur nomor urut menjadi 1
+        $incrementPengirimanCounterId = !empty($pengiriman_counter_id) ? ((int) substr($pengiriman_counter_id, -5) + 1) : 1;
 
-        $newPengirimanCounterId = "KRM." . $counter_id . "." . $now->year . "." . $addZero . $incrementPengirimanCounterId;
+        // Format nomor urut dengan tambahan nol di depan sesuai panjang
+        $incrementPengirimanCounterIdFormatted = str_pad($incrementPengirimanCounterId, 5, '0', STR_PAD_LEFT);
+
+        // Bangun ID pengiriman baru
+        $newPengirimanCounterId = "KRM." . $counter_id . "." . $now->year . "." . $incrementPengirimanCounterIdFormatted;
         return $newPengirimanCounterId;
     }
+
+
 }

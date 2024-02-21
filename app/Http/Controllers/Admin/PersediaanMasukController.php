@@ -45,7 +45,7 @@ class PersediaanMasukController extends Controller
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
             ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
-            ->selectRaw('max(dp.quantity) as max, round(avg(dp.quantity)) as avg, sum(dp.quantity) as total')
+            ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
             ->whereRaw("b.barang_id = '" . $barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
         $now = Carbon::now();
         $subdate = Carbon::now()->subDays(7);

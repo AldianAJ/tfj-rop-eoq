@@ -462,7 +462,7 @@
                         <div class="col-5 d-flex justify-content-end" id="filter-month">
                             <label for="example-month-input" class="col-md-2 col-form-label">Bulan</label>
                             <div class="col-md-5">
-                                <input class="form-control" type="month" value="2024-01" id="month-year">
+                                <input class="form-control" type="month" id="month-year">
                             </div>
                         </div>
                         <div class="col">

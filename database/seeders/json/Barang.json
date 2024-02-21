@@ -93,23 +93,23 @@
     },
     {
         "nama_barang": "Masako Sapi 8,5gr",
-        "harga_barang": "1500"
+        "harga_barang": "500"
     },
     {
         "nama_barang": "Masako Ayam 8,5gr",
-        "harga_barang": "1500"
+        "harga_barang": "500"
     },
     {
         "nama_barang": "Royco Sapi 8,5gr",
-        "harga_barang": "1500"
+        "harga_barang": "500"
     },
     {
         "nama_barang": "Royco Ayam 8,5gr",
-        "harga_barang": "1500"
+        "harga_barang": "500"
     },
     {
         "nama_barang": "Maggi Magic Lezat 7gr",
-        "harga_barang": "1500"
+        "harga_barang": "500"
     },
     {
         "nama_barang": "Ladaku Merica Bubuk 3gr",
@@ -136,7 +136,7 @@
         "harga_barang": "4500"
     },
     {
-        "nama_barang": "Sabun Giv 76g",
+        "nama_barang": "Sabun Giv 76gr",
         "harga_barang": "3000"
     },
     {
@@ -189,7 +189,7 @@
     },
     {
         "nama_barang": "Teh Villa 2gr",
-        "harga_barang": "1500"
+        "harga_barang": "1300"
     },
     {
         "nama_barang": "Teh Sari Murni 9gr",
@@ -197,7 +197,7 @@
     },
     {
         "nama_barang": "Teh Sari Wangi 2gr",
-        "harga_barang": "1500"
+        "harga_barang": "1300"
     },
     {
         "nama_barang": "Energen 30gr",
@@ -217,6 +217,6 @@
     },
     {
         "nama_barang": "Kapal Api Mix 25gr",
-        "harga_barang": "1500"
+        "harga_barang": "1300"
     }
 ]
