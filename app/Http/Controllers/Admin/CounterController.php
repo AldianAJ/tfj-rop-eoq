@@ -35,7 +35,6 @@ class CounterController extends Controller
                 $barang_counters->save();
                 DB::commit();
             } catch (\Exception $ex) {
-                
                 echo $ex->getMessage();
                 DB::rollBack();
             }
@@ -76,7 +75,6 @@ class CounterController extends Controller
             $check_username = UserAuth::where('username', $request['username'])
                 ->where('username', '<>', $users->username)->count();
             if (empty($request['nama_counter']) || empty($request['alamat_counter']) || empty($request['username'])) {
-                # tidak boleh ada field yang kosong
                 $msg = (object) [
                     "message" => "Tidak boleh ada field yang kosong !!",
                     "response" => "warning"
@@ -99,21 +97,18 @@ class CounterController extends Controller
             $check_name = UserAuth::where('name', $request['nama_counter'])->first();
             $check_username = UserAuth::where('username', $request['username'])->first();
             if (empty($request['counter_id']) || empty($request['nama_counter']) || empty($request['alamat_counter']) || empty($request['username']) || empty($request['password'])) {
-                # tidak boleh ada field yang kosong
                 $msg = (object) [
                     "message" => "Tidak boleh ada field yang kosong !!",
                     "response" => "warning"
                 ];
                 return $msg;
             } elseif (!empty($check_name)) {
-                # nama barang sudah ada
                 $msg = (object) [
                     "message" => "Nama Counter tersebut sudah ada !!",
                     "response" => "warning"
                 ];
                 return $msg;
             } elseif (!empty($check_username)) {
-                # nama barang sudah ada
                 $msg = (object) [
                     "message" => "Username Counter tersebut sudah ada !!",
                     "response" => "warning"
@@ -163,7 +158,6 @@ class CounterController extends Controller
 
             return redirect()->route('counter')->with('msg', 'Data counter baru berhasil ditambahkan');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -203,7 +197,6 @@ class CounterController extends Controller
 
             return redirect()->route('counter')->with('msg', 'Data counter berhasil diubah');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -223,4 +216,5 @@ class CounterController extends Controller
             DB::rollBack();
         }
     }
+
 }

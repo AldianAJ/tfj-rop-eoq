@@ -21,7 +21,6 @@ class GudangController extends Controller
     public function validatorHelper($request)
     {
         if (empty($request['nama_gudang']) || empty($request['alamat_gudang']) || empty($request['username'])) {
-            # tidak boleh ada field yang kosong
             $msg = (object) [
                 "message" => "Tidak boleh ada field yang kosong, kecuali password !!",
                 "response" => "warning"
@@ -34,22 +33,23 @@ class GudangController extends Controller
     {
         $path = 'gudang';
         $user = $this->userAuth();
-        if ($request->ajax()) {
 
+        if ($request->ajax()) {
             $query = 'SELECT a.gudang_id, b.name, b.address, b.username, a.slug
-            FROM gudangs as a
-            JOIN users as b on a.user_id = b.user_id;';
+        FROM gudangs as a
+        JOIN users as b on a.user_id = b.user_id;';
             $gudangs = DB::select($query);
 
             return DataTables::of($gudangs)
                 ->addColumn('action', function ($object) use ($path) {
-                    $html = ' <a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light">'
-                        . ' <i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
+                    $html = '<a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light">'
+                        . '<i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
                     return $html;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
+
         return view('pages.gudang.index', compact('user'));
     }
 
@@ -84,10 +84,12 @@ class GudangController extends Controller
             }
             $users->save();
             DB::commit();
-            return redirect()->route('gudang')->with('msg', 'Data gudang berhasil di ubah');
+            return redirect()->route('gudang')->with('msg', 'Data gudang berhasil diubah');
         } catch (\Exception $ex) {
             echo $ex->getMessage();
             DB::rollBack();
         }
     }
+
+
 }

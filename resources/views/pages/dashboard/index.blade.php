@@ -33,6 +33,9 @@
                     data: "qty_total"
                 },
                 {
+                    data: "max"
+                },
+                {
                     data: "avg"
                 },
                 {
@@ -45,12 +48,13 @@
                     data: "avg",
                     render: function(data, type, row) {
                         if (parseInt(row.qty_total) <= parseInt(row.rop)) {
-                            return '<div class="alert alert-danger d-flex justify-content-center align-items-center fw-bold" style="width: 200px" role="alert" >Lakukan Pemesanan</div>';
+                            return '<span class="badge rounded-3 badge-soft-danger p-2 font-size-11"><b>Lakukan Pemesanan</b></span>';
                         } else if (parseInt(row.qty_total) <= parseInt(data)) {
-                            return '<div class="alert alert-warning d-flex justify-content-center align-items-center fw-bold" style="width: 200px" role="alert">Segera Memesan</div>';
+                            return '<span class="badge rounded-3 badge-soft-warning p-2 font-size-11"><b>Segera Memesan</b></span>';
                         } else {
-                            return '<div class="alert alert-success d-flex justify-content-center align-items-center fw-bold" style="width: 200px" role="alert">Aman</div>';
+                            return '<span class="badge rounded-3 badge-soft-success p-2 font-size-11"><b>Aman</b></span>';
                         }
+
                     }
                 }
             ],
@@ -59,7 +63,7 @@
 @endpush
 
 @section('content')
-    <!-- start page title -->
+    <!-- Start page title -->
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -71,27 +75,23 @@
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div>
-
             </div>
         </div>
     </div>
-    <!-- end page title -->
+    <!-- End page title -->
 
     <div class="row">
-
         <div class="col-xl">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="card mini-stats-wid">
                         <div class="card-body">
-
                             <div class="d-flex flex-wrap">
                                 <div class="me-3">
                                     <p class="text-muted mb-2">Total Jenis Barang</p>
                                     <h5 class="mb-0">{{ $jumlah_jenis }}</h5>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -138,16 +138,17 @@
                     </div>
                 </div>
             </div>
-            <!-- end row -->
+            <!-- End row -->
 
             <div class="card">
                 <div class="card-body">
-                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Nama Barang</th>
                                 <th>Stok</th>
+                                <th>Permintaan Tertinggi</th>
                                 <th>Rata-Rata Permintaan</th>
                                 <th>Safety Stock</th>
                                 <th>ROP</th>
@@ -160,8 +161,7 @@
                 </div>
             </div>
         </div>
-        <!-- end col -->
-
+        <!-- End col -->
     </div>
-    <!-- end row -->
+    <!-- End row -->
 @endsection

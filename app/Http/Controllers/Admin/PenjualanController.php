@@ -14,7 +14,6 @@ use Carbon\Carbon;
 
 class PenjualanController extends Controller
 {
-
     public function userAuth()
     {
         $user = Auth::guard('user')->user();
@@ -25,6 +24,7 @@ class PenjualanController extends Controller
     {
         $user = $this->userAuth();
         $path = 'penjualan';
+
         if ($request->ajax() && empty($request->type)) {
             if ($user->role == 'gudang' || $user->role == 'owner') {
                 $penjualan = DB::table('penjualans as p')
@@ -34,11 +34,11 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.tanggal_penjualan')
                     ->orderByDesc('p.penjualan_id')
                     ->get();
-                return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                    return $html;
-                })
+
+                return DataTables::of($penjualan)
+                    ->addColumn('action', function ($object) use ($path) {
+                        return '<button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                    })
                     ->rawColumns(['action'])
                     ->make(true);
             } elseif ($user->role == 'counter') {
@@ -51,11 +51,11 @@ class PenjualanController extends Controller
                     ->orderByDesc('p.tanggal_penjualan')
                     ->orderByDesc('p.penjualan_id')
                     ->get();
-                return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                    return $html;
-                })
+
+                return DataTables::of($penjualan)
+                    ->addColumn('action', function ($object) use ($path) {
+                        return '<button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                    })
                     ->rawColumns(['action'])
                     ->make(true);
             }
@@ -69,11 +69,11 @@ class PenjualanController extends Controller
                     ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
                     ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
-                return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                    return $html;
-                })
+
+                return DataTables::of($penjualan)
+                    ->addColumn('action', function ($object) use ($path) {
+                        return '<button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                    })
                     ->rawColumns(['action'])
                     ->make(true);
             } elseif ($user->role == 'counter') {
@@ -89,16 +89,15 @@ class PenjualanController extends Controller
                     ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
                     ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
                     ->get();
-                return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                    return $html;
-                })
+
+                return DataTables::of($penjualan)
+                    ->addColumn('action', function ($object) use ($path) {
+                        return '<button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                    })
                     ->rawColumns(['action'])
                     ->make(true);
             }
         }
-        // dd($penjualan_id);
 
         return view('pages.history.penjualan', compact('user'));
     }
@@ -107,6 +106,7 @@ class PenjualanController extends Controller
     {
         $bulan_tahun = $request->bulan_tahun;
         $path = 'penjualan';
+
         $penjualan = DB::table('detail_penjualans as dp')
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
@@ -116,18 +116,17 @@ class PenjualanController extends Controller
             ->groupByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m"), b.nama_barang')
             ->orderByRaw('DATE_FORMAT(p.tanggal_penjualan,"%Y-%m") DESC')
             ->get();
-        return DataTables::of($penjualan)->addColumn('action', function ($object) use ($path) {
-            $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail">'
-                . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-            return $html;
-        })
+
+        return DataTables::of($penjualan)
+            ->addColumn('action', function ($object) use ($path) {
+                return '<button class="btn btn-secondary waves-effect waves-light btn-detail"><i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+            })
             ->rawColumns(['action'])
             ->make(true);
     }
 
     public function exportPDF(Request $request)
     {
-        # code...
         $bulan_tahun = $request->bulan_tahun;
         $tahun = substr($bulan_tahun, 0, 4);
         $bulan = substr($bulan_tahun, 5);
@@ -149,6 +148,7 @@ class PenjualanController extends Controller
 
         $title = 'Laporan Penjualan ' . $month[$bulan] . ' ' . $tahun;
         $tanggal = Carbon::now()->format('d') . ' ' . $month[Carbon::now()->format('m')] . ' ' . Carbon::now()->format('Y');
+
         $penjualans = DB::table('detail_penjualans as dp')
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
@@ -173,7 +173,6 @@ class PenjualanController extends Controller
 
     public function detail(Request $request)
     {
-        # code...
         $detail_penjualans = DB::table('detail_penjualans as dp')
             ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
             ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
@@ -184,4 +183,5 @@ class PenjualanController extends Controller
 
         return DataTables::of($detail_penjualans)->make(true);
     }
+
 }

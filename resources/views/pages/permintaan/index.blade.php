@@ -29,7 +29,7 @@
         let permintaanDatatable = $('#datatable').DataTable({
             ajax: "{{ route('permintaan-counter') }}",
             order: [
-                [3, 'desc'],
+                [3, 'desc']
             ],
             columns: [{
                     data: "permintaan_id"
@@ -68,7 +68,7 @@
                 {
                     data: "action"
                 }
-            ],
+            ]
         });
 
         $('#datatable').on('click', '.btn-detail', function() {
@@ -86,9 +86,9 @@
                 $('#detail-datatable').DataTable().destroy();
                 $('#detail-datatable').DataTable({
                     ajax: {
-                        "type": "POST",
-                        "url": "{{ route('permintaan-counter.detail') }}",
-                        "data": {
+                        type: "POST",
+                        url: "{{ route('permintaan-counter.detail') }}",
+                        data: {
                             '_token': "{{ csrf_token() }}",
                             'slug': slug
                         }
@@ -102,7 +102,7 @@
                             data: "quantity",
                             name: "quantity"
                         }
-                    ],
+                    ]
                 });
             }
         });

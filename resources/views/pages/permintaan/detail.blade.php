@@ -27,7 +27,7 @@
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
         $('#datatable').DataTable(
-            
+
         );
     </script>
 @endpush
@@ -44,7 +44,6 @@
                         <li class="breadcrumb-item active">Data @yield('title')</li>
                     </ol>
                 </div>
-
             </div>
         </div>
     </div>
@@ -62,12 +61,12 @@
                 <div class="card-body">
                     <h4 class="card-title mb-3">Detail Permintaan {{ $permintaans->permintaan_counter_id }}</h4>
                     <div class="row mb-4 mt-2">
-                        <div class="col d-flex justify-content-start ">
+                        <div class="col d-flex justify-content-start">
                             <a href="{{ route('permintaan-counter') }}" class="btn btn-secondary waves-effect waves-light">
                                 <i class="bx bx-caret-left align-middle me-2 font-size-18"></i>Kembali
                             </a>
                         </div>
-                        <div class="col d-flex justify-content-end ">
+                        <div class="col d-flex justify-content-end">
                             @if ($count_tmp == $count_detail)
                                 <a href="{{ route('permintaan-counter.storePersetujuan', ['slug' => $permintaans->slug]) }}"
                                     class="btn btn-primary waves-effect waves-light">
@@ -76,7 +75,7 @@
                             @endif
                         </div>
                     </div>
-                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Nama Barang</th>
@@ -87,17 +86,12 @@
                         <tbody>
                             @foreach ($details as $detail)
                                 <tr>
-                                    <td>
-                                        {{ $detail->nama }}
-                                    </td>
-                                    <td>
-                                        {{ $detail->quantity }}
-                                    </td>
+                                    <td>{{ $detail->nama }}</td>
+                                    <td>{{ $detail->quantity }}</td>
                                     <td>
                                         @if (!empty($temporary_persetujuan))
                                             @if (array_key_exists($detail->permintaan_counter_id . '/' . $detail->barang_id, $temporary_persetujuan))
-                                                <span
-                                                    class="badge rounded-pill badge-soft-success font-size-14">Selesai</span>
+                                                <span class="badge rounded-pill badge-soft-success font-size-14">Selesai</span>
                                             @else
                                                 <a href="{{ route('permintaan-counter.persetujuan', ['slug' => $detail->slug, 'id' => $detail->id]) }}"
                                                     class="btn btn-primary">Persetujuan</a>
@@ -106,7 +100,6 @@
                                             <a href="{{ route('permintaan-counter.persetujuan', ['slug' => $detail->slug, 'id' => $detail->id]) }}"
                                                 class="btn btn-primary">Persetujuan</a>
                                         @endif
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -114,6 +107,7 @@
                     </table>
                 </div>
             </div>
-        </div> <!-- end col -->
+        </div> <!-- End col -->
     </div>
 @endsection
+

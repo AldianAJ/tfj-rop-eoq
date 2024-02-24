@@ -48,7 +48,7 @@
                 {
                     data: "status",
                     render: function(data, type, row) {
-                        return '<span class="badge rounded-pill badge-soft-primary font-size-14">Selesai</span>';
+                        return '<span class="badge rounded-pill badge-soft-success font-size-14">Selesai</span>';
                     }
                 },
                 {
@@ -58,19 +58,15 @@
         });
 
         $('#datatable').on('click', '.btn-detail', function() {
-            let selectedData = '';
-            let slug = '';
-            let indexRow = mainTable.rows().nodes().to$().index($(this).closest('tr'));
-            selectedData = mainTable.row(indexRow).data();
-            slug = selectedData.slug;
+            let selectedData = mainTable.row($(this).closest('tr')).data();
+            let slug = selectedData.slug;
             $("#id-permintaan").text(selectedData.permintaan_counter_id);
-            $('#detail-datatable').DataTable().clear();
-            $('#detail-datatable').DataTable().destroy();
+            $('#detail-datatable').DataTable().clear().destroy();
             $('#detail-datatable').DataTable({
                 ajax: {
-                    "type": "POST",
-                    "url": "{{ route('permintaan-counter.detail') }}",
-                    "data": {
+                    type: "POST",
+                    url: "{{ route('permintaan-counter.detail') }}",
+                    data: {
                         '_token': "{{ csrf_token() }}",
                         'slug': slug
                     }

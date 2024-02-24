@@ -39,7 +39,8 @@
                                 @endif
                                 <div class="col-12">
                                     <div class="text-dark p-4 fs-5 text-center">
-                                        <img src="{{ asset('assets/images/logo-tfj.png') }}" alt="" height="60" class="mb-3">
+                                        <img src="{{ asset('assets/images/logo-tfj.png') }}" alt=""
+                                            height="60" class="mb-3">
                                         <h5 class="fw-bold">Selamat Datang!</h5>
                                         <p>Jangan lupa tersenyum dengan pelanggan.</p>
                                     </div>
@@ -61,16 +62,14 @@
                                         <div class="input-group auth-pass-inputgroup">
                                             <input type="password" class="form-control" placeholder="Enter password"
                                                 aria-label="Password" aria-describedby="password-addon" name="password">
-                                            <button class="btn btn-light " type="button" id="password-addon"><i
-                                                    class="mdi mdi-eye-outline"></i></button>
                                         </div>
                                     </div>
                                     <div class="mt-3 d-grid">
-                                        <button class="btn btn-info waves-effect waves-light" type="submit">Log
-                                            In</button>
+                                        <button class="btn btn-info waves-effect waves-light"
+                                            type="submit">Login</button>
                                     </div>
 
-                                    
+
                                 </form>
                             </div>
 

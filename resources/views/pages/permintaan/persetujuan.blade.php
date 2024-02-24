@@ -132,7 +132,6 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="mt-4 mb-3 row">
                             <label for="harga_barang" class="col-md-2 col-form-label">Catatan</label>
                             <div class="col-md-10">

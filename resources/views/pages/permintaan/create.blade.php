@@ -38,7 +38,7 @@
                 {
                     data: "action"
                 }
-            ],
+            ]
         });
 
         let no = 1;
@@ -51,7 +51,7 @@
                 style: "currency",
                 currency: "IDR"
             }).format(number);
-        }
+        };
 
         $('.alert').hide();
 
@@ -77,9 +77,8 @@
                                 return '<button class="btn btn-danger waves-effect waves-light btn-remove"><i class="bx bxs-trash align-middle font-size-18"></i></button>';
                             }
                         }
-                    ],
+                    ]
                 });
-
             } else {
                 return $('#datatable-permintaan').DataTable({
                     lengthMenu: [5],
@@ -112,8 +111,8 @@
                         "id_barang": selectedData.barang_id,
                         "nama_barang": selectedData.nama_barang,
                         "harga_barang": selectedData.harga_barang,
-                        "jumlah": Number(jumlah_permintaan),
-                    }
+                        "jumlah": Number(jumlah_permintaan)
+                    };
                     permintaan.push(permintaanTemp);
                 }
             } else {
@@ -122,8 +121,8 @@
                     "id_barang": selectedData.barang_id,
                     "nama_barang": selectedData.nama_barang,
                     "harga_barang": selectedData.harga_barang,
-                    "jumlah": Number(jumlah_permintaan),
-                }
+                    "jumlah": Number(jumlah_permintaan)
+                };
                 permintaan.push(permintaanTemp);
             }
         }
@@ -185,12 +184,11 @@
                                 {
                                     data: "action"
                                 }
-                            ],
+                            ]
                         });
                     }
                 });
             }
-
         });
     </script>
 @endpush
@@ -207,7 +205,6 @@
                         <li class="breadcrumb-item active">Data @yield('title')</li>
                     </ol>
                 </div>
-
             </div>
         </div>
     </div>
