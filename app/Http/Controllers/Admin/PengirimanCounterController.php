@@ -170,7 +170,6 @@ class PengirimanCounterController extends Controller
 
     public function detailHistory(Request $request)
     {
-        # code...
         $slug = $request->slug;
         $query = 'SELECT a.pengiriman_counter_id, a.slug, a.permintaan_counter_id, g.name, d.nama_barang, b.jumlah_pengiriman, b.persetujuan, b.catatan
             FROM pengiriman_counters AS a

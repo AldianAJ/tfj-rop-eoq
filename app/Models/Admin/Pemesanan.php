@@ -17,27 +17,22 @@ class Pemesanan extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'pemesanan_id',
-        'slug',
-        'status_pemesanan',
-        'tanggal_pemesanan'
+        'pemesanan_id', 'slug', 'status_pemesanan', 'tanggal_pemesanan'
     ];
 
     public static function generatePemesananId()
     {
         $now = Carbon::now();
+
         $pemesanan_id = DB::table('pemesanans')->whereYear('tanggal_pemesanan', $now->year)->max('pemesanan_id');
 
-        // Jika tidak ada pemesanan sebelumnya pada tahun ini, atur nomor urut menjadi 1
-        $incrementPemesananId = !empty($pemesanan_id) ? ((int) substr($pemesanan_id, -6) + 1) : 1;
+        $pemesanan_id = substr($pemesanan_id, 9, 6);
+        $pemesanan_id = (int) $pemesanan_id + 1;
 
-        // Format nomor urut dengan tambahan nol di depan sesuai panjang
-        $incrementPemesananIdFormatted = str_pad($incrementPemesananId, 6, '0', STR_PAD_LEFT);
+        $addZero = str_pad($pemesanan_id, 6, "0", STR_PAD_LEFT);
 
-        // Bangun ID pemesanan baru
-        $newPemesananId = "PMSN." . $now->year . "." . $incrementPemesananIdFormatted;
+        $newPemesananId = "PMSN.{$now->year}.{$addZero}";
+
         return $newPemesananId;
     }
-
 }
-

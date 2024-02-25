@@ -31,7 +31,8 @@
             ajax: "{{ route('pengiriman-counter.history') }}",
             columns: [{
                     data: "pengiriman_counter_id"
-                }, {
+                },
+                {
                     data: "permintaan_counter_id"
                 },
                 {
@@ -65,7 +66,6 @@
                             }).format(date);
                             return tanggal_penjualan;
                         }
-
                     }
                 },
                 {
@@ -91,8 +91,7 @@
             selectedData = mainTable.row(indexRow).data();
             slug = selectedData.slug;
             $("#id-permintaan").text(selectedData.pengiriman_counter_id);
-            $('#detail-datatable').DataTable().clear();
-            $('#detail-datatable').DataTable().destroy();
+            $('#detail-datatable').DataTable().clear().destroy();
             $('#detail-datatable').DataTable({
                 ajax: {
                     "type": "POST",
@@ -117,7 +116,6 @@
                             }
                         }
                     },
-
                     {
                         data: "persetujuan",
                         name: "persetujuan"

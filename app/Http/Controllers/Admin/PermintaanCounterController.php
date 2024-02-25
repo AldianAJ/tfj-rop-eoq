@@ -348,7 +348,6 @@ class PermintaanCounterController extends Controller
                 $update_permintaan->status = 'Dikirim';
             }
             $update_permintaan->save();
-
             DB::commit();
         } catch (\Exception $ex) {
             echo $ex->getMessage();

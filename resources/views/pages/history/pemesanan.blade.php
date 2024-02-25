@@ -31,7 +31,8 @@
                 style: "currency",
                 currency: "IDR"
             }).format(number);
-        }
+        };
+
         let mainTable = $('#datatable').DataTable({
             ajax: "{{ route('pemesanan.history') }}",
             columns: [{
@@ -73,8 +74,7 @@
             selectedData = mainTable.row(indexRow).data();
             slug = selectedData.slug;
             $("#id-permintaan").text(selectedData.permintaan_counter_id);
-            $('#detail-datatable').DataTable().clear();
-            $('#detail-datatable').DataTable().destroy();
+            $('#detail-datatable').DataTable().clear().destroy();
             $('#detail-datatable').DataTable({
                 ajax: {
                     "type": "POST",

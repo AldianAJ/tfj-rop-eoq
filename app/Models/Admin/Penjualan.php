@@ -19,24 +19,21 @@ class Penjualan extends Model
     public static function generatePenjualanCounterId($counter_id, $tahun = null)
     {
         $now = Carbon::now();
-        $tahun = !empty($tahun) ? $tahun : $now->year;
 
-        // Ambil ID penjualan terakhir untuk counter dan tahun tertentu
+        $tahun = (!empty($tahun) ? $tahun : $now->year);
+
         $penjualan_id = DB::table('penjualans')
             ->whereYear('tanggal_penjualan', $tahun)
             ->where('counter_id', $counter_id)
             ->max('penjualan_id');
 
-        // Jika tidak ada data penjualan sebelumnya, atur nomor urut menjadi 1
-        $incrementPenjualanCounterId = !empty($penjualan_id) ? ((int) substr($penjualan_id, 16) + 1) : 1;
+        $penjualan_id = substr($penjualan_id, 16, 5);
+        $penjualan_id = (int) $penjualan_id + 1;
 
-        // Format nomor urut dengan tambahan nol di depan sesuai panjang
-        $incrementPenjualanCounterIdFormatted = str_pad($incrementPenjualanCounterId, 5, '0', STR_PAD_LEFT);
+        $addZero = str_pad($penjualan_id, 5, "0", STR_PAD_LEFT);
 
-        // Bangun ID penjualan baru dengan menambahkan awalan "PNJ"
-        $newPenjualanCounterId = "PNJ." . $counter_id . "." . $tahun . "." . $incrementPenjualanCounterIdFormatted;
+        $newPenjualanCounterId = "PNJ.{$counter_id}.{$tahun}.{$addZero}";
+
         return $newPenjualanCounterId;
     }
-
 }
-

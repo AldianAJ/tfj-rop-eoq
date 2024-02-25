@@ -38,11 +38,11 @@
                     data: "tanggal_permintaan",
                     render: function(data, type, row) {
                         let date = new Date(data);
-                        let tanggal_penjualan = new Intl.DateTimeFormat(['ban', 'id'], {
+                        let tanggal_permintaan = new Intl.DateTimeFormat(['ban', 'id'], {
                             dateStyle: 'long',
                             timeZone: 'Asia/Jakarta'
                         }).format(date);
-                        return tanggal_penjualan;
+                        return tanggal_permintaan;
                     }
                 },
                 {

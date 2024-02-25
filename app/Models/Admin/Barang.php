@@ -16,28 +16,20 @@ class Barang extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'barang_id',
-        'slug',
-        'nama_barang',
-        'harga_barang',
-        'biaya_penyimpanan',
-        'rop'
+        'barang_id', 'slug', 'nama_barang', 'harga_barang', 'biaya_penyimpanan', 'rop'
     ];
 
     public static function generateBarangId()
     {
-        // Ambil ID barang terakhir
-        $lastBarangId = DB::table('barangs')->max('barang_id');
+        $barang_id = DB::table('barangs')->max('barang_id');
 
-        // Jika tidak ada data barang sebelumnya, atur nomor urut menjadi 1
-        $incrementBarangId = !empty($lastBarangId) ? ((int) substr($lastBarangId, 1) + 1) : 1;
+        $barang_id = str_replace("B", "", $barang_id);
+        $barang_id = (int) $barang_id + 1;
 
-        // Format nomor urut dengan tambahan nol di depan sesuai panjang
-        $incrementBarangIdFormatted = str_pad($incrementBarangId, 5, '0', STR_PAD_LEFT);
+        $addZero = str_pad($barang_id, 5, "0", STR_PAD_LEFT);
 
-        // Bangun ID barang baru dengan menambahkan awalan "B"
-        $newBarangId = "B" . $incrementBarangIdFormatted;
+        $newBarangId = "B{$addZero}";
+
         return $newBarangId;
     }
-
 }

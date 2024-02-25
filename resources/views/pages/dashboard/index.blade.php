@@ -47,9 +47,9 @@
                 {
                     data: "avg",
                     render: function(data, type, row) {
-                        if (parseInt(row.qty_total) <= parseInt(row.rop)) {
+                        if (parseInt(row.qty_total) <= parseInt(row.ss)) {
                             return '<span class="badge rounded-3 badge-soft-danger p-2 font-size-11"><b>Lakukan Pemesanan</b></span>';
-                        } else if (parseInt(row.qty_total) <= parseInt(data)) {
+                        } else if (parseInt(row.qty_total) <= parseInt(row.rop)) {
                             return '<span class="badge rounded-3 badge-soft-warning p-2 font-size-11"><b>Segera Memesan</b></span>';
                         } else {
                             return '<span class="badge rounded-3 badge-soft-success p-2 font-size-11"><b>Aman</b></span>';

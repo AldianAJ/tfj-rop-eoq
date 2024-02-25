@@ -24,39 +24,32 @@
 <body>
     <div class="account-pages my-5 pt-sm-5">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
                 <div class="col-md-8 col-lg-6 col-xl-5">
                     <div class="card overflow-hidden">
-                        <div class="bg-info">
-                            <div class="row">
-                                @if (session()->has('msg'))
-                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                        <i class="mdi mdi-alert-outline me-2"></i>
-                                        {{ session('msg') }}
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                            aria-label="Close"></button>
-                                    </div>
-                                @endif
-                                <div class="col-12">
-                                    <div class="text-dark p-4 fs-5 text-center">
-                                        <img src="{{ asset('assets/images/logo-tfj.png') }}" alt=""
-                                            height="60" class="mb-3">
-                                        <h5 class="fw-bold">Selamat Datang!</h5>
-                                        <p>Jangan lupa tersenyum dengan pelanggan.</p>
-                                    </div>
+                        <div class="row">
+                            @if (session()->has('msg'))
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <i class="mdi mdi-alert-outline me-2"></i>
+                                    {{ session('msg') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
+                            @endif
+                            <div class="d-flex align-items-center justify-content-center gap-1 pt-5">
+                                <img src="{{ asset('assets/images/logo-tfj.png') }}" style="width: 40px" alt="Logo">
+                                <p class="mb-0 text-dark fw-bold fs-4">Toko Fadhil Jaya</p>
                             </div>
                         </div>
-                        <div class="card-body pt-0">
-                            <div class="p-2">
+                        <div class="card-body">
+                            <div class="p-3">
                                 <form class="form-horizontal" action="{{ route('auth.login') }}" method="POST">
                                     @csrf
-                                    <div class="mb-3 mt-2">
+                                    <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="username" name="username"
                                             placeholder="Enter username">
                                     </div>
-
                                     <div class="mb-3">
                                         <label class="form-label">Password</label>
                                         <div class="input-group auth-pass-inputgroup">
@@ -64,8 +57,8 @@
                                                 aria-label="Password" aria-describedby="password-addon" name="password">
                                         </div>
                                     </div>
-                                    <div class="mt-3 d-grid">
-                                        <button class="btn btn-info waves-effect waves-light"
+                                    <div class="mt-4 d-grid">
+                                        <button class="btn btn-primary waves-effect waves-light fw-bold"
                                             type="submit">Login</button>
                                     </div>
 
