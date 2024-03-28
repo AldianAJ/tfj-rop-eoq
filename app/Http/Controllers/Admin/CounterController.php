@@ -48,7 +48,7 @@ class CounterController extends Controller
         if ($request->ajax()) {
             $counters = DB::table('counters as a')
                 ->join('users as b', 'a.user_id', '=', 'b.user_id')
-                ->select('a.counter_id', 'b.name', 'b.address', 'b.username', 'a.slug')
+                ->select('a.counter_id', 'a.slug', 'b.name', 'b.address', 'b.username')
                 ->get();
             return DataTables::of($counters)
                 ->addColumn('action', function ($object) use ($path) {
@@ -168,7 +168,7 @@ class CounterController extends Controller
         $user = $this->userAuth();
         $counters = DB::table('counters as a')
             ->join('users as b', 'a.user_id', '=', 'b.user_id')
-            ->select('a.counter_id', 'b.name', 'b.address', 'b.username', 'a.slug')
+            ->select('a.counter_id', 'a.slug', 'b.name', 'b.address', 'b.username')
             ->where('a.slug', $slug)->first();
 
         return view('pages.counter.edit', compact('counters', 'user'));

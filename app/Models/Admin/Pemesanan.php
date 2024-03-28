@@ -17,7 +17,7 @@ class Pemesanan extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'pemesanan_id', 'slug', 'status_pemesanan', 'tanggal_pemesanan'
+        'pemesanan_id', 'slug', 'supplier_id', 'status_pemesanan', 'tanggal_pemesanan'
     ];
 
     public static function generatePemesananId()

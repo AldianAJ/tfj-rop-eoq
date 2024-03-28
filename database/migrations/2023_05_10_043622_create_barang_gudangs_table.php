@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('barang_gudangs', function (Blueprint $table) {
             $table->string('barang_gudang_id')->primary();
             $table->string('slug');
-            $table->string('barang_id');
             $table->string('gudang_id');
+            $table->string('barang_id');
             $table->integer('stok_awal')->default(0);
             $table->integer('stok_masuk')->default(0);
             $table->integer('stok_keluar')->default(0);

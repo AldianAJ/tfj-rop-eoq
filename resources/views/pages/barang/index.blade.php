@@ -51,22 +51,31 @@
                 },
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     {
+                        data: "supplier_id",
+                        name: "supplier_id"
+                    }, {
+                        data: "qty_total",
+                        name: "qty_total"
+                    }, {
+                        data: "quantity_satuan",
+                        name: "quantity_satuan"
+                    }, {
+                        data: "konversi_quantity",
+                        name: "konversi_quantity"
+                    }, {
+                        data: "konversi_satuan",
+                        name: "konversi_satuan"
+                    }, {
                         data: "biaya_penyimpanan",
                         render: function(data, type, row) {
                             return rupiah(data);
                         }
-                    }, {
-                        data: "rop",
-                        name: "rop"
-                    }, {
-                        data: "qty_total",
-                        name: "qty_total"
                     },
                     @if ($user->role == 'gudang' || $user->role == 'owner')
                         {
                             data: "action",
                             name: "action"
-                        }
+                        },
                     @endif
                 @else
                     {
@@ -74,21 +83,17 @@
                         name: "quantity"
                     },
                 @endif
-
-            ],
+            ]
         });
 
+
         $('input[name=btnradio]').each(function(index, element) {
-            // element == this
             $(this).on('change', function(e) {
-                $('#datatable').DataTable().clear();
-                $('#datatable').DataTable().destroy();
+                $('#datatable').DataTable().clear().destroy();
                 const target = $(e.target).val();
                 if (target == 'master') {
-                    barangDatatable.columns(4).visible(true);
-                    barangDatatable.columns(5).visible(true);
-                    barangDatatable.columns(6).visible(true);
-                    $(barangDatatable.columns(3).header()).text('Biaya Penyimpanan');
+                    barangDatatable.columns(9).visible(true);
+                    $(barangDatatable.columns(8).header()).text('Biaya Penyimpanan');
                     $('#datatable').DataTable({
                         ajax: "{{ route('barang') }}",
                         columns: [{
@@ -106,18 +111,25 @@
                                 }
                             },
                             {
+                                data: "supplier_id",
+                                name: "supplier_id"
+                            }, {
+                                data: "qty_total",
+                                name: "qty_total"
+                            }, {
+                                data: "quantity_satuan",
+                                name: "quantity_satuan"
+                            }, {
+                                data: "konversi_quantity",
+                                name: "konversi_quantity"
+                            }, {
+                                data: "konversi_satuan",
+                                name: "konversi_satuan"
+                            }, {
                                 data: "biaya_penyimpanan",
                                 render: function(data, type, row) {
                                     return rupiah(data);
                                 }
-                            },
-                            {
-                                data: "rop",
-                                name: "rop"
-                            },
-                            {
-                                data: "qty_total",
-                                name: "qty_total"
                             },
                             {
                                 data: "action",
@@ -126,9 +138,7 @@
                         ],
                     });
                 } else {
-                    barangDatatable.columns(4).visible(false);
-                    barangDatatable.columns(5).visible(false);
-                    barangDatatable.columns(6).visible(false);
+                    barangDatatable.columns(9).visible(false);
                     $(barangDatatable.columns(3).header()).text('Quantity');
                     $('#datatable').DataTable({
                         ajax: {
@@ -156,6 +166,10 @@
                             {
                                 data: "quantity",
                             },
+                            {
+                                data: "quantity_satuan",
+                                name: "quantity_satuan"
+                            }
                         ],
                     });
                 }
@@ -182,13 +196,12 @@
                     },
                     success: function(response) {
                         $('#biayaModal').modal('toggle');
-                        $('.alert-penyimpanan').show();
-                        $('#datatable').DataTable().clear();
-                        $('#datatable').DataTable().destroy();
-                        barangDatatable.columns(4).visible(true);
-                        barangDatatable.columns(5).visible(true);
-                        barangDatatable.columns(6).visible(true);
-                        $(barangDatatable.columns(3).header()).text('Biaya Penyimpanan');
+                        setTimeout(function() {
+                            $('.alert-penyimpanan').hide();
+                        }, 3000); // Hide after 3 seconds
+                        $('#datatable').DataTable().clear().destroy();
+                        barangDatatable.columns(9).visible(true);
+                        $(barangDatatable.columns(8).header()).text('Biaya Penyimpanan');
                         $('#datatable').DataTable({
                             ajax: "{{ route('barang') }}",
                             columns: [{
@@ -206,18 +219,26 @@
                                     }
                                 },
                                 {
+                                    data: "qty_total",
+                                    name: "qty_total"
+                                },
+                                {
+                                    data: "quantity_satuan",
+                                    name: "quantity_satuan"
+                                },
+                                {
+                                    data: "konversi_quantity",
+                                    name: "konversi_quantity"
+                                },
+                                {
+                                    data: "konversi_satuan",
+                                    name: "konversi_satuan"
+                                },
+                                {
                                     data: "biaya_penyimpanan",
                                     render: function(data, type, row) {
                                         return rupiah(data);
                                     }
-                                },
-                                {
-                                    data: "rop",
-                                    name: "rop"
-                                },
-                                {
-                                    data: "qty_total",
-                                    name: "qty_total"
                                 },
                                 {
                                     data: "action",
@@ -231,7 +252,9 @@
                 });
             } else {
                 $('#biayaModal').modal('toggle');
-                $('.alert-warning').show();
+                setTimeout(function() {
+                    $('.alert-warning').hide();
+                }, 3000); // Hide after 3 seconds
                 $('#biaya_penyimpanan').val("");
             }
         });
@@ -243,8 +266,10 @@
             selectedData = barangDatatable.row(indexRow).data();
             slug = selectedData.slug;
             $("#nama-barang").text(selectedData.nama_barang);
-            $('#detail-datatable').DataTable().clear();
-            $('#detail-datatable').DataTable().destroy();
+
+            // Hapus dan hancurkan DataTable yang sudah ada sebelum membuat yang baru
+            $('#detail-datatable').DataTable().clear().destroy();
+
             $('#detail-datatable').DataTable({
                 ajax: {
                     "type": "POST",
@@ -262,10 +287,15 @@
                     {
                         data: "quantity",
                         name: "quantity"
+                    },
+                    {
+                        data: "quantity_satuan",
+                        name: "quantity_satuan"
                     }
                 ],
             });
         });
+
 
         $('.btn-close').on('click', function() {
             $('.alert').hide();
@@ -292,23 +322,6 @@
 
     <div class="row">
         <div class="col-12">
-            @if (session()->has('msg'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-check-all me-2"></i>
-                    {{ session('msg') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
-            <div class="alert alert-success alert-dismissible alert-penyimpanan" role="alert">
-                <i class="mdi mdi-check-all me-2"></i>
-                Biaya Penyimpanan berhasil disimpan
-                <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="alert alert-warning alert-dismissible" role="alert">
-                <i class="mdi mdi-alert-outline me-2"></i>
-                Biaya penyimpanan tidak boleh kosong
-                <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
             <div class="card">
                 <div class="card-body">
                     @if ($user->role == 'gudang')
@@ -324,13 +337,11 @@
                                     <input type="radio" class="btn-check" name="btnradio" value="master" id="btnradio4"
                                         autocomplete="off" checked>
                                     <label class="btn btn-outline-primary" for="btnradio4">Master Barang</label>
-
                                     <input type="radio" class="btn-check" name="btnradio" value="gudang" id="btnradio5"
                                         autocomplete="off">
                                     <label class="btn btn-outline-primary" for="btnradio5">Barang Gudang</label>
                                 </div>
                             </div>
-
                             <div class="col">
                                 <div class="d-flex justify-content-end">
                                     <a href="{{ route('barang.create') }}"
@@ -343,15 +354,18 @@
                     @endif
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
                                 <th>Harga Barang</th>
                                 @if ($user->role == 'gudang' || $user->role == 'owner')
+                                    <th>Asal Barang</th>
+                                    <th>Qty</th>
+                                    <th>Satuan</th>
+                                    <th>Konversi Qty</th>
+                                    <th>Konversi Satuan</th>
                                     <th>Biaya Penyimpanan</th>
-                                    <th>ROP</th>
-                                    <th>Quantity Total</th>
                                     @if ($user->role == 'gudang' || $user->role == 'owner')
                                         <th>Action</th>
                                     @endif
@@ -364,6 +378,40 @@
                         </tbody>
                     </table>
 
+                </div>
+            </div>
+
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+
+                <!-- Toasts -->
+                @if (session()->has('msg'))
+                    <div class="toast align-items-center text-white bg-success border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            <i class="mdi mdi-check-all me-2"></i>
+                            <strong class="mr-auto"></strong><br>
+                            {{ session('msg') }}
+                        </div>
+                    </div>
+                @endif
+
+                <div class="toast align-items-center text-white bg-success border-0 alert-penyimpanan" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body bg-success">
+                        <i class="mdi mdi-check-all me-2 text-white"></i>
+                        <strong class="mr-auto text-white">Success</strong><br>
+                        Biaya Penyimpanan berhasil disimpan
+                    </div>
+                </div>
+
+                <div class="toast align-items-center text-white bg-warning border-0 alert-warning" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body bg-warning text-white">
+                        <i class="mdi mdi-alert-outline me-2 text-white"></i>
+                        <strong class="mr-auto text-white">Warning</strong><br>
+                        Biaya penyimpanan tidak boleh kosong
+                    </div>
                 </div>
             </div>
         </div> <!-- end col -->

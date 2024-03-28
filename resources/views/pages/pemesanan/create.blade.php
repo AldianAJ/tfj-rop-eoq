@@ -298,7 +298,7 @@
                     <h4 class="card-title mb-3">Barang</h4>
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
@@ -336,7 +336,7 @@
                     </div>
                     <h5>Biaya Pemesanan : <span id="biaya"></span></h5>
                     <table id="datatable-pemesanan" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>

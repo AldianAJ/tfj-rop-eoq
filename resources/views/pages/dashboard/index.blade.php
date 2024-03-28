@@ -48,11 +48,11 @@
                     data: "avg",
                     render: function(data, type, row) {
                         if (parseInt(row.qty_total) <= parseInt(row.ss)) {
-                            return '<span class="badge rounded-3 badge-soft-danger p-2 font-size-11"><b>Lakukan Pemesanan</b></span>';
+                            return '<span class="badge rounded-3 badge-soft-danger p-2 font-size-12" style="border: 1px solid;"><i class="bx bxs-cart me-1" style="font-size: 12px;"></i><b>Darurat</b></span>';
                         } else if (parseInt(row.qty_total) <= parseInt(row.rop)) {
-                            return '<span class="badge rounded-3 badge-soft-warning p-2 font-size-11"><b>Segera Memesan</b></span>';
+                            return '<span class="badge rounded-3 badge-soft-warning p-2 font-size-12" style="border: 1px solid;"><i class="bx bxs-alarm-exclamation me-1" style="font-size: 12px;></i><b>Perhatian</b></span>';
                         } else {
-                            return '<span class="badge rounded-3 badge-soft-success p-2 font-size-11"><b>Aman</b></span>';
+                            return '<span class="badge rounded-3 badge-soft-success p-2 font-size-12" style="border: 1px solid;"><i class="bx bxs-badge-check me-1" style="font-size: 12px;></i><b>Aman</b></span>';
                         }
 
                     }
@@ -116,7 +116,8 @@
                                     <p class="text-muted mb-2">Total Pendapatan ({{ $bulan_tahun }})</p>
                                     <h5 class="mb-0">
                                         @php
-                                            $hasil_rupiah = 'Rp ' . number_format($penjualan->total_pendapatan, 0, ',', '.');
+                                            $hasil_rupiah =
+                                                'Rp ' . number_format($penjualan->total_pendapatan, 0, ',', '.');
                                             echo $hasil_rupiah;
                                         @endphp
                                     </h5>
@@ -143,7 +144,7 @@
             <div class="card">
                 <div class="card-body">
                     <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID</th>
                                 <th>Nama Barang</th>

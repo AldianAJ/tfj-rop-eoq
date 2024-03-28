@@ -24,7 +24,7 @@ class PengirimanCounterController extends Controller
 
     public function index()
     {
-        $pengiriman_counter_id = PengirimanCounter::generatePengirimanCounterId('C00002');
+        $pengiriman_counter_id = PengirimanCounter::generatePengirimanCounterId('C00001');
         dd($pengiriman_counter_id);
     }
 
@@ -34,23 +34,25 @@ class PengirimanCounterController extends Controller
         $permintaan = DB::table('permintaan_counters')
             ->where('slug', $slug)
             ->first();
-        $data = DB::table('pengiriman_counters')
-            ->where('permintaan_counter_id', $permintaan->permintaan_counter_id)
-            ->first();
 
-        $query = 'SELECT a.pengiriman_counter_id, a.slug, a.permintaan_counter_id, g.name, d.nama_barang, b.jumlah_pengiriman, b.persetujuan, b.catatan
-            FROM pengiriman_counters AS a
-            LEFT JOIN detail_pengiriman_counters AS b ON a.pengiriman_counter_id = b.pengiriman_counter_id
-            LEFT JOIN permintaan_counters AS c on a.permintaan_counter_id = c.permintaan_counter_id
-            LEFT JOIN barangs AS d ON b.barang_id = d.barang_id
-            LEFT JOIN gudangs AS e ON b.gudang_id = e.gudang_id
-            LEFT JOIN counters AS f ON b.counter_id = f.counter_id
-            LEFT JOIN users AS g ON e.user_id=g.user_id OR f.user_id = g.user_id WHERE a.permintaan_counter_id = "' . $permintaan->permintaan_counter_id . '"';
+        $pengirimans = DB::table('pengiriman_counters as a')
+            ->select('a.pengiriman_counter_id', 'a.slug', 'a.permintaan_counter_id', 'g.name', 'd.nama_barang', 'b.jumlah_pengiriman', 'b.persetujuan', 'b.catatan')
+            ->leftJoin('detail_pengiriman_counters as b', 'a.pengiriman_counter_id', '=', 'b.pengiriman_counter_id')
+            ->leftJoin('permintaan_counters as c', 'a.permintaan_counter_id', '=', 'c.permintaan_counter_id')
+            ->leftJoin('barangs as d', 'b.barang_id', '=', 'd.barang_id')
+            ->leftJoin('gudangs as e', 'b.gudang_id', '=', 'e.gudang_id')
+            ->leftJoin('counters as f', 'b.counter_id', '=', 'f.counter_id')
+            ->leftJoin('users as g', function ($join) {
+                $join->on('e.user_id', '=', 'g.user_id')
+                    ->orOn('f.user_id', '=', 'g.user_id');
+            })
+            ->where('a.permintaan_counter_id', $permintaan->permintaan_counter_id)
+            ->get();
 
-        $pengirimans = DB::select($query);
-
-        return view('pages.pengiriman.detail', compact('user', 'pengirimans', 'permintaan', 'data'));
+        return view('pages.pengiriman.detail', compact('user', 'pengirimans', 'permintaan'));
     }
+
+
 
     public function storePenerimaan($slug)
     {
@@ -72,7 +74,6 @@ class PengirimanCounterController extends Controller
             }
             DB::commit();
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -107,9 +108,13 @@ class PengirimanCounterController extends Controller
     {
         DB::beginTransaction();
         try {
-            $detail_pengiriman = DetailPengirimanCounter::where(['pengiriman_counter_id' => $pengiriman_counter_id, 'barang_id' => $barang_id])->first();
-            $detail_pengiriman->status_pengiriman = 'Dikirim';
-            $detail_pengiriman->save();
+            $detail_pengiriman = DB::table('detail_pengiriman_counters')
+                ->where(['pengiriman_counter_id' => $pengiriman_counter_id, 'barang_id' => $barang_id])
+                ->first();
+
+            DB::table('detail_pengiriman_counters')
+                ->where(['pengiriman_counter_id' => $pengiriman_counter_id, 'barang_id' => $barang_id])
+                ->update(['status_pengiriman' => 'Shipped']);
 
             $barang_diambil = DB::table('detail_pengiriman_counters as dp')
                 ->join('pengiriman_counters as pg', 'dp.pengiriman_counter_id', '=', 'pg.pengiriman_counter_id')
@@ -119,20 +124,18 @@ class PengirimanCounterController extends Controller
                 ->join('counters as c', 'pm.counter_id', '=', 'c.counter_id')
                 ->join('users as u', 'c.user_id', '=', 'u.user_id')
                 ->selectRaw('DISTINCT pg.pengiriman_counter_id, pm.permintaan_counter_id, b.barang_id, b.nama_barang, pm.tanggal_permintaan, dp.jumlah_pengiriman, u.name, dp.status_pengiriman')
-                ->where(['pg.pengiriman_counter_id' => $pengiriman_counter_id, 'dp.persetujuan' => 'setuju', 'dp.status_pengiriman' => 'Menunggu Dikirim'])
+                ->where(['pg.pengiriman_counter_id' => $pengiriman_counter_id, 'dp.persetujuan' => 'setuju', 'dp.status_pengiriman' => 'Waiting Shipped'])
                 ->get();
-            // dd($barang_diambil);
+
             if (count($barang_diambil) < 1) {
-                // dd($barang_diambil);
-                $pengiriman = DB::table('pengiriman_counters')->where('pengiriman_counter_id', $pengiriman_counter_id)->first();
-                $permintaan = PermintaanCounter::where('permintaan_counter_id', $pengiriman->permintaan_counter_id)->first();
-                $permintaan->status = 'Dikirim';
-                $permintaan->save();
+                DB::table('pengiriman_counters')
+                    ->where('pengiriman_counter_id', $pengiriman_counter_id)
+                    ->update(['status' => 'Shipped']);
             }
+
             DB::commit();
             return redirect()->route('pengiriman-counter.barangDiambil');
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -142,47 +145,57 @@ class PengirimanCounterController extends Controller
     {
         $user = $this->userAuth();
         $path = "pengiriman-counter";
+
         if ($request->ajax()) {
             $pengirimans = DB::table('pengiriman_counters as pgc')
                 ->join('permintaan_counters as pmc', 'pgc.permintaan_counter_id', '=', 'pmc.permintaan_counter_id')
                 ->join('counters as c', 'pmc.counter_id', '=', 'c.counter_id')
                 ->join('users as u', 'c.user_id', '=', 'u.user_id')
-                ->selectRaw('pgc.pengiriman_counter_id, u.name, pmc.permintaan_counter_id, pmc.status, pgc.tanggal_pengiriman, pgc.tanggal_penerimaan, pgc.slug')
-                ->where('pmc.status', 'Diterima/Selesai')
-                ->orWhere('pmc.status', 'Ditolak')
-                ->orderByRaw('pgc.tanggal_pengiriman desc, pgc.pengiriman_counter_id desc')
+                ->selectRaw('pgc.pengiriman_counter_id, u.name, pmc.permintaan_counter_id, pmc.status_permintaan, pgc.tanggal_pengiriman, pgc.tanggal_penerimaan, pgc.slug')
+                ->where('pmc.status_permintaan', 'Diterima/Selesai')
+                ->orWhere('pmc.status_permintaan', 'Ditolak')
+                ->orderByDesc('pgc.tanggal_pengiriman')
+                ->orderByDesc('pgc.pengiriman_counter_id')
                 ->get();
 
             return DataTables::of($pengirimans)
                 ->addColumn('action', function ($object) use ($path) {
-                    $html = ' <button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                        . '  <i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                    $html .= ' <a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
-                        . ' <i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
+                    $html = '<button class="btn btn-secondary waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '<i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                    $html .= '<a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
+                        . '<i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
                     return $html;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
+
         return view('pages.history.pengiriman-counter', compact('user'));
     }
+
 
 
     public function detailHistory(Request $request)
     {
         $slug = $request->slug;
-        $query = 'SELECT a.pengiriman_counter_id, a.slug, a.permintaan_counter_id, g.name, d.nama_barang, b.jumlah_pengiriman, b.persetujuan, b.catatan
-            FROM pengiriman_counters AS a
-            LEFT JOIN detail_pengiriman_counters AS b ON a.pengiriman_counter_id = b.pengiriman_counter_id
-            LEFT JOIN permintaan_counters AS c on a.permintaan_counter_id = c.permintaan_counter_id
-            LEFT JOIN barangs AS d ON b.barang_id = d.barang_id
-            LEFT JOIN gudangs AS e ON b.gudang_id = e.gudang_id
-            LEFT JOIN counters AS f ON b.counter_id = f.counter_id
-            LEFT JOIN users AS g ON e.user_id=g.user_id OR f.user_id = g.user_id WHERE a.slug = "' . $slug . '"';
 
-        $pengirimans = DB::select($query);
+        $pengirimans = DB::table('pengiriman_counters as a')
+            ->select('a.pengiriman_counter_id', 'a.slug', 'a.permintaan_counter_id', 'g.name', 'd.nama_barang', 'b.jumlah_pengiriman', 'b.persetujuan', 'b.catatan')
+            ->leftJoin('detail_pengiriman_counters as b', 'a.pengiriman_counter_id', '=', 'b.pengiriman_counter_id')
+            ->leftJoin('permintaan_counters as c', 'a.permintaan_counter_id', '=', 'c.permintaan_counter_id')
+            ->leftJoin('barangs as d', 'b.barang_id', '=', 'd.barang_id')
+            ->leftJoin('gudangs as e', 'b.gudang_id', '=', 'e.gudang_id')
+            ->leftJoin('counters as f', 'b.counter_id', '=', 'f.counter_id')
+            ->leftJoin('users as g', function ($join) {
+                $join->on('e.user_id', '=', 'g.user_id')
+                    ->orOn('f.user_id', '=', 'g.user_id');
+            })
+            ->where('a.slug', '=', $slug)
+            ->get();
+
         return DataTables::of($pengirimans)->make(true);
     }
+
 
     public function exportPDF($slug)
     {
@@ -205,18 +218,22 @@ class PengirimanCounterController extends Controller
         $pengiriman_counter = DB::table('pengiriman_counters')
             ->where('slug', $slug)
             ->first();
-        $query = 'SELECT a.pengiriman_counter_id, a.slug, a.permintaan_counter_id, g.name, d.nama_barang, b.jumlah_pengiriman, b.persetujuan, b.catatan
-        FROM pengiriman_counters AS a
-        LEFT JOIN detail_pengiriman_counters AS b ON a.pengiriman_counter_id = b.pengiriman_counter_id
-        LEFT JOIN permintaan_counters AS c on a.permintaan_counter_id = c.permintaan_counter_id
-        LEFT JOIN barangs AS d ON b.barang_id = d.barang_id
-        LEFT JOIN gudangs AS e ON b.gudang_id = e.gudang_id
-        LEFT JOIN counters AS f ON b.counter_id = f.counter_id
-        LEFT JOIN users AS g ON e.user_id=g.user_id OR f.user_id = g.user_id WHERE a.slug = "' . $slug . '"';
-        $details = DB::select($query);
+
+        $details = DB::table('pengiriman_counters as a')
+            ->select('a.pengiriman_counter_id', 'a.slug', 'a.permintaan_counter_id', 'g.name', 'd.nama_barang', 'b.jumlah_pengiriman', 'b.persetujuan', 'b.catatan')
+            ->leftJoin('detail_pengiriman_counters as b', 'a.pengiriman_counter_id', '=', 'b.pengiriman_counter_id')
+            ->leftJoin('permintaan_counters as c', 'a.permintaan_counter_id', '=', 'c.permintaan_counter_id')
+            ->leftJoin('barangs as d', 'b.barang_id', '=', 'd.barang_id')
+            ->leftJoin('gudangs as e', 'b.gudang_id', '=', 'e.gudang_id')
+            ->leftJoin('counters as f', 'b.counter_id', '=', 'f.counter_id')
+            ->leftJoin('users as g', function ($join) {
+                $join->on('e.user_id', '=', 'g.user_id')
+                    ->orOn('f.user_id', '=', 'g.user_id');
+            })
+            ->where('a.slug', $slug)
+            ->get();
 
         $title = 'Laporan Pengiriman Counter ' . $pengiriman_counter->pengiriman_counter_id;
-        // dd($title);
         $pdf = Pdf::loadView('pages.export.pengiriman-counter', compact('details', 'title', 'tanggal'));
         return $pdf->download($title . ".pdf");
     }

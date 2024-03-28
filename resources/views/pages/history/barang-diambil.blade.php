@@ -51,12 +51,12 @@
                 {
                     data: "status_pengiriman",
                     render: function(data, type, row) {
-                        if (data == 'Menunggu Dikirim') {
+                        if (data == 'Waiting Shipped') {
                             return "<a href='/pengiriman_counter/update/status/" + row
                                 .pengiriman_counter_id + "/" + row.barang_id +
                                 "' class='btn btn-primary'>Kirim </a>";
                         } else {
-                            return '<span class="badge rounded-pill badge-soft-primary font-size-14">Dikirim</span>';
+                            return '<span class="badge rounded-pill badge-soft-primary font-size-14">Shipped</span>';
                         }
                     }
                 }
@@ -94,7 +94,7 @@
             <div class="card">
                 <div class="card-body">
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>Jumlah Dikirim</th>

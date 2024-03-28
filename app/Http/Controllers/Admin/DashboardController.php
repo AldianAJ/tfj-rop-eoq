@@ -16,7 +16,6 @@ class DashboardController extends Controller
         $user = Auth::guard('user')->user();
         return $user;
     }
-
     public function index(Request $request)
     {
         $user = $this->userAuth();
@@ -27,15 +26,10 @@ class DashboardController extends Controller
                 ->join('barang_counters as bc', 'b.barang_id', '=', 'bc.barang_id')
                 ->join('detail_penjualans as dp', 'bc.barang_counter_id', '=', 'dp.barang_counter_id')
                 ->selectRaw('b.barang_id, b.slug, b.nama_barang, b.harga_barang, b.biaya_penyimpanan, b.rop,
-                    ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) +
-                    (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = b.barang_id GROUP BY barang_id)) as qty_total,
-                    MAX(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, b.ss')
-                ->groupByRaw("b.barang_id, b.slug, b.nama_barang, b.harga_barang, b.biaya_penyimpanan, b.rop,
-                    ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) +
-                    (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = b.barang_id GROUP BY barang_id))")
-                ->orderByRaw("((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = b.barang_id GROUP BY barang_id) +
-                    (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = b.barang_id GROUP BY barang_id)) <= b.rop desc,
-                    b.barang_id asc")
+                (SUM(bg.stok_masuk) - SUM(bg.stok_keluar) + SUM(bc.stok_masuk) - SUM(bc.stok_keluar)) as qty_total,
+                MAX(dp.quantity) as max, ROUND(SUM(dp.quantity) / 30, 2) as avg, b.ss')
+                ->groupBy('b.barang_id', 'b.slug', 'b.nama_barang', 'b.harga_barang', 'b.biaya_penyimpanan', 'b.rop', 'b.ss')
+                ->orderByRaw('(SUM(bg.stok_masuk) - SUM(bg.stok_keluar) + SUM(bc.stok_masuk) - SUM(bc.stok_keluar)) <= b.rop DESC, b.barang_id ASC')
                 ->get();
 
             return DataTables::of($barangs)
@@ -67,5 +61,4 @@ class DashboardController extends Controller
 
         return view('pages.dashboard.index', compact('user', 'jumlah_jenis', 'total_transaksi', 'penjualan', 'jumlah_counter', 'bulan_tahun'));
     }
-
 }

@@ -23,6 +23,19 @@
     <script src="{{ asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
+    <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl, {
+                autohide: true,
+                delay: 5000
+            });
+        });
+
+        toastList.forEach(function(toast) {
+            toast.show();
+        });
+    </script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
@@ -49,13 +62,6 @@
 
     <div class="row">
         <div class="col-12">
-            @if (session()->has('msg'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-check-all me-2"></i>
-                    {{ session('msg') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">Detail Pengiriman {{ $data->pengiriman_counter_id }}</h4>
@@ -65,7 +71,7 @@
                                 <i class="bx bx-caret-left align-middle me-2 font-size-18"></i>Kembali
                             </a>
                         </div>
-                        @if ($user->role == 'counter' && $permintaan->status == 'Dikirim')
+                        @if ($user->role == 'counter' && $permintaan->status == 'Shipped')
                             <div class="col d-flex justify-content-end">
                                 <a href="{{ route('pengiriman-counter.penerimaan', ['slug' => $data->slug]) }}"
                                     class="btn btn-primary waves-effect waves-light">
@@ -75,7 +81,7 @@
                         @endif
                     </div>
                     <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>Sumber</th>
@@ -107,6 +113,22 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+                @if (session()->has('msg'))
+                    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                        style="position: fixed; bottom: 1rem; right: 1rem;">
+                        <div class="toast align-items-center text-white bg-success border-0" role="alert"
+                            aria-live="assertive" aria-atomic="true">
+                            <div class="toast-body">
+                                <i class="mdi mdi-check-all me-2 text-white"></i>
+                                <strong class="mr-auto">Success</strong><br>
+                                {{ session('msg') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div> <!-- end col -->
     </div>

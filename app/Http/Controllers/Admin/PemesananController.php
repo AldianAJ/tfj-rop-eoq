@@ -28,6 +28,7 @@ class PemesananController extends Controller
     {
         $user = $this->userAuth();
         $path = 'pemesanan';
+
         if ($request->ajax()) {
             $pemesanans = DB::table('pemesanans')
                 ->where('status_pemesanan', 'Menunggu Persetujuan')
@@ -43,21 +44,24 @@ class PemesananController extends Controller
                         return $html;
                     } elseif ($user->role == 'gudang' && $object->status_pemesanan == 'Disetujui') {
                         $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-secondary waves-effect waves-light btn-detail">
-                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
+                    <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
                         $html .= ' <a href="' . route($path . '.dipesan', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light btn-detail">
-                        <i class="bx bxs-send font-size-18 align-middle me-2"></i> Dipesan</a>';
+                    <i class="bx bxs-send font-size-18 align-middle me-2"></i> Dipesan</a>';
                         return $html;
                     } else {
                         $html = ' <a href="' . route($path . '.detail', ["slug" => $object->slug]) . '" class="btn btn-secondary waves-effect waves-light btn-detail">
-                        <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
+                    <i class="bx bx-detail font-size-18 align-middle me-2"></i> Detail</a>';
                         return $html;
                     }
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
+
         return view('pages.pemesanan.index', compact('user'));
     }
+
+
 
     public function hitung()
     {
@@ -85,12 +89,22 @@ class PemesananController extends Controller
     {
         $user = $this->userAuth();
         if ($request->ajax()) {
-            $query = "SELECT a.barang_id, a.slug,a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop,((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total
-            FROM barangs as a
-            JOIN barang_gudangs as b on a.barang_id = b.barang_id
-            JOIN barang_counters as c on a.barang_id = c.barang_id
-            GROUP BY a.barang_id, a.nama_barang, a.harga_barang, a.biaya_penyimpanan, a.rop ORDER BY ((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) <= a.rop desc, a.barang_id asc";
-            $barangs = DB::select($query);
+            $barangs = DB::table('barangs as a')
+                ->select(
+                    'a.barang_id',
+                    'a.slug',
+                    'a.nama_barang',
+                    'a.harga_barang',
+                    'a.biaya_penyimpanan',
+                    'a.rop',
+                    DB::raw('((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) as qty_total')
+                )
+                ->join('barang_gudangs as b', 'a.barang_id', '=', 'b.barang_id')
+                ->join('barang_counters as c', 'a.barang_id', '=', 'c.barang_id')
+                ->groupBy('a.barang_id', 'a.nama_barang', 'a.harga_barang', 'a.biaya_penyimpanan', 'a.rop')
+                ->orderByRaw('((SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_gudangs WHERE barang_id = a.barang_id GROUP BY barang_id) + (SELECT SUM(stok_masuk)-SUM(stok_keluar) FROM barang_counters WHERE barang_id = a.barang_id GROUP BY barang_id)) <= a.rop desc, a.barang_id asc')
+                ->get();
+
             return DataTables::of($barangs)
                 ->addColumn('action', function ($object) {
                     $html = '<button class="btn btn-success waves-effect waves-light btn-add"' .
@@ -103,6 +117,7 @@ class PemesananController extends Controller
 
         return view('pages.pemesanan.create', compact('user'));
     }
+
 
     public function hitungEOQ(Request $request)
     {
@@ -148,7 +163,7 @@ class PemesananController extends Controller
     public function store(Request $request)
     {
         $details = json_decode($request->pemesanan);
-        $biaya_pemesanan = $request->biaya;
+        // $biaya_pemesanan = $request->biaya;
 
         DB::beginTransaction();
         try {
@@ -158,7 +173,7 @@ class PemesananController extends Controller
             $pemesanan->slug = Str::random(16);
             $pemesanan->status_pemesanan = 'Menunggu Persetujuan';
             $pemesanan->tanggal_pemesanan = Carbon::now();
-            $pemesanan->biaya_pemesanan = $biaya_pemesanan;
+            // $pemesanan->biaya_pemesanan = $biaya_pemesanan;
             $pemesanan->save();
             foreach ($details as $detail) {
                 $detail_pemesanan = new DetailPemesanan;
@@ -178,7 +193,6 @@ class PemesananController extends Controller
 
     public function jumlahHari($bulan_tahun)
     {
-        # code...
         $jumlah = date('t', strtotime(substr($bulan_tahun, 3, 4) . "-" . substr($bulan_tahun, 0, 2) . "-01"));
         return $jumlah;
     }
@@ -316,7 +330,6 @@ class PemesananController extends Controller
             $pemesanan->save();
             DB::commit();
         } catch (\Exception $ex) {
-            //throw $th;
             echo $ex->getMessage();
             DB::rollBack();
         }
@@ -377,13 +390,15 @@ class PemesananController extends Controller
             ->where('p.status_pemesanan', 'Selesai')
             ->whereBetween('pm.tanggal_persediaan_masuk', [$subdate, $lastdate])
             ->first();
+
         foreach ($details as $detail) {
             $data = DB::table('detail_penjualans as dp')
                 ->join('penjualans as p', 'dp.penjualan_id', '=', 'p.penjualan_id')
                 ->join('barang_counters as bc', 'dp.barang_counter_id', '=', 'bc.barang_counter_id')
                 ->join('barangs as b', 'bc.barang_id', '=', 'b.barang_id')
                 ->selectRaw('max(dp.quantity) as max, round(sum(dp.quantity) / 30, 2) as avg, sum(dp.quantity) as total')
-                ->whereRaw("b.barang_id = '" . $detail->barang_id . "' AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = '" . $bulan_tahun->bulan . "'")->first();
+                ->whereRaw("b.barang_id = ? AND DATE_FORMAT(p.tanggal_penjualan, '%m-%Y') = ?", [$detail->barang_id, $bulan_tahun->bulan])
+                ->first();
             $lead_time = !empty($avg_date->lead_time) ? $avg_date->lead_time : 2;
             $ss = ($data->max - $data->avg) * $lead_time;
             $jumlah_hari = $this->jumlahHari($bulan_tahun->bulan);
@@ -409,6 +424,7 @@ class PemesananController extends Controller
         }
         return DataTables::of($detail_pemesanans)->make(true);
     }
+
 
     public function exportPDF($slug)
     {

@@ -136,7 +136,7 @@
             <div class="card">
                 <div class="card-body">
                     <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Pemesanan</th>
                                 <th>Tanggal Pemesanan</th>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="modal-body">
                     <table class="table table-bordered dt-responsive nowrap w-100" id="detail-datatable">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>EOQ</th>

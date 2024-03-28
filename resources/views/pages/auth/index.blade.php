@@ -10,7 +10,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo-tfj.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-tfj-sm-dark.png') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-md-8 col-lg-6 col-xl-5">
-                    <div class="card overflow-hidden">
+                    <div class="card overflow-hidden" style="box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);">
                         <div class="row">
                             @if (session()->has('msg'))
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -37,7 +37,8 @@
                                 </div>
                             @endif
                             <div class="d-flex align-items-center justify-content-center gap-1 pt-5">
-                                <img src="{{ asset('assets/images/logo-tfj.png') }}" style="width: 40px" alt="Logo">
+                                <img src="{{ asset('assets/images/logo-tfj-sm-dark.png') }}" style="width: 40px"
+                                    alt="Logo">
                                 <p class="mb-0 text-dark fw-bold fs-4">Toko Fadhil Jaya</p>
                             </div>
                         </div>
@@ -61,11 +62,8 @@
                                         <button class="btn btn-primary waves-effect waves-light fw-bold"
                                             type="submit">Login</button>
                                     </div>
-
-
                                 </form>
                             </div>
-
                         </div>
                     </div>
                     <div class="mt-4 text-center fw-bold">
@@ -73,7 +71,7 @@
                             <p>Copyright©
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script> Toko Fadhil Jaya. All Rights Reserved.
+                                </script> Toko Fadhil Jaya.
                             </p>
                         </div>
                     </div>

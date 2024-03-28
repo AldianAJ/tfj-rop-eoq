@@ -11,7 +11,7 @@
 
 </head>
 
-<body data-sidebar="dark" data-layout-mode="light">
+<body data-sidebar="light" data-layout-mode="light">
     <div id="preloader">
         <div id="status">
             <div class="spinner-chase">

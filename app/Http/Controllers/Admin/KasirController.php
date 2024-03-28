@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\BarangCounter;
 use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
 use App\Models\Admin\Penjualan;
 use App\Models\Admin\DetailPenjualan;
@@ -32,25 +31,25 @@ class KasirController extends Controller
                 ->where('user_id', $user->user_id)
                 ->first();
 
-            $query = 'SELECT a.barang_counter_id, b.barang_id, b.nama_barang, b.harga_barang, a.slug, (a.stok_masuk - a.stok_keluar) as quantity
-            FROM barang_counters as a
-            JOIN barangs as b on a.barang_id = b.barang_id
-            WHERE a.counter_id = "' . $counters->counter_id . '" ORDER BY a.barang_counter_id ASC';
+            $data = DB::table('barang_counters as a')
+                ->select('a.barang_counter_id', 'b.barang_id', 'b.nama_barang', 'b.harga_barang', 'a.slug')
+                ->selectRaw('(a.stok_masuk - a.stok_keluar) as quantity')
+                ->join('barangs as b', 'a.barang_id', '=', 'b.barang_id')
+                ->where('a.counter_id', $counters->counter_id)
+                ->orderBy('a.barang_counter_id', 'ASC')
+                ->get();
 
-            $data = DB::select($query);
+            foreach ($data as $item) {
+                $item->action = '<button class="btn btn-primary waves-effect waves-light btn-add" data-bs-toggle="modal"
+                data-bs-target="#quantityModal"><i class="bx bxs-cart align-middle font-size-18"></i></button>';
+            }
 
-            return DataTables::of($data)
-                ->addColumn('action', function ($object) {
-                    $html = '<button class="btn btn-primary waves-effect waves-light btn-add" data-bs-toggle="modal"
-                    data-bs-target="#quantityModal"><i class="bx bxs-cart align-middle font-size-18"></i></button>';
-                    return $html;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            return response()->json($data);
         }
 
         return view('pages.kasir.index', compact('user'));
     }
+
 
     public function store(Request $request)
     {
@@ -89,5 +88,4 @@ class KasirController extends Controller
             DB::rollBack();
         }
     }
-
 }

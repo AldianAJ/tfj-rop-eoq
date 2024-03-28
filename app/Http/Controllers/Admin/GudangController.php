@@ -35,23 +35,28 @@ class GudangController extends Controller
         $user = $this->userAuth();
 
         if ($request->ajax()) {
-            $query = 'SELECT a.gudang_id, b.name, b.address, b.username, a.slug
-        FROM gudangs as a
-        JOIN users as b on a.user_id = b.user_id;';
-            $gudangs = DB::select($query);
+            try {
+                $gudangs = DB::table('gudangs as a')
+                    ->join('users as b', 'a.user_id', '=', 'b.user_id')
+                    ->select('a.gudang_id','a.slug', 'b.name', 'b.address', 'b.username',)
+                    ->get();
 
-            return DataTables::of($gudangs)
-                ->addColumn('action', function ($object) use ($path) {
-                    $html = '<a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light">'
-                        . '<i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
-                    return $html;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+                return DataTables::of($gudangs)
+                    ->addColumn('action', function ($object) use ($path) {
+                        $html = '<a href="' . route($path . ".edit", ["slug" => $object->slug]) . '" class="btn btn-warning waves-effect waves-light">'
+                            . '<i class="bx bx-edit align-middle me-2 font-size-18"></i>Edit</a>';
+                        return $html;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            } catch (\Exception $e) {
+                return response()->json(['error' => 'Failed to fetch data: ' . $e->getMessage()], 500);
+            }
         }
 
         return view('pages.gudang.index', compact('user'));
     }
+
 
     public function edit($slug)
     {
@@ -90,6 +95,4 @@ class GudangController extends Controller
             DB::rollBack();
         }
     }
-
-
 }

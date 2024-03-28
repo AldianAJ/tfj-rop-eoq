@@ -1,14 +1,11 @@
 <div class="vertical-menu">
-
-    <div data-simplebar class="h-100 bg-dark">
-
+    <div data-simplebar class="h-100">
         <!--- Sidemenu -->
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     <li class="menu-title" key="t-menu">Menu</li>
-
                     <li>
                         <a href="{{ route('dashboard') }}">
                             <i class="bx bx-home-circle"></i>
@@ -25,11 +22,16 @@
                             <span key="t-gudang">Gudang</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="{{ route('counter') }}" class="waves-effect">
                             <i class="bx bxs-store-alt"></i>
                             <span key="t-counter">Counter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('supplier') }}" class="waves-effect">
+                            <i class="bx bxs-business"></i>
+                            <span key="t-counter">Supplier</span>
                         </a>
                     </li>
                 @endif
@@ -40,10 +42,10 @@
                         <span key="t-barang">Barang</span>
                     </a>
                 </li>
+
                 @if ($user->role == 'counter' || $user->role == 'gudang')
                     <li class="menu-title" key="t-pages">Utility</li>
                 @endif
-
 
                 @if ($user->role == 'counter')
                     <li>
@@ -77,6 +79,7 @@
                         </a>
                     </li>
                 @endif
+
                 @if ($user->role == 'gudang')
                     <li>
                         <a href="{{ route('persediaan-masuk') }}" class="waves-effect">
@@ -98,9 +101,10 @@
                 <li>
                     <a href="{{ route('permintaan-counter.history') }}" class="waves-effect">
                         <i class="bx bx-notepad"></i>
-                        <span key="t-kasir">Permintaan Counter ke Gudang</span>
+                        <span key="t-kasir">Permintaan Counter</span>
                     </a>
                 </li>
+
                 @if ($user->role == 'gudang' || $user->role == 'owner')
                     <li>
                         <a href="{{ route('pemesanan.history') }}" class="waves-effect">
@@ -112,11 +116,10 @@
                     <li>
                         <a href="{{ route('pengiriman-counter.history') }}" class="waves-effect">
                             <i class="bx bx-task"></i>
-                            <span key="t-kasir">Pengiriman Counter ke Counter</span>
+                            <span key="t-kasir">Pengiriman Counter</span>
                         </a>
                     </li>
                 @endif
-
             </ul>
         </div>
         <!-- Sidebar -->

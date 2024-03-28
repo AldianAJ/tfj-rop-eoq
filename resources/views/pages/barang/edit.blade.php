@@ -6,6 +6,20 @@
 
 @push('after-app-script')
     <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl, {
+                autohide: true,
+                delay: 5000
+            });
+        });
+
+        toastList.forEach(toast => {
+            toast.show();
+        });
+    </script>
+    
+    <script>
         $("#harga_barang").keypress(function(e) {
             var key = String.fromCharCode(e.which);
 
@@ -37,18 +51,24 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    @if (session()->has('msg'))
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <i class="mdi mdi-alert-outline me-2"></i>
-                            {{ session('msg') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
                     <form action="{{ route('barang.update', ['slug' => $barangs->slug]) }}" method="post">
                         @csrf
                         @include('pages.barang.form')
                     </form>
                 </div>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+                @if (session()->has('msg'))
+                    <div class="toast align-items-center text-white bg-warning border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            <i class="mdi mdi-alert-outline me-2 text-white"></i>
+                            <strong class="mr-auto"></strong><br>
+                            {{ session('msg') }}
+                        </div>
+                    </div>
+                @endif
             </div>
         </div> <!-- end col -->
     </div>

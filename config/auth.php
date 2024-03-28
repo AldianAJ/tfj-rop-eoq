@@ -74,10 +74,6 @@ return [
             'model' => App\Models\Admin\UserAuth::class,
         ]
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

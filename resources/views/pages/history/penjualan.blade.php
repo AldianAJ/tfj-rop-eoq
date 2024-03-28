@@ -58,90 +58,173 @@
 
         $('input[name=btnradio]').each(function(index, element) {
             $(this).on('change', function(e) {
-                $('#datatable').DataTable().clear().destroy();
+                $('#datatable').DataTable().clear();
+                $('#datatable').DataTable().destroy();
                 let type = $(e.target).val();
                 console.log(type);
                 if (type == 'group') {
-                    initializeMainTable([{
-                            data: "penjualan_id"
-                        },
-                        @if ($user->role == 'gudang' || $user->role == 'owner')
-                            {
-                                data: "name"
+                    let mainTable = $('#datatable').DataTable({
+                        "ordering": false,
+                        columnDefs: [
+                            @if ($user->role == 'gudang' || $user->role == 'owner')
+                                {
+                                    "visible": false,
+                                    "targets": 3
+                                }, {
+                                    "visible": false,
+                                    "targets": 4
+                                },
+                            @else
+                                {
+                                    "visible": false,
+                                    "targets": 2
+                                }, {
+                                    "visible": false,
+                                    "targets": 3
+                                }, {
+                                    "visible": false,
+                                    "targets": 4
+                                }
+                            @endif
+                        ],
+                        ajax: "{{ route('penjualan') }}",
+                        columns: [{
+                                data: "penjualan_id"
                             },
-                        @endif {
-                            data: "tanggal_penjualan",
-                            render: function(data, type, row) {
-                                let date = new Date(data);
-                                let tanggal_penjualan = new Intl.DateTimeFormat(['ban', 'id'], {
-                                    dateStyle: 'long',
-                                    timeZone: 'Asia/Jakarta'
-                                }).format(date);
-                                return tanggal_penjualan;
-                            }
-                        },
-                        {
-                            data: null
-                        },
-                        {
-                            data: null
-                        },
-                        {
-                            data: "grand_total",
-                            render: function(data, type, row) {
-                                return rupiah(data);
-                            }
-                        },
-                        {
-                            data: "action"
-                        }
-                    ], "{{ route('penjualan') }}");
-                } else if (type == 'ungroup') {
-                    initializeMainTable([{
-                            data: null
-                        },
-                        @if ($user->role == 'gudang' || $user->role == 'owner')
+                            @if ($user->role == 'gudang' || $user->role == 'owner')
+                                {
+                                    data: "name"
+                                },
+                            @endif {
+                                data: "tanggal_penjualan",
+                                render: function(data, type, row) {
+                                    let date = new Date(data);
+                                    let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
+                                        'id'
+                                    ], {
+                                        dateStyle: 'long',
+                                        timeZone: 'Asia/Jakarta'
+                                    }).format(date);
+                                    return tanggal_penjualan;
+                                }
+                            },
                             {
                                 data: null
                             },
-                        @endif {
-                            data: "tanggal_penjualan",
-                            render: function(data, type, row) {
-                                let date = new Date(data);
-                                let options = {
-                                    year: "numeric",
-                                    month: "long",
-                                    timeZone: 'Asia/Jakarta'
-                                };
-                                let tanggal_penjualan = new Intl.DateTimeFormat(['ban', 'id'],
-                                    options).format(date);
-                                return tanggal_penjualan;
+                            {
+                                data: null
+                            },
+                            {
+                                data: "grand_total",
+                                render: function(data, type, row) {
+                                    return rupiah(data);
+                                }
+                            },
+                            {
+                                data: "action"
+                            }
+                        ],
+                    });
+                } else if (type == 'ungroup') {
+                    mainTable = $('#datatable').DataTable({
+                        "ordering": false,
+                        columnDefs: [
+                            @if ($user->role == 'gudang' || $user->role == 'owner')
+                                {
+                                    "visible": false,
+                                    "targets": 0
+                                }, {
+                                    "visible": false,
+                                    "targets": 1
+                                }, {
+                                    "visible": true,
+                                    "targets": 2
+                                }, {
+                                    "visible": true,
+                                    "targets": 3
+                                }, {
+                                    "visible": true,
+                                    "targets": 4
+                                }, {
+                                    "visible": false,
+                                    "targets": 5
+                                }, {
+                                    "visible": false,
+                                    "targets": 6
+                                }
+                            @else
+                                {
+                                    "visible": false,
+                                    "targets": 0
+                                }, {
+                                    "visible": true,
+                                    "targets": 1
+                                }, {
+                                    "visible": true,
+                                    "targets": 2
+                                }, {
+                                    "visible": true,
+                                    "targets": 3
+                                }, {
+                                    "visible": false,
+                                    "targets": 4
+                                }, {
+                                    "visible": false,
+                                    "targets": 5
+                                },
+                            @endif
+                        ],
+                        ajax: {
+                            "type": "GET",
+                            "url": "{{ route('penjualan') }}",
+                            "data": {
+                                '_token': "{{ csrf_token() }}",
+                                'type': type
                             }
                         },
-                        {
-                            data: "nama_barang"
-                        },
-                        {
-                            data: "total_penjualan"
-                        },
-                        {
-                            data: null
-                        },
-                        {
-                            data: null
-                        }
-                    ], {
-                        "type": "GET",
-                        "url": "{{ route('penjualan') }}",
-                        "data": {
-                            '_token': "{{ csrf_token() }}",
-                            'type': type
-                        }
+                        columns: [{
+                                data: null
+                            },
+                            @if ($user->role == 'gudang' || $user->role == 'owner')
+                                {
+                                    data: null
+                                },
+                            @endif {
+                                data: "tanggal_penjualan",
+                                render: function(data, type, row) {
+                                    let date = new Date(data);
+                                    let options = {
+                                        year: "numeric",
+                                        month: "long",
+                                        timeZone: 'Asia/Jakarta'
+                                    };
+                                    let tanggal_penjualan = new Intl.DateTimeFormat(['ban',
+                                        'id'
+                                    ], options).format(date);
+                                    return tanggal_penjualan;
+                                }
+                            },
+                            {
+                                data: "nama_barang"
+                            },
+                            {
+                                data: "total_penjualan"
+                            },
+                            {
+                                data: null
+                            },
+                            {
+                                data: null
+                            }
+
+                        ],
                     });
                 }
                 changeButton(type);
             });
+
         });
+
 
         $('#btn-filter').on('click', function() {
             let monthYear = $('#month-year').val();
@@ -296,7 +379,7 @@
                     </div>
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Penjualan</th>
                                 @if ($user->role == 'gudang' || $user->role == 'owner')
@@ -326,7 +409,7 @@
                 </div>
                 <div class="modal-body">
                     <table class="table table-bordered dt-responsive nowrap w-100" id="detail-datatable">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>Harga</th>

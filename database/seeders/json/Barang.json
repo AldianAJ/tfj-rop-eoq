@@ -1,222 +1,442 @@
 [
     {
-        "nama_barang": "Beras Lopo Ijo 1kg",
-        "harga_barang": "18000"
+        "nama_barang": "Beras Lopo Ijo",
+        "harga_barang": "18000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "25",
+        "konversi_satuan": "Kg"
     },
     {
-        "nama_barang": "Beras Pak Tani 1kg",
-        "harga_barang": "17000"
+        "nama_barang": "Beras Pak Tani",
+        "harga_barang": "17000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "25",
+        "konversi_satuan": "Kg"
     },
     {
-        "nama_barang": "Beras Raja Lele 1kg",
-        "harga_barang": "16000"
+        "nama_barang": "Beras Raja Lele",
+        "harga_barang": "16000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "25",
+        "konversi_satuan": "Kg"
     },
     {
-        "nama_barang": "Beras Mangga 1kg",
-        "harga_barang": "15000"
+        "nama_barang": "Beras Mangga",
+        "harga_barang": "15000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "25",
+        "konversi_satuan": "Kg"
     },
     {
         "nama_barang": "Beras Lopo Ijo 5kg",
-        "harga_barang": "75000"
+        "harga_barang": "75000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Pcs",
+        "konversi_quantity": "1",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Beras Lopo Ijo 3kg",
-        "harga_barang": "45000"
+        "harga_barang": "45000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Pcs",
+        "konversi_quantity": "1",
+        "konversi_satuan": "Pcs"
     },
     {
-        "nama_barang": "Gula KA 1kg",
-        "harga_barang": "13000"
+        "nama_barang": "Gula KA",
+        "harga_barang": "13000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "50",
+        "konversi_satuan": "Kg"
     },
     {
         "nama_barang": "Minyak Sania 2ltr",
-        "harga_barang": "35000"
+        "harga_barang": "35000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "6",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Minyak Sunco 2ltr",
-        "harga_barang": "38500"
+        "harga_barang": "38500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "6",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Minyak Bimoli 2ltr",
-        "harga_barang": "36000"
+        "harga_barang": "36000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "6",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Mie Sedap Goreng",
-        "harga_barang": "3500"
+        "harga_barang": "3500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "40",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Mie Indomie Goreng",
-        "harga_barang": "3500"
+        "harga_barang": "3500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "40",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Mie Indomie Kari Ayam",
-        "harga_barang": "3500"
+        "harga_barang": "3500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "6",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Mie Sedap Soto",
-        "harga_barang": "3500"
+        "harga_barang": "3500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "40",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Mie Keriting Doroku 600gr",
-        "harga_barang": "12000"
+        "harga_barang": "12000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Bal",
+        "konversi_quantity": "9",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Bihun Jagung Padamu 350gr",
-        "harga_barang": "7000"
+        "harga_barang": "7000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Bal",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Mie Pipih Kuda Menjangan 2kg",
-        "harga_barang": "46000"
+        "harga_barang": "46000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "bal",
+        "konversi_quantity": "1",
+        "konversi_satuan": "bal"
     },
     {
-        "nama_barang": "Tepung Tapioka Rose Brand 1kg",
-        "harga_barang": "10000"
+        "nama_barang": "Tepung Tapioka Rose Brand",
+        "harga_barang": "10000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "25",
+        "konversi_satuan": "Kg"
     },
     {
-        "nama_barang": "Tepung Terigu Payung 1kg",
-        "harga_barang": "11000"
+        "nama_barang": "Tepung Terigu Payung",
+        "harga_barang": "11000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Sack",
+        "konversi_quantity": "25",
+        "konversi_satuan": "Kg"
     },
     {
         "nama_barang": "Tepung Beras Rose Brand 500gr",
-        "harga_barang": "7500"
+        "harga_barang": "7500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "20",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Tepung Ketan Rose Brand 500gr",
-        "harga_barang": "8000"
+        "harga_barang": "8000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "20",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Garam Kapal 250gr",
-        "harga_barang": "3000"
+        "harga_barang": "3000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Bal",
+        "konversi_quantity": "40",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Micin Sasa 30gr",
-        "harga_barang": "2500"
+        "harga_barang": "2500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Bal",
+        "konversi_quantity": "20",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Masako Sapi 8,5gr",
-        "harga_barang": "500"
+        "harga_barang": "500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "720",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Masako Ayam 8,5gr",
-        "harga_barang": "500"
+        "harga_barang": "500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "720",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Royco Sapi 8,5gr",
-        "harga_barang": "500"
+        "harga_barang": "500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "576",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Royco Ayam 8,5gr",
-        "harga_barang": "500"
+        "harga_barang": "500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "576",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Maggi Magic Lezat 7gr",
-        "harga_barang": "500"
+        "harga_barang": "500",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "720",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Ladaku Merica Bubuk 3gr",
-        "harga_barang": "1000"
+        "harga_barang": "1000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "192",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Kunyit Bubuk Desaku 8gr",
-        "harga_barang": "1000"
+        "harga_barang": "1000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "192",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Ketumbar Bubuk Desaku 12,5gr",
-        "harga_barang": "1000"
+        "harga_barang": "1000",
+        "supplier_id": "S00002",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "192",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Sabun Lifebouy 70gr",
-        "harga_barang": "3500"
+        "harga_barang": "3500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "144",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Shampoo Lifebouy 170ml",
-        "harga_barang": "25000"
+        "harga_barang": "25000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "20",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Pepsodent 75gr",
-        "harga_barang": "4500"
+        "harga_barang": "4500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "144",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Sabun Giv 76gr",
-        "harga_barang": "3000"
+        "harga_barang": "3000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "72",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Sabun Nuvo 76gr",
-        "harga_barang": "3000"
+        "harga_barang": "3000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "72",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Sabun Dettol 100gr",
-        "harga_barang": "6000"
+        "harga_barang": "6000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "30",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Rexona roll 45ml",
-        "harga_barang": "16000"
+        "harga_barang": "16000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "36",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Molto 780ml",
-        "harga_barang": "13000"
+        "harga_barang": "13000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Rinso 770gr",
-        "harga_barang": "18000"
+        "harga_barang": "18000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Sunlight 755ml",
-        "harga_barang": "17000"
+        "harga_barang": "17000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Vixal 755ml",
-        "harga_barang": "18000"
+        "harga_barang": "18000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Wipol 755ml",
-        "harga_barang": "17500"
+        "harga_barang": "17500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Kecap Bango 550ml",
-        "harga_barang": "17000"
+        "harga_barang": "17000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "12",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Kecap Sedap 63ml",
-        "harga_barang": "2000"
+        "harga_barang": "2000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "48",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Sambal ABC 135ml",
-        "harga_barang": "8000"
+        "harga_barang": "8000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "48",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Saus ABC 135ml",
-        "harga_barang": "7000"
+        "harga_barang": "7000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "48",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Teh Villa 2gr",
-        "harga_barang": "1300"
+        "harga_barang": "1300",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "120",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Teh Sari Murni 9gr",
-        "harga_barang": "1500"
+        "harga_barang": "1500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "120",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Teh Sari Wangi 2gr",
-        "harga_barang": "1300"
+        "harga_barang": "1300",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "120",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Energen 30gr",
-        "harga_barang": "2000"
+        "harga_barang": "2000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "160",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Milo 22gr",
-        "harga_barang": "2000"
+        "harga_barang": "2000",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "220",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Good Day Freeze 30gr",
-        "harga_barang": "2500"
+        "harga_barang": "2500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "120",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Luwak White 20gr",
-        "harga_barang": "1500"
+        "harga_barang": "1500",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "200",
+        "konversi_satuan": "Pcs"
     },
     {
         "nama_barang": "Kapal Api Mix 25gr",
-        "harga_barang": "1300"
+        "harga_barang": "1300",
+        "supplier_id": "S00001",
+        "quantity_satuan": "Dus",
+        "konversi_quantity": "120",
+        "konversi_satuan": "Pcs"
     }
 ]

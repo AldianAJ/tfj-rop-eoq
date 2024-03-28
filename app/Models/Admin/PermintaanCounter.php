@@ -17,7 +17,7 @@ class PermintaanCounter extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'permintaan_counter_id', 'slug', 'counter_id', 'status', 'tanggal_permintaan'
+        'permintaan_counter_id', 'slug', 'counter_id', 'status_permintaan', 'tanggal_permintaan'
     ];
 
     public static function generatePermintaanCounterId($counter_id)

@@ -79,7 +79,7 @@
             <div class="card">
                 <div class="card-body">
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Gudang</th>
                                 <th>Nama Gudang</th>

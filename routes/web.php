@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BarangController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GudangController;
 use App\Http\Controllers\Admin\CounterController;
+use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\KasirController;
 use App\Http\Controllers\Admin\UserAuthController;
 use App\Http\Controllers\Admin\PemesananController;
@@ -69,6 +70,15 @@ Route::middleware('user')->group(function () {
         Route::get('/counter/destroy/{slug}', 'destroy')->name('counter.destroy');
     });
 
+    Route::controller(SupplierController::class)->group(function () {
+        Route::get('/supplier', 'index')->name('supplier');
+        Route::get('/supplier/create', 'create')->name('supplier.create');
+        Route::post('/supplier/store', 'store')->name('supplier.store');
+        Route::get('/supplier/edit/{slug}', 'edit')->name('supplier.edit');
+        Route::post('/supplier/update/{slug}', 'update')->name('supplier.update');
+        Route::get('/supplier/destroy/{slug}', 'destroy')->name('supplier.destroy');
+    });
+
     Route::controller(PemesananController::class)->group(function () {
         Route::get('/pemesanan', 'index')->name('pemesanan');
         Route::get('/pemesanan/persediaan-baru', 'createNewPersediaan')->name('pemesanan.create.new-persediaan');
@@ -96,6 +106,7 @@ Route::middleware('user')->group(function () {
         Route::post('/permintaan-counter/store', 'store')->name('permintaan-counter.store');
         Route::post('/permintaan-counter/detail', 'detail')->name('permintaan-counter.detail');
         Route::get('/permintaan-counter/detail/{slug}', 'detailByGudang')->name('permintaan-counter.detailByGudang');
+        Route::get('/permintaan-counter/checkstatus', 'checkStatus')->name('permintaan.checkStatus');
         Route::get('/permintaan-counter/persetujuan/{slug}/{id}', 'createPersetujuan')->name('permintaan-counter.persetujuan');
         Route::post('/permintaan-counter/temp/persetujuan', 'temporaryPersetujuan')->name('permintaan-counter.tmpPersetujuan');
         Route::get('/permintaan-counter/pengiriman/store/{slug}', 'storePengiriman')->name('permintaan-counter.storePersetujuan');

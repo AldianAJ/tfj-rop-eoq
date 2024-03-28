@@ -1,0 +1,14 @@
+[
+    {
+        "nama_supplier": "PT Unilever Indonesia Tbk",
+        "alamat": "Jl. Rungkut Industri IV No.5-11, Surabaya, Jawa Timur",
+        "telp": "0312989100",
+        "biaya_pemesanan": "15000"
+    },
+    {
+        "nama_supplier": "UD. 55",
+        "alamat": "Jl. Tambak Rejo No.55, Surabaya, Jawa Timur",
+        "telp": "0313711932",
+        "biaya_pemesanan": "15000"
+    }
+]

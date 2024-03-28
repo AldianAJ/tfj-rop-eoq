@@ -53,7 +53,7 @@
             }).format(number);
         };
 
-        $('.alert').hide();
+        $('.alert-success').hide();
 
         function viewPermintaanDataTable(paramOne) {
             $('#datatable-permintaan').DataTable().clear();
@@ -168,7 +168,10 @@
                     success: function(response) {
                         no = 1;
                         permintaan = [];
-                        $('.alert').show();
+                        $('.alert-success').show();
+                        setTimeout(function() {
+                            $('.alert-success').hide();
+                        }, 5000);
                         viewPermintaanDataTable(permintaan);
                         mainTable.clear();
                         mainTable.destroy();
@@ -210,17 +213,12 @@
     </div>
 
     <div class="row">
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <i class="mdi mdi-check-all me-2"></i>
-            Permintaan berhasil disimpan
-            <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">Data Barang</h4>
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
@@ -231,6 +229,17 @@
                         </tbody>
                     </table>
 
+                </div>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+                <div class="toast align-items-center text-white bg-success border-0 alert-success" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body bg-success">
+                        <i class="mdi mdi-check-all me-2 text-white"></i>
+                        <strong class="mr-auto text-white">Success</strong><br>
+                        Permintaan berhasil disimpan
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,7 +253,7 @@
                         </button>
                     </div>
                     <table id="datatable-permintaan" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>

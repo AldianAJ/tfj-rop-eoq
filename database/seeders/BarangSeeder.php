@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Admin\Barang;
 use Illuminate\Support\Str;
-use PhpParser\Node\Stmt\TryCatch;
 
 class BarangSeeder extends Seeder
 {
@@ -27,6 +25,10 @@ class BarangSeeder extends Seeder
                 $barang->slug = Str::random(16);
                 $barang->nama_barang = $data->nama_barang;
                 $barang->harga_barang = $data->harga_barang;
+                $barang->supplier_id = $data->supplier_id;
+                $barang->quantity_satuan = $data->quantity_satuan;
+                $barang->konversi_quantity = $data->konversi_quantity;
+                $barang->konversi_satuan = $data->konversi_satuan;
                 $barang->save();
                 DB::commit();
             } catch (\Exception $ex) {

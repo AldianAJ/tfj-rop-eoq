@@ -35,7 +35,6 @@
         $('#save-persetujuan').on('click', function() {
             persetujuan = $("input[name='btnradio']:checked").val();
             pemesanan_id = $('#pemesanan_id').text();
-            // console.log(pemesanan_id);
             $('#answer').text(persetujuan);
             $('#confirmModal').modal('toggle');
 
@@ -116,7 +115,7 @@
                         @endif
                     </div>
                     <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>Stok Sekarang</th>

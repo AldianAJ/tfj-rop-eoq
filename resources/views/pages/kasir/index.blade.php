@@ -185,15 +185,22 @@
             if (jumlah_pembelian > selectedData.quantity) {
                 $('#quantityModal').modal('toggle');
                 $('.stok').show();
+                setTimeout(function() {
+                    $('.stok').hide();
+                }, 5000); // 5000 milliseconds = 5 seconds
             } else if (jumlah_pembelian == "") {
                 $('#quantityModal').modal('toggle');
                 $('.zero').show();
+                setTimeout(function() {
+                    $('.zero').hide();
+                }, 5000); // 5000 milliseconds = 5 seconds
             } else {
                 changeBarangAfterAddKasir(id_barang, jumlah_pembelian);
                 $('#quantityModal').modal('toggle');
                 keranjangDatatable = viewKeranjangDataTable(keranjang);
             }
         });
+
 
         function changeNumberDelKasir() {
             no = 1;
@@ -240,11 +247,13 @@
                         no = 1;
                         keranjang = [];
                         $('.alert-success').show();
+                        setTimeout(function() {
+                            $('.alert-success').hide();
+                        }, 5000);
                         viewKeranjangDataTable(keranjang);
                         grandTotal = 0;
                         $('#grandTotal').text("Rp 0,00");
-                        mainTable.clear();
-                        mainTable.destroy();
+                        mainTable.clear().destroy();
                         mainTable = $('#datatable').DataTable({
                             lengthMenu: [5, 10, 20, 50, 100],
                             ajax: "{{ route('kasir') }}",
@@ -302,28 +311,13 @@
     </div>
 
     <div class="row">
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <i class="mdi mdi-check-all me-2"></i>
-            Transaksi berhasil disimpan
-            <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <div class="alert alert-warning alert-dismissible stok" role="alert">
-            <i class="mdi mdi-alert-outline me-2"></i>
-            Stok barang counter tidak cukup!!
-            <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <div class="alert alert-warning alert-dismissible zero" role="alert">
-            <i class="mdi mdi-alert-outline me-2"></i>
-            Jumlah pembelian harus diisi
-            <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
         <div class="col">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">Barang Kasir</h4>
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
@@ -351,7 +345,7 @@
                         </button>
                     </div>
                     <table id="datatable-keranjang" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
@@ -368,6 +362,35 @@
                             <th colspan="2" class="font-size-16"><span id="grandTotal">Rp 0,00</span></th>
                         </tr>
                     </table>
+                </div>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+                <div class="toast align-items-center text-white bg-success border-0 alert-success" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body bg-success">
+                        <i class="mdi mdi-check-all me-2 text-white"></i>
+                        <strong class="mr-auto text-white">Success</strong><br>
+                        Transaksi berhasil disimpan
+                    </div>
+                </div>
+
+                <div class="toast align-items-center text-white bg-warning border-0 alert-warning stok" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body bg-warning text-white">
+                        <i class="mdi mdi-alert-outline me-2 text-white"></i>
+                        <strong class="mr-auto text-white">Warning</strong><br>
+                        Stok barang counter tidak cukup!!
+                    </div>
+                </div>
+
+                <div class="toast align-items-center text-white bg-warning border-0 alert-warning zero" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body bg-warning text-white">
+                        <i class="mdi mdi-alert-outline me-2 text-white"></i>
+                        <strong class="mr-auto text-white">Warning</strong><br>
+                        Jumlah pembelian harus diisi
+                    </div>
                 </div>
             </div>
         </div>

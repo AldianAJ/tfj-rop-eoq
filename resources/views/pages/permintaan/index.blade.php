@@ -23,6 +23,19 @@
     <script src="{{ asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
+    <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl, {
+                autohide: true,
+                delay: 5000
+            });
+        });
+
+        toastList.forEach(function(toast) {
+            toast.show();
+        });
+    </script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script>
@@ -39,15 +52,16 @@
                         data: "name"
                     },
                 @endif {
-                    data: "status",
+                    data: "status_permintaan",
                     render: function(data, type, row) {
                         let html = '';
-                        if (data == 'Dikirim') {
+                        if (data == 'Delivered') {
                             html = '<span class="badge rounded-pill badge-soft-primary font-size-14">' +
                                 data +
                                 '</span>';
-                        } else if (data == 'Pending') {
+                        } else if (data == 'Processing') {
                             html = '<span class="badge rounded-pill badge-soft-warning font-size-14">' +
+                                '<span class="bx bx-revision me-1"></span>' +
                                 data +
                                 '</span>';
                         }
@@ -80,10 +94,9 @@
             slug = selectedData.slug;
             if (selectedData.status == 'Dikirim') {
                 window.location = '/pengiriman-counter/detail/' + slug;
-            } else if (selectedData.status == 'Pending') {
+            } else if (selectedData.status == 'Processing') {
                 $("#id_permintaan").text(selectedData.permintaan_id);
-                $('#detai-datatable').DataTable().clear();
-                $('#detail-datatable').DataTable().destroy();
+                $('#detai-datatable').DataTable().clear().destroy();
                 $('#detail-datatable').DataTable({
                     ajax: {
                         type: "POST",
@@ -127,13 +140,6 @@
     </div>
 
     <div class="row">
-        @if (session()->has('msg'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="mdi mdi-check-all me-2"></i>
-                {{ session('msg') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -147,7 +153,7 @@
                     @endif
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>ID Permintaan</th>
                                 @if ($user->role == 'gudang')
@@ -164,6 +170,22 @@
 
                 </div>
             </div>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+                @if (session()->has('msg'))
+                    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                        style="position: fixed; bottom: 1rem; right: 1rem;">
+                        <div class="toast align-items-center text-white bg-success border-0" role="alert"
+                            aria-live="assertive" aria-atomic="true">
+                            <div class="toast-body">
+                                <i class="mdi mdi-check-all me-2 text-white"></i>
+                                <strong class="mr-auto">Success</strong><br>
+                                {{ session('msg') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div> <!-- end col -->
     </div>
     <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -175,7 +197,7 @@
                 </div>
                 <div class="modal-body">
                     <table class="table table-bordered dt-responsive nowrap w-100" id="detail-datatable">
-                        <thead>
+                        <thead class="table-light">
                             <tr>
                                 <th>Nama Barang</th>
                                 <th>Jumlah Permintaan</th>

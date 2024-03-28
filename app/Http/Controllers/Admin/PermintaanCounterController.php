@@ -40,16 +40,16 @@ class PermintaanCounterController extends Controller
                     $permintaans = DB::table('permintaan_counters as a')
                         ->join('counters as b', 'a.counter_id', '=', 'b.counter_id')
                         ->join('users as c', 'c.user_id', '=', 'b.user_id')
-                        ->select('a.permintaan_counter_id as permintaan_id', 'c.name', 'a.status', 'a.tanggal_permintaan', 'a.slug')
+                        ->select('a.permintaan_counter_id as permintaan_id', 'c.name', 'a.status_permintaan', 'a.tanggal_permintaan', 'a.slug')
                         ->where('a.counter_id', $counter_id)
-                        ->whereIn('a.status', ['Pending', 'Dikirim'])
+                        ->whereIn('a.status_permintaan', ['Processing', 'Delivered'])
                         ->orderByDesc('tanggal_permintaan')
                         ->get();
 
                     return DataTables::of($permintaans)
                         ->addColumn('action', function ($object) {
                             $html = '<button class="btn btn-success waves-effect waves-light btn-detail"';
-                            if ($object->status == 'Pending') {
+                            if ($object->status == 'Processing') {
                                 $html .= ' data-bs-toggle="modal" data-bs-target="#detailModal"';
                             }
                             $html .= '><i class="bx bx-detail align-middle me-2 font-size-18"></i>Detail</button>';
@@ -62,18 +62,18 @@ class PermintaanCounterController extends Controller
                 $permintaans = DB::table('permintaan_counters as a')
                     ->join('counters as b', 'a.counter_id', '=', 'b.counter_id')
                     ->join('users as c', 'c.user_id', '=', 'b.user_id')
-                    ->select('a.permintaan_counter_id as permintaan_id', 'c.name', 'a.status', 'a.tanggal_permintaan', 'a.slug')
-                    ->whereIn('a.status', ['Pending', 'Dikirim'])
+                    ->select('a.permintaan_counter_id as permintaan_id', 'c.name', 'a.status_permintaan', 'a.tanggal_permintaan', 'a.slug')
+                    ->whereIn('a.status_permintaan', ['Processing', 'Delivered'])
                     ->orderByDesc('tanggal_permintaan')
                     ->get();
 
                 return DataTables::of($permintaans)
                     ->addColumn('action', function ($object) use ($path) {
                         $html = '';
-                        if ($object->status == 'Pending') {
+                        if ($object->status == 'Processing') {
                             $html = '<a href="' . route($path . '.detailByGudang', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">';
                             $html .= '<i class="bx bx-transfer-alt align-middle me-2 font-size-18"></i>Proses</a>';
-                        } elseif ($object->status == 'Dikirim') {
+                        } elseif ($object->status == 'Delivered') {
                             $html = '<a href="' . route('pengiriman-counter.detail', ["slug" => $object->slug]) . '" class="btn btn-success waves-effect waves-light">';
                             $html .= '<i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</a>';
                         }
@@ -121,7 +121,7 @@ class PermintaanCounterController extends Controller
             $permintaan->permintaan_counter_id = $permintaan_id;
             $permintaan->slug = Str::random(16);
             $permintaan->counter_id = $counter_id;
-            $permintaan->status = 'Pending';
+            $permintaan->status = 'Processing';
             $permintaan->tanggal_permintaan = Carbon::now();
             $permintaan->save();
             foreach ($list_permintaans as $list) {
@@ -192,27 +192,34 @@ class PermintaanCounterController extends Controller
             ->where('role', 'gudang')
             ->first();
 
-        $query = 'SELECT DISTINCT u.name as nama,
-            CASE u.name
-                WHEN "' . $gudang->name . '" THEN (bg.stok_masuk - bg.stok_keluar)
-                ELSE (bc.stok_masuk - bc.stok_keluar)
-            END as quantity,
-            CASE u.name
-                WHEN "' . $gudang->name . '" THEN g.gudang_id
-                ELSE c.counter_id
-            END as sumber_id,
-            b.nama_barang
-        FROM barangs as b
-        JOIN barang_gudangs as bg on b.barang_id = bg.barang_id
-        JOIN barang_counters as bc on b.barang_id = bc.barang_id
-        JOIN gudangs as g on bg.gudang_id = g.gudang_id
-        JOIN counters as c on bc.counter_id = c.counter_id
-        JOIN users as u on g.user_id = u.user_id OR c.user_id = u.user_id
-        WHERE b.barang_id = "' . $permintaan->barang_id . '"
-            AND (bg.stok_masuk - bg.stok_keluar >= "' . $permintaan->jumlah_permintaan . '"
-                or bc.stok_masuk - bc.stok_keluar >= "' . $permintaan->jumlah_permintaan . '")
-            AND c.counter_id <> "' . $permintaan->counter_id . '"
-        GROUP BY nama, quantity, sumber_id, nama_barang';
+        $query = DB::table('barangs as b')
+            ->select('u.name as nama')
+            ->selectRaw('CASE u.name
+                            WHEN ? THEN (bg.stok_masuk - bg.stok_keluar)
+                            ELSE (bc.stok_masuk - bc.stok_keluar)
+                        END as quantity', [$gudang->name])
+            ->selectRaw('CASE u.name
+                            WHEN ? THEN g.gudang_id
+                            ELSE c.counter_id
+                        END as sumber_id', [$gudang->name])
+            ->select('b.nama_barang')
+            ->join('barang_gudangs as bg', 'b.barang_id', '=', 'bg.barang_id')
+            ->join('barang_counters as bc', 'b.barang_id', '=', 'bc.barang_id')
+            ->join('gudangs as g', 'bg.gudang_id', '=', 'g.gudang_id')
+            ->join('counters as c', 'bc.counter_id', '=', 'c.counter_id')
+            ->join('users as u', function ($join) {
+                $join->on('g.user_id', '=', 'u.user_id')
+                    ->orWhere('c.user_id', '=', 'u.user_id');
+            })
+            ->where('b.barang_id', $permintaan->barang_id)
+            ->where(function ($query) use ($permintaan) {
+                $query->whereRaw('(bg.stok_masuk - bg.stok_keluar) >= ?', [$permintaan->jumlah_permintaan])
+                    ->orWhereRaw('(bc.stok_masuk - bc.stok_keluar) >= ?', [$permintaan->jumlah_permintaan]);
+            })
+            ->where('c.counter_id', '<>', $permintaan->counter_id)
+            ->groupBy('nama', 'quantity', 'sumber_id', 'nama_barang')
+            ->get();
+
 
         $sumbers = DB::select($query);
 
@@ -324,13 +331,13 @@ class PermintaanCounterController extends Controller
                 if ($temp['persetujuan'] == 'Setuju') {
                     if ($temp['id_sumber'] == 'G00001') {
                         $detail->gudang_id = $temp['id_sumber'];
-                        $detail->status_pengiriman = 'Dikirim';
+                        $detail->status_pengiriman = 'Delivered';
                         $barang_gudang = BarangGudang::where('barang_id', $temp['barang_id'])->first();
                         $barang_gudang->stok_keluar += $temp['jumlah_pengiriman'];
                         $barang_gudang->save();
                     } else {
                         $detail->counter_id = $temp['id_sumber'];
-                        $detail->status_pengiriman = 'Menunggu Dikirim';
+                        $detail->status_pengiriman = 'Waiting Delivered';
                         $barang_counter = BarangCounter::where(['barang_id' => $temp['barang_id'], 'counter_id' => $temp['id_sumber']])->first();
                         $barang_counter->stok_keluar += $temp['jumlah_pengiriman'];
                         $barang_counter->save();
@@ -343,9 +350,9 @@ class PermintaanCounterController extends Controller
 
             $update_permintaan = PermintaanCounter::where('permintaan_counter_id', $permintaan->permintaan_counter_id)->first();
             if ($count_ditolak == $count_tmp) {
-                $update_permintaan->status = 'Ditolak';
+                $update_permintaan->status = 'Cancelled';
             } else {
-                $update_permintaan->status = 'Dikirim';
+                $update_permintaan->status = 'Delivered';
             }
             $update_permintaan->save();
             DB::commit();
@@ -357,58 +364,66 @@ class PermintaanCounterController extends Controller
         session()->forget("temporary_persetujuan");
         return redirect()->route('permintaan-counter');
     }
-
-
     public function indexHistory(Request $request)
     {
         $user = $this->userAuth();
         $path = "permintaan-counter";
 
         if ($request->ajax()) {
-            if ($user->role == 'gudang' || $user->role == 'owner') {
-                $permintaans = DB::table('permintaan_counters as p')
-                    ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
-                    ->join('users as u', 'c.user_id', '=', 'u.user_id')
-                    ->select('p.permintaan_counter_id', 'u.name', 'p.tanggal_permintaan', 'p.slug', 'p.status')
-                    ->where('p.status', 'Diterima/Selesai')
-                    ->orderBy('p.tanggal_permintaan', 'desc')
-                    ->get();
+            $query = DB::table('permintaan_counters as p')
+                ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
+                ->join('users as u', 'c.user_id', '=', 'u.user_id')
+                ->select('p.permintaan_counter_id', 'u.name', 'p.tanggal_permintaan', 'p.slug', 'p.status_permintaan')
+                ->orderBy('p.tanggal_permintaan', 'desc');
 
-                return DataTables::of($permintaans)
-                    ->addColumn('action', function ($object) use ($path) {
-                        $html = '<button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                            . '<i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                        $html .= '<a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
-                            . '<i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
-                        return $html;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
+            if ($user->role == 'gudang' || $user->role == 'owner') {
+                $query->where('p.status_permintaan', 'Diterima/Selesai');
             } else {
                 $counter = DB::table('counters')
                     ->where('user_id', $user->user_id)
                     ->first();
 
-                $permintaans = DB::table('permintaan_counters as p')
-                    ->join('counters as c', 'p.counter_id', '=', 'c.counter_id')
-                    ->join('users as u', 'c.user_id', '=', 'u.user_id')
-                    ->select('p.permintaan_counter_id', 'u.name', 'p.tanggal_permintaan', 'p.slug', 'p.status')
-                    ->where('c.counter_id', $counter->counter_id)
-                    ->orderBy('p.tanggal_permintaan', 'desc')
-                    ->get();
-
-                return DataTables::of($permintaans)
-                    ->addColumn('action', function ($object) use ($path) {
-                        $html = '<button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
-                            . '<i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
-                        return $html;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
+                $query->where('p.counter_id', $counter->counter_id);
             }
+
+            $permintaans = $query->get();
+
+            return DataTables::of($permintaans)
+                ->addColumn('action', function ($object) use ($path) {
+                    $html = '<button class="btn btn-info waves-effect waves-light btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal">'
+                        . '<i class="bx bx-detail font-size-18 align-middle me-2"></i>Detail</button>';
+                    $html .= '<a href="' . route($path . '.exportPDF', ["slug" => $object->slug]) . '" class="btn btn-primary waves-effect waves-light">'
+                        . '<i class="bx bxs-printer align-middle me-2 font-size-18"></i>Cetak PDF</a>';
+                    return $html;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
         }
 
         return view('pages.history.permintaan-counter', compact('user'));
+    }
+
+
+    public function checkMinta()
+    {
+        $user = $this->userAuth();
+
+        $checkMinta = DB::table('permintaan_counters')
+            ->join('counters', 'counters.counter_id', '=', 'permintaan_counters.counter_id')
+            ->where('counters.user_id', $user->user_id)
+            ->where(function ($q) {
+                $q->where('permintaan_counters.status', 'Processing')
+                    ->orWhere('permintaan_counters.status', 'Delivered');
+            })
+            ->get();
+
+        $result = [
+            'checkMinta' => $checkMinta
+        ];
+
+        $result = (object) $result;
+
+        return response()->json($result, 200);
     }
 
 
@@ -455,5 +470,4 @@ class PermintaanCounterController extends Controller
         $pdf = PDF::loadView('pages.export.permintaan-counter', compact('details', 'title', 'tanggal', 'permintaan'));
         return $pdf->download($title . ".pdf");
     }
-
 }

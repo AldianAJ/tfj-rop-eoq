@@ -6,6 +6,20 @@
 
 @push('after-app-script')
     <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl, {
+                autohide: true,
+                delay: 5000
+            });
+        });
+
+        toastList.forEach(function(toast) {
+            toast.show();
+        });
+    </script>
+
+    <script>
         $("#jumlah_pengiriman").keypress(function(evt) {
             var key = String.fromCharCode(evt.which);
             if (!(/[0-9]/.test(key))) {
@@ -56,13 +70,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    @if (session()->has('msg'))
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <i class="mdi mdi-alert-outline me-2"></i>
-                            {{ session('msg') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
                     <form action="{{ route('permintaan-counter.tmpPersetujuan') }}" method="post">
                         @csrf
                         <h4 class="card-title">Form @yield('title')</h4>
@@ -149,9 +156,21 @@
                                             class="bx bx bxs-save align-middle me-2 font-size-18"></i>Simpan</button>
                                 </div>
                             </div>
-
                     </form>
                 </div>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end"
+                style="position: fixed; bottom: 1rem; right: 1rem;">
+                @if (session()->has('msg'))
+                    <div class="toast align-items-center text-white bg-warning border-0" role="alert"
+                        aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            <i class="mdi mdi-alert-outline me-2 text-white"></i>
+                            <strong class="mr-auto"></strong><br>
+                            {{ session('msg') }}
+                        </div>
+                    </div>
+                @endif
             </div>
         </div> <!-- end col -->
     </div>
